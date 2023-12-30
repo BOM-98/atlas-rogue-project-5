@@ -44,8 +44,20 @@ INSTALLED_APPS = [
     'allauth.socialaccount',
     # django-sites
     'django.contrib.sites',
+    #Tailwind Django App
+    'tailwind',
+    'theme',
+    'django_browser_reload',
     # apps
     "home",
+]
+
+# Tailwind Django App
+TAILWIND_APP_NAME = 'theme'
+
+# Tailwind Django App internal ip requirement
+INTERNAL_IPS = [
+    "127.0.0.1",
 ]
 
 MIDDLEWARE = [
@@ -58,6 +70,8 @@ MIDDLEWARE = [
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
     # allauth requirement:
     "allauth.account.middleware.AccountMiddleware",
+    # Tailwind Django App Browser Reload
+    "django_browser_reload.middleware.BrowserReloadMiddleware",
 ]
 
 # django-allauth requirement
