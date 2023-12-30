@@ -396,3 +396,13 @@ FodyWeavers.xsd
 
 # JetBrains Rider
 *.sln.iml
+
+# Atlas Rogue Specific
+
+*.sqlite3
+*.pyc
+__pycache__
+package.json
+package-lock.json
+node_modules
+tailwind.config.js
