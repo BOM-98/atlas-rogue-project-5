@@ -1,0 +1,49 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    {% block meta %}
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% endblock %}
+    {% block extra_meta %}
+    {% endblock %}
+
+    {% block core_css %}
+    <link href="{% static 'css/output.css' %}" rel="stylesheet">
+    {% endblock %}
+    {% block extra_css %}
+    {% endblock %}
+
+    <title>Atlas Rogue | {% block extra_title %}{% endblock %}</title>
+</head>
+
+<body>
+    <main>
+        {% if messages %}
+        <div class="messages">
+            {% for message in messages %}
+            <div class="message {{ message.tags }}">
+                {{ message }}
+            </div>
+            {% endfor %}
+        </div>
+        {% endif %}
+        {% block content %}
+        {% endblock %}
+    </main>
+    <footer>
+        {% block footer %}
+        {% endblock %}
+    </footer>
+    {% block core_js %}
+    <script src="{% static 'js/output.js' %}"></script>
+    {% endblock %}
+    {% block extra_js %}
+    {% endblock %}
+</body>
+
+</html>
