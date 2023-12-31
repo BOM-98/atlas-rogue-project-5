@@ -32,37 +32,46 @@
     <!-- Navigation -->
 
     <div class="border-b-2 border-neutral-100 mb-10">
-        <nav class="justify-between items-stretch flex gap-5 px-10 py-5 max-md:flex-wrap max-md:px-5 mx-16">
+        <nav class="justify-between items-stretch lg:flex gap-5 lpx-10 py-5 max-md:px-5 mx-16">
 
             <!-- Logo -->
-
-            <img loading="lazy" src="{% static 'atlas-rogue-logo1.png' %}"
-                class="aspect-[4.95] object-contain object-center w-[193px] overflow-hidden self-center shrink-0 max-w-full my-auto" />
-
+            <div class="flex items-stretch justify-between gap05">
+            <a href="#" class="object-contain object-center self-center"><img loading="lazy"
+                    src="{% static 'atlas-rogue-logo1.png' %}"
+                    class="object-contain object-center w-[193px] overflow-hidden self-center shrink-0 max-w-full my-auto" /></a>
+            <button class="lg:hidden block hamburger" aria-label="Open Menu">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7">
+                    </path>
+                </svg>
+            </button>
+            </div>
             <!-- End Logo -->
             <!-- Nav List -->
-            <ul
-                class="items-stretch self-center flex justify-between gap-5 my-auto p-2.5 max-md:max-w-full max-md:flex-wrap">
+            <ul class="lg:flex lg:items-stretch lg:self-center lg:justify-between gap-5 my-auto p-2.5">
+                <!-- Menu Items -->
                 <li><a href="#"
-                        class="text-neutral-400 text-center text-base whitespace-nowrap hover:text-primary-600 hover:underline underline-offset-4 decoration-2"
+                        class="text-neutral-400 text-center text-base whitespace-nowrap hover:text-primary-600 hover:underline underline-offset-4 decoration-2 duration-500"
                         aria-label="Rent">Rent</a>
                 </li>
                 <li><a href="#"
-                        class="text-neutral-400 text-center text-base hover:text-primary-600 hover:underline underline-offset-4 decoration-2"
+                        class="text-neutral-400 text-center text-base hover:text-primary-600 hover:underline underline-offset-4 decoration-2 duration-500"
                         aria-label="Suppliers">Suppliers</a></li>
                 <li><a href="#"
-                        class="text-neutral-400 text-center text-base hover:text-primary-600 hover:underline underline-offset-4 decoration-2"
+                        class="text-neutral-400 text-center text-base hover:text-primary-600 hover:underline underline-offset-4 decoration-2 duration-500"
                         aria-label="Our Story">Our Story</a></li>
                 <li><a href="#"
-                        class="text-neutral-400 text-center text-base hover:text-primary-600 hover:underline underline-offset-4 decoration-2"
+                        class="text-neutral-400 text-center text-base hover:text-primary-600 hover:underline underline-offset-4 decoration-2 duration-500"
                         aria-label="Wishlist">Wishlist</a></li>
                 <li><a href="#"
-                        class="text-neutral-400 text-center text-base grow whitespace-nowrap hover:text-primary-600 hover:underline underline-offset-4 decoration-2"
+                        class="text-neutral-400 text-center text-base grow whitespace-nowrap hover:text-primary-600 hover:underline underline-offset-4 decoration-2 duration-500"
                         aria-label="Contact Us">Contact Us</a></li>
+                <!-- End Menu Items -->
             </ul>
             <!-- End Nav List -->
             <!-- Nav icons -->
-            <div class="justify-between items-stretch flex gap-5 py-1.5">
+            <div class="lg:flex lg:justify-between lg:items-stretch lg:flex gap-5 py-1.5">
                 <img loading="lazy" src="{% static 'icons/Wishlist.svg' %}"
                     class="aspect-square object-contain object-center w-[31px] overflow-hidden self-center shrink-0 max-w-full my-auto mx-4" />
                 <img loading="lazy" src="{% static 'icons/search-bar.svg' %}"
