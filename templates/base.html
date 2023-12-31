@@ -31,38 +31,49 @@
 
     <!-- Navigation -->
 
-    <nav class="justify-between items-stretch flex gap-5 px-10 py-5 max-md:flex-wrap max-md:px-5">
+    <div class="border-b-2 border-neutral-100 mb-10">
+        <nav class="justify-between items-stretch flex gap-5 px-10 py-5 max-md:flex-wrap max-md:px-5 mx-16">
 
-        <!-- Logo -->
+            <!-- Logo -->
 
-        <img loading="lazy"
-            src="{% static 'atlas-rogue-logo1.png' %}"
-            class="aspect-[4.95] object-contain object-center w-[193px] overflow-hidden self-center shrink-0 max-w-full my-auto" />
+            <img loading="lazy" src="{% static 'atlas-rogue-logo1.png' %}"
+                class="aspect-[4.95] object-contain object-center w-[193px] overflow-hidden self-center shrink-0 max-w-full my-auto" />
 
-        <!-- End Logo -->
-        <!-- Nav List -->
-        <ul class="items-stretch self-center flex justify-between gap-5 my-auto p-2.5 max-md:max-w-full max-md:flex-wrap">
-            <li><a href="#" class="text-neutral-400 text-center text-base whitespace-nowrap" aria-label="Rent">Rent</a>
-            </li>
-            <li><a href="#" class="text-neutral-400 text-center text-base" aria-label="Suppliers">Suppliers</a></li>
-            <li><a href="#" class="text-neutral-400 text-center text-base" aria-label="Our Story">Our Story</a></li>
-            <li><a href="#" class="text-neutral-400 text-center text-base" aria-label="Wishlist">Wishlist</a></li>
-            <li><a href="#" class="text-neutral-400 text-center text-base grow whitespace-nowrap"
-                    aria-label="Contact Us">Contact Us</a></li>
-        </ul>
-        <!-- End Nav List -->
-        <div class="justify-between items-stretch flex gap-5 py-1.5">
-            <img loading="lazy"
-                src=""
-                class="aspect-square object-contain object-center w-[31px] overflow-hidden self-center shrink-0 max-w-full my-auto" />
-            <img loading="lazy"
-                src=""
-                class="aspect-square object-contain object-center w-[31px] justify-center items-center overflow-hidden self-center shrink-0 max-w-full my-auto" />
-            <img loading="lazy"
-                src=""
-                class="aspect-square object-contain object-center w-[38px] overflow-hidden shrink-0 max-w-full" />
-        </div>
-    </nav>
+            <!-- End Logo -->
+            <!-- Nav List -->
+            <ul
+                class="items-stretch self-center flex justify-between gap-5 my-auto p-2.5 max-md:max-w-full max-md:flex-wrap">
+                <li><a href="#"
+                        class="text-neutral-400 text-center text-base whitespace-nowrap hover:text-primary-600 hover:underline underline-offset-4 decoration-2"
+                        aria-label="Rent">Rent</a>
+                </li>
+                <li><a href="#"
+                        class="text-neutral-400 text-center text-base hover:text-primary-600 hover:underline underline-offset-4 decoration-2"
+                        aria-label="Suppliers">Suppliers</a></li>
+                <li><a href="#"
+                        class="text-neutral-400 text-center text-base hover:text-primary-600 hover:underline underline-offset-4 decoration-2"
+                        aria-label="Our Story">Our Story</a></li>
+                <li><a href="#"
+                        class="text-neutral-400 text-center text-base hover:text-primary-600 hover:underline underline-offset-4 decoration-2"
+                        aria-label="Wishlist">Wishlist</a></li>
+                <li><a href="#"
+                        class="text-neutral-400 text-center text-base grow whitespace-nowrap hover:text-primary-600 hover:underline underline-offset-4 decoration-2"
+                        aria-label="Contact Us">Contact Us</a></li>
+            </ul>
+            <!-- End Nav List -->
+            <!-- Nav icons -->
+            <div class="justify-between items-stretch flex gap-5 py-1.5">
+                <img loading="lazy" src="{% static 'icons/Wishlist.svg' %}"
+                    class="aspect-square object-contain object-center w-[31px] overflow-hidden self-center shrink-0 max-w-full my-auto mx-4" />
+                <img loading="lazy" src="{% static 'icons/search-bar.svg' %}"
+                    class="aspect-square object-contain object-center w-[31px] justify-center items-center overflow-hidden self-center shrink-0 max-w-full my-auto mx-4" />
+                <img loading="lazy" src="{% static 'icons/cart.svg' %}"
+                    class="aspect-square object-contain object-center w-[38px] overflow-hidden shrink-0 max-w-full mx-4" />
+            </div>
+            <!-- End Nav icons -->
+        </nav>
+    </div>
+    <!-- End Navigation -->
     <main>
         {% if messages %}
         <div class="messages">
