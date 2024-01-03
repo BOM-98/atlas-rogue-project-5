@@ -32,52 +32,59 @@
     <!-- Navigation -->
 
     <div class="border-b-2 border-neutral-100 mb-10">
-        <nav class="justify-between items-stretch lg:flex gap-5 lpx-10 py-5 max-md:px-5 mx-16">
+        <nav class="justify-between items-stretch flex gap-5 lpx-10 py-5 mx-8 sm:mx-16">
 
             <!-- Logo -->
-            <div class="flex items-stretch justify-between gap05">
-            <a href="#" class="object-contain object-center self-center"><img loading="lazy"
-                    src="{% static 'atlas-rogue-logo1.png' %}"
-                    class="object-contain object-center w-[193px] overflow-hidden self-center shrink-0 max-w-full my-auto" /></a>
-            <button class="lg:hidden block hamburger" aria-label="Open Menu">
-                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"
-                    xmlns="http://www.w3.org/2000/svg">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7">
-                    </path>
-                </svg>
-            </button>
+            <div class="flex items-stretch justify-between gap-5">
+                <button class="lg:hidden block hamburger" id="menu-toggle" aria-label="Open Menu">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M4 6h16M4 12h16m-7 6h7">
+                        </path>
+                    </svg>
+                </button>
+                <a href="#" class="hidden lg:block object-contain object-center self-center"><img loading="lazy"
+                        src="{% static 'img/atlas-rogue-logo1.png' %}"
+                        class="object-contain object-center w-[193px] min-w-[193px] overflow-hidden self-center max-w-full my-auto" /></a>
+                <a href="#" class="lg:hidden object-contain object-center self-center"><img loading="lazy"
+                        src="{% static 'img/icons/atlas-rogue-icon.svg' %}"
+                        class="object-contain object-center w-[40px] min-w-[40px] shrink-0 overflow-hidden self-center max-w-full my-auto" /></a>
             </div>
             <!-- End Logo -->
             <!-- Nav List -->
-            <ul class="lg:flex lg:items-stretch lg:self-center lg:justify-between gap-5 my-auto p-2.5">
-                <!-- Menu Items -->
-                <li><a href="#"
-                        class="text-neutral-400 text-center text-base whitespace-nowrap hover:text-primary-600 hover:underline underline-offset-4 decoration-2 duration-500"
-                        aria-label="Rent">Rent</a>
-                </li>
-                <li><a href="#"
-                        class="text-neutral-400 text-center text-base hover:text-primary-600 hover:underline underline-offset-4 decoration-2 duration-500"
-                        aria-label="Suppliers">Suppliers</a></li>
-                <li><a href="#"
-                        class="text-neutral-400 text-center text-base hover:text-primary-600 hover:underline underline-offset-4 decoration-2 duration-500"
-                        aria-label="Our Story">Our Story</a></li>
-                <li><a href="#"
-                        class="text-neutral-400 text-center text-base hover:text-primary-600 hover:underline underline-offset-4 decoration-2 duration-500"
-                        aria-label="Wishlist">Wishlist</a></li>
-                <li><a href="#"
-                        class="text-neutral-400 text-center text-base grow whitespace-nowrap hover:text-primary-600 hover:underline underline-offset-4 decoration-2 duration-500"
-                        aria-label="Contact Us">Contact Us</a></li>
-                <!-- End Menu Items -->
-            </ul>
+            <div
+                class="absolute lg:static bg-white min-h-[60vh] lg:min-h-fit left-0 top-[9%] top-[100%] w-full lg:w-fit flex items-center px-5" id="nav-list"> 
+                <ul class="flex lg:flex-row flex-col items-stretch self-center justify-between gap-5 my-auto p-2.5">
+                    <!-- Menu Items -->
+                    <li><a href="#"
+                            class="text-neutral-400 text-center text-base whitespace-nowrap hover:text-primary-600 hover:underline underline-offset-4 decoration-2 duration-500"
+                            aria-label="Rent">Rent</a>
+                    </li>
+                    <li><a href="#"
+                            class="text-neutral-400 text-center text-base hover:text-primary-600 hover:underline underline-offset-4 decoration-2 duration-500"
+                            aria-label="Suppliers">Suppliers</a></li>
+                    <li><a href="#"
+                            class="text-neutral-400 text-center text-base hover:text-primary-600 hover:underline underline-offset-4 decoration-2 duration-500"
+                            aria-label="Our Story">Our Story</a></li>
+                    <li><a href="#"
+                            class="text-neutral-400 text-center text-base hover:text-primary-600 hover:underline underline-offset-4 decoration-2 duration-500"
+                            aria-label="Wishlist">Wishlist</a></li>
+                    <li><a href="#"
+                            class="text-neutral-400 text-center text-base grow whitespace-nowrap hover:text-primary-600 hover:underline underline-offset-4 decoration-2 duration-500"
+                            aria-label="Contact Us">Contact</a></li>
+                    <!-- End Menu Items -->
+                </ul>
+            </div>
             <!-- End Nav List -->
             <!-- Nav icons -->
-            <div class="lg:flex lg:justify-between lg:items-stretch lg:flex gap-5 py-1.5">
-                <img loading="lazy" src="{% static 'icons/Wishlist.svg' %}"
-                    class="aspect-square object-contain object-center w-[31px] overflow-hidden self-center shrink-0 max-w-full my-auto mx-4" />
-                <img loading="lazy" src="{% static 'icons/search-bar.svg' %}"
-                    class="aspect-square object-contain object-center w-[31px] justify-center items-center overflow-hidden self-center shrink-0 max-w-full my-auto mx-4" />
-                <img loading="lazy" src="{% static 'icons/cart.svg' %}"
-                    class="aspect-square object-contain object-center w-[38px] overflow-hidden shrink-0 max-w-full mx-4" />
+            <div class="flex justify-between items-stretch flex gap-[2vw] py-1.5 min-w-fit">
+                <img loading="lazy" src="{% static 'img/icons/Wishlist.svg' %}"
+                    class="aspect-square object-contain object-center w-[25px] sm:w-[31px] overflow-hidden self-center shrink-0 max-w-full my-auto mx-1 sm:mx-4" />
+                <img loading="lazy" src="{% static 'img/icons/search-bar.svg' %}"
+                    class="aspect-square object-contain object-center w-[25px] sm:w-[31px] justify-center items-center overflow-hidden self-center shrink-0 max-w-full my-auto mx-1 sm:mx-4" />
+                <img loading="lazy" src="{% static 'img/icons/cart.svg' %}"
+                    class="aspect-square object-contain object-center w-[25px] sm:w-[38px] overflow-hidden shrink-0 max-w-full mx-1 sm:mx-4" />
             </div>
             <!-- End Nav icons -->
         </nav>
@@ -101,6 +108,7 @@
         {% endblock %}
     </footer>
     {% block core_js %}
+    <script src="{% static 'js/index.js' %}"></script>
     {% endblock %}
     {% block extra_js %}
     {% endblock %}
