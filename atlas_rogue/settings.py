@@ -12,6 +12,8 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 
 import os
 import dj_database_url
+if os.path.isfile('env.py'):
+     import env
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -27,7 +29,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['https://atlas-rogue-09e759974ffc.herokuapp.com/', 'localhost']
+ALLOWED_HOSTS = ['https://atlas-rogue-09e759974ffc.herokuapp.com/', 'localhost', '127.0.0.1']
 
 
 # Application definition
@@ -45,20 +47,8 @@ INSTALLED_APPS = [
     'allauth.socialaccount',
     # django-sites
     'django.contrib.sites',
-    #Tailwind Django App
-    'tailwind',
-    'theme',
-    'django_browser_reload',
     # apps
     "home",
-]
-
-# Tailwind Django App
-TAILWIND_APP_NAME = 'theme'
-
-# Tailwind Django App internal ip requirement
-INTERNAL_IPS = [
-    "127.0.0.1",
 ]
 
 MIDDLEWARE = [
@@ -71,8 +61,6 @@ MIDDLEWARE = [
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
     # allauth requirement:
     "allauth.account.middleware.AccountMiddleware",
-    # Tailwind Django App Browser Reload
-    "django_browser_reload.middleware.BrowserReloadMiddleware",
 ]
 
 # django-allauth requirement

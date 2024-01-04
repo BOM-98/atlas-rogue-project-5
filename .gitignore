@@ -402,3 +402,4 @@ FodyWeavers.xsd
 *.sqlite3
 *.pyc
 __pycache__
+env.py
