@@ -17,6 +17,29 @@
 
     {% block core_css %}
     <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+              extend: {
+                colors: {
+                  primary: {
+                    50: "#fef2f4",
+                    100: "#fde6e9",
+                    200: "#fad1d8",
+                    300: "#f6abb7",
+                    400: "#f07c92",
+                    500: "#e54e6f",
+                    600: "#d3315c",
+                    700: "#b0204a",
+                    800: "#941d43",
+                    900: "#7f1c40",
+                    950: "#460b1e",
+                  },
+                },
+              },
+            },
+          };
+    </script>
     {% endblock %}
 
     {% block extra_css %}
@@ -53,7 +76,7 @@
             <!-- End Logo -->
             <!-- Nav List -->
             <div
-                class="absolute lg:static bg-white min-h-[60vh] lg:min-h-fit left-0 top-[100%] w-full lg:w-fit flex items-center px-5" id="nav-list"> 
+                class="absolute hidden lg:static bg-white min-h-[40vh] lg:min-h-fit left-0 top-[9%] w-full lg:w-fit flex items-center px-5" id="nav-list"> 
                 <ul class="flex lg:flex-row flex-col items-stretch self-center justify-between gap-5 my-auto p-2.5">
                     <!-- Menu Items -->
                     <li><a href="#"

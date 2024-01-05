@@ -8,5 +8,5 @@ if (menuToggle && navList) {
 }
 
 function onToggleMenu(e) {
-    navList.classList.toggle("top-[100%]");
+    navList.classList.toggle("hidden");
 }
