@@ -1,1 +1,1 @@
-web: atlas_rogue.wsgi:application
+web: gunicorn atlas_rogue.wsgi:application
