@@ -20,25 +20,25 @@
     <script>
         tailwind.config = {
             theme: {
-              extend: {
-                colors: {
-                  primary: {
-                    50: "#fef2f4",
-                    100: "#fde6e9",
-                    200: "#fad1d8",
-                    300: "#f6abb7",
-                    400: "#f07c92",
-                    500: "#e54e6f",
-                    600: "#d3315c",
-                    700: "#b0204a",
-                    800: "#941d43",
-                    900: "#7f1c40",
-                    950: "#460b1e",
-                  },
+                extend: {
+                    colors: {
+                        primary: {
+                            50: "#fef2f4",
+                            100: "#fde6e9",
+                            200: "#fad1d8",
+                            300: "#f6abb7",
+                            400: "#f07c92",
+                            500: "#e54e6f",
+                            600: "#d3315c",
+                            700: "#b0204a",
+                            800: "#941d43",
+                            900: "#7f1c40",
+                            950: "#460b1e",
+                        },
+                    },
                 },
-              },
             },
-          };
+        };
     </script>
     {% endblock %}
 
@@ -75,37 +75,75 @@
             </div>
             <!-- End Logo -->
             <!-- Nav List -->
-            <div
-                class="absolute hidden lg:block lg:static bg-white min-h-[40vh] lg:min-h-fit left-0 top-[9%] w-full lg:w-fit flex items-center px-5" id="nav-list"> 
+            <div class="absolute hidden lg:block lg:static bg-white min-h-[40vh] lg:min-h-fit left-0 top-[9%] w-full lg:w-fit flex items-center px-5"
+                id="nav-list">
                 <ul class="flex lg:flex-row flex-col items-stretch self-center justify-between gap-5 my-auto p-2.5">
                     <!-- Menu Items -->
-                    <li><div class="relative">
-                        <button id="rent-menu-button"
-                            class="text-neutral-400 text-center text-base whitespace-nowrap hover:text-primary-600 hover:underline underline-offset-4 decoration-2 duration-500"
-                            aria-label="Rent">Rent</button>
-                            <div id="rent-dropdown-menu" class="hidden lg:absolute z-10 mt-2 w-56 origin-top-right divide-y divide-gray-100 rounded-md bg-white  ring-1 ring-black ring-opacity-5 focus:outline-none" role="menu" aria-orientation="vertical" aria-labelledby="menu-button" tabindex="-1">
-                                <div class="py-1" role="none">
-                                  <!-- Active: "bg-gray-100 text-gray-900", Not Active: "text-gray-700" -->
-                                  <a href="#" class="text-gray-700 block px-4 py-2 text-sm" role="menuitem" tabindex="-1" id="menu-item-0">Edit</a>
-                                  <a href="#" class="text-gray-700 block px-4 py-2 text-sm" role="menuitem" tabindex="-1" id="menu-item-1">Duplicate</a>
-                                </div>
-                                <div class="py-1" role="none">
-                                  <a href="#" class="text-gray-700 block px-4 py-2 text-sm" role="menuitem" tabindex="-1" id="menu-item-2">Archive</a>
-                                  <a href="#" class="text-gray-700 block px-4 py-2 text-sm" role="menuitem" tabindex="-1" id="menu-item-3">Move</a>
-                                </div>
-                                <div class="py-1" role="none">
-                                  <a href="#" class="text-gray-700 block px-4 py-2 text-sm" role="menuitem" tabindex="-1" id="menu-item-4">Share</a>
-                                  <a href="#" class="text-gray-700 block px-4 py-2 text-sm" role="menuitem" tabindex="-1" id="menu-item-5">Add to favorites</a>
-                                </div>
-                                <div class="py-1" role="none">
-                                  <a href="#" class="text-gray-700 block px-4 py-2 text-sm" role="menuitem" tabindex="-1" id="menu-item-6">Delete</a>
-                                </div>
-                              </div>
+                    <li>
+                        <div class="relative">
+                            <!-- Rent Button -->
+                            <button
+                                class="drop-down-button text-neutral-400 text-center text-base whitespace-nowrap hover:text-primary-600 hover:underline underline-offset-4 decoration-2 duration-500"
+                                aria-label="Rent">Rent</button>
+
+                            <!-- Rent Dropdown -->
+                            <div class="hidden drop-down-menu lg:absolute z-10 mt-2 w-56 origin-top-right divide-y divide-gray-100 rounded-md bg-white  ring-1 ring-black ring-opacity-5 focus:outline-none"
+                                role="menu" aria-orientation="vertical" aria-labelledby="menu-button" tabindex="-1">
+                                <a href="#"
+                                    class="text-gray-700 block px-4 py-2 text-sm hover:bg-gray-100 hover:text-primary-600"
+                                    role="menuitem" tabindex="-1" id="menu-item-0">Edit</a>
+                                <a href="#"
+                                    class="text-gray-700 block px-4 py-2 text-sm hover:bg-gray-100 hover:text-primary-600"
+                                    role="menuitem" tabindex="-1" id="menu-item-1">Duplicate</a>
+                                <a href="#"
+                                    class="text-gray-700 block px-4 py-2 text-sm hover:bg-gray-100 hover:text-primary-600"
+                                    role="menuitem" tabindex="-1" id="menu-item-2">Archive</a>
+                                <a href="#"
+                                    class="text-gray-700 block px-4 py-2 text-sm hover:bg-gray-100 hover:text-primary-600"
+                                    role="menuitem" tabindex="-1" id="menu-item-3">Move</a>
+                                <a href="#"
+                                    class="text-gray-700 block px-4 py-2 text-sm hover:bg-gray-100 hover:text-primary-600"
+                                    role="menuitem" tabindex="-1" id="menu-item-4">Share</a>
+                                <a href="#"
+                                    class="text-gray-700 block px-4 py-2 text-sm hover:bg-gray-100 hover:text-primary-600"
+                                    role="menuitem" tabindex="-1" id="menu-item-5">Add to favorites</a>
+                                <a href="#"
+                                    class="text-gray-700 block px-4 py-2 text-sm hover:bg-gray-100 hover:text-primary-600"
+                                    role="menuitem" tabindex="-1" id="menu-item-6">Delete</a>
+                            </div>
+                            <!-- End Rent Dropdown -->
                         </div>
                     </li>
-                    <li><a href="#"
-                            class="text-neutral-400 text-center text-base hover:text-primary-600 hover:underline underline-offset-4 decoration-2 duration-500"
-                            aria-label="Suppliers">Suppliers</a></li>
+                    <li><button
+                            class="drop-down-button text-neutral-400 text-center text-base hover:text-primary-600 hover:underline underline-offset-4 decoration-2 duration-500"
+                            aria-label="Suppliers">Suppliers</button>
+                        <!-- Suppliers Dropdown -->
+                        <div class="hidden drop-down-menu lg:absolute z-10 mt-2 w-56 origin-top-right divide-y divide-gray-100 rounded-md bg-white  ring-1 ring-black ring-opacity-5 focus:outline-none"
+                            role="menu" aria-orientation="vertical" aria-labelledby="menu-button" tabindex="-1">
+                            <a href="#"
+                                class="text-gray-700 block px-4 py-2 text-sm hover:bg-gray-100 hover:text-primary-600"
+                                role="menuitem" tabindex="-1" id="menu-item-0">Edit</a>
+                            <a href="#"
+                                class="text-gray-700 block px-4 py-2 text-sm hover:bg-gray-100 hover:text-primary-600"
+                                role="menuitem" tabindex="-1" id="menu-item-1">Duplicate</a>
+                            <a href="#"
+                                class="text-gray-700 block px-4 py-2 text-sm hover:bg-gray-100 hover:text-primary-600"
+                                role="menuitem" tabindex="-1" id="menu-item-2">Archive</a>
+                            <a href="#"
+                                class="text-gray-700 block px-4 py-2 text-sm hover:bg-gray-100 hover:text-primary-600"
+                                role="menuitem" tabindex="-1" id="menu-item-3">Move</a>
+                            <a href="#"
+                                class="text-gray-700 block px-4 py-2 text-sm hover:bg-gray-100 hover:text-primary-600"
+                                role="menuitem" tabindex="-1" id="menu-item-4">Share</a>
+                            <a href="#"
+                                class="text-gray-700 block px-4 py-2 text-sm hover:bg-gray-100 hover:text-primary-600"
+                                role="menuitem" tabindex="-1" id="menu-item-5">Add to favorites</a>
+                            <a href="#"
+                                class="text-gray-700 block px-4 py-2 text-sm hover:bg-gray-100 hover:text-primary-600"
+                                role="menuitem" tabindex="-1" id="menu-item-6">Delete</a>
+                        </div>
+                        <!-- End Suppliers Dropdown -->
+                    </li>
                     <li><a href="#"
                             class="text-neutral-400 text-center text-base hover:text-primary-600 hover:underline underline-offset-4 decoration-2 duration-500"
                             aria-label="Our Story">Our Story</a></li>
@@ -126,7 +164,7 @@
                 <img loading="lazy" src="{% static 'img/icons/search-bar.svg' %}"
                     class="aspect-square object-contain object-center w-[25px] sm:w-[31px] justify-center items-center overflow-hidden self-center shrink-0 max-w-full my-auto mx-1 sm:mx-4" />
                 <img loading="lazy" src="{% static 'img/icons/cart.svg' %}"
-                    class="aspect-square object-contain object-center w-[25px] sm:w-[38px] overflow-hidden shrink-0 max-w-full mx-1 sm:mx-4" />
+                    class="aspect-square object-contain object-center w-[29px] sm:w-[38px] overflow-hidden shrink-0 max-w-full mx-1 sm:mx-4" />
             </div>
             <!-- End Nav icons -->
         </nav>
