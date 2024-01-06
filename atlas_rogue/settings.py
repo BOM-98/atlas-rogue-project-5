@@ -49,6 +49,7 @@ INSTALLED_APPS = [
     'django.contrib.sites',
     # apps
     "home",
+    "products",
 ]
 
 MIDDLEWARE = [
