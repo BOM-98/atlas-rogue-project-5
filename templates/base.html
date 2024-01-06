@@ -68,17 +68,26 @@
                 </button>
                 <a href="#" class="hidden lg:block object-contain object-center self-center"><img loading="lazy"
                         src="{% static 'img/atlas-rogue-logo1.png' %}"
-                        class="object-contain object-center w-[193px] min-w-[193px] overflow-hidden self-center max-w-full my-auto" /></a>
-                <a href="#" class="lg:hidden object-contain object-center self-center"><img loading="lazy"
+                        class="object-contain object-center w-[193px] overflow-hidden self-center max-w-full my-auto" /></a>
+                <a href="#" class="lg:hidden aspect-[4.95] object-contain object-center self-center"><img loading="lazy"
                         src="{% static 'img/icons/atlas-rogue-icon.svg' %}"
                         class="object-contain object-center w-[40px] min-w-[40px] shrink-0 overflow-hidden self-center max-w-full my-auto" /></a>
             </div>
             <!-- End Logo -->
             <!-- Nav List -->
-            <div class="absolute hidden lg:block lg:static bg-white min-h-[40vh] lg:min-h-fit left-0 top-[9%] w-full lg:w-fit flex items-center px-5"
+            <div class="absolute hidden lg:block lg:static bg-white min-h-[40vh] lg:min-h-fit left-0 top-[9%] w-full lg:w-fit flex items-center self-center px-5"
                 id="nav-list">
                 <ul class="flex lg:flex-row flex-col items-stretch self-center justify-between gap-5 my-auto p-2.5">
                     <!-- Menu Items -->
+                    <li class="lg:hidden">
+                        <form method="GET" action="">
+                            <div class="">
+                                <input type="text" name="q" placeholder="Search"
+                                    class="border-2 border-neutral-100 rounded-md px-2 py-1.5 text-sm text-neutral-400 focus:outline-none focus:border-primary-600" />
+                                <button type="submit" class="hidden">Search</button>
+                            </div>
+                        </form>
+                    </li>
                     <li>
                         <div class="relative">
                             <!-- Rent Button -->
@@ -118,7 +127,7 @@
                             class="drop-down-button text-neutral-400 text-center text-base hover:text-primary-600 hover:underline underline-offset-4 decoration-2 duration-500"
                             aria-label="Suppliers">Suppliers</button>
                         <!-- Suppliers Dropdown -->
-                        <div class="hidden drop-down-menu lg:absolute z-10 mt-2 w-56 origin-top-right divide-y divide-gray-100 rounded-md bg-white  ring-1 ring-black ring-opacity-5 focus:outline-none"
+                        <div class="hidden drop-down-menu lg:absolute z-10 mt-2 w-56 origin-top-right divide-y divide-gray-100 rounded-md bg-white ring-1 ring-black ring-opacity-5 focus:outline-none"
                             role="menu" aria-orientation="vertical" aria-labelledby="menu-button" tabindex="-1">
                             <a href="#"
                                 class="text-gray-700 block px-4 py-2 text-sm hover:bg-gray-100 hover:text-primary-600"
@@ -146,10 +155,7 @@
                     </li>
                     <li><a href="#"
                             class="text-neutral-400 text-center text-base hover:text-primary-600 hover:underline underline-offset-4 decoration-2 duration-500"
-                            aria-label="Our Story">Our Story</a></li>
-                    <li><a href="#"
-                            class="text-neutral-400 text-center text-base hover:text-primary-600 hover:underline underline-offset-4 decoration-2 duration-500"
-                            aria-label="Wishlist">Wishlist</a></li>
+                            aria-label="Our Story">About</a></li>
                     <li><a href="#"
                             class="text-neutral-400 text-center text-base grow whitespace-nowrap hover:text-primary-600 hover:underline underline-offset-4 decoration-2 duration-500"
                             aria-label="Contact Us">Contact</a></li>
@@ -158,16 +164,73 @@
             </div>
             <!-- End Nav List -->
             <!-- Nav icons -->
-            <div class="flex justify-between items-stretch flex gap-[2vw] py-1.5 min-w-fit">
+            <div class="flex justify-between items-stretch self-center flex gap-[1vw] py-1 min-w-fit">
+                <form method="GET" action="" class="self-center">
+                    <div class="flex hidden lg:block self-center">
+                        <input type="text" name="q" placeholder="Search"
+                            class="self-center border-2 border-neutral-100 rounded-md px-2 py-1.5 text-sm text-neutral-400 focus:outline-none focus:border-primary-600" />
+                        <button type="submit" class="hidden">Search</button>
+                    </div>
+                </form>
+
+                <!-- Account -->
+                <div class="relative self-center">
+                    <button
+                        class="hidden lg:block drop-down-button text-neutral-400 text-center text-base whitespace-nowrap hover:text-primary-600 hover:underline underline-offset-4 decoration-2 duration-500"
+                        aria-label="Rent">My Account</button>
+
+                    <!-- Account Dropdown -->
+                    <div class="hidden drop-down-menu lg:absolute z-10 mt-2 w-56 divide-y divide-gray-100 rounded-md bg-white ring-1 ring-black ring-opacity-5 focus:outline-none"
+                        role="menu" aria-orientation="vertical" aria-labelledby="menu-button" tabindex="-1">
+                        {% if request.user.is_authenticated %}
+                        {% if request.user.is_superuser %}
+                        <a href=""
+                            class="text-gray-700 block px-4 py-2 text-sm hover:bg-gray-100 hover:text-primary-600"
+                            role="menuitem" tabindex="-1">Product Management</a>
+                        {% endif %}
+                        <a href=""
+                            class="text-gray-700 block px-4 py-2 text-sm hover:bg-gray-100 hover:text-primary-600"
+                            role="menuitem" tabindex="-1">My Profile</a>
+                        <a href="{% url 'account_logout' %}"
+                            class="text-gray-700 block px-4 py-2 text-sm hover:bg-gray-100 hover:text-primary-600"
+                            role="menuitem" tabindex="-1">Logout</a>
+                        {% else %}
+                        <a href="{% url 'account_signup' %}"
+                            class="text-gray-700 block px-4 py-2 text-sm hover:bg-gray-100 hover:text-primary-600"
+                            role="menuitem" tabindex="-1">Register</a>
+                        <a href="{% url 'account_login' %}"
+                            class="text-gray-700 block px-4 py-2 text-sm hover:bg-gray-100 hover:text-primary-600"
+                            role="menuitem" tabindex="-1">Login</a>
+                        {% endif %}
+                    </div>
+                </div>
+                <!-- End Account Dropdown -->
+
+                <!--Wishlist-->
                 <img loading="lazy" src="{% static 'img/icons/Wishlist.svg' %}"
-                    class="aspect-square object-contain object-center w-[25px] sm:w-[31px] overflow-hidden self-center shrink-0 max-w-full my-auto mx-1 sm:mx-4" />
-                <img loading="lazy" src="{% static 'img/icons/search-bar.svg' %}"
-                    class="aspect-square object-contain object-center w-[25px] sm:w-[31px] justify-center items-center overflow-hidden self-center shrink-0 max-w-full my-auto mx-1 sm:mx-4" />
-                <img loading="lazy" src="{% static 'img/icons/cart.svg' %}"
-                    class="aspect-square object-contain object-center w-[29px] sm:w-[38px] overflow-hidden shrink-0 max-w-full mx-1 sm:mx-4" />
+                    class="aspect-square object-contain object-center w-[25px] sm:w-[31px] overflow-hidden self-center shrink-0 max-w-full my-auto mx-2" />
+                <!-- End Wishlist -->
+                <!-- Cart -->
+                <a class="{% if grand_total %}text-info font-weight-bold{% else %}{% endif %} nav-link self-center text-base text-neutral-400 hover:text-primary-600"
+                    href="">
+                    <div class="flex flex-row items-center text-center my-auto">
+                        <div><img loading="lazy" src="{% static 'img/icons/cart.svg' %}"
+                                class="aspect-square object-contain object-center w-[29px] sm:w-[31px] overflow-hidden shrink-0 max-w-full mx-2" /></i>
+                        </div>
+                        <p class="my-0">
+                            {% if grand_total %}
+                            ${{ grand_total|floatformat:2 }}
+                            {% else %}
+                            $0.00
+                            {% endif %}
+                        </p>
+                    </div>
+                </a>
+                <!-- End Cart -->
             </div>
-            <!-- End Nav icons -->
-        </nav>
+    </div>
+    <!-- End Nav icons -->
+    </nav>
     </div>
     <!-- End Navigation -->
     <main>
