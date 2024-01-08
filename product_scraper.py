@@ -1,38 +1,130 @@
+from requests_html import HTMLSession
+import json
 import requests
-from bs4 import BeautifulSoup
+import os
 
-baseurl = "https://www.mywardrobehq.com/"
+baseurl = "https://cloan.uk"
+url = "https://cloan.uk/category/view-all?page=10"
 
 headers = {
     'User-Agent' : 'Mozilla/5.0 (Macintosh; Intel Mac OS X 14_1) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.2 Safari/605.1.15'
 }
 
-response = requests.get('https://cloan.uk/category/view-all', headers=headers)
-# r = requests.get('https://cloan.uk/category/view-all')
+s = HTMLSession()
+r = s.get(url, headers=headers)
+products_data = []
 
-if response.status_code == 200:
-    # Parse the HTML content of the page
-    soup = BeautifulSoup(response.text, 'html.parser')
+r.html.render(sleep=1)
+    
+products = r.html.xpath('//*[@id="products-section"]', first=True)
+items = len(products.absolute_links)
+counter = 0
 
-    # Find all 'a' tags with a 'href' attribute within product listings
-    product_links = [a['href'] for a in soup.find_all('a')]
+for item in products.absolute_links:
+    r = s.get(item, headers=headers)
+    r.html.render(sleep=1, timeout=20)
+    # Assign Name
+    name = r.html.find('h1', first=True).text
+    # Assign Designer
+    designer = r.html.find('h2', first=True).text
+    # Assign Price
+    price = r.html.find('p.price', first=True).text
+    # Clean Price
+    clean_price = price.replace('From £', '').strip()
+    # Assign RRP
+    rrp_element = r.html.find('p.rrp', first=True)
 
-    # Print all the product links
-    for link in product_links:
-        print(link)
-else:
-    print('Failed to retrieve the webpage')
+    if rrp_element is not None:
+        rrp = rrp_element.text
+        clean_rrp = rrp.replace('RRP £', '').strip()
+    else:
+        clean_rrp = None
+    
+    #Get Variants (Size, Colour, Length)
+    variants = r.html.xpath('//*[@class="variation-grid"]', first=True)
+    inputs = variants.find('input.options')
+    
+    if len(inputs) == 3:
+        # Assign Size, Length and Colour
+        size = inputs[0].attrs.get('placeholder', 'None')
+        length = inputs[1].attrs.get('placeholder', 'None')
+        colour = inputs[2].attrs.get('placeholder', 'None')
+    else:
+        size = 'M'
+        length = 'N/A'
+        colour = 'N/A'
+    
+    # Get Image URL
+    source_element = r.html.find('source[type="image/webp"]', first=True)    
+    image_url = source_element.attrs['srcset'] if source_element and 'srcset' in source_element.attrs else 'Null'
+    
+    # Download Image
+    image_name = name.replace(' ', '_').replace('/', '_').replace('?', '_').replace('!', '_').replace(':', '_').replace('"', '_').replace("'", '_').replace(',', '_').replace('(', '_').replace(')', '_').replace('&', '_').replace(';', '_').replace('.', '_').replace('-', '_').replace('__', '_').lower()
+    if not image_name.lower().endswith('.webp'):
+            image_name += '.webp'
+    folder_path = '/Users/brianomahony/Documents/software-development/Projects/atlas-rogue-project-5/product_images'
+    
+    if not os.path.exists(folder_path):
+        os.makedirs(folder_path)
+        
+    response = requests.get(image_url)
+    if response.status_code == 200:
+        with open(os.path.join(folder_path, image_name), 'wb') as f:
+            f.write(response.content)
+    else:
+        print('Error downloading image')
+    
+    # Get SKU
+    script_tag = r.html.find('script[type="application/ld+json"]', first=True)
+    if script_tag:
+        json_data = json.loads(script_tag.text)
 
+        # Extract the SKU
+        sku = json_data.get('sku', None)
+    else:
+        sku = None
+    
+    #Get Product Category
+    breadcrumb_items = r.html.find('li.breadcrumb-item a')
+    category_text = breadcrumb_items[1].text
+    
+    categories_list = {
+        "Dress": 1,
+        "Top": 2,
+        "Bag": 3,
+        "Blazer": 4,
+        "Skirt": 5,
+        "Hat": 6,
+        "Other": 7,
+    }
+    
+    # Set default category to 'Other' if no match is found
+    category = categories_list.get(category_text, categories_list["Other"])
 
-# soup = BeautifulSoup(r.content, 'lxml')
-
-# productlist = soup.find_all('a')
-
-# print(productlist)
-
-# productlinks = []
-
-# for item in productlist:
-#     for link in item.find_all('a', href=True):
-#         productlinks.append(baseurl + link['href'])
-#         print(link['href'])
+    # Create Product Dictionary
+    counter += 1
+    product_info = {
+        "pk": counter,
+        "model": "products.product",
+        "fields": {
+            "name": name,
+            "designer": designer,
+            "price": clean_price,
+            "rrp": clean_rrp,
+            "sku": sku,
+            "size": size,
+            "colour": colour,
+            "length": length,
+            "image_url": image_url,
+            "image": image_name,
+            "category": category
+        }
+    }
+    
+    # Append Product Dictionary to products_data list
+    products_data.append(product_info)
+    print(f'Product {counter} of {items} complete')
+    
+    # Write products_data list to products.json
+    with open('products.json', 'w') as json_file:
+        json.dump(products_data, json_file, indent=4)
