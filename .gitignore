@@ -403,3 +403,6 @@ FodyWeavers.xsd
 *.pyc
 __pycache__
 env.py
+.venv
+.DS_Store
+.gitignore
