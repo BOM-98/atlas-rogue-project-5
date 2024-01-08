@@ -1,7 +1,21 @@
 {% extends "base.html" %}
+{% load static %}
 
 {% block extra_title %}Home{% endblock %}
 
 {% block content %}
-    <h1 class="font-sans text-sky-400">Home</h1>
+<div class="w-full h-full flex-col justify-center items-center inline-flex">
+    <div class="self-stretch aspect-[1200/480] justify-start items-center inline-flex w-full py-5"  style="background-image: url('{% static 'img/hero-image.png' %}'); background-size:100%; repeat: none;" id="hero-image">
+        <div
+            class="text-2xl md:text-4lx py-5 px-5 bg-rose-300 bg-opacity-20 rounded-[15px] flex-col justify-center items-start gap-5 inline-flex">
+            <p class="text-black text-base font-bold tracking-widest">NUMBER ONE FASHION</p>
+            <h1 class="text-black text-2xl sm:text-5xl font-bold">FASHION OF FREEDOM</h1>
+            <p><span style="text-zinc-500 text-base font-bold ">Starting from</span><span
+                    style="text-black text-base font-bold "> $10.00</span></p>
+            <div class="px-[30px] py-2.5 bg-pink-600 rounded-[10px] justify-center items-center gap-2.5 inline-flex">
+                <div class="text-center text-white text-base leading-snug">Shop Now</div>
+            </div>
+        </div>
+    </div>
+</div>
 {% endblock %}
