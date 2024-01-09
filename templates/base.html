@@ -16,7 +16,10 @@
     {% endblock %}
 
     {% block core_css %}
+    <!-- Tailwind CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Flowbite -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.2.1/flowbite.min.css" rel="stylesheet" />
     <script>
         tailwind.config = {
             theme: {
@@ -54,7 +57,7 @@
     <!-- Navigation -->
 
     <div class="border-b-2 border-neutral-100 mb-10">
-        <nav class="justify-between items-stretch flex gap-5 lpx-10 py-5 mx-8 sm:mx-16">
+        <nav class="justify-between items-stretch flex gap-5 lpx-10 py-5 mx-16">
 
             <!-- Logo -->
             <div class="flex items-stretch justify-between gap-5">
@@ -252,6 +255,8 @@
     </footer>
     {% block core_js %}
     <script src="{% static 'js/index.js' %}"></script>
+    <!-- Flowbite JS Script -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.2.1/flowbite.min.js"></script>
     {% endblock %}
     {% block extra_js %}
     {% endblock %}

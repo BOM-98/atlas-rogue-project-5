@@ -5,17 +5,140 @@
 
 {% block content %}
 <div class="w-full h-full flex-col justify-center items-center inline-flex">
-    <div class="self-stretch aspect-[1200/480] justify-start items-center inline-flex w-full py-5"  style="background-image: url('{% static 'img/hero-image.png' %}'); background-size:100%; repeat: none;" id="hero-image">
+    <div class="self-stretch aspect-[1200/480] justify-start items-center inline-flex w-full py-5"
+        style="background-image: url('{% static 'img/hero-image.png' %}'); background-size:100%; repeat: none;"
+        id="hero-image">
         <div
             class="text-2xl md:text-4lx py-5 px-5 bg-rose-300 bg-opacity-20 rounded-[15px] flex-col justify-center items-start gap-5 inline-flex">
             <p class="text-black text-base font-bold tracking-widest">NUMBER ONE FASHION</p>
             <h1 class="text-black text-2xl sm:text-5xl font-bold">FASHION OF FREEDOM</h1>
             <p><span style="text-zinc-500 text-base font-bold ">Starting from</span><span
                     style="text-black text-base font-bold "> $10.00</span></p>
-            <div class="px-[30px] py-2.5 bg-pink-600 rounded-[10px] justify-center items-center gap-2.5 inline-flex">
+            <div class="px-[30px] py-2.5 bg-primary-600 rounded-[10px] justify-center items-center gap-2.5 inline-flex">
                 <div class="text-center text-white text-base leading-snug">Shop Now</div>
             </div>
         </div>
     </div>
+    <div class="self-stretch text-black text-2xl font-normal px-8 py-8">
+        <h2 class="self-stretch text-black text-2xl md:text-4xl text-center py-5"><span class="text-black">The
+            </span><span class="text-primary-600 font-bold">Fashion Rental
+                App</span><br><span class="text-black"> That Makes
+                You Look Your Best</span></h2>
+        <p class="text-center"><span class="text-neutral-400 font-normal text-lg md:text-2xl">Ireland’s best women’s
+                fashion</span><br><span class="text-primary-600 font-normal text-lg md:text-2xl">rentals
+                in one place</span></p>
+    </div>
+
+    <h2 class="self-stretch text-black text-2xl font-normal">Category</h2>
+    <!-- Carousel -->
+    <div id="controls-carousel" class="relative w-full" data-carousel="static">
+        <!-- Carousel wrapper -->
+        <div class="relative h-56 overflow-hidden rounded-lg md:h-56">
+            <!-- Slide 1 -->
+            <div class="hidden duration-700 ease-in-out" data-carousel-item>
+                <div class="w-full h-full self-stretch py-2.5 justify-between items-center inline-flex">
+                    <!-- Item 1 -->
+                    <div
+                        class="grow shrink basis-0 self-stretch flex-col justify-start items-center gap-2.5 inline-flex">
+                        <div
+                            class="px-[11px] py-[11px] rounded-full border border-primary-600 justify-center items-center gap-2.5 inline-flex">
+                            <div class="w-[73px] h-[71px] relative"></div>
+                        </div>
+                        <div class="text-center text-black text-lg font-normal font-['Avenir'] leading-[25.20px]">
+                            Dresses</div>
+                    </div>
+                    <!-- Item 2 -->
+                    <div
+                        class="grow shrink basis-0 self-stretch flex-col justify-start items-center gap-2.5 inline-flex">
+                        <div
+                            class="px-[11px] py-[11px] rounded-full border border-primary-600 justify-center items-center gap-2.5 inline-flex">
+                            <div class="w-[73px] h-[71px] relative"></div>
+                        </div>
+                        <div class="text-center text-black text-lg font-normal font-['Avenir'] leading-[25.20px]">Bags
+                        </div>
+                    </div>
+                    <!-- Item 3 -->
+                    <div
+                        class="grow shrink basis-0 self-stretch flex-col justify-start items-center gap-2.5 inline-flex">
+                        <div
+                            class="p-2.5 rounded-full border border-primary-600 justify-center items-center gap-2.5 inline-flex">
+                            <div class="w-[71px] h-[71px] relative">
+                                <div class="h-[67.62px] left-[1.91px] top-[1.66px] absolute">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="text-center text-black text-lg font-normal font-['Avenir'] leading-[25.20px]">Hats
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Slide 2 -->
+            <div class="hidden duration-700 ease-in-out" data-carousel-item="active">
+                <!-- Item 4 -->
+                <div class="w-full h-full self-stretch py-2.5 justify-between items-center inline-flex">
+                    <div
+                        class="grow shrink basis-0 self-stretch flex-col justify-start items-center gap-2.5 inline-flex">
+                        <div
+                            class="px-[11px] py-[11px] rounded-full border border-primary-600 justify-center items-center gap-2.5 inline-flex">
+                            <div class="w-[73px] h-[71px] relative"></div>
+                        </div>
+                        <div class="text-center text-black text-lg font-normal font-['Avenir'] leading-[25.20px]">Tops
+                        </div>
+                    </div>
+                    <!-- Item 5 -->
+                    <div
+                        class="grow shrink basis-0 self-stretch flex-col justify-start items-center gap-2.5 inline-flex">
+                        <div
+                            class="px-[11px] py-[11px] rounded-full border border-primary-600 justify-center items-center gap-2.5 inline-flex">
+                            <div class="w-[73px] h-[71px] relative"></div>
+                        </div>
+                        <div class="text-center text-black text-lg font-normal font-['Avenir'] leading-[25.20px]">
+                            Blazers</div>
+                    </div>
+                    <!-- Item 6 -->
+                    <div
+                        class="grow shrink basis-0 self-stretch flex-col justify-start items-center gap-2.5 inline-flex">
+                        <div
+                            class="p-2.5 rounded-full border border-primary-600 justify-center items-center gap-2.5 inline-flex">
+                            <div class="w-[71px] h-[71px] relative">
+                                <div class="h-[67.62px] left-[1.91px] top-[1.66px] absolute">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="text-center text-black text-lg font-normal font-['Avenir'] leading-[25.20px]">Skirts
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Slider controls -->
+        <button type="button"
+            class="absolute top-0 start-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none"
+            data-carousel-prev>
+            <span
+                class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 dark:bg-primary-800/30 group-hover:bg-white/50 dark:group-hover:bg-primary-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-primary-800/70 group-focus:outline-none">
+                <svg class="w-4 h-4 text-white dark:text-gray-800 rtl:rotate-180" aria-hidden="true"
+                    xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
+                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M5 1 1 5l4 4" />
+                </svg>
+                <span class="sr-only">Previous</span>
+            </span>
+        </button>
+        <button type="button"
+            class="absolute top-0 end-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none"
+            data-carousel-next>
+            <span
+                class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 dark:bg-primary-800/30 group-hover:bg-white/50 dark:group-hover:bg-primary-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-primary-800/70 group-focus:outline-none">
+                <svg class="w-4 h-4 text-white dark:text-gray-800 rtl:rotate-180" aria-hidden="true"
+                    xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
+                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="m1 9 4-4-4-4" />
+                </svg>
+                <span class="sr-only">Next</span>
+            </span>
+        </button>
+    </div>
+    <!-- End Carousel -->
 </div>
 {% endblock %}
