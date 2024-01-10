@@ -253,12 +253,12 @@
         {% block footer %}
         {% endblock %}
     </footer>
+    {% block extra_js %}
+    {% endblock %}
     {% block core_js %}
     <script src="{% static 'js/index.js' %}"></script>
     <!-- Flowbite JS Script -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.2.1/flowbite.min.js"></script>
-    {% endblock %}
-    {% block extra_js %}
     {% endblock %}
 </body>
 

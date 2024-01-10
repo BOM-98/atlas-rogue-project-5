@@ -1,10 +1,13 @@
 {% extends "base.html" %}
 {% load static %}
 
+{% block extra_css %}
+{% endblock %}
+
 {% block extra_title %}Home{% endblock %}
 
 {% block content %}
-<div class="w-full h-full flex-col justify-center items-center inline-flex">
+<div class="w-full h-full flex-col justify-center items-center inline-flex mx-2">
     <div class="self-stretch aspect-[1200/480] justify-start items-center inline-flex w-full py-5"
         style="background-image: url('{% static 'img/hero-image.png' %}'); background-size:100%; repeat: none;"
         id="hero-image">
@@ -28,23 +31,24 @@
                 fashion</span><br><span class="text-primary-600 font-normal text-lg md:text-2xl">rentals
                 in one place</span></p>
     </div>
-
     <h2 class="self-stretch text-black text-2xl font-normal">Category</h2>
     <!-- Carousel -->
     <div id="controls-carousel" class="relative w-full" data-carousel="static">
         <!-- Carousel wrapper -->
         <div class="relative h-56 overflow-hidden rounded-lg md:h-56">
             <!-- Slide 1 -->
-            <div class="hidden duration-700 ease-in-out" data-carousel-item>
+            <div class="hidden duration-700 ease-in-out" data-carousel-item="active">
                 <div class="w-full h-full self-stretch py-2.5 justify-between items-center inline-flex">
                     <!-- Item 1 -->
                     <div
                         class="grow shrink basis-0 self-stretch flex-col justify-start items-center gap-2.5 inline-flex">
                         <div
                             class="px-[11px] py-[11px] rounded-full border border-primary-600 justify-center items-center gap-2.5 inline-flex">
-                            <div class="w-[73px] h-[71px] relative"></div>
+                            <div class="w-[60px] h-[60px] p-1 flex justify-center items-center relative">
+                                <img src="{% static 'img/icons/dress.svg' %}" alt="">
+                            </div>
                         </div>
-                        <div class="text-center text-black text-lg font-normal font-['Avenir'] leading-[25.20px]">
+                        <div class="text-center text-black text-lg font-normal  leading-[25.20px]">
                             Dresses</div>
                     </div>
                     <!-- Item 2 -->
@@ -52,60 +56,70 @@
                         class="grow shrink basis-0 self-stretch flex-col justify-start items-center gap-2.5 inline-flex">
                         <div
                             class="px-[11px] py-[11px] rounded-full border border-primary-600 justify-center items-center gap-2.5 inline-flex">
-                            <div class="w-[73px] h-[71px] relative"></div>
+                            <div class="w-[60px] h-[60px] p-1 flex justify-center relative">
+                                <img src="{% static 'img/icons/handbag.svg' %}" alt="">
+                            </div>
                         </div>
-                        <div class="text-center text-black text-lg font-normal font-['Avenir'] leading-[25.20px]">Bags
+                        <div class="text-center text-black text-lg font-normal  leading-[25.20px]">
+                            Bags
                         </div>
                     </div>
                     <!-- Item 3 -->
                     <div
                         class="grow shrink basis-0 self-stretch flex-col justify-start items-center gap-2.5 inline-flex">
                         <div
-                            class="p-2.5 rounded-full border border-primary-600 justify-center items-center gap-2.5 inline-flex">
-                            <div class="w-[71px] h-[71px] relative">
-                                <div class="h-[67.62px] left-[1.91px] top-[1.66px] absolute">
-                                </div>
+                            class="px-[11px] py-[11px] rounded-full border border-primary-600 justify-center items-center gap-2.5 inline-flex">
+                            <div class="w-[60px] h-[60px] p-1 flex justify-center relative">
+                                <img src="{% static 'img/icons/top.svg' %}" alt="">
                             </div>
                         </div>
-                        <div class="text-center text-black text-lg font-normal font-['Avenir'] leading-[25.20px]">Hats
+                        <div class="text-center text-black text-lg font-normal  leading-[25.20px]">
+                            Tops
                         </div>
                     </div>
                 </div>
             </div>
             <!-- Slide 2 -->
-            <div class="hidden duration-700 ease-in-out" data-carousel-item="active">
-                <!-- Item 4 -->
+            <div class="hidden duration-700 ease-in-out" data-carousel-item>
+
                 <div class="w-full h-full self-stretch py-2.5 justify-between items-center inline-flex">
+                    <!-- Item 4 -->
                     <div
                         class="grow shrink basis-0 self-stretch flex-col justify-start items-center gap-2.5 inline-flex">
                         <div
-                            class="px-[11px] py-[11px] rounded-full border border-primary-600 justify-center items-center gap-2.5 inline-flex">
-                            <div class="w-[73px] h-[71px] relative"></div>
+                            class="p-2.5 rounded-full border border-primary-600 justify-center items-center gap-2.5 inline-flex">
+                            <div class="w-[60px] h-[60px] p-1 flex justify-center relative">
+                                <img src="{% static 'img/icons/skirt.svg' %}" alt="">
+                            </div>
                         </div>
-                        <div class="text-center text-black text-lg font-normal font-['Avenir'] leading-[25.20px]">Tops
+                        <div class="text-center text-black text-lg font-normal  leading-[25.20px]">
+                            Skirts
                         </div>
                     </div>
                     <!-- Item 5 -->
                     <div
                         class="grow shrink basis-0 self-stretch flex-col justify-start items-center gap-2.5 inline-flex">
                         <div
-                            class="px-[11px] py-[11px] rounded-full border border-primary-600 justify-center items-center gap-2.5 inline-flex">
-                            <div class="w-[73px] h-[71px] relative"></div>
+                            class="p-2.5 rounded-full border border-primary-600 justify-center items-center gap-2.5 inline-flex">
+                            <div class="w-[60px] h-[60px] p-1 flex justify-center relative">
+                                <img src="{% static 'img/icons/blazer.svg' %}" alt="">
+                            </div>
                         </div>
-                        <div class="text-center text-black text-lg font-normal font-['Avenir'] leading-[25.20px]">
-                            Blazers</div>
+                        <div class="text-center text-black text-lg font-normal  leading-[25.20px]">
+                            Blazers
+                        </div>
                     </div>
                     <!-- Item 6 -->
                     <div
                         class="grow shrink basis-0 self-stretch flex-col justify-start items-center gap-2.5 inline-flex">
                         <div
                             class="p-2.5 rounded-full border border-primary-600 justify-center items-center gap-2.5 inline-flex">
-                            <div class="w-[71px] h-[71px] relative">
-                                <div class="h-[67.62px] left-[1.91px] top-[1.66px] absolute">
-                                </div>
+                            <div class="w-[60px] h-[60px] p-1 flex justify-center relative">
+                                <img src="{% static 'img/icons/hat.svg' %}" alt="">
                             </div>
                         </div>
-                        <div class="text-center text-black text-lg font-normal font-['Avenir'] leading-[25.20px]">Skirts
+                        <div class="text-center text-black text-lg font-normal  leading-[25.20px]">
+                            Hats
                         </div>
                     </div>
                 </div>
@@ -140,5 +154,100 @@
         </button>
     </div>
     <!-- End Carousel -->
+    <button type="button"
+        class="text-white bg-red-700 hover:bg-red-800 focus:outline-none focus:ring-4 focus:ring-red-300 font-medium rounded-lg text-base px-5 py-3 text-center mb-2 dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-900">See
+        All</button>
+        
+    <!--Featured Product  Section -->
+    <section class="w-full py-5" id="featured-section">
+    <h2 class="self-stretch text-black text-2xl font-normal">Featured Items</h2>
+    <div class="w-full h-fit py-[30px] justify-around items-center flex flex-wrap">
+        <!-- Product 1 -->
+        <div class="w-[216px] h-[412px] flex-col justify-start gap-2.5 inline-flex">
+            <div class="self-stretch grow shrink basis-0 bg-zinc-300 rounded-[15px]"></div>
+            <div class="p-2.5 bg-white bg-opacity-50 rounded-[50px] justify-center items-center gap-2.5 inline-flex">
+                <div class="w-5 h-5 relative"></div>
+            </div>
+            <div class="self-stretch h-[106px] px-[7px] flex-col justify-start items-start flex">
+                <div class="self-stretch justify-start items-start gap-2.5 inline-flex">
+                    <div class="grow shrink basis-0 text-black text-xl font-extrabold leading-7">Product
+                        Name</div>
+                    <div class="w-4 h-4 relative"></div>
+                    <div class="h-5 justify-center items-start gap-2.5 flex">
+                        <div class="text-neutral-400 text-sm font-extrabold leading-tight">4.9</div>
+                    </div>
+                </div>
+                <div class="self-stretch text-black text-lg font-normal leading-[25.20px]">Product
+                    Description</div>
+                <div class="self-stretch text-black text-lg font-normal leading-[25.20px]">€90</div>
+            </div>
+        </div>
+        <!-- Product 1 -->
+        <div class="w-[216px] h-[412px] flex-col justify-start gap-2.5 inline-flex">
+            <div class="self-stretch grow shrink basis-0 bg-zinc-300 rounded-[15px]"></div>
+            <div class="p-2.5 bg-white bg-opacity-50 rounded-[50px] justify-center items-center gap-2.5 inline-flex">
+                <div class="w-5 h-5 relative"></div>
+            </div>
+            <div class="self-stretch h-[106px] px-[7px] flex-col justify-start items-start flex">
+                <div class="self-stretch justify-start items-start gap-2.5 inline-flex">
+                    <div class="grow shrink basis-0 text-black text-xl font-extrabold leading-7">Product
+                        Name</div>
+                    <div class="w-4 h-4 relative"></div>
+                    <div class="h-5 justify-center items-start gap-2.5 flex">
+                        <div class="text-neutral-400 text-sm font-extrabold leading-tight">4.9</div>
+                    </div>
+                </div>
+                <div class="self-stretch text-black text-lg font-normal leading-[25.20px]">Product
+                    Description</div>
+                <div class="self-stretch text-black text-lg font-normal leading-[25.20px]">€90</div>
+            </div>
+        </div>
+        <!-- Product 1 -->
+        <div class="w-[216px] h-[412px] flex-col justify-start gap-2.5 inline-flex">
+            <div class="self-stretch grow shrink basis-0 bg-zinc-300 rounded-[15px]"></div>
+            <div class="p-2.5 bg-white bg-opacity-50 rounded-[50px] justify-center items-center gap-2.5 inline-flex">
+                <div class="w-5 h-5 relative"></div>
+            </div>
+            <div class="self-stretch h-[106px] px-[7px] flex-col justify-start items-start flex">
+                <div class="self-stretch justify-start items-start gap-2.5 inline-flex">
+                    <div class="grow shrink basis-0 text-black text-xl font-extrabold leading-7">Product
+                        Name</div>
+                    <div class="w-4 h-4 relative"></div>
+                    <div class="h-5 justify-center items-start gap-2.5 flex">
+                        <div class="text-neutral-400 text-sm font-extrabold leading-tight">4.9</div>
+                    </div>
+                </div>
+                <div class="self-stretch text-black text-lg font-normal leading-[25.20px]">Product
+                    Description</div>
+                <div class="self-stretch text-black text-lg font-normal leading-[25.20px]">€90</div>
+            </div>
+        </div>
+        <!-- Product 1 -->
+        <div class="w-[216px] h-[412px] flex-col justify-start gap-2.5 inline-flex">
+            <div class="self-stretch grow shrink basis-0 bg-zinc-300 rounded-[15px]"></div>
+            <div class="p-2.5 bg-white bg-opacity-50 rounded-[50px] justify-center items-center gap-2.5 inline-flex">
+                <div class="w-5 h-5 relative"></div>
+            </div>
+            <div class="self-stretch h-[106px] px-[7px] flex-col justify-start items-start flex">
+                <div class="self-stretch justify-start items-start gap-2.5 inline-flex">
+                    <div class="grow shrink basis-0 text-black text-xl font-extrabold leading-7">Product
+                        Name</div>
+                    <div class="w-4 h-4 relative"></div>
+                    <div class="h-5 justify-center items-start gap-2.5 flex">
+                        <div class="text-neutral-400 text-sm font-extrabold leading-tight">4.9</div>
+                    </div>
+                </div>
+                <div class="self-stretch text-black text-lg font-normal leading-[25.20px]">Product
+                    Description</div>
+                <div class="self-stretch text-black text-lg font-normal leading-[25.20px]">€90</div>
+            </div>
+        </div>
+    </div>
+    </section>
+    <!-- End Featured Product Section -->
 </div>
+
+{% endblock %}
+
+{% block extra_js %}
 {% endblock %}
