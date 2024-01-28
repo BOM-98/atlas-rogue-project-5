@@ -15,7 +15,7 @@
   <div class="justify-center items-center md:justify-start md:items-start flex flex-col md:flex-row gap-8 lg:gap-24">
 
     <!-- Product Image -->
-    <img src="../media{{ product.image.url }}" alt="" class="h-[375px] md:h-[750px] object-cover rounded-md">
+    <img src="../media{{ product.image.url }}" alt="" class="h-[375px] md:h-[563px] lg:h-[750px] object-cover rounded-md">
 
     <!-- Product Details -->
     <div class="flex-col justify-center items-center md:justify-start md:items-start gap-2.5 inline-flex">
@@ -30,7 +30,7 @@
           </div>
         </div>
       </div>
-      <div class="w-[265px] md:px-5 flex-col justify-between items-start flex">
+      <div class="w-[265px] md:px-5 flex-col justify-between items-start flex px-5">
         <div class="text-black text-lg font-extrabold">Product Details</div>
         <div class="text-black text-base py-2">Size: {{ product.size }}</div>
         <div class="text-black text-base py-2">Color: {{ product.colour }}</div>
