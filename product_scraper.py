@@ -22,7 +22,7 @@ counter = 0
 
 for item in products.absolute_links:
     r = s.get(item, headers=headers)
-    r.html.render(sleep=1, timeout=20)
+    r.html.render(sleep=1, timeout=50)
     # Assign Name
     name = r.html.find('h1', first=True).text
     # Assign Designer
@@ -55,24 +55,50 @@ for item in products.absolute_links:
         colour = 'N/A'
     
     # Get Image URL
-    source_element = r.html.find('source[type="image/webp"]', first=True)    
-    image_url = source_element.attrs['srcset'] if source_element and 'srcset' in source_element.attrs else 'Null'
+    # Find all source elements with type 'image/webp'
+    source_elements = r.html.find('source[type="image/webp"]')
+
+    image_url = None
+    image_url_2x = None
+    for source_element in source_elements:
+        # Check if the height attribute is 750
+        if source_element.attrs.get('height') == '750':
+            srcset = source_element.attrs.get('srcset')
+            # Split the srcset to analyze each part
+            if srcset:
+                srcset_parts = srcset.split(", ")
+                for part in srcset_parts:
+                    url, descriptor = part.split(" ", 1)
+                    # Store the first URL as a fallback
+                    if image_url is None:
+                        image_url = url
+                    # Check for 2x descriptor
+                    if descriptor == "2x":
+                        image_url_2x = url
+                        break
+                # Use 2x URL if found, else fallback to the first URL
+                image_url = image_url_2x if image_url_2x else image_url
+                if image_url:
+                    break
+            else:
+                image_url = None 
     
-    # Download Image
-    image_name = name.replace(' ', '_').replace('/', '_').replace('?', '_').replace('!', '_').replace(':', '_').replace('"', '_').replace("'", '_').replace(',', '_').replace('(', '_').replace(')', '_').replace('&', '_').replace(';', '_').replace('.', '_').replace('-', '_').replace('__', '_').lower()
-    if not image_name.lower().endswith('.webp'):
-            image_name += '.webp'
-    folder_path = '/Users/brianomahony/Documents/software-development/Projects/atlas-rogue-project-5/product_images'
-    
-    if not os.path.exists(folder_path):
-        os.makedirs(folder_path)
+    if image_url:
+        # Download Image
+        image_name = name.replace(' ', '_').replace('/', '_').replace('?', '_').replace('!', '_').replace(':', '_').replace('"', '_').replace("'", '_').replace(',', '_').replace('(', '_').replace(')', '_').replace('&', '_').replace(';', '_').replace('.', '_').replace('-', '_').replace('__', '_').lower()
+        if not image_name.lower().endswith('.webp'):
+                image_name += '.webp'
+        folder_path = '/Users/brianomahony/Documents/software-development/Projects/atlas-rogue-project-5/product_images'
         
-    response = requests.get(image_url)
-    if response.status_code == 200:
-        with open(os.path.join(folder_path, image_name), 'wb') as f:
-            f.write(response.content)
-    else:
-        print('Error downloading image')
+        if not os.path.exists(folder_path):
+            os.makedirs(folder_path)
+            
+        response = requests.get(image_url)
+        if response.status_code == 200:
+            with open(os.path.join(folder_path, image_name), 'wb') as f:
+                f.write(response.content)
+        else:
+            print('Error downloading image')
     
     # Get SKU
     script_tag = r.html.find('script[type="application/ld+json"]', first=True)
@@ -126,5 +152,5 @@ for item in products.absolute_links:
     print(f'Product {counter} of {items} complete')
     
     # Write products_data list to products.json
-    with open('products.json', 'w') as json_file:
+    with open('products-2.json', 'w') as json_file:
         json.dump(products_data, json_file, indent=4)
