@@ -78,12 +78,12 @@
             </div>
             <!-- End Logo -->
             <!-- Nav List -->
-            <div class="absolute hidden lg:block lg:static min-h-[40vh] lg:min-h-fit left-0 top-[9%] w-full lg:w-fit flex items-center self-center px-5"
+            <div class="absolute bg-gray-50 hidden lg:block lg:static min-h-[40vh] lg:min-h-fit left-0 top-[9%] w-full lg:w-fit flex items-center self-center px-5"
                 id="nav-list">
                 <ul class="flex lg:flex-row flex-col items-stretch self-center justify-between gap-5 my-auto p-2.5">
                     <!-- Menu Items -->
                     <li class="lg:hidden">
-                        <form method="GET" action="">
+                        <form method="GET" action="{% url 'products' %}">
                             <div class="">
                                 <input type="text" name="q" placeholder="Search"
                                     class="border-2 border-neutral-100 rounded-md px-2 py-1.5 text-sm text-neutral-400 focus:outline-none focus:border-primary-600" />
@@ -106,22 +106,22 @@
                                     role="menuitem" tabindex="-1" id="menu-item-0">All</a>
                                 <a href="#"
                                     class="text-gray-700 block px-4 py-2 text-sm hover:bg-gray-100 hover:text-primary-600"
-                                    role="menuitem" tabindex="-1" id="menu-item-1">Duplicate</a>
+                                    role="menuitem" tabindex="-1" id="menu-item-1">Dresses</a>
                                 <a href="#"
                                     class="text-gray-700 block px-4 py-2 text-sm hover:bg-gray-100 hover:text-primary-600"
-                                    role="menuitem" tabindex="-1" id="menu-item-2">Archive</a>
+                                    role="menuitem" tabindex="-1" id="menu-item-2">Skirts</a>
                                 <a href="#"
                                     class="text-gray-700 block px-4 py-2 text-sm hover:bg-gray-100 hover:text-primary-600"
-                                    role="menuitem" tabindex="-1" id="menu-item-3">Move</a>
+                                    role="menuitem" tabindex="-1" id="menu-item-3">Tops</a>
                                 <a href="#"
                                     class="text-gray-700 block px-4 py-2 text-sm hover:bg-gray-100 hover:text-primary-600"
-                                    role="menuitem" tabindex="-1" id="menu-item-4">Share</a>
+                                    role="menuitem" tabindex="-1" id="menu-item-4">Bags</a>
                                 <a href="#"
                                     class="text-gray-700 block px-4 py-2 text-sm hover:bg-gray-100 hover:text-primary-600"
-                                    role="menuitem" tabindex="-1" id="menu-item-5">Add to favorites</a>
+                                    role="menuitem" tabindex="-1" id="menu-item-5">Blazers</a>
                                 <a href="#"
                                     class="text-gray-700 block px-4 py-2 text-sm hover:bg-gray-100 hover:text-primary-600"
-                                    role="menuitem" tabindex="-1" id="menu-item-6">Delete</a>
+                                    role="menuitem" tabindex="-1" id="menu-item-6">Hats</a>
                             </div>
                             <!-- End Rent Dropdown -->
                         </div>
@@ -168,7 +168,7 @@
             <!-- End Nav List -->
             <!-- Nav icons -->
             <div class="flex justify-between items-stretch self-center flex gap-[1vw] py-1 min-w-fit">
-                <form method="GET" action="" class="self-center">
+                <form method="GET" action="{% url 'products' %}" class="self-center">
                     <div class="flex hidden lg:block self-center">
                         <input type="text" name="q" placeholder="Search"
                             class="self-center border-2 border-neutral-100 rounded-md px-2 py-1.5 text-sm text-neutral-400 focus:outline-none focus:border-primary-600" />
