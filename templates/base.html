@@ -104,22 +104,22 @@
                                 <a href="{% url 'products' %}"
                                     class="text-gray-700 block px-4 py-2 text-sm hover:bg-gray-100 hover:text-primary-600"
                                     role="menuitem" tabindex="-1" id="menu-item-0">All</a>
-                                <a href="#"
+                                <a href="{% url 'products' %}?category=dresses"
                                     class="text-gray-700 block px-4 py-2 text-sm hover:bg-gray-100 hover:text-primary-600"
                                     role="menuitem" tabindex="-1" id="menu-item-1">Dresses</a>
-                                <a href="#"
+                                <a href="{% url 'products' %}?category=skirts"
                                     class="text-gray-700 block px-4 py-2 text-sm hover:bg-gray-100 hover:text-primary-600"
                                     role="menuitem" tabindex="-1" id="menu-item-2">Skirts</a>
-                                <a href="#"
+                                <a href="{% url 'products' %}?category=tops"
                                     class="text-gray-700 block px-4 py-2 text-sm hover:bg-gray-100 hover:text-primary-600"
                                     role="menuitem" tabindex="-1" id="menu-item-3">Tops</a>
-                                <a href="#"
+                                <a href="{% url 'products' %}?category=bags"
                                     class="text-gray-700 block px-4 py-2 text-sm hover:bg-gray-100 hover:text-primary-600"
                                     role="menuitem" tabindex="-1" id="menu-item-4">Bags</a>
-                                <a href="#"
+                                <a href="{% url 'products' %}?category=blazers"
                                     class="text-gray-700 block px-4 py-2 text-sm hover:bg-gray-100 hover:text-primary-600"
                                     role="menuitem" tabindex="-1" id="menu-item-5">Blazers</a>
-                                <a href="#"
+                                <a href="{% url 'products' %}?category=hats"
                                     class="text-gray-700 block px-4 py-2 text-sm hover:bg-gray-100 hover:text-primary-600"
                                     role="menuitem" tabindex="-1" id="menu-item-6">Hats</a>
                             </div>
@@ -128,31 +128,40 @@
                     </li>
                     <li><button
                             class="drop-down-button text-neutral-400 text-center text-base hover:text-primary-600 hover:underline underline-offset-4 decoration-2 duration-500"
-                            aria-label="Suppliers">Suppliers</button>
+                            aria-label="Designers">Designers</button>
                         <!-- Suppliers Dropdown -->
                         <div class="hidden drop-down-menu lg:absolute z-10 mt-2 w-56 origin-top-right divide-y divide-gray-100 rounded-md bg-white ring-1 ring-black ring-opacity-5 focus:outline-none"
                             role="menu" aria-orientation="vertical" aria-labelledby="menu-button" tabindex="-1">
-                            <a href="#"
+                            <a href="{% url 'products' %}?designer=Ganni"
                                 class="text-gray-700 block px-4 py-2 text-sm hover:bg-gray-100 hover:text-primary-600"
-                                role="menuitem" tabindex="-1" id="menu-item-0">Edit</a>
-                            <a href="#"
+                                role="menuitem" tabindex="-1" id="menu-item-0">Ganni</a>
+                            <a href="{% url 'products' %}?designer=Rixo"
                                 class="text-gray-700 block px-4 py-2 text-sm hover:bg-gray-100 hover:text-primary-600"
-                                role="menuitem" tabindex="-1" id="menu-item-1">Duplicate</a>
-                            <a href="#"
+                                role="menuitem" tabindex="-1" id="menu-item-1">Rixo</a>
+                            <a href="{% url 'products' %}?designer=Shrimps"
                                 class="text-gray-700 block px-4 py-2 text-sm hover:bg-gray-100 hover:text-primary-600"
-                                role="menuitem" tabindex="-1" id="menu-item-2">Archive</a>
-                            <a href="#"
+                                role="menuitem" tabindex="-1" id="menu-item-2">Shrimps</a>
+                            <a href="{% url 'products' %}?designer=Stine Goya"
                                 class="text-gray-700 block px-4 py-2 text-sm hover:bg-gray-100 hover:text-primary-600"
-                                role="menuitem" tabindex="-1" id="menu-item-3">Move</a>
-                            <a href="#"
+                                role="menuitem" tabindex="-1" id="menu-item-3">Stine Goya</a>
+                            <a href="{% url 'products' %}?designer=Self Portrait"
                                 class="text-gray-700 block px-4 py-2 text-sm hover:bg-gray-100 hover:text-primary-600"
-                                role="menuitem" tabindex="-1" id="menu-item-4">Share</a>
-                            <a href="#"
+                                role="menuitem" tabindex="-1" id="menu-item-4">Self Portrait</a>
+                            <a href="{% url 'products' %}?designer=Rotate"
                                 class="text-gray-700 block px-4 py-2 text-sm hover:bg-gray-100 hover:text-primary-600"
-                                role="menuitem" tabindex="-1" id="menu-item-5">Add to favorites</a>
-                            <a href="#"
+                                role="menuitem" tabindex="-1" id="menu-item-5">Rotate</a>
+                            <a href="{% url 'products' %}?designer=Ghost"
                                 class="text-gray-700 block px-4 py-2 text-sm hover:bg-gray-100 hover:text-primary-600"
-                                role="menuitem" tabindex="-1" id="menu-item-6">Delete</a>
+                                role="menuitem" tabindex="-1" id="menu-item-6">Ghost</a>
+                            <a href="{% url 'products' %}?designer=Faithful The Brand"
+                                class="text-gray-700 block px-4 py-2 text-sm hover:bg-gray-100 hover:text-primary-600"
+                                role="menuitem" tabindex="-1" id="menu-item-6">Faithful The Brand</a>
+                            <a href="{% url 'products' %}?designer=The Frankie Shop"
+                                class="text-gray-700 block px-4 py-2 text-sm hover:bg-gray-100 hover:text-primary-600"
+                                role="menuitem" tabindex="-1" id="menu-item-6">The Frankie Shop</a>
+                            <a href="{% url 'products' %}"
+                            class="text-gray-700 block px-4 py-2 text-sm hover:bg-gray-100 hover:text-primary-600"
+                            role="menuitem" tabindex="-1" id="menu-item-6">View All</a>
                         </div>
                         <!-- End Suppliers Dropdown -->
                     </li>
