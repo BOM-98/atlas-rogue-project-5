@@ -7,72 +7,67 @@
 {% block extra_title %}All Products{% endblock %}
 
 {% block content %}
-<div class="w-full px-[120px] py-10 flex-col justify-start items-start gap-2.5 inline-flex">
-  <div class="self-stretch justify-start items-start gap-[30px] inline-flex">
-    <div class="flex-col justify-start items-start gap-2.5 inline-flex">
-      <div class="justify-start items-start gap-2.5 inline-flex">
-        <div class="w-[370px] h-[370px] bg-zinc-300 rounded-[30px]"></div>
-        <div class="w-[370px] h-[370px] bg-zinc-300 rounded-[30px]"></div>
-      </div>
-      <div class="justify-start items-start gap-2.5 inline-flex">
-        <div class="w-[370px] h-[370px] bg-zinc-300 rounded-[30px]"></div>
-        <div class="w-[370px] h-[370px] bg-zinc-300 rounded-[30px]"></div>
-      </div>
-    </div>
-    <div class="grow shrink basis-0 flex-col justify-start items-start gap-2.5 inline-flex">
+
+<!-- First Container -->
+<div class="py-10 justify-center items-center flex flex-row">
+
+  <!-- Second Container -->
+  <div class="justify-center items-center md:justify-start md:items-start flex flex-col md:flex-row gap-8 lg:gap-24">
+
+    <!-- Product Image -->
+    <img src="../media{{ product.image.url }}" alt="" class="h-[375px] md:h-[750px] object-cover rounded-md">
+
+    <!-- Product Details -->
+    <div class="flex-col justify-center items-center md:justify-start md:items-start gap-2.5 inline-flex">
       <div class="px-5 flex-col justify-start items-start gap-2.5 flex">
-        <p class="text-black text-base leading-tight">{{ product.designer }}</p>
-        <h1 class="text-black text-xl font-extrabold leading-snug">{{ product.name }}</h1>
-        <p class="text-black text-lg leading-snug">€{{ product.price }} / day</p>
-        <p class="text-black text-lg leading-snug">RRP: €{{ product.rrp }}</p>
+        <p class="text-black text-base">{{ product.designer }}</p>
+        <h1 class="text-black text-xl font-extrabold">{{ product.name }}</h1>
+        <p class="text-black text-lg"><span class="font-bold">€{{ product.price }}</span> / day</p>
+        <p class="text-black text-lg"><span class="text-sm">RRP:</span> €{{ product.rrp }}</p>
         <div class="justify-start items-center gap-2.5 inline-flex">
           <div class="p-2.5 bg-white bg-opacity-50 rounded-[50px] justify-center items-center gap-2.5 flex">
             <div class="w-5 h-5 relative"></div>
           </div>
         </div>
       </div>
-      <div class="w-[203px] px-5 flex-col justify-between items-start flex">
-        <div class="text-black text-sm font-extrabold font-['Avenir'] leading-tight">Product Details</div>
-      </div>
-      <div class="self-stretch h-[111px] px-5 flex-col justify-between items-start flex">
-        <div class="text-black text-sm font-extrabold font-['Avenir'] leading-tight">Size: {{ product.size }}</div>
-        <div class="text-black text-sm font-extrabold font-['Avenir'] leading-tight">Color: {{ product.colour }}</div>
-        <div class="text-black text-sm font-extrabold font-['Avenir'] leading-tight">Length: {{ product.length }}</div>
+      <div class="w-[265px] md:px-5 flex-col justify-between items-start flex">
+        <div class="text-black text-lg font-extrabold">Product Details</div>
+        <div class="text-black text-base py-2">Size: {{ product.size }}</div>
+        <div class="text-black text-base py-2">Color: {{ product.colour }}</div>
+        <div class="text-black text-base py-2">Length: {{ product.length }}</div>
       </div>
       <div class="px-5 flex-col justify-start items-start gap-2.5 flex">
         <div class="flex-col justify-start items-start gap-1.5 flex">
-          <div class="w-[79px] opacity-50 text-black text-xl font-normal font-['Avenir'] leading-7">Quantity</div>
+          <div class="w-[79px] opacity-50 text-black text-xl font-normal">Quantity</div>
           <div
             class="w-[100px] px-2.5 py-3 rounded-[10px] border border-zinc-300 justify-between items-center inline-flex">
             <div class="w-5 h-5 relative opacity-50"></div>
-            <div class="text-center text-stone-950 text-lg font-normal font-['Inter'] leading-relaxed">2</div>
+            <div class="text-center text-stone-950 text-lg font-normal">2</div>
             <div class="w-5 h-5 relative opacity-50"></div>
           </div>
         </div>
       </div>
-      <div class="px-5 justify-start items-start gap-2.5 inline-flex">
-        <div class="text-center text-black text-base font-extrabold font-['Avenir'] leading-snug">Choose your rental
+      <div class="md:px-5 py-5 w-[265px] justify-start items-start gap-2.5 inline-flex">
+        <div class="text-black text-base font-extrabold">Choose your rental
           period</div>
       </div>
-      <div class="self-stretch px-5 py-10 justify-between items-center inline-flex">
-        <div class="w-[180px] h-14 p-2.5 bg-pink-600 rounded-[20px] shadow justify-center items-center gap-2.5 flex">
-          <div class="w-[22px] h-[22px] relative"></div>
-          <div class="text-center text-white text-base font-extrabold font-['Avenir'] leading-snug">Add To Cart</div>
+      <div class="py-5 justify-start gap-6 items-center flex flex-col">
+        <div class="w-[265px] md:px-5 flex-col justify-start items-start inline-flex">
+          <p class="text-center text-black text-lg font-extrabold">Total Price</p>
+          <p class="text-center text-black text-xl font-extrabold">€{{ product.price }}</p>
         </div>
-        <div class="flex-col justify-center items-start gap-2.5 inline-flex">
-          <div class="text-center text-black text-lg font-extrabold font-['Avenir'] leading-[25.20px]">Total Price</div>
-          <div class="text-center text-black text-xl font-extrabold font-['Avenir'] leading-7">€180</div>
+        <div class="lg:w-full w-[165px] md:px-5 h-14 bg-primary-600 rounded-[20px] shadow justify-center items-center flex">
+          <button class="text-center text-white text-base font-extrabold px-2">Add To Cart</button>
         </div>
-      </div>
-      <div class="self-stretch px-[21px] py-5 justify-start items-start gap-2.5 inline-flex">
-        <div class="w-[151px] opacity-50 text-black text-sm font-normal font-['Inter'] leading-tight">Free standard
-          shipping</div>
-        <div class="w-[151px] opacity-50 text-pink-600 text-sm font-normal font-['Inter'] underline leading-tight">Free
-          Returns</div>
+        <div class="self-stretch px-[21px] py-5 justify-start items-start gap-2.5 inline-flex">
+          <p class="opacity-50 text-black text-sm font-normal">Free standard
+            shipping</p>
+          <p class="opacity-50 text-primary-600 text-sm font-normal underline">Free
+            Returns</p>
+        </div>
       </div>
     </div>
   </div>
-
 </div>
 
 {% endblock %}
