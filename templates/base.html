@@ -57,7 +57,7 @@
     <!-- Navigation -->
 
     <div class="border-b-2 border-neutral-100 mb-10">
-        <nav class="justify-between items-stretch flex gap-5 lpx-10 py-5 mx-16 bg-gray-50">
+        <nav class="justify-between items-stretch flex gap-5 lpx-10 py-5 px-16 bg-gray-50">
 
             <!-- Logo -->
             <div class="flex items-stretch justify-between gap-5">
@@ -69,10 +69,10 @@
                         </path>
                     </svg>
                 </button>
-                <a href="#" class="hidden lg:block object-contain object-center self-center"><img loading="lazy"
+                <a href="{% url 'home' %}" class="hidden lg:block object-contain object-center self-center"><img loading="lazy"
                         src="{% static 'img/atlas-rogue-logo1.png' %}"
                         class="object-contain object-center w-[193px] overflow-hidden self-center max-w-full my-auto" /></a>
-                <a href="#" class="lg:hidden aspect-[4.95] object-contain object-center self-center"><img loading="lazy"
+                <a href="{% url 'home' %}" class="lg:hidden aspect-[4.95] object-contain object-center self-center"><img loading="lazy"
                         src="{% static 'img/icons/atlas-rogue-icon.svg' %}"
                         class="object-contain object-center w-[40px] min-w-[40px] shrink-0 overflow-hidden self-center max-w-full my-auto" /></a>
             </div>
@@ -101,9 +101,9 @@
                             <!-- Rent Dropdown -->
                             <div class="hidden drop-down-menu lg:absolute z-10 mt-2 w-56 origin-top-right divide-y divide-gray-100 rounded-md bg-white  ring-1 ring-black ring-opacity-5 focus:outline-none"
                                 role="menu" aria-orientation="vertical" aria-labelledby="menu-button" tabindex="-1">
-                                <a href="#"
+                                <a href="{% url 'products' %}"
                                     class="text-gray-700 block px-4 py-2 text-sm hover:bg-gray-100 hover:text-primary-600"
-                                    role="menuitem" tabindex="-1" id="menu-item-0">Edit</a>
+                                    role="menuitem" tabindex="-1" id="menu-item-0">All</a>
                                 <a href="#"
                                     class="text-gray-700 block px-4 py-2 text-sm hover:bg-gray-100 hover:text-primary-600"
                                     role="menuitem" tabindex="-1" id="menu-item-1">Duplicate</a>
