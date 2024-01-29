@@ -50,6 +50,7 @@ INSTALLED_APPS = [
     # apps
     "home",
     "products",
+    "bag",
 ]
 
 MIDDLEWARE = [
@@ -107,6 +108,7 @@ TEMPLATES = [
                 "django.template.context_processors.request",
                 "django.contrib.auth.context_processors.auth",
                 "django.contrib.messages.context_processors.messages",
+                "bag.contexts.bag_contents",
             ],
         },
     },
@@ -185,3 +187,6 @@ STATICFILES_DIRS = (os.path.join(BASE_DIR, 'static'),)
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
+
+FREE_DELIVERY_THRESHOLD = 50
+STANDARD_DELIVERY_PERCENTAGE = 10
