@@ -53,7 +53,7 @@
   <!-- End of Price Sort Dropdown -->
 
   <!-- Name Sort Dropdown -->
-  <button id="dropdownHoverButton" data-dropdown-toggle="category-sort" data-dropdown-trigger="hover"
+  <button id="dropdownHoverButton" data-dropdown-toggle="name-sort" data-dropdown-trigger="hover"
     class="text-white bg-primary-600 hover:bg-primary-800 focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center"
     type="button">Sort By Name <svg class="w-2.5 h-2.5 ms-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
       fill="none" viewBox="0 0 10 6">
@@ -62,7 +62,7 @@
   </button>
 
   <!-- Name Sort menu -->
-  <div id="category-sort" class="z-10 hidden bg-primary-600 divide-y divide-gray-100 rounded-lg shadow w-44">
+  <div id="name-sort" class="z-10 hidden bg-primary-600 divide-y divide-gray-100 rounded-lg shadow w-44">
     <ul class="py-2 text-sm text-white" aria-labelledby="dropdownHoverButton">
       <li>
         <a href="{% url 'products' %}?sort=name&direction=asc" class="block px-4 py-2 hover:bg-primary-400">A - Z</a>
@@ -73,6 +73,28 @@
     </ul>
   </div>
   <!-- End of Name Sort Dropdown -->
+
+  <!-- Category Sort Dropdown -->
+  <button id="dropdownHoverButton" data-dropdown-toggle="category-sort" data-dropdown-trigger="hover"
+    class="text-white bg-primary-600 hover:bg-primary-800 focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center"
+    type="button">Sort By Category <svg class="w-2.5 h-2.5 ms-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+      fill="none" viewBox="0 0 10 6">
+      <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 4 4 4-4" />
+    </svg>
+  </button>
+
+  <!-- Category Sort menu -->
+  <div id="category-sort" class="z-10 hidden bg-primary-600 divide-y divide-gray-100 rounded-lg shadow w-44">
+    <ul class="py-2 text-sm text-white" aria-labelledby="dropdownHoverButton">
+      <li>
+        <a href="{% url 'products' %}?sort=category&direction=asc" class="block px-4 py-2 hover:bg-primary-400">A - Z</a>
+      </li>
+      <li>
+        <a href="{% url 'products' %}?sort=category&direction=desc" class="block px-4 py-2 hover:bg-primary-400">Z - A</a>
+      </li>
+    </ul>
+  </div>
+  <!-- End of Category Sort Dropdown -->
 
   <div class="w-full">
     <p class="text-gray-500 mt-3 text-center md:text-left text-sm">
@@ -119,8 +141,14 @@
   </div>
   {% endfor %}
 </div>
+<div class="btt-link shadow-sm rounded-md border border-primary-600 fixed bottom-2.5 right-2.5 h-10 w-10 hover:bg-primary-200 hover:text-white hover:font-extrabold">
+  <a class="flex h-full items-center justify-center cursor-pointer">
+      <i class="fas fa-arrow-up text-primary-600 hover:text-white hover:font-extrabold"></i>
+  </a>    
+</div>
 
 {% endblock %}
 
 {% block extra_js %}
+<script src="{% static 'js/navButton.js' %}"></script>
 {% endblock %}
