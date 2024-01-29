@@ -15,7 +15,8 @@
   <div class="justify-center items-center md:justify-start md:items-start flex flex-col md:flex-row gap-8 lg:gap-24">
 
     <!-- Product Image -->
-    <img src="../media{{ product.image.url }}" alt="" class="h-[375px] md:h-[563px] lg:h-[750px] object-cover rounded-md">
+    <img src="../media{{ product.image.url }}" alt=""
+      class="h-[375px] md:h-[563px] lg:h-[750px] object-cover rounded-md">
 
     <!-- Product Details -->
     <div class="flex-col justify-center items-center md:justify-start md:items-start gap-2.5 inline-flex">
@@ -35,6 +36,14 @@
         <div class="text-black text-base py-2">Size: {{ product.size }}</div>
         <div class="text-black text-base py-2">Color: {{ product.colour }}</div>
         <div class="text-black text-base py-2">Length: {{ product.length }}</div>
+        {% if product.category %}
+        <a href="{% url 'products' %}?category={{ product.category.name }}">
+          <div class="flex flex-row justify-start items-center gap-2.5">
+            <img src="{% static 'img/icons/tag-black-shape.svg' %}" alt="" class="h-3 fill-secondaryGray-400">
+            <div class="self-stretch text-black text-base font-normal my-1">{{product.category.friendly_name }}</div>
+          </div>
+        </a>
+        {% endif %}
       </div>
       <div class="px-5 flex-col justify-start items-start gap-2.5 flex">
         <div class="flex-col justify-start items-start gap-1.5 flex">
@@ -56,7 +65,8 @@
           <p class="text-center text-black text-lg font-extrabold">Total Price</p>
           <p class="text-center text-black text-xl font-extrabold">€{{ product.price }}</p>
         </div>
-        <div class="lg:w-full w-[165px] md:px-5 h-14 bg-primary-600 rounded-[20px] shadow justify-center items-center flex">
+        <div
+          class="lg:w-full w-[165px] md:px-5 h-14 bg-primary-600 rounded-[20px] shadow justify-center items-center flex">
           <button class="text-center text-white text-base font-extrabold px-2">Add To Cart</button>
         </div>
         <div class="self-stretch px-[21px] py-5 justify-start items-start gap-2.5 inline-flex">
