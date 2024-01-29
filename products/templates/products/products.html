@@ -7,6 +7,26 @@
 {% block extra_title %}All Products{% endblock %}
 
 {% block content %}
+
+<h1 class="text-xl w-full text-center font-extrabold">Rent
+  {% if category is not None %}
+  <span class="text-primary-600">{{ category }}</span>
+  {% else %}
+  <span class="text-primary-600">All</span>
+  {% endif %}
+</h1>
+
+<!-- Categories Pills -->
+<div class="w-full h-fit py-[30px] justify-center items-start gap-[30px] flex flex-wrap px-10">
+  {% for c in current_categories %}
+  <a class="category-badge no-underline" href="{% url 'products' %}?category={{ c.name }}">
+    <span
+      class="py-2 px-4 bg-white text-primary-600 font-bold rounded-md border border-primary-600 hover:bg-primary-600 hover:text-white hover:font-extrabold">{{c.friendly_name }}</span>
+  </a>
+  {% endfor %}
+</div>
+<!-- End of Categories Pills -->
+
 <div class="w-full h-fit py-[30px] justify-start items-start gap-[30px] flex flex-wrap px-10">
   <!-- Price Sort Dropdown -->
   <button id="dropdownHoverButton" data-dropdown-toggle="price-sort" data-dropdown-trigger="hover"
@@ -32,7 +52,7 @@
   </div>
   <!-- End of Price Sort Dropdown -->
 
-  <!-- Color Sort Dropdown -->
+  <!-- Name Sort Dropdown -->
   <button id="dropdownHoverButton" data-dropdown-toggle="category-sort" data-dropdown-trigger="hover"
     class="text-white bg-primary-600 hover:bg-primary-800 focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center"
     type="button">Sort By Name <svg class="w-2.5 h-2.5 ms-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
@@ -41,7 +61,7 @@
     </svg>
   </button>
 
-  <!-- Color Sort menu -->
+  <!-- Name Sort menu -->
   <div id="category-sort" class="z-10 hidden bg-primary-600 divide-y divide-gray-100 rounded-lg shadow w-44">
     <ul class="py-2 text-sm text-white" aria-labelledby="dropdownHoverButton">
       <li>
@@ -52,7 +72,17 @@
       </li>
     </ul>
   </div>
-  <!-- End of Color Sort Dropdown -->
+  <!-- End of Name Sort Dropdown -->
+
+  <div class="w-full">
+    <p class="text-gray-500 mt-3 text-center md:text-left text-sm">
+      {% if search_term or current_categories or current_sorting != 'None_None' %}
+      <span class="text-xs"><a href="{% url 'products' %}" class="text-primary-500 hover:text-primary-700">Products Home</a> |
+      </span>
+      {% endif %}
+      {{ products|length }} Products{% if search_term %} found for <strong>"{{ search_term }}"</strong>{% endif %}
+    </p>
+  </div>
 
 </div>
 <div class="w-full h-fit py-[30px] justify-around items-center flex flex-wrap">
@@ -76,10 +106,12 @@
       </div>
       <div class="self-stretch text-secondaryGrey-400 text-sm font-normal my-1">{{ product.designer }}</div>
       {% if product.category %}
-      <div class="flex flex-row justify-start items-center gap-2.5">
-        <img src="{% static 'img/icons/tag-black-shape.svg' %}" alt="" class="h-3 fill-secondaryGray-400">
-        <div class="self-stretch text-black text-sm font-normal my-1">{{product.category.friendly_name }}</div>
-      </div>
+      <a href="{% url 'products' %}?category={{ product.category.name }}">
+        <div class="flex flex-row justify-start items-center gap-2.5">
+          <img src="{% static 'img/icons/tag-black-shape.svg' %}" alt="" class="h-3 fill-secondaryGray-400">
+          <div class="self-stretch text-black text-sm font-normal my-1">{{product.category.friendly_name }}</div>
+        </div>
+      </a>
       {% endif %}
       <div class="self-stretch text-black text-lg font-normal my-1">{{ product.price }} <span
           class="text-gray text-sm">/ day</span></div>

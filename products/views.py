@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect, reverse, get_object_or_404
 from django.contrib import messages
-from django.db.models import Q
+from django.db.models import Q, F
 from .models import Product, Category
 from django.db.models.functions import Lower
 
@@ -16,6 +16,9 @@ def all_products(request):
     categories = None
     sort = None
     direction = None
+    
+    unique_category_ids = products.values_list('category', flat=True).distinct()
+    categories = Category.objects.filter(id__in=unique_category_ids)
     
     if request.GET:
         if 'sort' in request.GET:
@@ -55,6 +58,7 @@ def all_products(request):
     context = {
         "products": products,
         'search_term': query,
+        'category': category,
         'current_categories': categories,
         'current_designers': designers,
         'current_sorting': current_sorting,
