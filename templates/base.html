@@ -238,7 +238,7 @@
                 <!-- End Wishlist -->
                 <!-- Cart -->
                 <a class="{% if grand_total %}text-info font-weight-bold{% else %}{% endif %} nav-link self-center text-base text-neutral-400 hover:text-primary-600"
-                    href="">
+                    href="{% url 'view_bag' %}">
                     <div class="flex flex-row items-center text-center my-auto">
                         <div><img loading="lazy" src="{% static 'img/icons/cart.svg' %}"
                                 class="aspect-square object-contain object-center w-[29px] sm:w-[31px] overflow-hidden shrink-0 max-w-full mx-2" /></i>

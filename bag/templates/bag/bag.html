@@ -1,0 +1,123 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block extra_css %}
+{% endblock %}
+
+{% block extra_title %}Bag{% endblock %}
+
+{% block content %}
+<div class="flex shadow-md my-10 flex-col md:flex-row">
+    <div class="w-full md:w-3/4 bg-white px-10 py-10">
+        <div class="flex justify-between border-b pb-8">
+            <h1 class="font-semibold text-2xl">Shopping Cart</h1>
+            <h2 class="font-semibold text-2xl">3 Items</h2>
+        </div>
+
+    <!-- Start Cart Items -->
+        <div class="flex mt-10 mb-5">
+            <!-- Details & Items -->
+            <h3 class="font-semibold text-gray-600 text-xs uppercase w-1/2">Product Details</h3>
+            <div class="w-1/2 px-5"><h3 class="font-semibold text-end text-gray-600 text-xs uppercase  text-center">Total</h3></div>
+        </div>
+
+        <!-- Image & Description -->
+        <div class="w-full h-fit py-2.5 border-b border-zinc-300 justify-between items-start inline-flex">
+            <!-- Image -->
+            <div class="w-1/8 min-w-24 aspect-square bg-zinc-300 rounded-[15px]"></div>
+            <!-- Description -->
+            <div class="w-1/4 flex-col justify-start items-start gap-2.5 inline-flex">
+                <div class="text-black text-sm font-normal">Brown Jacket</div>
+                <div class="text-neutral-400 text-xs font-normal">Size: M</div>
+                <div class="text-black text-sm font-extrabold">€70</div>
+            </div>
+
+            <!-- Quantity Input -->
+            <div class="w-1/4 h-full px-5 justify-start items-start gap-5 flex">
+                <form class="max-w-xs mx-auto h-full">
+                    <label for="counter-input" class="block mb-1 text-sm font-medium text-gray-900">Quantity:</label>
+                    <div class="relative flex items-center">
+                        <button type="button" id="decrement-button" data-input-counter-decrement="counter-input"
+                            class="flex-shrink-0 bg-gray-100 hover:bg-gray-200 inline-flex items-center justify-center border border-gray-300 rounded-md h-5 w-5 focus:ring-gray-100 dark:focus:ring-gray-700 focus:ring-2 focus:outline-none">
+                            <svg class="w-2.5 h-2.5 text-gray-900" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                                fill="none" viewBox="0 0 18 2">
+                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                    stroke-width="2" d="M1 1h16" />
+                            </svg>
+                        </button>
+                        <input type="text" id="counter-input" data-input-counter
+                            class="flex-shrink-0 text-gray-900 border-0 bg-transparent text-sm font-normal focus:outline-none focus:ring-0 max-w-[2.5rem] text-center"
+                            placeholder="" value="12" required>
+                        <button type="button" id="increment-button" data-input-counter-increment="counter-input"
+                            class="flex-shrink-0 bg-gray-100 hover:bg-gray-200 inline-flex items-center justify-center border border-gray-300 rounded-md h-5 w-5 focus:ring-gray-100 dark:focus:ring-gray-700 focus:ring-2 focus:outline-none">
+                            <svg class="w-2.5 h-2.5 text-gray-900" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                                fill="none" viewBox="0 0 18 18">
+                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                    stroke-width="2" d="M9 1v16M1 9h16" />
+                            </svg>
+                        </button>
+                    </div>
+                </form>
+            </div>
+            <!-- End Quantity Input -->
+
+            <!-- Total & Delete -->
+            <div class="flex flex-col gap-8 justify-center align-center h-full">
+                <!-- Total -->
+                <div class="flex flex-col h-full gap-2.5 justify-start align-start">
+                    <p>€70</p>
+                </div>
+                <!-- Delete -->
+                <div
+                    class="w-12 h-12 bg-rose-500 bg-opacity-30 rounded-[10px] flex-col justify-start align-start">
+                    <div class="w-5 h-[21px]"></div>
+                </div>
+            </div>
+            <!-- End Total & Delete -->
+        </div>
+
+        
+
+        <a href="#" class="flex font-semibold text-primary-600 text-sm mt-10">
+
+            <svg class="fill-current mr-2 text-primary-600 w-4" viewBox="0 0 448 512">
+                <path
+                    d="M134.059 296H436c6.627 0 12-5.373 12-12v-56c0-6.627-5.373-12-12-12H134.059v-46.059c0-21.382-25.851-32.09-40.971-16.971L7.029 239.029c-9.373 9.373-9.373 24.569 0 33.941l86.059 86.059c15.119 15.119 40.971 4.411 40.971-16.971V296z" />
+            </svg>
+            Continue Shopping
+        </a>
+    </div>
+
+    <div id="summary" class="w-1/4 px-8 py-10">
+        <h1 class="font-semibold text-2xl border-b pb-8">Order Summary</h1>
+        <div class="flex justify-between mt-10 mb-5">
+            <span class="font-semibold text-sm uppercase">Items 3</span>
+            <span class="font-semibold text-sm">590$</span>
+        </div>
+        <div>
+            <label class="font-medium inline-block mb-3 text-sm uppercase">Shipping</label>
+            <select class="block p-2 text-gray-600 w-full text-sm">
+                <option>Standard shipping - $10.00</option>
+            </select>
+        </div>
+        <div class="py-10">
+            <label for="promo" class="font-semibold inline-block mb-3 text-sm uppercase">Promo Code</label>
+            <input type="text" id="promo" placeholder="Enter your code" class="p-2 text-sm w-full">
+        </div>
+        <button class="bg-red-500 hover:bg-red-600 px-5 py-2 text-sm text-white uppercase">Apply</button>
+        <div class="border-t mt-8">
+            <div class="flex font-semibold justify-between py-6 text-sm uppercase">
+                <span>Total cost</span>
+                <span>$600</span>
+            </div>
+            <button
+                class="bg-indigo-500 font-semibold hover:bg-indigo-600 py-3 text-sm text-white uppercase w-full">Checkout</button>
+        </div>
+    </div>
+
+</div>
+
+{% endblock %}
+
+{% block extra_js %}
+{% endblock %}
