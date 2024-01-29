@@ -17,14 +17,16 @@
     </svg>
   </button>
 
-  <!-- Dropdown menu -->
+  <!-- Price Sort menu -->
   <div id="price-sort" class="z-10 hidden bg-primary-600 divide-y divide-gray-100 rounded-lg shadow w-44">
     <ul class="py-2 text-sm text-white" aria-labelledby="dropdownHoverButton">
       <li>
-        <a href="{% url 'products' %}?sort=price&direction=desc" class="block px-4 py-2 hover:bg-primary-400">High to Low</a>
+        <a href="{% url 'products' %}?sort=price&direction=desc" class="block px-4 py-2 hover:bg-primary-400">High to
+          Low</a>
       </li>
       <li>
-        <a href="{% url 'products' %}?sort=price&direction=asc" class="block px-4 py-2 hover:bg-primary-400">Low to High</a>
+        <a href="{% url 'products' %}?sort=price&direction=asc" class="block px-4 py-2 hover:bg-primary-400">Low to
+          High</a>
       </li>
     </ul>
   </div>
@@ -39,7 +41,7 @@
     </svg>
   </button>
 
-  <!-- Dropdown menu -->
+  <!-- Color Sort menu -->
   <div id="category-sort" class="z-10 hidden bg-primary-600 divide-y divide-gray-100 rounded-lg shadow w-44">
     <ul class="py-2 text-sm text-white" aria-labelledby="dropdownHoverButton">
       <li>
@@ -50,6 +52,7 @@
       </li>
     </ul>
   </div>
+  <!-- End of Color Sort Dropdown -->
 
 </div>
 <div class="w-full h-fit py-[30px] justify-around items-center flex flex-wrap">
@@ -63,16 +66,22 @@
     <div class="p-2.5 bg-white bg-opacity-50 rounded-[50px] justify-center items-center gap-2.5 inline-flex">
       <div class="w-5 h-5 relative"></div>
     </div>
-    <div class="self-stretch h-[106px] px-[7px] flex-col justify-start items-start flex">
+    <div class="self-stretch h-[150px] px-[7px] flex-col justify-between items-start flex">
       <div class="self-stretch justify-start items-start gap-2.5 inline-flex">
-        <div class="grow shrink basis-0 text-black text-lg font-extrabold leading-7 my-1">{{ product.name }}</div>
+        <div class="grow shrink basis-0 text-black text-lg font-bold leading-7 my-1">{{ product.name }}</div>
         <div class="w-4 h-4 relative"></div>
         <div class="h-5 justify-center items-start gap-2.5 flex">
           <div class="text-neutral-400 text-sm font-extrabold leading-tight">4.9</div>
         </div>
       </div>
-      <div class="self-stretch text-black text-base font-normal leading-[25.20px] my-1">{{ product.designer }}</div>
-      <div class="self-stretch text-black text-lg font-normal leading-[25.20px] my-1">{{ product.price }} <span
+      <div class="self-stretch text-secondaryGrey-400 text-sm font-normal my-1">{{ product.designer }}</div>
+      {% if product.category %}
+      <div class="flex flex-row justify-start items-center gap-2.5">
+        <img src="{% static 'img/icons/tag-black-shape.svg' %}" alt="" class="h-3 fill-secondaryGray-400">
+        <div class="self-stretch text-black text-sm font-normal my-1">{{product.category.friendly_name }}</div>
+      </div>
+      {% endif %}
+      <div class="self-stretch text-black text-lg font-normal my-1">{{ product.price }} <span
           class="text-gray text-sm">/ day</span></div>
     </div>
   </div>
