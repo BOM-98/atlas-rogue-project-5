@@ -7,35 +7,44 @@
 {% block extra_title %}Bag{% endblock %}
 
 {% block content %}
-<div class="flex shadow-md my-10 flex-col md:flex-row">
+<div class="flex flex-col md:flex-row">
     <div class="w-full md:w-3/4 bg-white px-10 py-10">
         <div class="flex justify-between border-b pb-8">
             <h1 class="font-semibold text-2xl">Shopping Cart</h1>
-            <h2 class="font-semibold text-2xl">3 Items</h2>
+            <h2 class="font-semibold text-2xl">{{ bag_items|length }} Items</h2>
         </div>
 
-    <!-- Start Cart Items -->
+        <!-- Start Cart Items -->
         <div class="flex mt-10 mb-5">
             <!-- Details & Items -->
             <h3 class="font-semibold text-gray-600 text-xs uppercase w-1/2">Product Details</h3>
-            <div class="w-1/2 px-5"><h3 class="font-semibold text-end text-gray-600 text-xs uppercase  text-center">Total</h3></div>
+            <div class="w-1/2 px-1">
+                <h3 class="font-semibold text-end text-gray-600 text-xs uppercase  text-center">Total</h3>
+            </div>
         </div>
+
+        {% if bag_items %}
+        {% for item in bag_items %}
+        {% with product=item.product %}
 
         <!-- Image & Description -->
         <div class="w-full h-fit py-2.5 border-b border-zinc-300 justify-between items-start inline-flex">
             <!-- Image -->
-            <div class="w-1/8 min-w-24 aspect-square bg-zinc-300 rounded-[15px]"></div>
+            <div class="w-1/6 min-w-32 h-[150px] rounded-md border border-secondary-400 overflow-hidden justify-start inline-flex">
+                <div class="flex justify-center items-center">
+                    <img src="../media{{ product.image.url }}" alt="" class="w-full object-fit rounded-md">
+                </div>
+            </div>
             <!-- Description -->
             <div class="w-1/4 flex-col justify-start items-start gap-2.5 inline-flex">
-                <div class="text-black text-sm font-normal">Brown Jacket</div>
-                <div class="text-neutral-400 text-xs font-normal">Size: M</div>
-                <div class="text-black text-sm font-extrabold">€70</div>
+                <h3 class="text-black text-sm font-normal">{{ product.name }}</h3>
+                <div class="text-neutral-400 text-xs font-normal">{{ product.size }}</div>
+                <div class="text-black text-sm font-extrabold">{{ product.price }}</div>
             </div>
 
             <!-- Quantity Input -->
-            <div class="w-1/4 h-full px-5 justify-start items-start gap-5 flex">
+            <div class="w-1/4 h-full px-5 justify-center items-center gap-5 flex">
                 <form class="max-w-xs mx-auto h-full">
-                    <label for="counter-input" class="block mb-1 text-sm font-medium text-gray-900">Quantity:</label>
                     <div class="relative flex items-center">
                         <button type="button" id="decrement-button" data-input-counter-decrement="counter-input"
                             class="flex-shrink-0 bg-gray-100 hover:bg-gray-200 inline-flex items-center justify-center border border-gray-300 rounded-md h-5 w-5 focus:ring-gray-100 dark:focus:ring-gray-700 focus:ring-2 focus:outline-none">
@@ -47,7 +56,7 @@
                         </button>
                         <input type="text" id="counter-input" data-input-counter
                             class="flex-shrink-0 text-gray-900 border-0 bg-transparent text-sm font-normal focus:outline-none focus:ring-0 max-w-[2.5rem] text-center"
-                            placeholder="" value="12" required>
+                            placeholder="" value="{{ item.quantity }}" required>
                         <button type="button" id="increment-button" data-input-counter-increment="counter-input"
                             class="flex-shrink-0 bg-gray-100 hover:bg-gray-200 inline-flex items-center justify-center border border-gray-300 rounded-md h-5 w-5 focus:ring-gray-100 dark:focus:ring-gray-700 focus:ring-2 focus:outline-none">
                             <svg class="w-2.5 h-2.5 text-gray-900" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
@@ -65,18 +74,26 @@
             <div class="flex flex-col gap-8 justify-center align-center h-full">
                 <!-- Total -->
                 <div class="flex flex-col h-full gap-2.5 justify-start align-start">
-                    <p>€70</p>
+                    <p>{{ item.item_total }}</p>
                 </div>
-                <!-- Delete -->
-                <div
-                    class="w-12 h-12 bg-rose-500 bg-opacity-30 rounded-[10px] flex-col justify-start align-start">
-                    <div class="w-5 h-[21px]"></div>
+                <!-- Edit -->
+                <div>
+                    <a href="{% url 'product_detail' product.id %}">
+                        <p class="text-primary-600 text-sm">Delete</p>
+                    </a>
+                    <p class="text-grey-600 text-sm">Edit</p>
                 </div>
             </div>
             <!-- End Total & Delete -->
         </div>
+        <!-- End Image & Description -->
 
-        
+        {% endwith %}
+        {% endfor %}
+        {% else %}
+
+        {% endif %}
+
 
         <a href="#" class="flex font-semibold text-primary-600 text-sm mt-10">
 
@@ -92,7 +109,7 @@
         <h1 class="font-semibold text-2xl border-b pb-8">Order Summary</h1>
         <div class="flex justify-between mt-10 mb-5">
             <span class="font-semibold text-sm uppercase">Items 3</span>
-            <span class="font-semibold text-sm">590$</span>
+            <span class="font-semibold text-sm">€ {{ total }}</span>
         </div>
         <div>
             <label class="font-medium inline-block mb-3 text-sm uppercase">Shipping</label>
