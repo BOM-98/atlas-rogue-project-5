@@ -30,7 +30,8 @@
         <!-- Image & Description -->
         <div class="w-full h-fit py-2.5 border-b border-zinc-300 justify-between items-start inline-flex">
             <!-- Image -->
-            <div class="w-1/6 min-w-32 h-[150px] rounded-md border border-secondary-400 overflow-hidden justify-start inline-flex">
+            <div
+                class="w-1/6 min-w-32 h-[150px] rounded-md border border-secondary-400 overflow-hidden justify-start inline-flex">
                 <div class="flex justify-center items-center">
                     <img src="../media{{ product.image.url }}" alt="" class="w-full object-fit rounded-md">
                 </div>
@@ -81,7 +82,7 @@
                     <a href="{% url 'product_detail' product.id %}">
                         <p class="text-primary-600 text-sm">Delete</p>
                     </a>
-                    <p class="text-grey-600 text-sm">Edit</p>
+
                 </div>
             </div>
             <!-- End Total & Delete -->
@@ -127,8 +128,13 @@
                 <span>Total cost</span>
                 <span>$600</span>
             </div>
+            {% if free_delivery_delta > 0 %}
+            <p class="mb-1 text-red-500">
+                You could get free delivery by spending just <strong>${{ free_delivery_delta }}</strong> more!
+            </p>
+            {% endif %}
             <button
-                class="bg-indigo-500 font-semibold hover:bg-indigo-600 py-3 text-sm text-white uppercase w-full">Checkout</button>
+                class="bg-indigo-500 font-semibold hover:bg-indigo-600 py-3 text-sm text-white uppercase w-full mt-5">Checkout</button>
         </div>
     </div>
 
