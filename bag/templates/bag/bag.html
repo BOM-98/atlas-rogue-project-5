@@ -79,10 +79,12 @@
                 </div>
                 <!-- Edit -->
                 <div>
-                    <a href="{% url 'product_detail' product.id %}">
+                    <a href="{% url 'remove_from_bag' product.id %}" id="remove_{{ item.item_id }}">
                         <p class="text-primary-600 text-sm">Delete</p>
                     </a>
-
+                    <a href="{% url 'product_detail' product.id %}">
+                        <p class="text-grey-600 text-sm">Edit</p>
+                    </a>
                 </div>
             </div>
             <!-- End Total & Delete -->
