@@ -263,6 +263,15 @@
         {% if messages %}
         <div class="messages">
             {% for message in messages %}
+                {% if message.tags == 'error' %}
+                    {% include 'includes/toasts/toast_error.html' %}
+                {% elif message.tags == 'success' %}
+                    {% include 'includes/toasts/toast_success.html' %}
+                {% elif message.tags == 'warning' %}
+                    {% include 'includes/toasts/toast_warning.html' %}
+                {% else %}
+                    {% include 'includes/toasts/toast_info.html' %}
+                {% endif %}
             <div class="message {{ message.tags }}">
                 {{ message }}
             </div>
