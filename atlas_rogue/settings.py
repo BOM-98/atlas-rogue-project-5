@@ -18,6 +18,8 @@ from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 
 # Quick-start development settings - unsuitable for production
@@ -47,6 +49,9 @@ INSTALLED_APPS = [
     'allauth.socialaccount',
     # django-sites
     'django.contrib.sites',
+    # Crispy Forms
+    "crispy_forms",
+    "crispy_tailwind",
     # apps
     "home",
     "products",
@@ -95,6 +100,10 @@ LOGIN_URL = '/accounts/login/'
 
 ROOT_URLCONF = "atlas_rogue.urls"
 
+# Crispy Forms
+CRISPY_ALLOWED_TEMPLATE_PACKS = "tailwind"
+CRISPY_TEMPLATE_PACK = "tailwind"
+
 TEMPLATES = [
     {
         "BACKEND": "django.template.backends.django.DjangoTemplates",
@@ -109,6 +118,7 @@ TEMPLATES = [
                 "django.template.context_processors.request",
                 "django.contrib.auth.context_processors.auth",
                 "django.contrib.messages.context_processors.messages",
+                "django.template.context_processors.media",
                 "bag.contexts.bag_contents",
             ],
         },
