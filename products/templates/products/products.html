@@ -112,7 +112,7 @@
   <div class="w-[250px] h-fit min-h-[500px] flex-col justify-start gap-2.5 inline-flex my-16 mx-5">
     <div class="flex justify-center items-center">
       <a href="{% url 'product_detail' product.id %}">
-        <img src="../media{{ product.image.url }}" alt="" class="h-96 object-cover rounded-md">
+        <img src="{{ product.image.url }}" alt="" class="h-96 object-cover rounded-md">
       </a>
     </div>
     <div class="p-2.5 bg-white bg-opacity-50 rounded-[50px] justify-center items-center gap-2.5 inline-flex">
