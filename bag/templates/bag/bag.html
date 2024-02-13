@@ -1,5 +1,6 @@
 {% extends "base.html" %}
 {% load static %}
+{% load bag_tools %}
 
 {% block extra_css %}
 {% endblock %}
@@ -135,8 +136,10 @@
                 You could get free delivery by spending just <strong>${{ free_delivery_delta }}</strong> more!
             </p>
             {% endif %}
+            <a href="{% url 'checkout' %}">
             <button
                 class="bg-indigo-500 font-semibold hover:bg-indigo-600 py-3 text-sm text-white uppercase w-full mt-5">Checkout</button>
+            </a>
         </div>
     </div>
 
