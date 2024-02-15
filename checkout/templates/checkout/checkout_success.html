@@ -1,0 +1,93 @@
+{% extends "base.html" %}
+{% load static %}
+{% load tailwind_filters %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'checkout/css/checkout.css' %}">
+{% endblock %}
+
+{% block content %}
+<div class="overlay"></div>
+<!-- Main content container -->
+<div class="container mx-auto px-4 py-6">
+    <div class="flex justify-center">
+        <div class="w-full">
+            <!-- Separator -->
+            <div class="border-t-2 border-gray-200 my-4"></div>
+            
+            <!-- Thank You Message -->
+            <h2 class="text-2xl font-semibold text-center mb-4">Thank You</h2>
+            
+            <div class="border-t-2 border-gray-200 my-4"></div>
+            
+            <!-- Order Confirmation Details -->
+            <p class="text-lg text-gray-800 text-center mb-6">Your order information is below. A confirmation email will be sent to <strong>{{ order.email }}</strong>.</p>
+            
+            <!-- Order Details Wrapper -->
+            <div class="max-w-4xl mx-auto bg-white shadow-lg rounded-lg p-6">
+                <p class="text-md mb-2 font-semibold text-gray-700">Order Info:</p>
+                
+                <!-- Order Number -->
+                <div class="flex justify-between flex-wrap items-center py-2">
+                    <p class="text-md font-semibold text-gray-600">Order Number</p>
+                    <p class="text-xs sm:text-md w-full text-wrap text-gray-800">{{ order.order_number }}</p>
+                </div>
+                
+                <!-- Order Date -->
+                <div class="flex justify-between items-center py-2">
+                    <p class="text-md font-semibold text-gray-600">Order Date</p>
+                    <p class="text-md text-gray-800">{{ order.date }}</p>
+                </div>
+                
+                <!-- Dynamic Order Items -->
+                {% for item in order.lineitems.all %}
+                <div class="flex justify-between items-center border-t pt-2 mt-2">
+                    <p class="text-md font-semibold text-gray-600">{{ item.product.name }}{% if item.product_size %} - Size {{ item.product.size|upper }}{% endif %}</p>
+                    <p class="text-md text-gray-800">{{ item.quantity }} @ ${{ item.product.price }} each</p>
+                </div>
+                {% endfor %}
+                
+                <!-- Delivery Address -->
+                <p class="text-md mt-4 mb-2 font-semibold text-gray-700">Delivering To:</p>
+                
+                <!-- Details -->
+                <div class="flex justify-between items-center py-2">
+                    <p class="text-md font-semibold text-gray-600">Full Name</p>
+                    <p class="text-md text-gray-800">{{ order.full_name }}</p>
+                </div>
+                <div class="flex justify-between items-center py-2">
+                    <p class="text-md font-semibold text-gray-600">Address</p>
+                    <p class="text-md text-gray-800">{{ order.street_address1 }}</p>
+                </div>
+                {% if order.street_address2 %}
+                <div class="flex justify-between items-center py-2">
+                    <p class="text-md font-semibold text-gray-600">Address 2</p>
+                    <p class="text-md text-gray-800">{{ order.street_address2 }}</p>
+                </div>
+                {% endif %}
+                <!-- More details similar to above -->
+                
+                <!-- Billing Info -->
+                <p class="text-md mt-4 mb-2 font-semibold text-gray-700">Billing Info:</p>
+                
+                <!-- Billing Details -->
+                <div class="flex justify-between items-center py-2">
+                    <p class="text-md font-semibold text-gray-600">Order Total</p>
+                    <p class="text-md text-gray-800">{{ order.order_total }}</p>
+                </div>
+                <!-- More billing details similar to above -->
+            </div>
+            
+            <!-- Call to Action Button -->
+            <div class="text-center mt-6">
+                <a href="{% url 'products' %}" class="inline-block bg-primary-500 text-white py-2 px-4 rounded hover:bg-primary-700 transition-colors duration-300">
+                    <span class="inline-flex items-center">
+                        <i class="fas fa-gifts text-white mr-2"></i>
+                        <span>Back Home!</span>
+                    </span>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
