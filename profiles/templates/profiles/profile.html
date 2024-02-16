@@ -4,7 +4,7 @@
 {% load tailwind_filters %}
 
 {% block extra_css %}
-    <link rel="stylesheet" href="{% static 'profiles/css/profile.css' %}">
+    <link rel="stylesheet" href="{% static 'css/profile.css' %}">
 {% endblock %}
 
 {% block content %}
@@ -16,13 +16,28 @@
                 <h2 class="font-semibold text-2xl mb-4">Profile</h2>
                 <hr class="my-4">
             </div>
-            {{ profile }}
+            <div class="px-4 w-full">
+                <p class="my-2">Default Delivery Information</p>
+                <form>
+                    {% csrf_token %}
+                    {{ form|crispy }}
+                    <button type="submit" class="bg-primary-500 hover:bg-primary-700 text-white rounded py-2 px-4 my-4">Update</button>
+                </form>
+            </div>
+            <div class="px-4 w-full">
+                <hr class="my-4">
+                <h2 class="font-semibold text-2xl mb-4">Order History</h2>
+                <hr class="my-4">
+                {{ orders }}
+            </div>
         </div>
     </div>
 {% endblock %}
 
 {% block extra_js %}
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 {% endblock %}
 {% block postloadjs %}
+{{ block.super }}
+<script src="{% static 'js/countryfield.js' %}"></script>
 {% endblock %}   
