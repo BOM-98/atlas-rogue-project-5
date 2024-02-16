@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% load static %}
+{% load bag_tools %}
+{% load tailwind_filters %}
+
+{% block extra_css %}
+    <link rel="stylesheet" href="{% static 'profiles/css/profile.css' %}">
+{% endblock %}
+
+{% block content %}
+    <div class="overlay"></div>
+    <div class="container mx-auto px-4 min-h-[70vh]">
+        <div class="flex flex-wrap -mx-4">
+            <div class="px-4 w-full">
+                <hr class="my-4">
+                <h2 class="font-semibold text-2xl mb-4">Profile</h2>
+                <hr class="my-4">
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+{% block extra_js %}
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+{% endblock %}
+{% block postloadjs %}
+{% endblock %}   
