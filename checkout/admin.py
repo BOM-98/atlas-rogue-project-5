@@ -19,6 +19,7 @@ class OrderAdmin(admin.ModelAdmin):
     )
     fields = (
         "order_number",
+        "user_profile", # "user_profile" is a foreign key to the UserProfile model
         "date",
         "full_name",
         "email",

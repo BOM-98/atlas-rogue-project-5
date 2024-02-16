@@ -77,7 +77,16 @@
                 </div>
                 <!-- More billing details similar to above -->
             </div>
-            
+            {% if from_profile %}
+            <div class="text-center mt-6">
+                <a href="{% url 'profile' %}" class="inline-block bg-primary-500 text-white py-2 px-4 rounded hover:bg-primary-700 transition-colors duration-300">
+                    <span class="inline-flex items-center">
+                        <i class="fas fa-user text-white mr-2"></i>
+                        <span>Back to Profile</span>
+                    </span>
+                </a>
+            </div>
+            {% else %}
             <!-- Call to Action Button -->
             <div class="text-center mt-6">
                 <a href="{% url 'products' %}" class="inline-block bg-primary-500 text-white py-2 px-4 rounded hover:bg-primary-700 transition-colors duration-300">
@@ -87,6 +96,7 @@
                     </span>
                 </a>
             </div>
+            {% endif %}
         </div>
     </div>
 </div>
