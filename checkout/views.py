@@ -3,9 +3,11 @@ import os
 
 # Related third-party imports
 import stripe
+import json
 from django.conf import settings
 from django.contrib import messages
-from django.shortcuts import render, redirect, reverse, get_object_or_404
+from django.shortcuts import render, redirect, reverse, get_object_or_404, HttpResponse
+from django.views.decorators.http import require_POST
 
 # Local application/library specific imports
 from bag.contexts import bag_contents
@@ -13,13 +15,28 @@ from .forms import OrderForm
 from products.models import Product
 from .models import Order, OrderLineItem
 
-
+@require_POST
+def cache_checkout_data(request):
+    try:
+        pid = request.POST.get("client_secret").split("_secret")[0]
+        stripe.api_key = settings.STRIPE_SECRET_KEY
+        stripe.PaymentIntent.modify(pid, metadata={
+            "bag": json.dumps(request.session.get("bag", {})),
+            "save_info": request.POST.get("save_info"),
+            'username': request.user,
+            })
+        return HttpResponse(status=200)
+    except Exception as e:
+        messages.error(request, "Sorry, your payment cannot be \
+            processed right now. Please try again later.")
+        return HttpResponse(content=e, status=400)
+    
 def checkout(request):
     """
     A view to return the checkout page
     """
     # Load Stripe keys from environment variables
-    stripe.api_key = os.getenv("STRIPE_SECRET_KEY")
+    stripe_secret_key = os.getenv("STRIPE_SECRET_KEY")
     stripe_public_key = os.getenv("STRIPE_PUBLIC_KEY")
     
     if request.method == "POST":
@@ -66,6 +83,7 @@ def checkout(request):
         current_bag = bag_contents(request)
         total = current_bag["grand_total"]
         stripe_total = round(total * 100)  # Stripe requires the amount to be in cents
+        stripe.api_key = stripe_secret_key
 
         # Create a Stripe PaymentIntent
         intent = stripe.PaymentIntent.create(
@@ -74,7 +92,7 @@ def checkout(request):
             # Add any additional arguments here
         )
 
-    order_form = OrderForm()
+        order_form = OrderForm()
 
     if not stripe_public_key:
         messages.warning(
@@ -96,7 +114,7 @@ def checkout_success(request, order_number):
     Handle successful checkouts
     """
     save_info = request.session.get("save_info")
-    order = Order.objects.get(order_number=order_number)
+    order = get_object_or_404(Order,order_number=order_number)
     messages.success(request, f"Order successfully processed! \
         Your order number is {order_number}. A confirmation \
         email will be sent to {order.email}.")
