@@ -1,16 +1,72 @@
 {% load i18n %}
+{% load static %}
+{% load tailwind_filters %}
+
 <!DOCTYPE html>
-<html>
-    <head>
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>
-            {% block head_title %}
-            {% endblock head_title %}
-        </title>
-        {% block extra_head %}
-        {% endblock extra_head %}
-    </head>
+<html lang="en">
+
+<!-- Header -->
+
+<head>
+    {% block meta %}
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% endblock %}
+
+    {% block extra_meta %}
+    {% endblock %}
+
+    {% block core_css %}
+    <!-- Tailwind CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Flowbite CDN-->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.2.1/flowbite.min.css" rel="stylesheet" />
+    <!-- Tailwind Configuration -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: {
+                            50: "#fef2f4",
+                            100: "#fde6e9",
+                            200: "#fad1d8",
+                            300: "#f6abb7",
+                            400: "#f07c92",
+                            500: "#e54e6f",
+                            600: "#d3315c",
+                            700: "#b0204a",
+                            800: "#941d43",
+                            900: "#7f1c40",
+                            950: "#460b1e",
+                        },
+                        secondaryGray: {
+                            50: "#f6f6f6",
+                            100: "#e7e7e7",
+                            200: "#d1d1d1",
+                            300: "#b0b0b0",
+                            400: "#b0b0b0",
+                            500: "#6d6d6d",
+                            600: "#5d5d5d",
+                            700: "#4f4f4f",
+                            800: "#454545",
+                            900: "#3d3d3d",
+                            950: "#262626",
+                        },
+                    },
+                },
+            },
+        };
+    </script>
+    {% endblock %}
+
+    {% block extra_css %}
+    {% endblock %}
+
+    <title>Atlas Rogue | {% block extra_title %}{% endblock %}</title>
+</head>
+<!-- End Header -->
     <body>
         {% block body %}
             {% if messages %}
@@ -21,30 +77,334 @@
                     </ul>
                 </div>
             {% endif %}
-            <div>
-                <strong>{% trans "Menu:" %}</strong>
-                <ul>
-                    {% if user.is_authenticated %}
-                        <li>
-                            <a href="{% url 'account_email' %}">{% trans "Change Email" %}</a>
-                        </li>
-                        <li>
-                            <a href="{% url 'account_logout' %}">{% trans "Sign Out" %}</a>
-                        </li>
-                    {% else %}
-                        <li>
-                            <a href="{% url 'account_login' %}">{% trans "Sign In" %}</a>
-                        </li>
-                        <li>
-                            <a href="{% url 'account_signup' %}">{% trans "Sign Up" %}</a>
-                        </li>
-                    {% endif %}
-                </ul>
-            </div>
+            <body class="flex flex-col min-h-screen">
+
+                <!-- Navigation -->
+            
+                <div class="border-b-2 border-neutral-100 mb-10">
+                    <nav class="justify-between items-stretch flex gap-5 lpx-10 py-5 px-16 bg-gray-50">
+            
+                        <!-- Logo -->
+                        <div class="flex items-stretch justify-between gap-5">
+                            <button class="lg:hidden block hamburger" id="menu-toggle" aria-label="Open Menu">
+                                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M4 6h16M4 12h16m-7 6h7">
+                                    </path>
+                                </svg>
+                            </button>
+                            <a href="{% url 'home' %}" class="hidden lg:block object-contain object-center self-center"><img loading="lazy"
+                                    src="{% static 'img/atlas-rogue-logo1.png' %}"
+                                    class="object-contain object-center w-[193px] overflow-hidden self-center max-w-full my-auto" /></a>
+                            <a href="{% url 'home' %}" class="lg:hidden aspect-[4.95] object-contain object-center self-center"><img loading="lazy"
+                                    src="{% static 'img/icons/atlas-rogue-icon.svg' %}"
+                                    class="object-contain object-center w-[40px] min-w-[40px] shrink-0 overflow-hidden self-center max-w-full my-auto" /></a>
+                        </div>
+                        <!-- End Logo -->
+                        <!-- Nav List -->
+                        <div class="absolute bg-gray-50 hidden lg:block lg:static min-h-[40vh] lg:min-h-fit left-0 top-[9%] w-full lg:w-fit flex items-center self-center px-5"
+                            id="nav-list">
+                            <ul class="flex lg:flex-row flex-col items-stretch self-center justify-between gap-5 my-auto p-2.5">
+                                <!-- Menu Items -->
+                                <li class="lg:hidden">
+                                    <form method="GET" action="{% url 'products' %}">
+                                        <div class="">
+                                            <input type="text" name="q" placeholder="Search"
+                                                class="border-2 border-neutral-100 rounded-md px-2 py-1.5 text-sm text-neutral-400 focus:outline-none focus:border-primary-600" />
+                                            <button type="submit" class="hidden">Search</button>
+                                        </div>
+                                    </form>
+                                </li>
+                                <li>
+                                    <div class="relative">
+                                        <!-- Rent Button -->
+                                        <button
+                                            class="drop-down-button text-neutral-400 text-center text-base whitespace-nowrap hover:text-primary-600 hover:underline underline-offset-4 decoration-2 duration-500"
+                                            aria-label="Rent">Rent</button>
+            
+                                        <!-- Rent Dropdown -->
+                                        <div class="hidden drop-down-menu lg:absolute z-10 mt-2 w-56 origin-top-right divide-y divide-gray-100 rounded-md bg-white  ring-1 ring-black ring-opacity-5 focus:outline-none"
+                                            role="menu" aria-orientation="vertical" aria-labelledby="menu-button" tabindex="-1">
+                                            <a href="{% url 'products' %}"
+                                                class="text-gray-700 block px-4 py-2 text-sm hover:bg-gray-100 hover:text-primary-600"
+                                                role="menuitem" tabindex="-1" id="menu-item-0">All</a>
+                                            <a href="{% url 'products' %}?category=dresses"
+                                                class="text-gray-700 block px-4 py-2 text-sm hover:bg-gray-100 hover:text-primary-600"
+                                                role="menuitem" tabindex="-1" id="menu-item-1">Dresses</a>
+                                            <a href="{% url 'products' %}?category=skirts"
+                                                class="text-gray-700 block px-4 py-2 text-sm hover:bg-gray-100 hover:text-primary-600"
+                                                role="menuitem" tabindex="-1" id="menu-item-2">Skirts</a>
+                                            <a href="{% url 'products' %}?category=tops"
+                                                class="text-gray-700 block px-4 py-2 text-sm hover:bg-gray-100 hover:text-primary-600"
+                                                role="menuitem" tabindex="-1" id="menu-item-3">Tops</a>
+                                            <a href="{% url 'products' %}?category=bags"
+                                                class="text-gray-700 block px-4 py-2 text-sm hover:bg-gray-100 hover:text-primary-600"
+                                                role="menuitem" tabindex="-1" id="menu-item-4">Bags</a>
+                                            <a href="{% url 'products' %}?category=blazers"
+                                                class="text-gray-700 block px-4 py-2 text-sm hover:bg-gray-100 hover:text-primary-600"
+                                                role="menuitem" tabindex="-1" id="menu-item-5">Blazers</a>
+                                            <a href="{% url 'products' %}?category=hats"
+                                                class="text-gray-700 block px-4 py-2 text-sm hover:bg-gray-100 hover:text-primary-600"
+                                                role="menuitem" tabindex="-1" id="menu-item-6">Hats</a>
+                                        </div>
+                                        <!-- End Rent Dropdown -->
+                                    </div>
+                                </li>
+                                <li><button
+                                        class="drop-down-button text-neutral-400 text-center text-base hover:text-primary-600 hover:underline underline-offset-4 decoration-2 duration-500"
+                                        aria-label="Designers">Designers</button>
+                                    <!-- Suppliers Dropdown -->
+                                    <div class="hidden drop-down-menu lg:absolute z-10 mt-2 w-56 origin-top-right divide-y divide-gray-100 rounded-md bg-white ring-1 ring-black ring-opacity-5 focus:outline-none"
+                                        role="menu" aria-orientation="vertical" aria-labelledby="menu-button" tabindex="-1">
+                                        <a href="{% url 'products' %}?designer=Ganni"
+                                            class="text-gray-700 block px-4 py-2 text-sm hover:bg-gray-100 hover:text-primary-600"
+                                            role="menuitem" tabindex="-1" id="menu-item-0">Ganni</a>
+                                        <a href="{% url 'products' %}?designer=Rixo"
+                                            class="text-gray-700 block px-4 py-2 text-sm hover:bg-gray-100 hover:text-primary-600"
+                                            role="menuitem" tabindex="-1" id="menu-item-1">Rixo</a>
+                                        <a href="{% url 'products' %}?designer=Shrimps"
+                                            class="text-gray-700 block px-4 py-2 text-sm hover:bg-gray-100 hover:text-primary-600"
+                                            role="menuitem" tabindex="-1" id="menu-item-2">Shrimps</a>
+                                        <a href="{% url 'products' %}?designer=Stine Goya"
+                                            class="text-gray-700 block px-4 py-2 text-sm hover:bg-gray-100 hover:text-primary-600"
+                                            role="menuitem" tabindex="-1" id="menu-item-3">Stine Goya</a>
+                                        <a href="{% url 'products' %}?designer=Self Portrait"
+                                            class="text-gray-700 block px-4 py-2 text-sm hover:bg-gray-100 hover:text-primary-600"
+                                            role="menuitem" tabindex="-1" id="menu-item-4">Self Portrait</a>
+                                        <a href="{% url 'products' %}?designer=Rotate"
+                                            class="text-gray-700 block px-4 py-2 text-sm hover:bg-gray-100 hover:text-primary-600"
+                                            role="menuitem" tabindex="-1" id="menu-item-5">Rotate</a>
+                                        <a href="{% url 'products' %}?designer=Ghost"
+                                            class="text-gray-700 block px-4 py-2 text-sm hover:bg-gray-100 hover:text-primary-600"
+                                            role="menuitem" tabindex="-1" id="menu-item-6">Ghost</a>
+                                        <a href="{% url 'products' %}?designer=Faithful The Brand"
+                                            class="text-gray-700 block px-4 py-2 text-sm hover:bg-gray-100 hover:text-primary-600"
+                                            role="menuitem" tabindex="-1" id="menu-item-6">Faithful The Brand</a>
+                                        <a href="{% url 'products' %}?designer=The Frankie Shop"
+                                            class="text-gray-700 block px-4 py-2 text-sm hover:bg-gray-100 hover:text-primary-600"
+                                            role="menuitem" tabindex="-1" id="menu-item-6">The Frankie Shop</a>
+                                        <a href="{% url 'products' %}"
+                                        class="text-gray-700 block px-4 py-2 text-sm hover:bg-gray-100 hover:text-primary-600"
+                                        role="menuitem" tabindex="-1" id="menu-item-6">View All</a>
+                                    </div>
+                                    <!-- End Suppliers Dropdown -->
+                                </li>
+                                <li><a href="#"
+                                        class="text-neutral-400 text-center text-base hover:text-primary-600 hover:underline underline-offset-4 decoration-2 duration-500"
+                                        aria-label="Our Story">About</a></li>
+                                <li><a href="#"
+                                        class="text-neutral-400 text-center text-base grow whitespace-nowrap hover:text-primary-600 hover:underline underline-offset-4 decoration-2 duration-500"
+                                        aria-label="Contact Us">Contact</a></li>
+                                <!-- End Menu Items -->
+                            </ul>
+                        </div>
+                        <!-- End Nav List -->
+                        <!-- Nav icons -->
+                        <div class="flex justify-between items-stretch self-center flex gap-[1vw] py-1 min-w-fit">
+                            <form method="GET" action="{% url 'products' %}" class="self-center">
+                                <div class="flex hidden lg:block self-center">
+                                    <input type="text" name="q" placeholder="Search"
+                                        class="self-center border-2 border-neutral-100 rounded-md px-2 py-1.5 text-sm text-neutral-400 focus:outline-none focus:border-primary-600" />
+                                    <button type="submit" class="hidden">Search</button>
+                                </div>
+                            </form>
+            
+                            <!-- Account -->
+                            <div class="relative self-center">
+                                <button
+                                    class="hidden lg:block drop-down-button text-neutral-400 text-center text-base whitespace-nowrap hover:text-primary-600 hover:underline underline-offset-4 decoration-2 duration-500"
+                                    aria-label="Rent">My Account</button>
+            
+                                <!-- Account Dropdown -->
+                                <div class="hidden drop-down-menu lg:absolute z-10 mt-2 w-56 divide-y divide-gray-100 rounded-md bg-white ring-1 ring-black ring-opacity-5 focus:outline-none"
+                                    role="menu" aria-orientation="vertical" aria-labelledby="menu-button" tabindex="-1">
+                                    {% if request.user.is_authenticated %}
+                                    {% if request.user.is_superuser %}
+                                    <a href=""
+                                        class="text-gray-700 block px-4 py-2 text-sm hover:bg-gray-100 hover:text-primary-600"
+                                        role="menuitem" tabindex="-1">Product Management</a>
+                                    {% endif %}
+                                    <a href=""
+                                        class="text-gray-700 block px-4 py-2 text-sm hover:bg-gray-100 hover:text-primary-600"
+                                        role="menuitem" tabindex="-1">My Profile</a>
+                                    <a href="{% url 'account_logout' %}"
+                                        class="text-gray-700 block px-4 py-2 text-sm hover:bg-gray-100 hover:text-primary-600"
+                                        role="menuitem" tabindex="-1">Logout</a>
+                                    {% else %}
+                                    <a href="{% url 'account_signup' %}"
+                                        class="text-gray-700 block px-4 py-2 text-sm hover:bg-gray-100 hover:text-primary-600"
+                                        role="menuitem" tabindex="-1">Register</a>
+                                    <a href="{% url 'account_login' %}"
+                                        class="text-gray-700 block px-4 py-2 text-sm hover:bg-gray-100 hover:text-primary-600"
+                                        role="menuitem" tabindex="-1">Login</a>
+                                    {% endif %}
+                                </div>
+                            </div>
+                            <!-- End Account Dropdown -->
+            
+                            <!--Wishlist-->
+                            <img loading="lazy" src="{% static 'img/icons/Wishlist.svg' %}"
+                                class="aspect-square object-contain object-center w-[25px] sm:w-[31px] overflow-hidden self-center shrink-0 max-w-full my-auto mx-2" />
+                            <!-- End Wishlist -->
+                            <!-- Cart -->
+                            <a class="{% if grand_total %}text-info font-weight-bold{% else %}{% endif %} nav-link self-center text-base text-neutral-400 hover:text-primary-600"
+                                href="{% url 'view_bag' %}">
+                                <div class="flex flex-row items-center text-center my-auto">
+                                    <div><img loading="lazy" src="{% static 'img/icons/cart.svg' %}"
+                                            class="aspect-square object-contain object-center w-[29px] sm:w-[31px] overflow-hidden shrink-0 max-w-full mx-2" /></i>
+                                    </div>
+                                    <p class="my-0">
+                                        {% if grand_total %}
+                                        €{{ grand_total|floatformat:2 }}
+                                        {% else %}
+                                        €0.00
+                                        {% endif %}
+                                    </p>
+                                </div>
+                            </a>
+                            <!-- End Cart -->
+                        </div>
+                </div>
+                <!-- End Nav icons -->
+                </nav>
+                </div>
+                <!-- End Navigation -->
+                <main class="container mx-auto flex-grow">
             {% block content %}
             {% endblock content %}
+        </main>
         {% endblock body %}
         {% block extra_body %}
         {% endblock extra_body %}
+        {% block footer %}
+        <footer class="bg-gray-50 mt-5">
+            <div class="mx-auto w-full max-w-screen-xl p-4 py-6 lg:py-8">
+                <div class="md:flex md:justify-between">
+                    <div class="mb-6 md:mb-0">
+                        <a href="#" class="flex items-center px-5">
+                            <img src="{% static 'img/icons/atlas-rogue-icon.svg' %}" class="h-8 me-3" alt="Atlas Rogue Logo" />
+                            <span
+                                class="self-center text-2xl font-semibold whitespace-nowrap">Atlas Rogue</span>
+                        </a>
+                        <h2 class="px-5 py-2 text-xl">Sign up for our newsletter</h2>
+                        <div class="w-fit text-black text-l font-normal py-2 px-5">Be the first to know about
+                            our special offers, new product launches, and events</div>
+                            <div class = "flex flex-row justify-start items-center gap-5 px-5">
+                            <div class="text-black text-lg w-1/2 xs:w-1/4 max-w-16">Sign Up</div>
+                            <form method="POST" action="" class="w-full max-w-64">
+                                <div class="w-full">
+                                    <input type="text" name="q" placeholder="email"
+                                        class="border-2 border-neutral-100 rounded-md px-2 py-1.5 text-sm text-neutral-400 focus:outline-none focus:border-primary-600 w-full" />
+                                    <button type="submit" class="hidden">Email</button>
+                                </div>
+                            </div>
+                            </form>
+                    </div>
+                    
+                    <div class="grid grid-cols-2 gap-8 sm:gap-6 sm:grid-cols-3">
+                        <div>
+                            <h2 class="mb-6 text-sm font-semibold text-gray-900 uppercase">Rent
+                            </h2>
+                            <ul class="text-gray-500 dark:text-gray-400 font-medium">
+                                <li>
+                                    <a href="{% url 'products' %}?category=dresses" class="hover:underline hover:text-primary-600">Dresses</a>
+                                </li>
+                                <li>
+                                    <a href="{% url 'products' %}?category=skirts" class="hover:underline hover:text-primary-600">Skirts</a>
+                                </li>
+                                <li>
+                                    <a href="{% url 'products' %}?category=tops" class="hover:underline hover:text-primary-600">Tops</a>
+                                </li>
+                                <li>
+                                    <a href="{% url 'products' %}?category=bags" class="hover:underline hover:text-primary-600">Bags</a>
+                                </li>
+                                <li>
+                                    <a href="{% url 'products' %}?category=blazers" class="hover:underline hover:text-primary-600">Blazers</a>
+                                </li>
+                                <li>
+                                    <a href="{% url 'products' %}?category=hats" class="hover:underline hover:text-primary-600">Hats</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h2 class="mb-6 text-sm font-semibold text-gray-900 uppercase">Help
+                            </h2>
+                            <ul class="text-gray-500 dark:text-gray-400 font-medium">
+                                <li>
+                                    <a href="#" class="hover:underline hover:text-primary-600">Order Status</a>
+                                </li>
+                                <li>
+                                    <a href="#" class="hover:underline hover:text-primary-600">Returns & Warranty</a>
+                                </li>
+                                <li>
+                                    <a href="#" class="hover:underline hover:text-primary-600">FAQ</a>
+                                </li>
+                                <li>
+                                    <a href="#" class="hover:underline hover:text-primary-600">Contact Us</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h2 class="mb-6 text-sm font-semibold text-gray-900 uppercase">About</h2>
+                            <ul class="text-gray-500 dark:text-gray-400 font-medium">
+                                <li>
+                                    <a href="#" class="hover:underline hover:text-primary-600">Privacy Policy</a>
+                                </li>
+                                <li>
+                                    <a href="#" class="hover:underline hover:text-primary-600">Terms &amp; Conditions</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <hr class="my-6 border-gray-200 sm:mx-auto dark:border-gray-700 lg:my-8" />
+                <div class="sm:flex sm:items-center sm:justify-between">
+                    <span class="text-sm text-gray-500 sm:text-center dark:text-gray-400">© 2023 <a
+                            href="#" class="hover:underline hover:hover:text-primary-600">Atlas Rogue</a>. All Rights Reserved.
+                    </span>
+                    <div class="flex mt-4 sm:justify-center sm:mt-0">
+                        <a href="#" class="text-gray-500 hover:text-primary-600">
+                            <svg class="w-4 h-4" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor"
+                                viewBox="0 0 8 19">
+                                <path fill-rule="evenodd"
+                                    d="M6.135 3H8V0H6.135a4.147 4.147 0 0 0-4.142 4.142V6H0v3h2v9.938h3V9h2.021l.592-3H5V3.591A.6.6 0 0 1 5.592 3h.543Z"
+                                    clip-rule="evenodd" />
+                            </svg>
+                            <span class="sr-only">Facebook page</span>
+                        </a>
+                        <a href="#" class="text-gray-500 hover:text-primary-600 ms-5">
+                            <svg class="w-4 h-4" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor"
+                                viewBox="0 0 20 17">
+                                <path fill-rule="evenodd"
+                                    d="M20 1.892a8.178 8.178 0 0 1-2.355.635 4.074 4.074 0 0 0 1.8-2.235 8.344 8.344 0 0 1-2.605.98A4.13 4.13 0 0 0 13.85 0a4.068 4.068 0 0 0-4.1 4.038 4 4 0 0 0 .105.919A11.705 11.705 0 0 1 1.4.734a4.006 4.006 0 0 0 1.268 5.392 4.165 4.165 0 0 1-1.859-.5v.05A4.057 4.057 0 0 0 4.1 9.635a4.19 4.19 0 0 1-1.856.07 4.108 4.108 0 0 0 3.831 2.807A8.36 8.36 0 0 1 0 14.184 11.732 11.732 0 0 0 6.291 16 11.502 11.502 0 0 0 17.964 4.5c0-.177 0-.35-.012-.523A8.143 8.143 0 0 0 20 1.892Z"
+                                    clip-rule="evenodd" />
+                            </svg>
+                            <span class="sr-only">Instagram page</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    
+    
+        <!-- End Footer -->
+    
+        {% endblock %}
+        {% block extra_js %}
+        {% endblock %}
+        {% block core_js %}
+        <script src="{% static 'js/index.js' %}"></script>
+        <!-- Flowbite JS Script -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.2.1/flowbite.min.js"></script>
+        <!-- FontAwesome Script-->
+        <script src="https://kit.fontawesome.com/0d2ad6c609.js" crossorigin="anonymous"></script>
+        <!-- Stripe Script -->
+        <script src="https://js.stripe.com/v3/"></script>
+        {% endblock %}
+        {% block postloadjs %}
+        {% endblock %}
     </body>
+    
+    </html>
 </html>
