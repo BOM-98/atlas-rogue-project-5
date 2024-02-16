@@ -18,6 +18,7 @@ defusedxml==0.7.1
 dj-database-url==2.1.0
 Django==4.2.7
 django-allauth==0.58.2
+django-countries==7.2.1
 django-crispy-forms==2.1
 fake-useragent==1.4.0
 gunicorn==21.2.0
