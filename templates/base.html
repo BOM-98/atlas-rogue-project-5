@@ -238,11 +238,13 @@
                 <!-- End Account Dropdown -->
 
                 <!--Wishlist-->
+                <a href="{% url 'wishlist' %}">
                 <img loading="lazy" src="{% static 'img/icons/Wishlist.svg' %}"
-                    class="aspect-square object-contain object-center w-[25px] sm:w-[31px] overflow-hidden self-center shrink-0 max-w-full my-auto mx-2" />
+                    class="aspect-square object-contain object-center w-[25px] sm:w-[31px] overflow-hidden self-center shrink-0 max-w-full my-auto mx-2 hover:scale-105" />
+                </a>
                 <!-- End Wishlist -->
                 <!-- Cart -->
-                <a class="{% if grand_total %}text-info font-weight-bold{% else %}{% endif %} nav-link self-center text-base text-neutral-400 hover:text-primary-600"
+                <a class="{% if grand_total %}text-info font-weight-bold{% else %}{% endif %} nav-link self-center text-base text-neutral-400 hover:text-primary-600 hover:scale-105"
                     href="{% url 'view_bag' %}">
                     <div class="flex flex-row items-center text-center my-auto">
                         <div><img loading="lazy" src="{% static 'img/icons/cart.svg' %}"
