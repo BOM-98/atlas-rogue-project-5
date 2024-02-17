@@ -142,6 +142,12 @@
       {% endif %}
       <div class="self-stretch text-black text-lg font-normal my-1">{{ product.price }} <span
           class="text-gray text-sm">/ day</span></div>
+      {% if request.user.is_superuser %}
+      <div class="flex flex-row justify-start items-start gap-4">
+        <a href="{% url 'edit_product' product.id %}" class="hover:text-blue-800 text-blue-400 rounded py-2 my-4">Edit</a>
+        <a href="{% url 'delete_product' product.id %}" class="hover:text-red-800 text-red-400 rounded py-2 my-4">Delete</a>
+      </div>
+      {% endif %}
     </div>
   </div>
   {% endfor %}

@@ -9,7 +9,7 @@
 {% block content %}
 
 <!-- First Container -->
-<div class="py-10 justify-center items-center flex flex-row">
+<div class="py-10 justify-center items-center flex flex-row w-full">
 
   <!-- Second Container -->
   <div class="justify-center items-center md:justify-start md:items-start flex flex-col md:flex-row gap-8 lg:gap-24">
@@ -17,7 +17,7 @@
     <!-- Product Image -->
 
         {% if product.image %}
-          <img src="{{ product.image.url }}" alt="{{ product.name }}" class="h-[375px] md:h-[563px] md:max-w-1/2 lg:h-[750px] object-fit rounded-md">
+          <img src="{{ product.image.url }}" alt="{{ product.name }}" class=" h-[375px] md:h-[563px] lg:h-[750px] max-w-[500px]  object-cover rounded-md">
         {% else %}
           <!-- Placeholder image or no image message -->
           <img src="{% static 'img/placeholder/woman-clothes.svg' %}" alt="{{ product.name }}" class="h-[375px] object-cover rounded-md">
@@ -99,9 +99,15 @@
               <p class="opacity-50 text-primary-600 text-sm font-normal underline">Free
                 Returns</p>
             </div>
+            {% if request.user.is_superuser %}
+              <div class="flex flex-row justify-center items-center gap-4">
+                <a href="{% url 'edit_product' product.id %}" class="hover:text-blue-800 text-blue-400 rounded py-2 my-4">Edit</a>
+                <a href="{% url 'delete_product' product.id %}" class="hover:text-red-800 text-red-400 rounded py-2 my-4">Delete</a>
+              </div>
+            {% endif %}
 
             <!-- Keep Shopping Button -->
-            <a href="{% url 'products' %}" class="inline-block text-primary-600 mx-5 px-3 py-2 hover:border hover:border-primary-600 rounded-md">
+            <a href="{% url 'products' %}" class="inline-block text-primary-600 text-center mx-5 px-3 py-2 hover:border hover:border-primary-600 rounded-md">
               <span class="icon">
                 <i class="fas fa-chevron-left"></i>
               </span>
