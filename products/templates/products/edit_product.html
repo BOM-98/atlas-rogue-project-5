@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+{% load static %}
+{% load tailwind_filters %}
+
+{% block content %}
+<div class="overlay"></div>
+<div class="container mx-auto px-4">
+    <div class="flex flex-wrap -mx-4">
+        <div class="px-4 w-full">
+            <hr class="my-4">
+            <h2 class="font-semibold text-2xl mb-4">Product Management</h2>
+            <h3 class="font-semibold text-secondaryGray-500 text-l mb-4">Edit Product</h3>
+            <hr class="my-4">
+        </div>
+    </div>
+    <div class="flex flex-wrap w-1/2">
+        <div class="px-4 w-full order-last mb-5">
+            <form method="POST" enctype="multipart/form-data" action="{% url 'edit_product' product.id %}">
+                {% csrf_token %}
+                {{ form|crispy }}
+                <div class="flex flex-row gap-2"> <a href="{% url 'products' %}"
+                        class="bg-secondaryGray-500 hover:bg-gray-700 text-white rounded py-2 px-4 my-4">Cancel</a>
+                    <button type="submit"
+                        class="bg-primary-500 hover:bg-primary-700 text-white rounded py-2 px-4 my-4">Update Product</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    {% endblock %}
