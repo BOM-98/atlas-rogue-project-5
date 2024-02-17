@@ -1,4 +1,4 @@
-from django
+from django import forms
 from .models import Product, Category
 
 class ProductForm(forms.ModelForm):
