@@ -36,7 +36,7 @@
                                 {% if item.product.image %}
                                     <img class="w-full" src="{{ product.image.url }}" alt="{{ item.product.name }}">
                                 {% else %}
-                                    <img class="w-full" src="{{ MEDIA_URL }}noimage.png" alt="{{ item.product.name }}">
+                                    <img class="w-full" src="{% static 'img/placeholder/woman-clothes.svg' %}" alt="{{ item.product.name }}">
                                 {% endif %}
                             </a>
                         </div>

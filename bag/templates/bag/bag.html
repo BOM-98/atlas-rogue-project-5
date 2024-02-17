@@ -34,7 +34,12 @@
             <div
                 class="w-1/6 min-w-32 h-[150px] rounded-md border border-secondary-400 overflow-hidden justify-start inline-flex">
                 <div class="flex justify-center items-center">
+                    {% if product.image %}
                     <img src="{{ product.image.url }}" alt="" class="w-full object-fit rounded-md">
+                    {% else %}
+                    <!-- Placeholder image or no image message -->
+                    <img src="{% static 'img/placeholder/woman-clothes.svg' %}" alt="" class="h-96 object-fit rounded-md">
+                    {% endif %}
                 </div>
             </div>
             <!-- Description -->
@@ -99,7 +104,7 @@
         {% endif %}
 
 
-        <a href="#" class="flex font-semibold text-primary-600 text-sm mt-10">
+        <a href="{% url 'products' %}" class="flex font-semibold text-primary-600 text-sm mt-10">
 
             <svg class="fill-current mr-2 text-primary-600 w-4" viewBox="0 0 448 512">
                 <path

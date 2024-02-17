@@ -1,3 +1,4 @@
+{% load static %}
 <div id="toast-success"
     class="flex items-center w-full p-4 mb-4 text-green-800 border-2 border-green-800 font-extrabold bg-white rounded-lg shadow" role="alert">
     <div class="inline-flex items-center justify-center flex-shrink-0 w-8 h-8 rounded-lg bg-green-800 text-green-200">
@@ -22,8 +23,12 @@
                 {% for item in bag_items %}
                 <div class="flex flex-col sm:flex-row flex-wrap mb-4">
                     <div class="w-1/4 p-1">
-                        <img class="max-w-[50px] px-2" src="{{ product.image.url }}"
+                        {% if item.product.image and item.product.image.url %}
+                            <img class="max-w-[50px] px-2" src="{{ product.image.url }}"
                             alt="{{ item.product.name }}">
+                        {% else %}
+                            <img class="max-w-[50px] px-2" src="{% static 'img/placeholder/woman-clothes.svg' %}" alt="{{ item.product.name }}">
+                        {% endif %}
                     </div>
                     <div class="w-3/4 p-1">
                         <p class="mb-0 font-semibold text-sm">{{ item.product.name }}</p>
