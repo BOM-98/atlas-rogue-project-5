@@ -5,6 +5,8 @@ from .models import Product, Category
 from django.db.models.functions import Lower
 from .forms import ProductForm
 from django.contrib.auth.decorators import login_required
+from wishlist.models import Wishlist
+from profiles.models import UserProfile
 
 # Create your views here.
 def all_products(request):
@@ -18,6 +20,8 @@ def all_products(request):
     categories = None
     sort = None
     direction = None
+    user_profile = UserProfile.objects.get(user=request.user)
+    wishlist = Wishlist.objects.get(user=user_profile)
     
     unique_category_ids = products.values_list('category', flat=True).distinct()
     categories = Category.objects.filter(id__in=unique_category_ids)
@@ -68,6 +72,7 @@ def all_products(request):
         'current_categories': categories,
         'current_designers': designers,
         'current_sorting': current_sorting,
+        'wishlist': wishlist,
     }
     return render(request, "products/products.html", context)
 
