@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+{% block title %}Contact{% endblock %}
+
+{% block content %}
+<hr class="my-4">
+<h1 class="font-semibold text-2xl mb-4">Contact Us</h1>
+<hr class="my-4">
+<p class="my-2">Want to get in touch? Please fill out the form below to contact us.</p>
+<hr class="my-4">
+<form method="post" class="mt-4">
+    {% csrf_token %}
+    {{ form|crispy }}
+    <button type="submit" class="bg-primary-500 hover:bg-primary-700 text-white rounded py-2 px-4 my-4">Send</button>
+</form>
+{% endblock %}
