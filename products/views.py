@@ -20,11 +20,17 @@ def all_products(request):
     categories = None
     sort = None
     direction = None
-    user_profile = UserProfile.objects.get(user=request.user)
-    wishlist = Wishlist.objects.get(user=user_profile)
+    wishlist = None
     
     unique_category_ids = products.values_list('category', flat=True).distinct()
     categories = Category.objects.filter(id__in=unique_category_ids)
+    
+    # Only attempt to get the user's profile and wishlist if the user is authenticated
+    if request.user.is_authenticated:
+        user_profile = UserProfile.objects.get(user=request.user)
+        wishlist, created = Wishlist.objects.get_or_create(user=user_profile)
+    else:
+        wishlist = None  # Wishlist remains None if the user is not authenticated
     
     if request.GET:
         if 'sort' in request.GET:

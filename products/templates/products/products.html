@@ -136,17 +136,24 @@
         <!-- End Product Name -->
         <div class="w-4 h-4 relative"></div>
         <div class="h-5 justify-center items-start gap-2.5 flex">
-          {% if product in wishlist.products.all %}
-          <a href="{% url 'remove_from_wishlist' product.id %}">
-            <img loading="lazy" src="{% static 'img/icons/heart-full.svg' %}"
-              class="aspect-square object-contain object-center w-[25px] min-w-[25px] overflow-hidden self-center shrink-0 max-w-full my-auto mx-2" />
-          </a>
+          {% if user.is_authenticated and wishlist %}
+            {% if product in wishlist.products.all %}
+              <a href="{% url 'remove_from_wishlist' product.id %}">
+                <img loading="lazy" src="{% static 'img/icons/heart-full.svg' %}"
+                  class="aspect-square object-contain object-center w-[25px] min-w-[25px] overflow-hidden self-center shrink-0 max-w-full my-auto mx-2" />
+              </a>
+            {% else %}
+              <a href="{% url 'add_to_wishlist' product.id %}">
+                <img loading="lazy" src="{% static 'img/icons/Wishlist.svg' %}"
+                    class="aspect-square object-contain object-center w-[25px] min-w-[25px] overflow-hidden self-center shrink-0 max-w-full my-auto mx-2" />
+              </a>
+            {% endif %}
           {% else %}
-          <a href="{% url 'add_to_wishlist' product.id %}">
-            <img loading="lazy" src="{% static 'img/icons/Wishlist.svg' %}"
-                class="aspect-square object-contain object-center w-[25px] min-w-[25px] overflow-hidden self-center shrink-0 max-w-full my-auto mx-2" />
+            <a href="{% url 'add_to_wishlist' product.id %}">
+              <img loading="lazy" src="{% static 'img/icons/Wishlist.svg' %}"
+                  class="aspect-square object-contain object-center w-[25px] min-w-[25px] overflow-hidden self-center shrink-0 max-w-full my-auto mx-2" />
             </a>
-          {% endif %}
+        {% endif %}
         </div>
       </div>
       <div class="self-stretch text-secondaryGrey-400 text-sm font-normal my-1">{{ product.designer }}</div>
