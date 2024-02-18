@@ -2,6 +2,7 @@ from decimal import Decimal
 from django.conf import settings
 from django.shortcuts import get_object_or_404
 from products.models import Product
+from datetime import datetime
 
 def bag_contents(request):
     """
@@ -12,16 +13,20 @@ def bag_contents(request):
     product_count = 0
     bag = request.session.get("bag", {})
     
-    for item_id, quantity in bag.items():
+    for item_id, item_data in bag.items():
         product = get_object_or_404(Product, pk=item_id)
-        item_total = quantity * product.price
-        total += quantity * product.price
-        product_count += quantity
+        start_date = item_data['start_date']
+        end_date = item_data['end_date']
+        item_total = item_data['quantity'] * product.price
+        total += item_data['quantity'] * product.price
+        product_count += item_data['quantity']
         bag_items.append({
             "item_id": item_id,
-            "quantity": quantity,
+            "quantity": item_data['quantity'],
             "product": product,
             "item_total": item_total,
+            "start_date": start_date,
+            "end_date": end_date,
         })
     
     if total < settings.FREE_DELIVERY_THRESHOLD:

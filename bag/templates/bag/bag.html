@@ -20,7 +20,7 @@
             <!-- Details & Items -->
             <h3 class="font-semibold text-gray-600 text-xs uppercase w-1/2">Product Details</h3>
             <div class="w-1/2 px-1">
-                <h3 class="font-semibold text-end text-gray-600 text-xs uppercase  text-center">Total</h3>
+                <h3 class="font-semibold text-end text-gray-600 text-xs uppercase text-center hidden md:block">Total</h3>
             </div>
         </div>
 
@@ -29,7 +29,7 @@
         {% with product=item.product %}
 
         <!-- Image & Description -->
-        <div class="w-full h-fit py-2.5 border-b border-zinc-300 justify-between items-start inline-flex">
+        <div class="w-full h-fit py-2.5 border-b border-zinc-300 justify-between items-start inline-flex flex-wrap">
             <!-- Image -->
             <div
                 class="w-1/6 min-w-32 h-[150px] rounded-md border border-secondary-400 overflow-hidden justify-start inline-flex">
@@ -44,41 +44,23 @@
             </div>
             <!-- Description -->
             <div class="w-1/4 flex-col justify-start items-start gap-2.5 inline-flex">
-                <h3 class="text-black text-sm font-normal">{{ product.name }}</h3>
-                <div class="text-neutral-400 text-xs font-normal">{{ product.size }}</div>
-                <div class="text-black text-sm font-extrabold">{{ product.price }}</div>
+                <h3 class="text-black text-sm font-semibold">{{ product.name }}</h3>
+                <p class="text-neutral-400 text-xs font-normal hidden md:block">{{ product.size }}</p>
+                <p class="text-black text-sm font-semi-bold">€{{ product.price }} / day</p>
+                <h3 class="text-black text-sm font-semibold sm:hidden">Days: {{ item.quantity }}</h3>
             </div>
 
-            <!-- Quantity Input -->
-            <div class="w-1/4 h-full px-5 justify-center items-center gap-5 flex">
-                <form class="max-w-xs mx-auto h-full">
-                    <div class="relative flex items-center">
-                        <button type="button" id="decrement-button" data-input-counter-decrement="counter-input"
-                            class="flex-shrink-0 bg-gray-100 hover:bg-gray-200 inline-flex items-center justify-center border border-gray-300 rounded-md h-5 w-5 focus:ring-gray-100 dark:focus:ring-gray-700 focus:ring-2 focus:outline-none">
-                            <svg class="w-2.5 h-2.5 text-gray-900" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
-                                fill="none" viewBox="0 0 18 2">
-                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
-                                    stroke-width="2" d="M1 1h16" />
-                            </svg>
-                        </button>
-                        <input type="text" id="counter-input" data-input-counter
-                            class="flex-shrink-0 text-gray-900 border-0 bg-transparent text-sm font-normal focus:outline-none focus:ring-0 max-w-[2.5rem] text-center"
-                            placeholder="" value="{{ item.quantity }}" required>
-                        <button type="button" id="increment-button" data-input-counter-increment="counter-input"
-                            class="flex-shrink-0 bg-gray-100 hover:bg-gray-200 inline-flex items-center justify-center border border-gray-300 rounded-md h-5 w-5 focus:ring-gray-100 dark:focus:ring-gray-700 focus:ring-2 focus:outline-none">
-                            <svg class="w-2.5 h-2.5 text-gray-900" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
-                                fill="none" viewBox="0 0 18 18">
-                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
-                                    stroke-width="2" d="M9 1v16M1 9h16" />
-                            </svg>
-                        </button>
-                    </div>
-                </form>
+            <!-- Days Display -->
+            <div class="w-1/4 flex-col h-full px-5 justify-center items-center gap-2 hidden sm:flex">
+                <h3 class="text-black text-sm font-semibold">Days: {{ item.quantity }}</h3>
+                <p class="text-black text-sm font-normal p-1 border rounded-md">{{ item.start_date }}</p>
+                <p>-</p>
+                <p class="text-black text-sm font-normal p-1 border rounded-md">{{ item.end_date }}</p>
             </div>
-            <!-- End Quantity Input -->
+            <!-- End Days Display -->
 
             <!-- Total & Delete -->
-            <div class="flex flex-col gap-8 justify-center align-center h-full">
+            <div class="flex flex-col gap-8 justify-center align-center h-full hidden sm:flex">
                 <!-- Total -->
                 <div class="flex flex-col h-full gap-2.5 justify-start align-start">
                     <p>{{ item.item_total }}</p>
@@ -86,14 +68,30 @@
                 <!-- Edit -->
                 <div>
                     <a href="{% url 'remove_from_bag' product.id %}" id="remove_{{ item.item_id }}">
-                        <p class="text-primary-600 text-sm">Delete</p>
+                        <p class="text-primary-600 text-sm mb-3">Delete</p>
                     </a>
                     <a href="{% url 'product_detail' product.id %}">
-                        <p class="text-grey-600 text-sm">Edit</p>
+                        <p class="text-grey-600 text-sm mb-3">Edit</p>
                     </a>
                 </div>
             </div>
             <!-- End Total & Delete -->
+        </div>
+        <!-- Total & Delete -->
+        <div class="flex flex-row gap-8 justify-center align-center h-full sm:hidden">
+            <!-- Edit -->
+            <div class="flex flex-row gap-4">
+                <a href="{% url 'remove_from_bag' product.id %}" id="remove_{{ item.item_id }}">
+                    <p class="text-primary-600 text-sm mb-3">Delete</p>
+                </a>
+                <a href="{% url 'product_detail' product.id %}">
+                    <p class="text-grey-600 text-sm mb-3">Edit</p>
+                </a>
+            </div>
+            <!-- Total -->
+            <div class="flex flex-col h-full text-sm gap-2.5 justify-start align-start">
+                <p>Item Total: {{ item.item_total }}</p>
+            </div>
         </div>
         <!-- End Image & Description -->
 
@@ -117,33 +115,36 @@
     <div id="summary" class="w-full md:w-1/4 px-8 py-10">
         <h1 class="font-semibold text-2xl border-b pb-8">Order Summary</h1>
         <div class="flex justify-between mt-10 mb-5">
-            <span class="font-semibold text-sm uppercase">Items 3</span>
+            <span class="font-semibold text-sm uppercase">Items {{ bag_items|length }}</span>
             <span class="font-semibold text-sm">€ {{ total }}</span>
         </div>
+        <div class="flex justify-between mt-10 mb-5">
+            <span class="font-semibold text-sm uppercase">Shipping Fee:</span>
+            {% if free_delivery_delta > 0 %}
+            <span class="font-semibold text-sm">10%</span>
+            {% else %}
+            <span class="font-semibold text-sm">Free</span>
+            {% endif %}
+        </div>
+        <div class="flex justify-between mt-10 mb-5">
+            <span class="font-semibold text-sm uppercase">Shipping Cost:</span>
+            <span class="font-semibold text-sm">€{{ delivery|floatformat:2 }}</span>
+        </div>
         <div>
-            <label class="font-medium inline-block mb-3 text-sm uppercase">Shipping</label>
-            <select class="block p-2 text-gray-600 w-full text-sm">
-                <option>Standard shipping - $10.00</option>
-            </select>
+            {% if free_delivery_delta > 0 %}
+            <p class="mb-1 text-sm text-grey-900">
+                You could get free delivery by spending just <strong>€{{ free_delivery_delta }}</strong> more!
+            </p>
+            {% endif %}
         </div>
-        <div class="py-10">
-            <label for="promo" class="font-semibold inline-block mb-3 text-sm uppercase">Promo Code</label>
-            <input type="text" id="promo" placeholder="Enter your code" class="p-2 text-sm w-full">
-        </div>
-        <button class="bg-red-500 hover:bg-red-600 px-5 py-2 text-sm text-white uppercase">Apply</button>
         <div class="border-t mt-8">
             <div class="flex font-semibold justify-between py-6 text-sm uppercase">
                 <span>Total cost</span>
-                <span>$600</span>
+                <span>€{{ grand_total|floatformat:2 }}</span>
             </div>
-            {% if free_delivery_delta > 0 %}
-            <p class="mb-1 text-red-500">
-                You could get free delivery by spending just <strong>${{ free_delivery_delta }}</strong> more!
-            </p>
-            {% endif %}
             <a href="{% url 'checkout' %}">
             <button
-                class="bg-indigo-500 font-semibold hover:bg-indigo-600 py-3 text-sm text-white uppercase w-full mt-5">Checkout</button>
+                class="bg-primary-500 font-semibold hover:bg-primary-600 rounded-md py-3 text-sm text-white uppercase w-full mt-5">Checkout</button>
             </a>
         </div>
     </div>
