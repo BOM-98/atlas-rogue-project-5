@@ -1,0 +1,6 @@
+User-agent: *
+Disallow: /accounts/
+Disallow: /bag/
+Sitemap: https://atlas-rogue-09e759974ffc.herokuapp.com/sitemap.xml
+
+

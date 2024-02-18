@@ -1,0 +1,1007 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset
+      xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
+            http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+<!-- created with Free Online Sitemap Generator www.xml-sitemaps.com -->
+
+
+<url>
+  <loc>https://atlas-rogue-09e759974ffc.herokuapp.com/</loc>
+  <lastmod>2024-02-18T21:51:00+00:00</lastmod>
+  <priority>1.00</priority>
+</url>
+<url>
+  <loc>https://atlas-rogue-09e759974ffc.herokuapp.com/products/</loc>
+  <lastmod>2024-02-18T21:51:00+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://atlas-rogue-09e759974ffc.herokuapp.com/products/?category=dresses</loc>
+  <lastmod>2024-02-18T21:51:00+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://atlas-rogue-09e759974ffc.herokuapp.com/products/?category=skirts</loc>
+  <lastmod>2024-02-18T21:51:00+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://atlas-rogue-09e759974ffc.herokuapp.com/products/?category=tops</loc>
+  <lastmod>2024-02-18T21:51:00+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://atlas-rogue-09e759974ffc.herokuapp.com/products/?category=bags</loc>
+  <lastmod>2024-02-18T21:51:00+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://atlas-rogue-09e759974ffc.herokuapp.com/products/?category=blazers</loc>
+  <lastmod>2024-02-18T21:51:00+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://atlas-rogue-09e759974ffc.herokuapp.com/products/?category=hats</loc>
+  <lastmod>2024-02-18T21:51:00+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://atlas-rogue-09e759974ffc.herokuapp.com/products/?designer=Ganni</loc>
+  <lastmod>2024-02-18T21:51:00+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://atlas-rogue-09e759974ffc.herokuapp.com/products/?designer=Rixo</loc>
+  <lastmod>2024-02-18T21:51:00+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://atlas-rogue-09e759974ffc.herokuapp.com/products/?designer=Shrimps</loc>
+  <lastmod>2024-02-18T21:51:00+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://atlas-rogue-09e759974ffc.herokuapp.com/products/?designer=Stine%20Goya</loc>
+  <lastmod>2024-02-18T21:51:00+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://atlas-rogue-09e759974ffc.herokuapp.com/products/?designer=Self%20Portrait</loc>
+  <lastmod>2024-02-18T21:51:00+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://atlas-rogue-09e759974ffc.herokuapp.com/products/?designer=Rotate</loc>
+  <lastmod>2024-02-18T21:51:00+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://atlas-rogue-09e759974ffc.herokuapp.com/products/?designer=Ghost</loc>
+  <lastmod>2024-02-18T21:51:00+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://atlas-rogue-09e759974ffc.herokuapp.com/products/?designer=Faithful%20The%20Brand</loc>
+  <lastmod>2024-02-18T21:51:00+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://atlas-rogue-09e759974ffc.herokuapp.com/products/?designer=The%20Frankie%20Shop</loc>
+  <lastmod>2024-02-18T21:51:00+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://atlas-rogue-09e759974ffc.herokuapp.com/contact/contact_form/</loc>
+  <lastmod>2024-02-18T21:51:00+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://atlas-rogue-09e759974ffc.herokuapp.com/accounts/signup/</loc>
+  <lastmod>2024-02-18T21:51:00+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://atlas-rogue-09e759974ffc.herokuapp.com/accounts/login/</loc>
+  <lastmod>2024-02-18T21:51:00+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://atlas-rogue-09e759974ffc.herokuapp.com/accounts/login/?next=/wishlist/view_wishlist/</loc>
+  <lastmod>2024-02-18T21:51:00+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://atlas-rogue-09e759974ffc.herokuapp.com/bag/</loc>
+  <lastmod>2024-02-18T21:51:00+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://atlas-rogue-09e759974ffc.herokuapp.com/products/?category=other</loc>
+  <lastmod>2024-02-18T21:51:00+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://atlas-rogue-09e759974ffc.herokuapp.com/products/?sort=price&amp;direction=desc</loc>
+  <lastmod>2024-02-18T21:51:00+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://atlas-rogue-09e759974ffc.herokuapp.com/products/?sort=price&amp;direction=asc</loc>
+  <lastmod>2024-02-18T21:51:00+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://atlas-rogue-09e759974ffc.herokuapp.com/products/?sort=name&amp;direction=asc</loc>
+  <lastmod>2024-02-18T21:51:00+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://atlas-rogue-09e759974ffc.herokuapp.com/products/?sort=name&amp;direction=desc</loc>
+  <lastmod>2024-02-18T21:51:00+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://atlas-rogue-09e759974ffc.herokuapp.com/products/?sort=category&amp;direction=asc</loc>
+  <lastmod>2024-02-18T21:51:00+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://atlas-rogue-09e759974ffc.herokuapp.com/products/?sort=category&amp;direction=desc</loc>
+  <lastmod>2024-02-18T21:51:00+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://atlas-rogue-09e759974ffc.herokuapp.com/products/10/</loc>
+  <lastmod>2024-02-18T21:51:00+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://atlas-rogue-09e759974ffc.herokuapp.com/accounts/login/?next=/wishlist/add_to_wishlist/10</loc>
+  <lastmod>2024-02-18T21:51:00+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://atlas-rogue-09e759974ffc.herokuapp.com/products/1/</loc>
+  <lastmod>2024-02-18T21:51:00+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://atlas-rogue-09e759974ffc.herokuapp.com/accounts/login/?next=/wishlist/add_to_wishlist/1</loc>
+  <lastmod>2024-02-18T21:51:00+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://atlas-rogue-09e759974ffc.herokuapp.com/products/2/</loc>
+  <lastmod>2024-02-18T21:51:00+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://atlas-rogue-09e759974ffc.herokuapp.com/accounts/login/?next=/wishlist/add_to_wishlist/2</loc>
+  <lastmod>2024-02-18T21:51:00+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://atlas-rogue-09e759974ffc.herokuapp.com/products/3/</loc>
+  <lastmod>2024-02-18T21:51:00+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://atlas-rogue-09e759974ffc.herokuapp.com/accounts/login/?next=/wishlist/add_to_wishlist/3</loc>
+  <lastmod>2024-02-18T21:51:00+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://atlas-rogue-09e759974ffc.herokuapp.com/products/4/</loc>
+  <lastmod>2024-02-18T21:51:00+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://atlas-rogue-09e759974ffc.herokuapp.com/accounts/login/?next=/wishlist/add_to_wishlist/4</loc>
+  <lastmod>2024-02-18T21:51:00+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://atlas-rogue-09e759974ffc.herokuapp.com/products/5/</loc>
+  <lastmod>2024-02-18T21:51:00+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://atlas-rogue-09e759974ffc.herokuapp.com/accounts/login/?next=/wishlist/add_to_wishlist/5</loc>
+  <lastmod>2024-02-18T21:51:00+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://atlas-rogue-09e759974ffc.herokuapp.com/products/6/</loc>
+  <lastmod>2024-02-18T21:51:00+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://atlas-rogue-09e759974ffc.herokuapp.com/accounts/login/?next=/wishlist/add_to_wishlist/6</loc>
+  <lastmod>2024-02-18T21:51:00+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://atlas-rogue-09e759974ffc.herokuapp.com/products/7/</loc>
+  <lastmod>2024-02-18T21:51:00+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://atlas-rogue-09e759974ffc.herokuapp.com/accounts/login/?next=/wishlist/add_to_wishlist/7</loc>
+  <lastmod>2024-02-18T21:51:00+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://atlas-rogue-09e759974ffc.herokuapp.com/products/8/</loc>
+  <lastmod>2024-02-18T21:51:00+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://atlas-rogue-09e759974ffc.herokuapp.com/accounts/login/?next=/wishlist/add_to_wishlist/8</loc>
+  <lastmod>2024-02-18T21:51:00+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://atlas-rogue-09e759974ffc.herokuapp.com/products/9/</loc>
+  <lastmod>2024-02-18T21:51:00+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://atlas-rogue-09e759974ffc.herokuapp.com/accounts/login/?next=/wishlist/add_to_wishlist/9</loc>
+  <lastmod>2024-02-18T21:51:00+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://atlas-rogue-09e759974ffc.herokuapp.com/products/11/</loc>
+  <lastmod>2024-02-18T21:51:00+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://atlas-rogue-09e759974ffc.herokuapp.com/accounts/login/?next=/wishlist/add_to_wishlist/11</loc>
+  <lastmod>2024-02-18T21:51:00+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://atlas-rogue-09e759974ffc.herokuapp.com/products/12/</loc>
+  <lastmod>2024-02-18T21:51:00+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://atlas-rogue-09e759974ffc.herokuapp.com/accounts/login/?next=/wishlist/add_to_wishlist/12</loc>
+  <lastmod>2024-02-18T21:51:00+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://atlas-rogue-09e759974ffc.herokuapp.com/products/13/</loc>
+  <lastmod>2024-02-18T21:51:00+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://atlas-rogue-09e759974ffc.herokuapp.com/accounts/login/?next=/wishlist/add_to_wishlist/13</loc>
+  <lastmod>2024-02-18T21:51:00+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://atlas-rogue-09e759974ffc.herokuapp.com/products/14/</loc>
+  <lastmod>2024-02-18T21:51:00+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://atlas-rogue-09e759974ffc.herokuapp.com/accounts/login/?next=/wishlist/add_to_wishlist/14</loc>
+  <lastmod>2024-02-18T21:51:00+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://atlas-rogue-09e759974ffc.herokuapp.com/products/15/</loc>
+  <lastmod>2024-02-18T21:51:00+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://atlas-rogue-09e759974ffc.herokuapp.com/accounts/login/?next=/wishlist/add_to_wishlist/15</loc>
+  <lastmod>2024-02-18T21:51:00+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://atlas-rogue-09e759974ffc.herokuapp.com/products/16/</loc>
+  <lastmod>2024-02-18T21:51:00+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://atlas-rogue-09e759974ffc.herokuapp.com/accounts/login/?next=/wishlist/add_to_wishlist/16</loc>
+  <lastmod>2024-02-18T21:51:00+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://atlas-rogue-09e759974ffc.herokuapp.com/products/17/</loc>
+  <lastmod>2024-02-18T21:51:00+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://atlas-rogue-09e759974ffc.herokuapp.com/accounts/login/?next=/wishlist/add_to_wishlist/17</loc>
+  <lastmod>2024-02-18T21:51:00+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://atlas-rogue-09e759974ffc.herokuapp.com/products/18/</loc>
+  <lastmod>2024-02-18T21:51:00+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://atlas-rogue-09e759974ffc.herokuapp.com/accounts/login/?next=/wishlist/add_to_wishlist/18</loc>
+  <lastmod>2024-02-18T21:51:00+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://atlas-rogue-09e759974ffc.herokuapp.com/products/19/</loc>
+  <lastmod>2024-02-18T21:51:00+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://atlas-rogue-09e759974ffc.herokuapp.com/accounts/login/?next=/wishlist/add_to_wishlist/19</loc>
+  <lastmod>2024-02-18T21:51:00+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://atlas-rogue-09e759974ffc.herokuapp.com/products/20/</loc>
+  <lastmod>2024-02-18T21:51:00+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://atlas-rogue-09e759974ffc.herokuapp.com/accounts/login/?next=/wishlist/add_to_wishlist/20</loc>
+  <lastmod>2024-02-18T21:51:00+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://atlas-rogue-09e759974ffc.herokuapp.com/products/21/</loc>
+  <lastmod>2024-02-18T21:51:00+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://atlas-rogue-09e759974ffc.herokuapp.com/accounts/login/?next=/wishlist/add_to_wishlist/21</loc>
+  <lastmod>2024-02-18T21:51:00+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://atlas-rogue-09e759974ffc.herokuapp.com/products/22/</loc>
+  <lastmod>2024-02-18T21:51:00+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://atlas-rogue-09e759974ffc.herokuapp.com/accounts/login/?next=/wishlist/add_to_wishlist/22</loc>
+  <lastmod>2024-02-18T21:51:00+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://atlas-rogue-09e759974ffc.herokuapp.com/products/23/</loc>
+  <lastmod>2024-02-18T21:51:00+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://atlas-rogue-09e759974ffc.herokuapp.com/accounts/login/?next=/wishlist/add_to_wishlist/23</loc>
+  <lastmod>2024-02-18T21:51:00+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://atlas-rogue-09e759974ffc.herokuapp.com/products/24/</loc>
+  <lastmod>2024-02-18T21:51:00+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://atlas-rogue-09e759974ffc.herokuapp.com/accounts/login/?next=/wishlist/add_to_wishlist/24</loc>
+  <lastmod>2024-02-18T21:51:00+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://atlas-rogue-09e759974ffc.herokuapp.com/products/25/</loc>
+  <lastmod>2024-02-18T21:51:00+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://atlas-rogue-09e759974ffc.herokuapp.com/accounts/login/?next=/wishlist/add_to_wishlist/25</loc>
+  <lastmod>2024-02-18T21:51:00+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://atlas-rogue-09e759974ffc.herokuapp.com/products/26/</loc>
+  <lastmod>2024-02-18T21:51:00+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://atlas-rogue-09e759974ffc.herokuapp.com/accounts/login/?next=/wishlist/add_to_wishlist/26</loc>
+  <lastmod>2024-02-18T21:51:00+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://atlas-rogue-09e759974ffc.herokuapp.com/products/27/</loc>
+  <lastmod>2024-02-18T21:51:00+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://atlas-rogue-09e759974ffc.herokuapp.com/accounts/login/?next=/wishlist/add_to_wishlist/27</loc>
+  <lastmod>2024-02-18T21:51:00+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://atlas-rogue-09e759974ffc.herokuapp.com/products/28/</loc>
+  <lastmod>2024-02-18T21:51:00+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://atlas-rogue-09e759974ffc.herokuapp.com/accounts/login/?next=/wishlist/add_to_wishlist/28</loc>
+  <lastmod>2024-02-18T21:51:00+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://atlas-rogue-09e759974ffc.herokuapp.com/products/29/</loc>
+  <lastmod>2024-02-18T21:51:00+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://atlas-rogue-09e759974ffc.herokuapp.com/accounts/login/?next=/wishlist/add_to_wishlist/29</loc>
+  <lastmod>2024-02-18T21:51:00+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://atlas-rogue-09e759974ffc.herokuapp.com/products/30/</loc>
+  <lastmod>2024-02-18T21:51:00+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://atlas-rogue-09e759974ffc.herokuapp.com/accounts/login/?next=/wishlist/add_to_wishlist/30</loc>
+  <lastmod>2024-02-18T21:51:00+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://atlas-rogue-09e759974ffc.herokuapp.com/products/31/</loc>
+  <lastmod>2024-02-18T21:51:00+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://atlas-rogue-09e759974ffc.herokuapp.com/accounts/login/?next=/wishlist/add_to_wishlist/31</loc>
+  <lastmod>2024-02-18T21:51:00+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://atlas-rogue-09e759974ffc.herokuapp.com/products/32/</loc>
+  <lastmod>2024-02-18T21:51:00+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://atlas-rogue-09e759974ffc.herokuapp.com/accounts/login/?next=/wishlist/add_to_wishlist/32</loc>
+  <lastmod>2024-02-18T21:51:00+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://atlas-rogue-09e759974ffc.herokuapp.com/products/33/</loc>
+  <lastmod>2024-02-18T21:51:00+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://atlas-rogue-09e759974ffc.herokuapp.com/accounts/login/?next=/wishlist/add_to_wishlist/33</loc>
+  <lastmod>2024-02-18T21:51:00+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://atlas-rogue-09e759974ffc.herokuapp.com/products/34/</loc>
+  <lastmod>2024-02-18T21:51:00+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://atlas-rogue-09e759974ffc.herokuapp.com/accounts/login/?next=/wishlist/add_to_wishlist/34</loc>
+  <lastmod>2024-02-18T21:51:00+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://atlas-rogue-09e759974ffc.herokuapp.com/products/35/</loc>
+  <lastmod>2024-02-18T21:51:00+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://atlas-rogue-09e759974ffc.herokuapp.com/accounts/login/?next=/wishlist/add_to_wishlist/35</loc>
+  <lastmod>2024-02-18T21:51:00+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://atlas-rogue-09e759974ffc.herokuapp.com/products/36/</loc>
+  <lastmod>2024-02-18T21:51:00+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://atlas-rogue-09e759974ffc.herokuapp.com/accounts/login/?next=/wishlist/add_to_wishlist/36</loc>
+  <lastmod>2024-02-18T21:51:00+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://atlas-rogue-09e759974ffc.herokuapp.com/products/37/</loc>
+  <lastmod>2024-02-18T21:51:00+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://atlas-rogue-09e759974ffc.herokuapp.com/accounts/login/?next=/wishlist/add_to_wishlist/37</loc>
+  <lastmod>2024-02-18T21:51:00+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://atlas-rogue-09e759974ffc.herokuapp.com/products/38/</loc>
+  <lastmod>2024-02-18T21:51:00+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://atlas-rogue-09e759974ffc.herokuapp.com/accounts/login/?next=/wishlist/add_to_wishlist/38</loc>
+  <lastmod>2024-02-18T21:51:00+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://atlas-rogue-09e759974ffc.herokuapp.com/products/39/</loc>
+  <lastmod>2024-02-18T21:51:00+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://atlas-rogue-09e759974ffc.herokuapp.com/accounts/login/?next=/wishlist/add_to_wishlist/39</loc>
+  <lastmod>2024-02-18T21:51:00+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://atlas-rogue-09e759974ffc.herokuapp.com/products/40/</loc>
+  <lastmod>2024-02-18T21:51:00+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://atlas-rogue-09e759974ffc.herokuapp.com/accounts/login/?next=/wishlist/add_to_wishlist/40</loc>
+  <lastmod>2024-02-18T21:51:00+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://atlas-rogue-09e759974ffc.herokuapp.com/products/41/</loc>
+  <lastmod>2024-02-18T21:51:00+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://atlas-rogue-09e759974ffc.herokuapp.com/accounts/login/?next=/wishlist/add_to_wishlist/41</loc>
+  <lastmod>2024-02-18T21:51:00+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://atlas-rogue-09e759974ffc.herokuapp.com/products/42/</loc>
+  <lastmod>2024-02-18T21:51:00+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://atlas-rogue-09e759974ffc.herokuapp.com/accounts/login/?next=/wishlist/add_to_wishlist/42</loc>
+  <lastmod>2024-02-18T21:51:00+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://atlas-rogue-09e759974ffc.herokuapp.com/products/43/</loc>
+  <lastmod>2024-02-18T21:51:00+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://atlas-rogue-09e759974ffc.herokuapp.com/accounts/login/?next=/wishlist/add_to_wishlist/43</loc>
+  <lastmod>2024-02-18T21:51:00+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://atlas-rogue-09e759974ffc.herokuapp.com/products/44/</loc>
+  <lastmod>2024-02-18T21:51:00+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://atlas-rogue-09e759974ffc.herokuapp.com/accounts/login/?next=/wishlist/add_to_wishlist/44</loc>
+  <lastmod>2024-02-18T21:51:00+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://atlas-rogue-09e759974ffc.herokuapp.com/products/45/</loc>
+  <lastmod>2024-02-18T21:51:00+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://atlas-rogue-09e759974ffc.herokuapp.com/accounts/login/?next=/wishlist/add_to_wishlist/45</loc>
+  <lastmod>2024-02-18T21:51:00+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://atlas-rogue-09e759974ffc.herokuapp.com/products/46/</loc>
+  <lastmod>2024-02-18T21:51:00+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://atlas-rogue-09e759974ffc.herokuapp.com/accounts/login/?next=/wishlist/add_to_wishlist/46</loc>
+  <lastmod>2024-02-18T21:51:00+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://atlas-rogue-09e759974ffc.herokuapp.com/products/47/</loc>
+  <lastmod>2024-02-18T21:51:00+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://atlas-rogue-09e759974ffc.herokuapp.com/accounts/login/?next=/wishlist/add_to_wishlist/49</loc>
+  <lastmod>2024-02-18T21:51:00+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://atlas-rogue-09e759974ffc.herokuapp.com/products/52/</loc>
+  <lastmod>2024-02-18T21:51:00+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://atlas-rogue-09e759974ffc.herokuapp.com/products/55/</loc>
+  <lastmod>2024-02-18T21:51:00+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://atlas-rogue-09e759974ffc.herokuapp.com/accounts/login/?next=/wishlist/add_to_wishlist/57</loc>
+  <lastmod>2024-02-18T21:51:00+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://atlas-rogue-09e759974ffc.herokuapp.com/products/60/</loc>
+  <lastmod>2024-02-18T21:51:00+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://atlas-rogue-09e759974ffc.herokuapp.com/accounts/login/?next=/wishlist/add_to_wishlist/65</loc>
+  <lastmod>2024-02-18T21:51:00+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://atlas-rogue-09e759974ffc.herokuapp.com/products/68/</loc>
+  <lastmod>2024-02-18T21:51:00+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://atlas-rogue-09e759974ffc.herokuapp.com/products/73/</loc>
+  <lastmod>2024-02-18T21:51:00+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://atlas-rogue-09e759974ffc.herokuapp.com/products/76/</loc>
+  <lastmod>2024-02-18T21:51:00+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://atlas-rogue-09e759974ffc.herokuapp.com/accounts/login/?next=/wishlist/add_to_wishlist/78</loc>
+  <lastmod>2024-02-18T21:51:00+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://atlas-rogue-09e759974ffc.herokuapp.com/accounts/login/?next=/wishlist/add_to_wishlist/83</loc>
+  <lastmod>2024-02-18T21:51:00+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://atlas-rogue-09e759974ffc.herokuapp.com/accounts/login/?next=/wishlist/add_to_wishlist/86</loc>
+  <lastmod>2024-02-18T21:51:00+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://atlas-rogue-09e759974ffc.herokuapp.com/products/89/</loc>
+  <lastmod>2024-02-18T21:51:00+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://atlas-rogue-09e759974ffc.herokuapp.com/accounts/login/?next=/wishlist/add_to_wishlist/94</loc>
+  <lastmod>2024-02-18T21:51:00+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://atlas-rogue-09e759974ffc.herokuapp.com/products/97/</loc>
+  <lastmod>2024-02-18T21:51:00+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://atlas-rogue-09e759974ffc.herokuapp.com/accounts/login/?next=/wishlist/add_to_wishlist/99</loc>
+  <lastmod>2024-02-18T21:51:00+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://atlas-rogue-09e759974ffc.herokuapp.com/products/102/</loc>
+  <lastmod>2024-02-18T21:51:00+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://atlas-rogue-09e759974ffc.herokuapp.com/products/105/</loc>
+  <lastmod>2024-02-18T21:51:00+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://atlas-rogue-09e759974ffc.herokuapp.com/accounts/login/?next=/wishlist/add_to_wishlist/107</loc>
+  <lastmod>2024-02-18T21:51:00+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://atlas-rogue-09e759974ffc.herokuapp.com/accounts/login/?next=/wishlist/add_to_wishlist/110</loc>
+  <lastmod>2024-02-18T21:51:00+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://atlas-rogue-09e759974ffc.herokuapp.com/products/113/</loc>
+  <lastmod>2024-02-18T21:51:00+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://atlas-rogue-09e759974ffc.herokuapp.com/products/116/</loc>
+  <lastmod>2024-02-18T21:51:00+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://atlas-rogue-09e759974ffc.herokuapp.com/accounts/login/?next=/wishlist/add_to_wishlist/118</loc>
+  <lastmod>2024-02-18T21:51:00+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://atlas-rogue-09e759974ffc.herokuapp.com/accounts/login/?next=/wishlist/add_to_wishlist/121</loc>
+  <lastmod>2024-02-18T21:51:00+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://atlas-rogue-09e759974ffc.herokuapp.com/products/124/</loc>
+  <lastmod>2024-02-18T21:51:00+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://atlas-rogue-09e759974ffc.herokuapp.com/products/127/</loc>
+  <lastmod>2024-02-18T21:51:00+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://atlas-rogue-09e759974ffc.herokuapp.com/accounts/login/?next=/wishlist/add_to_wishlist/129</loc>
+  <lastmod>2024-02-18T21:51:00+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://atlas-rogue-09e759974ffc.herokuapp.com/accounts/login/?next=/wishlist/add_to_wishlist/132</loc>
+  <lastmod>2024-02-18T21:51:00+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://atlas-rogue-09e759974ffc.herokuapp.com/accounts/login/?next=/wishlist/add_to_wishlist/135</loc>
+  <lastmod>2024-02-18T21:51:00+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://atlas-rogue-09e759974ffc.herokuapp.com/products/141/</loc>
+  <lastmod>2024-02-18T21:51:00+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://atlas-rogue-09e759974ffc.herokuapp.com/accounts/login/?next=/wishlist/add_to_wishlist/143</loc>
+  <lastmod>2024-02-18T21:51:00+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://atlas-rogue-09e759974ffc.herokuapp.com/products/146/</loc>
+  <lastmod>2024-02-18T21:51:00+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://atlas-rogue-09e759974ffc.herokuapp.com/products/149/</loc>
+  <lastmod>2024-02-18T21:51:00+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://atlas-rogue-09e759974ffc.herokuapp.com/accounts/login/?next=/wishlist/add_to_wishlist/151</loc>
+  <lastmod>2024-02-18T21:51:00+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://atlas-rogue-09e759974ffc.herokuapp.com/accounts/login/?next=/wishlist/add_to_wishlist/154</loc>
+  <lastmod>2024-02-18T21:51:00+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://atlas-rogue-09e759974ffc.herokuapp.com/products/160/</loc>
+  <lastmod>2024-02-18T21:51:00+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://atlas-rogue-09e759974ffc.herokuapp.com/accounts/login/?next=/wishlist/add_to_wishlist/162</loc>
+  <lastmod>2024-02-18T21:51:00+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://atlas-rogue-09e759974ffc.herokuapp.com/accounts/login/?next=/wishlist/add_to_wishlist/165</loc>
+  <lastmod>2024-02-18T21:51:00+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://atlas-rogue-09e759974ffc.herokuapp.com/products/168/</loc>
+  <lastmod>2024-02-18T21:51:00+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://atlas-rogue-09e759974ffc.herokuapp.com/accounts/login/?next=/wishlist/add_to_wishlist/170</loc>
+  <lastmod>2024-02-18T21:51:00+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://atlas-rogue-09e759974ffc.herokuapp.com/accounts/login/?next=/wishlist/add_to_wishlist/173</loc>
+  <lastmod>2024-02-18T21:51:00+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://atlas-rogue-09e759974ffc.herokuapp.com/products/176/</loc>
+  <lastmod>2024-02-18T21:51:00+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://atlas-rogue-09e759974ffc.herokuapp.com/accounts/login/?next=/wishlist/add_to_wishlist/181</loc>
+  <lastmod>2024-02-18T21:51:00+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://atlas-rogue-09e759974ffc.herokuapp.com/products/184/</loc>
+  <lastmod>2024-02-18T21:51:00+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://atlas-rogue-09e759974ffc.herokuapp.com/accounts/login/?next=/wishlist/add_to_wishlist/189</loc>
+  <lastmod>2024-02-18T21:51:00+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://atlas-rogue-09e759974ffc.herokuapp.com/accounts/login/?next=/wishlist/add_to_wishlist/192</loc>
+  <lastmod>2024-02-18T21:51:00+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://atlas-rogue-09e759974ffc.herokuapp.com/products/198/</loc>
+  <lastmod>2024-02-18T21:51:00+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://atlas-rogue-09e759974ffc.herokuapp.com/accounts/login/?next=/wishlist/add_to_wishlist/200</loc>
+  <lastmod>2024-02-18T21:51:00+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://atlas-rogue-09e759974ffc.herokuapp.com/products/203/</loc>
+  <lastmod>2024-02-18T21:51:00+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://atlas-rogue-09e759974ffc.herokuapp.com/products/206/</loc>
+  <lastmod>2024-02-18T21:51:00+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://atlas-rogue-09e759974ffc.herokuapp.com/accounts/login/?next=/wishlist/add_to_wishlist/208</loc>
+  <lastmod>2024-02-18T21:51:00+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://atlas-rogue-09e759974ffc.herokuapp.com/accounts/login/?next=/wishlist/add_to_wishlist/210</loc>
+  <lastmod>2024-02-18T21:51:00+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://atlas-rogue-09e759974ffc.herokuapp.com/accounts/login/?next=/wishlist/add_to_wishlist/213</loc>
+  <lastmod>2024-02-18T21:51:00+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://atlas-rogue-09e759974ffc.herokuapp.com/accounts/login/?next=/wishlist/add_to_wishlist/216</loc>
+  <lastmod>2024-02-18T21:51:00+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://atlas-rogue-09e759974ffc.herokuapp.com/products/224/</loc>
+  <lastmod>2024-02-18T21:51:00+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://atlas-rogue-09e759974ffc.herokuapp.com/accounts/login/?next=/wishlist/add_to_wishlist/226</loc>
+  <lastmod>2024-02-18T21:51:00+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://atlas-rogue-09e759974ffc.herokuapp.com/accounts/login/?next=/wishlist/add_to_wishlist/229</loc>
+  <lastmod>2024-02-18T21:51:00+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://atlas-rogue-09e759974ffc.herokuapp.com/products/234/</loc>
+  <lastmod>2024-02-18T21:51:00+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://atlas-rogue-09e759974ffc.herokuapp.com/accounts/login/?next=/wishlist/add_to_wishlist/236</loc>
+  <lastmod>2024-02-18T21:51:00+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://atlas-rogue-09e759974ffc.herokuapp.com/accounts/login/?next=/wishlist/add_to_wishlist/240</loc>
+  <lastmod>2024-02-18T21:51:00+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://atlas-rogue-09e759974ffc.herokuapp.com/accounts/password/reset/</loc>
+  <lastmod>2024-02-18T21:51:00+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://atlas-rogue-09e759974ffc.herokuapp.com/accounts/signup/?next=%2Fwishlist%2Fadd_to_wishlist%2F1</loc>
+  <lastmod>2024-02-18T21:51:00+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://atlas-rogue-09e759974ffc.herokuapp.com/accounts/signup/?next=%2Fwishlist%2Fadd_to_wishlist%2F13</loc>
+  <lastmod>2024-02-18T21:51:00+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://atlas-rogue-09e759974ffc.herokuapp.com/accounts/signup/?next=%2Fwishlist%2Fadd_to_wishlist%2F18</loc>
+  <lastmod>2024-02-18T21:51:00+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://atlas-rogue-09e759974ffc.herokuapp.com/accounts/signup/?next=%2Fwishlist%2Fadd_to_wishlist%2F24</loc>
+  <lastmod>2024-02-18T21:51:00+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://atlas-rogue-09e759974ffc.herokuapp.com/accounts/signup/?next=%2Fwishlist%2Fadd_to_wishlist%2F29</loc>
+  <lastmod>2024-02-18T21:51:00+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://atlas-rogue-09e759974ffc.herokuapp.com/accounts/signup/?next=%2Fwishlist%2Fadd_to_wishlist%2F35</loc>
+  <lastmod>2024-02-18T21:51:00+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://atlas-rogue-09e759974ffc.herokuapp.com/accounts/signup/?next=%2Fwishlist%2Fadd_to_wishlist%2F40</loc>
+  <lastmod>2024-02-18T21:51:00+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://atlas-rogue-09e759974ffc.herokuapp.com/accounts/signup/?next=%2Fwishlist%2Fadd_to_wishlist%2F46</loc>
+  <lastmod>2024-02-18T21:51:00+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://atlas-rogue-09e759974ffc.herokuapp.com/accounts/signup/?next=%2Fwishlist%2Fadd_to_wishlist%2F86</loc>
+  <lastmod>2024-02-18T21:51:00+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://atlas-rogue-09e759974ffc.herokuapp.com/accounts/signup/?next=%2Fwishlist%2Fadd_to_wishlist%2F110</loc>
+  <lastmod>2024-02-18T21:51:00+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://atlas-rogue-09e759974ffc.herokuapp.com/accounts/signup/?next=%2Fwishlist%2Fadd_to_wishlist%2F143</loc>
+  <lastmod>2024-02-18T21:51:00+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://atlas-rogue-09e759974ffc.herokuapp.com/accounts/signup/?next=%2Fwishlist%2Fadd_to_wishlist%2F173</loc>
+  <lastmod>2024-02-18T21:51:00+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://atlas-rogue-09e759974ffc.herokuapp.com/accounts/signup/?next=%2Fwishlist%2Fadd_to_wishlist%2F210</loc>
+  <lastmod>2024-02-18T21:51:00+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://atlas-rogue-09e759974ffc.herokuapp.com/accounts/signup/?next=%2Fwishlist%2Fadd_to_wishlist%2F240</loc>
+  <lastmod>2024-02-18T21:51:00+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://atlas-rogue-09e759974ffc.herokuapp.com/accounts/login/?next=%2Fwishlist%2Fadd_to_wishlist%2F35</loc>
+  <lastmod>2024-02-18T21:51:00+00:00</lastmod>
+  <priority>0.41</priority>
+</url>
+<url>
+  <loc>https://atlas-rogue-09e759974ffc.herokuapp.com/accounts/login/?next=%2Fwishlist%2Fadd_to_wishlist%2F173</loc>
+  <lastmod>2024-02-18T21:51:00+00:00</lastmod>
+  <priority>0.41</priority>
+</url>
+
+
+</urlset>
