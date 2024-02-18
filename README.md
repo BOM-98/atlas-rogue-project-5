@@ -63,6 +63,49 @@ Some user stories relating to a blog section for the website were deemed to not 
 
 ### SEO
 
+- Keyword research was conducted using [Ubersuggest](https://app.neilpatel.com/en/ubersuggest)
+- Given this is a fashion rental site for Ireland keyword research was focused on driving traffic from Irish consumers. Therefore, keyword research was focused heavily on local SEO. 
+- Research on UberSuggest showed that the following keywords had significant enough monthly traffic to be worth investing effort to rank for, while having a low enough "SEO Difficulty" i.e. competition to be viable options.
+- SEO Difficulty (SD) is on a normalised scale from 1-100, with 100 being the hardest. It is recommended for new websites to aim to target keywords with a SD below 40.
+- Long tail keywords that include locations e.g. Cork were added to increase the odds of driving traffic from specific areas in Ireland.
+- The top keywords chosen were `dress rental ireland`, `rental dresses ireland` & `rent a dress ireland`.
+- These keywords were implemented in the H1 & H2 tags, meta descriptions and titles of pages.
+- I attempted not to 'overstuff' keywords in my project and aimed to limit the keywords to max 10 mentions per page.
+- I did not have any way to specifically call out `rental dresses dublin` as I did not have inventory I could categorise under than heading. Instead, I attempted to mention Dublin in the about us page and link it to the Homepage twice so that the "link juice" flowed to the homepage and at least give a chance of it ranking on the first page of the keyword term.
+- Whenever possible, important keywords were bolded to highlight their importance and increase chances of them ranking. 
+- The word `dress` was included in the majority of our product names for dresses, therefore I made sure that the image names matched the name of the item and included the item name in the alt attributes of any image to increase our rankings for the word `dress`.
+- A `sitemap.xml` and `robot.txt` file was generated and uploaded to the project to inform Google what pages should be indexed and maximize chances of Atlas Rogue ranking for our targeted keywords.
+
+| KEYWORD                 | VOLUME | SD |
+|-------------------------|--------|----|
+| `rental dresses dublin` | 1900   | 29 |
+| `dresses to rent dublin`| 1900   | 30 |
+| `dress rental dublin`   | 1900   | 30 |
+| `rent dresses dublin`   | 1900   | 30 |
+| `rent dress dublin`     | 1900   | 30 |
+| `rent a dress dublin`   | 1900   | 29 |
+| `rent dress ireland`    | 1600   | 22 |
+| `dress rental ireland`  | 1600   | 28 |
+| `rental dresses ireland`| 1600   | 22 |
+| `rent a dress ireland`  | 1600   | 25 |
+| `rent dresses ireland`  | 1600   | 28 |
+| `dresses to rent ireland`| 1600  | 28 |
+| `rental dresses`        | 480    | 21 |
+| `dress rental`          | 480    | 22 |
+| `rent dresses`          | 480    | 22 |
+| `rent a dress`          | 480    | 26 |
+| `dresses rental`        | 480    | 21 |
+| `dress rentals`         | 480    | 20 |
+| `dress rental cork`     | 210    | 30 |
+
+
+<details>
+<summary>Screenshot of Ubersuggest Report</summary>
+
+
+![Dress_Rental_Screenshot](readme/img/ubersuggest_keyword_planning.png)
+
+</details>
 
 ### Social CHANGE
 
