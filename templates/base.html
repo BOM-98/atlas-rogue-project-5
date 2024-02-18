@@ -218,6 +218,9 @@
                         <a href="{% url 'add_product' %}"
                             class="text-gray-700 block px-4 py-2 text-sm hover:bg-gray-100 hover:text-primary-600"
                             role="menuitem" tabindex="-1">Product Management</a>
+                        <a href="{% url 'contact_submissions' %}"
+                            class="text-gray-700 block px-4 py-2 text-sm hover:bg-gray-100 hover:text-primary-600"
+                            role="menuitem" tabindex="-1">Contact Form Submissions</a>
                         {% endif %}
                         <a href="{% url 'profile' %}"
                             class="text-gray-700 block px-4 py-2 text-sm hover:bg-gray-100 hover:text-primary-600"
@@ -340,27 +343,15 @@
                         </h2>
                         <ul class="text-gray-500 dark:text-gray-400 font-medium">
                             <li>
-                                <a href="#" class="hover:underline hover:text-primary-600">Order Status</a>
-                            </li>
-                            <li>
-                                <a href="#" class="hover:underline hover:text-primary-600">Returns & Warranty</a>
-                            </li>
-                            <li>
-                                <a href="#" class="hover:underline hover:text-primary-600">FAQ</a>
-                            </li>
-                            <li>
-                                <a href="#" class="hover:underline hover:text-primary-600">Contact Us</a>
+                                <a href="{% url 'contact' %}" class="hover:underline hover:text-primary-600">Contact Us</a>
                             </li>
                         </ul>
                     </div>
-                    <div>
+                    <div class="mr-12">
                         <h2 class="mb-6 text-sm font-semibold text-gray-900 uppercase">About</h2>
                         <ul class="text-gray-500 dark:text-gray-400 font-medium">
                             <li>
-                                <a href="#" class="hover:underline hover:text-primary-600">Privacy Policy</a>
-                            </li>
-                            <li>
-                                <a href="#" class="hover:underline hover:text-primary-600">Terms &amp; Conditions</a>
+                                <a href="#" class="hover:underline hover:text-primary-600">About Us</a>
                             </li>
                         </ul>
                     </div>
