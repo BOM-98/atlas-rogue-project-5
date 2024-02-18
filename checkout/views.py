@@ -13,7 +13,7 @@ from django.views.decorators.http import require_POST
 from bag.contexts import bag_contents
 from .forms import OrderForm
 from products.models import Product
-from .models import Order, OrderLineItem
+from .models import Order, OrderLineItem, ProductRental
 from profiles.models import UserProfile
 from profiles.forms import UserProfileForm
 from profiles.models import UserProfile
@@ -78,6 +78,19 @@ def checkout(request):
                         "One of the products in your bag wasn't found in our database. "
                         "Please call us for assistance!")
                     )
+                    order.delete()
+                    return redirect(reverse("view_bag"))
+                try:
+                    product_rental = ProductRental(
+                        product=product,
+                        order_line_item=order_line_item,
+                        start_date=item_data['start_date'],
+                        end_date=item_data['end_date'], 
+                    )
+                    print(product_rental)
+                    product_rental.save()
+                except Exception as e:
+                    print(f"An error occurred: {e}")
                     order.delete()
                     return redirect(reverse("view_bag"))
 

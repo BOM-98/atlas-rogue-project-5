@@ -102,41 +102,25 @@ class OrderLineItem(models.Model):
 
     def __str__(self):
         return f"SKU {self.product.sku} on order {self.order.order_number}"
-    
+class ProductRental(models.Model):
+    """
+    Represents a rental period for a product.
 
-# class ProductRental(models.Model):
-#     """
-#     Represents a rental period for a product, ensuring that each product can only be rented out for non-overlapping periods.
+    Attributes:
+        product (ForeignKey): A reference to the Product being rented.
+        order_line_item (ForeignKey): The OrderLineItem associated with this rental, linking the rental to a specific order.
+        start_date (DateField): The start date of the rental period.
+        end_date (DateField): The end date of the rental period.
 
-#     Attributes:
-#         product (ForeignKey): A reference to the Product being rented.
-#         order_line_item (ForeignKey): The OrderLineItem associated with this rental, linking the rental to a specific order.
-#         start_date (DateField): The start date of the rental period.
-#         end_date (DateField): The end date of the rental period.
+    Methods:
+        clean: Validates the rental to prevent overlapping rental periods for the same product.
+        save: Overrides the default save method to include clean method validation before saving.
+        __str__: Returns a human-readable string representation of the rental instance.
+    """
+    product = models.ForeignKey(Product, on_delete=models.CASCADE, related_name='rentals')
+    order_line_item = models.ForeignKey(OrderLineItem, on_delete=models.CASCADE, related_name='rentals')
+    start_date = models.DateField()
+    end_date = models.DateField()
 
-#     Methods:
-#         clean: Validates the rental to prevent overlapping rental periods for the same product.
-#         save: Overrides the default save method to include clean method validation before saving.
-#         __str__: Returns a human-readable string representation of the rental instance.
-#     """
-#     product = models.ForeignKey(Product, on_delete=models.CASCADE, related_name='rentals')
-#     order_line_item = models.ForeignKey(OrderLineItem, on_delete=models.CASCADE, related_name='rentals')
-#     start_date = models.DateField()
-#     end_date = models.DateField()
-
-#     def clean(self):
-#         # Check for overlapping rentals
-#         overlapping_rentals = ProductRental.objects.filter(
-#             product=self.product,
-#             end_date__gte=self.start_date,
-#             start_date__lte=self.end_date
-#         ).exclude(id=self.id)
-#         if overlapping_rentals.exists():
-#             raise ValidationError('There is an overlapping rental period for this product.')
-
-#     def save(self, *args, **kwargs):
-#         self.clean()
-#         super().save(*args, **kwargs)
-
-#     def __str__(self):
-#         return f"{self.product.name} rented from {self.start_date} to {self.end_date}"
+    def __str__(self):
+        return f"{self.product.name} rented from {self.start_date} to {self.end_date}"

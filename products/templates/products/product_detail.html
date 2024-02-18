@@ -55,39 +55,16 @@
           <div class="text-black text-base font-bold">Choose your rental
             period</div>
         </div>
-
-        <div date-rangepicker datepicker-buttons datepicker-autoselect-today datepicker-format="yyyy-mm-dd" datepicker-orientation="bottom right" class="flex flex-col items-start md:px-5 gap-2 mt-2">
-          <div class="relative">
-            <div class="absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none">
-                 <svg class="w-4 h-4 text-gray-500" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
-                  <path d="M20 4a2 2 0 0 0-2-2h-2V1a1 1 0 0 0-2 0v1h-3V1a1 1 0 0 0-2 0v1H6V1a1 1 0 0 0-2 0v1H2a2 2 0 0 0-2 2v2h20V4ZM0 18a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V8H0v10Zm5-8h10a1 1 0 0 1 0 2H5a1 1 0 0 1 0-2Z"/>
-                </svg>
-            </div>
-            <input name="start_date" type="date" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full ps-10 p-2.5" placeholder="Select date start">
-          </div>
-          <span class="mx-4 text-gray-500">to</span>
-          <div class="relative">
-            <div class="absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none">
-                 <svg class="w-4 h-4 text-gray-500" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
-                  <path d="M20 4a2 2 0 0 0-2-2h-2V1a1 1 0 0 0-2 0v1h-3V1a1 1 0 0 0-2 0v1H6V1a1 1 0 0 0-2 0v1H2a2 2 0 0 0-2 2v2h20V4ZM0 18a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V8H0v10Zm5-8h10a1 1 0 0 1 0 2H5a1 1 0 0 1 0-2Z"/>
-                </svg>
-            </div>
-            <input name="end_date" type="date" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full ps-10 p-2.5" placeholder="Select date end">
-        </div>
+        <div class="md:px-5 py-2 w-full">
+            <input name="start_date" type="date" id="start_datepick" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-3/4 ps-10 p-2.5" placeholder="Select date start">
+            <p class="my-2 text-gray-500">to</p>
+            <input name="end_date" type="date" id="end_datepick" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-3/4 ps-10 p-2.5" placeholder="Select date end">
         </div>
         <!-- End Rental Period Calendar -->
 
         <!-- Quantity Selector -->
-        <div class="flex flex-col">
-          <div class="w-full py-5 flex-col justify-center">
-            <p class="md:px-5 py-2 opacity-50 text-black text-lg">Quantity:</p>
-            <div class="form-group md:px-5">
-              <div class="input-group">
-                <input class="form-input qty_input px-2.5 py-3 w-32 rounded-[10px] border border-zinc-300" type="number" name="quantity" value="1" min="1" max="99"
+                <input class="form-input qty_input px-2.5 py-3 w-32 rounded-[10px] border border-zinc-300" type="hidden" name="quantity" value="1" min="1" max="99"
                   data-item_id="{{ product.id }}" id="id_qty_{{ product.id }}">
-              </div>
-            </div>
-          </div>
           <!-- End Quantity Selector -->
 
           <!-- Total -->
@@ -104,7 +81,7 @@
             
             <!-- Add To Cart Button -->
             <input type="submit"
-              class="lg:w-full w-[165px] md:px-5 h-14 bg-primary-600 rounded-lg shadow justify-center items-start flex text-center text-white text-base font-extrabold cursor-pointer hover:bg-primary-700 hover:text-white"
+              class="lg:w-full w-[165px] px-5 mx-5 h-14 bg-primary-600 rounded-lg shadow justify-center items-start flex text-center text-white text-base font-extrabold cursor-pointer hover:bg-primary-700 hover:text-white"
               value="Add to Cart">
             <!-- End Add To Cart Button -->
             {% if request.user.is_superuser %}
@@ -137,7 +114,6 @@
 
 
 {% endblock %}
-
 {% block postloadjs %}
-<script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/datepicker.min.js"></script>
+<script src="{% static 'js/datepicker_config.js' %}"></script>
 {% endblock %}
