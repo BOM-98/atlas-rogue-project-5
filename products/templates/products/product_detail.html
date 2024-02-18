@@ -30,11 +30,6 @@
         <h1 class="text-black text-xl font-extrabold">{{ product.name }}</h1>
         <p class="text-black text-lg"><span class="font-bold">€{{ product.price }}</span> / day</p>
         <p class="text-black text-lg"><span class="text-base font-bold">RRP:</span> €{{ product.rrp }}</p>
-        <div class="justify-start items-center gap-2.5 inline-flex">
-          <div class="p-2.5 bg-white bg-opacity-50 rounded-[50px] justify-center items-center gap-2.5 flex">
-            <div class="w-5 h-5 relative"></div>
-          </div>
-        </div>
       </div>
       <div class="w-full md:px-5 flex-col justify-between items-start flex">
         <div class="text-black text-lg font-extrabold">Product Details</div>
@@ -59,6 +54,26 @@
         <div class="md:px-5 py-2 w-full justify-start items-start gap-2.5 inline-flex">
           <div class="text-black text-base font-bold">Choose your rental
             period</div>
+        </div>
+
+        <div date-rangepicker datepicker-buttons datepicker-autoselect-today datepicker-format="dd/mm/yyyy" datepicker-orientation="bottom right" class="flex flex-col items-start md:px-5 gap-2 mt-2">
+          <div class="relative">
+            <div class="absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none">
+                 <svg class="w-4 h-4 text-gray-500" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
+                  <path d="M20 4a2 2 0 0 0-2-2h-2V1a1 1 0 0 0-2 0v1h-3V1a1 1 0 0 0-2 0v1H6V1a1 1 0 0 0-2 0v1H2a2 2 0 0 0-2 2v2h20V4ZM0 18a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V8H0v10Zm5-8h10a1 1 0 0 1 0 2H5a1 1 0 0 1 0-2Z"/>
+                </svg>
+            </div>
+            <input name="start" type="text" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full ps-10 p-2.5" placeholder="Select date start">
+          </div>
+          <span class="mx-4 text-gray-500">to</span>
+          <div class="relative">
+            <div class="absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none">
+                 <svg class="w-4 h-4 text-gray-500" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
+                  <path d="M20 4a2 2 0 0 0-2-2h-2V1a1 1 0 0 0-2 0v1h-3V1a1 1 0 0 0-2 0v1H6V1a1 1 0 0 0-2 0v1H2a2 2 0 0 0-2 2v2h20V4ZM0 18a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V8H0v10Zm5-8h10a1 1 0 0 1 0 2H5a1 1 0 0 1 0-2Z"/>
+                </svg>
+            </div>
+            <input name="end" type="text" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full ps-10 p-2.5" placeholder="Select date end">
+        </div>
         </div>
         <!-- End Rental Period Calendar -->
 
@@ -92,22 +107,15 @@
               class="lg:w-full w-[165px] md:px-5 h-14 bg-primary-600 rounded-lg shadow justify-center items-start flex text-center text-white text-base font-extrabold cursor-pointer hover:bg-primary-700 hover:text-white"
               value="Add to Cart">
             <!-- End Add To Cart Button -->
-
-            <div class="self-stretch px-5 py-5 justify-start items-start gap-2.5 inline-flex">
-              <p class="opacity-50 text-black text-sm font-normal">Free standard
-                shipping</p>
-              <p class="opacity-50 text-primary-600 text-sm font-normal underline">Free
-                Returns</p>
-            </div>
             {% if request.user.is_superuser %}
-              <div class="flex flex-row justify-center items-center gap-4">
-                <a href="{% url 'edit_product' product.id %}" class="hover:text-blue-800 text-blue-400 rounded py-2 my-4">Edit</a>
-                <a href="{% url 'delete_product' product.id %}" class="hover:text-red-800 text-red-400 rounded py-2 my-4">Delete</a>
-              </div>
+            <div class="self-stretch px-5 py-5 justify-start items-start gap-2.5 inline-flex">
+              <a href="{% url 'edit_product' product.id %}" class="hover:text-blue-800 text-blue-400 text-black text-base font-normal">Edit</a>
+              <a href="{% url 'delete_product' product.id %}" class="opacity-50 text-primary-600 hover:text-red-800 text-base font-normal underline">Delete</a>
+            </div>
             {% endif %}
 
             <!-- Keep Shopping Button -->
-            <a href="{% url 'products' %}" class="inline-block text-primary-600 text-center mx-5 px-3 py-2 hover:border hover:border-primary-600 rounded-md">
+            <a href="{% url 'products' %}" class="inline-block text-primary-600 text-start px-3 py-2 hover:border hover:border-primary-600 rounded-md">
               <span class="icon">
                 <i class="fas fa-chevron-left"></i>
               </span>
@@ -130,5 +138,6 @@
 
 {% endblock %}
 
-{% block extra_js %}
+{% block postloadjs %}
+<script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/datepicker.min.js"></script>
 {% endblock %}
