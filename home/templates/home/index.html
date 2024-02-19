@@ -31,9 +31,9 @@
                 fashion</span><br><span class="text-primary-600 font-normal text-lg md:text-2xl">rentals
                 in one place</span></p>
     </div>
-    <h2 class="self-stretch text-black text-2xl font-normal">Category</h2>
+    <h2 class="self-stretch text-black text-2xl font-semibold">Category</h2>
     <!-- Carousel -->
-    <div id="controls-carousel" class="relative w-full" data-carousel="static">
+    <div id="controls-carousel" class="relative w-full" data-carousel="slide">
         <!-- Carousel wrapper -->
         <div class="relative h-56 overflow-hidden rounded-lg md:h-56">
             <!-- Slide 1 -->
@@ -145,11 +145,11 @@
         </div>
         <!-- Slider controls -->
         <button type="button"
-            class="absolute top-0 start-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none"
+            class="absolute top-20 right-20 start-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none"
             data-carousel-prev>
             <span
-                class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 dark:bg-primary-800/30 group-hover:bg-white/50 dark:group-hover:bg-primary-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-primary-800/70 group-focus:outline-none">
-                <svg class="w-4 h-4 text-white dark:text-gray-800 rtl:rotate-180" aria-hidden="true"
+                class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 group-hover:bg-white/50 group-focus:ring-4 group-focus:ring-white group-focus:outline-none hover:pointer">
+                <svg class="w-4 h-4 text-gray-800 rtl:rotate-180" aria-hidden="true"
                     xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
                     <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                         d="M5 1 1 5l4 4" />
@@ -158,11 +158,11 @@
             </span>
         </button>
         <button type="button"
-            class="absolute top-0 end-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none"
+            class="absolute top-20 left-20 end-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none"
             data-carousel-next>
             <span
-                class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 dark:bg-primary-800/30 group-hover:bg-white/50 dark:group-hover:bg-primary-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-primary-800/70 group-focus:outline-none">
-                <svg class="w-4 h-4 text-white dark:text-gray-800 rtl:rotate-180" aria-hidden="true"
+                class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 group-hover:bg-white/50  group-focus:ring-4 group-focus:ring-white group-focus:outline-none hover:pointer">
+                <svg class="w-4 h-4 text-gray-800 rtl:rotate-180" aria-hidden="true"
                     xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
                     <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                         d="m1 9 4-4-4-4" />
@@ -175,14 +175,14 @@
 
     <!-- See All -->
     <a href="{% url 'products' %}"><button type="button"
-            class="text-white bg-red-700 hover:bg-red-800 focus:outline-none focus:ring-4 focus:ring-red-300 font-medium rounded-lg text-base px-5 py-3 text-center mb-2 dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-900">See
+            class="text-white bg-primary-600 hover:bg-primary-700 focus:outline-none focus:ring-4 focus:ring-red-300 font-medium rounded-lg text-base px-5 py-3 text-center mb-2">See
             All</button>
     </a>
     <!-- End See All -->
 
     <!--Featured Product  Section -->
     <section class="w-full py-5" id="featured-section">
-        <h2 class="self-stretch text-black text-2xl font-normal">Featured Items</h2>
+        <h2 class="self-stretch text-black text-2xl font-semibold">Featured Items</h2>
         <div class="w-full h-fit py-[30px] justify-around items-center flex flex-wrap">
             <!-- Product 1 -->
             <div class="w-[216px] h-[412px] flex-col justify-start gap-2.5 inline-flex">
@@ -271,27 +271,43 @@
         </div>
     </section>
     <!-- End Featured Product Section -->
+
+    <!-- Designers Section -->
     <section class="categories-section w-full py-5">
-        <div
-            class="w-full h-[530px] bg-primary-300 bg-opacity-20 rounded-[15px] justify-center items-center flex flex-row flex-wrap my-5">
-            <div class="grow shrink basis-0 flex-col justify-center items-center">
-                <div class="grow shrink basis-0 text-center text-black text-[31px] font-extrabold leading-[43.40px]">
-                    Heading For The Slopes?</div>
-                <div class="grow shrink basis-0 text-center text-black text-xl font-normal leading-7">See
-                    our Ski Range</div>
-            </div>
-            <div class="w-[50%] min-w-[320px] h-[530px] bg-neutral-400 rounded-[15px]"></div>
-        </div>
-        <div
-            class="w-full h-[530px] bg-primary-300 bg-opacity-20 rounded-[15px] justify-center items-center flex flex-row flex-wrap my-5">
-            <div class="w-[50%] min-w-[320px] h-[530px] bg-neutral-400 rounded-[15px]"></div>
-            <div class="grow shrink basis-0 flex-col justify-center items-center">
-                <div class="grow shrink basis-0 text-center text-black text-[31px] font-extrabold leading-[43.40px]">
-                    Weddings?</div>
-                <div class="grow shrink basis-0 text-center text-black text-xl font-normal leading-7">See
-                    our Wedding Range</div>
+        <div class="bg-gray-50 rounded-md px-6 py-12 text-center md:px-12 lg:text-left">
+            <div class="w-100 mx-auto sm:max-w-2xl md:max-w-3xl lg:max-w-5xl xl:max-w-7xl">
+              <div class="grid items-center gap-12 lg:grid-cols-2">
+                <div class="mt-12 lg:mt-0">
+                  <h1 class="mt-2 mb-16 text-5xl font-bold tracking-tight md:text-6xl xl:text-7xl">
+                    Rent<span class="text-primary-500"> Rixo</span>
+                  </h1>
+                  <a class="mb-2 inline-block rounded bg-primary-500 px-12 pt-4 pb-3.5 text-sm font-medium uppercase leading-normal text-white shadow-[0_4px_9px_-4px_#3b71ca] transition duration-150 ease-in-out hover:bg-primary-600 hover:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:bg-primary-600 focus:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:outline-none focus:ring-0 active:bg-primary-700 active:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] md:mr-2 md:mb-0"
+                    data-te-ripple-init data-te-ripple-color="light" href="{% url 'products' %}?designer=rixo" role="button">Rent</a>
+                </div>
+                <div class="mb-12 lg:mb-0">
+                  <img src="{% static 'img/rixo-image.webp' %}"
+                    class="w-full rounded-lg shadow-lg dark:shadow-black/20" alt="" />
+                </div>
+              </div>
             </div>
         </div>
+            <div class="bg-gray-50 rounded-md mt-6 px-6 py-12 text-center md:px-12 lg:text-left">
+                <div class="w-100 mx-auto sm:max-w-2xl md:max-w-3xl lg:max-w-5xl xl:max-w-7xl">
+                  <div class="grid items-center gap-12 lg:grid-cols-2">
+                    <div class="mb-12 lg:mb-0">
+                        <img src="{% static 'img/ganni-image.webp' %}"
+                          class="w-full rounded-lg shadow-lg dark:shadow-black/20" alt="" />
+                      </div>
+                    <div class="mt-12 lg:mt-0">
+                      <h1 class="mt-2 mb-16 text-5xl font-bold tracking-tight md:text-6xl xl:text-7xl">
+                        Rent<span class="text-primary-500"> Ganni</span>
+                      </h1>
+                      <a class="mb-2 inline-block rounded bg-primary-500 px-12 pt-4 pb-3.5 text-sm font-medium uppercase leading-normal text-white shadow-[0_4px_9px_-4px_#3b71ca] transition duration-150 ease-in-out hover:bg-primary-600 hover:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:bg-primary-600 focus:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:outline-none focus:ring-0 active:bg-primary-700 active:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] md:mr-2 md:mb-0"
+                        data-te-ripple-init data-te-ripple-color="light" href="{% url 'products' %}?designer=ganni" role="button">Rent</a>
+                    </div>
+                  </div>
+                </div>
+            </div>
     </section>
 </div>
 

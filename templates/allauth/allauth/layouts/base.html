@@ -82,7 +82,7 @@
                 <!-- Navigation -->
             
                 <div class="border-b-2 border-neutral-100 mb-10">
-                    <nav class="justify-between items-stretch flex gap-5 lpx-10 py-5 px-16 bg-gray-50">
+                    <nav class="justify-between items-stretch flex gap-5 lpx-10 py-5 px-4 sm:px-16 bg-gray-50">
             
                         <!-- Logo -->
                         <div class="flex items-stretch justify-between gap-5">
@@ -94,12 +94,13 @@
                                     </path>
                                 </svg>
                             </button>
-                            <a href="{% url 'home' %}" class="hidden lg:block object-contain object-center self-center"><img loading="lazy"
-                                    src="{% static 'img/atlas-rogue-logo1.png' %}"
-                                    class="object-contain object-center w-[193px] overflow-hidden self-center max-w-full my-auto" /></a>
-                            <a href="{% url 'home' %}" class="lg:hidden aspect-[4.95] object-contain object-center self-center"><img loading="lazy"
-                                    src="{% static 'img/icons/atlas-rogue-icon.svg' %}"
-                                    class="object-contain object-center w-[40px] min-w-[40px] shrink-0 overflow-hidden self-center max-w-full my-auto" /></a>
+                            <a href="{% url 'home' %}" class="flex items-center">
+                                <img src="{% static 'img/icons/atlas-rogue-icon.svg' %}" class="h-8 lg:me-3 w-[40px] min-w-[40px]"
+                                    alt="Atlas Rogue Logo" />
+                                <span
+                                    class="hidden lg:block self-center text-2xl font-semibold text-gray-700 whitespace-nowrap">Atlas
+                                    Rogue</span>
+                            </a>
                         </div>
                         <!-- End Logo -->
                         <!-- Nav List -->
