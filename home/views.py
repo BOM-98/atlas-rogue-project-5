@@ -43,3 +43,22 @@ def index(request):
         "wishlist": wishlist,
     }
     return render(request, "home/index.html", context)
+
+def about_us(request):
+    """
+    Render the about us view.
+
+    This view returns the about us template for
+    the website. It is a simple view that
+    only renders the template without any
+    additional context or processing.
+
+    Parameters:
+    request (HttpRequest): The HttpRequest
+    object that represents the client's request.
+
+    Returns:
+    HttpResponse: An HttpResponse object
+    that renders the 'home/about_us.html' template.
+    """
+    return render(request, "home/about_us.html")
