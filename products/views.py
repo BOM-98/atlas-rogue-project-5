@@ -87,9 +87,18 @@ def product_detail(request, product_id):
     Render the products detail view.
     """
     product = get_object_or_404(Product, pk=product_id)
+    wishlist = None
+    
+    # Only attempt to get the user's profile and wishlist if the user is authenticated
+    if request.user.is_authenticated:
+        user_profile = UserProfile.objects.get(user=request.user)
+        wishlist, created = Wishlist.objects.get_or_create(user=user_profile)
+    else:
+        wishlist = None  # Wishlist remains None if the user is not authenticated
     
     context = {
         "product": product,
+        "wishlist": wishlist,
     }
     return render(request, "products/product_detail.html", context)
 
