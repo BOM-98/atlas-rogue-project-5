@@ -7,16 +7,17 @@
 {% block extra_title %}Home{% endblock %}
 
 {% block content %}
-<div class="w-full h-full flex-col justify-center items-center inline-flex mx-2 py-2">
+<div class="w-full h-full flex-col justify-center items-center inline-flex py-2">
     <div class="self-stretch aspect-[1200/480] justify-start items-center inline-flex w-full py-5"
         style="background-image: url('{% static 'img/hero-image.png' %}'); background-size:100%; repeat: none;"
         id="hero-image">
         <div
             class="text-2xl md:text-4lx py-5 px-5 bg-rose-300 bg-opacity-20 rounded-[15px] flex-col justify-center items-start gap-5 inline-flex">
-            <p class="text-black text-base font-bold tracking-widest">NUMBER ONE FASHION</p>
-            <h1 class="text-black text-2xl sm:text-5xl font-bold">FASHION OF FREEDOM</h1>
-            <p><span style="text-zinc-500 text-base font-bold ">Starting from</span><span
-                    style="text-black text-base font-bold "> $10.00</span></p>
+            <p class="text-black text-base font-bold tracking-widest">FASHION RENTAL</p>
+            <h1 class="text-black text-2xl sm:text-5xl font-bold">DRESS RENTAL IRELAND</h1>
+            <p class="text-sm">
+                <span >Dublin | Cork | Galway |</span>
+                <span> All 32 Counties</span></p>
             <div class="px-[30px] py-2.5 bg-primary-600 rounded-[10px] justify-center items-center gap-2.5 inline-flex">
                 <a class="text-center text-white text-base leading-snug" href="{% url 'products' %}">Shop Now</a>
             </div>
@@ -25,13 +26,13 @@
     <div class="self-stretch text-black text-2xl font-normal px-8 py-8">
         <h2 class="self-stretch text-black text-2xl md:text-4xl text-center py-5"><span class="text-black">The
             </span><span class="text-primary-600 font-bold">Fashion Rental
-                App</span><br><span class="text-black"> That Makes
+                Site</span><br><span class="text-black"> That Makes
                 You Look Your Best</span></h2>
         <p class="text-center"><span class="text-neutral-400 font-normal text-lg md:text-2xl">Ireland’s best women’s
                 fashion</span><br><span class="text-primary-600 font-normal text-lg md:text-2xl">rentals
                 in one place</span></p>
     </div>
-    <h2 class="self-stretch text-black text-2xl font-semibold">Category</h2>
+    <h2 class="self-stretch my-8 text-black text-center text-2xl font-semibold">Category</h2>
     <!-- Carousel -->
     <div id="controls-carousel" class="relative w-full" data-carousel="slide">
         <!-- Carousel wrapper -->
@@ -182,92 +183,67 @@
 
     <!--Featured Product  Section -->
     <section class="w-full py-5" id="featured-section">
-        <h2 class="self-stretch text-black text-2xl font-semibold">Featured Items</h2>
+        <h2 class="self-stretch text-center my-8 text-black text-2xl font-semibold">Featured Items</h2>
         <div class="w-full h-fit py-[30px] justify-around items-center flex flex-wrap">
-            <!-- Product 1 -->
-            <div class="w-[216px] h-[412px] flex-col justify-start gap-2.5 inline-flex">
-                <div class="self-stretch grow shrink basis-0 bg-zinc-300 rounded-[15px]"></div>
-                <div
-                    class="p-2.5 bg-white bg-opacity-50 rounded-[50px] justify-center items-center gap-2.5 inline-flex">
-                    <div class="w-5 h-5 relative"></div>
-                </div>
-                <div class="self-stretch h-[106px] px-[7px] flex-col justify-start items-start flex">
-                    <div class="self-stretch justify-start items-start gap-2.5 inline-flex">
-                        <div class="grow shrink basis-0 text-black text-xl font-extrabold leading-7">Product
-                            Name</div>
-                        <div class="w-4 h-4 relative"></div>
-                        <div class="h-5 justify-center items-start gap-2.5 flex">
-                            <div class="text-neutral-400 text-sm font-extrabold leading-tight">4.9</div>
-                        </div>
-                    </div>
-                    <div class="self-stretch text-black text-lg font-normal leading-[25.20px]">Product
-                        Description</div>
-                    <div class="self-stretch text-black text-lg font-normal leading-[25.20px]">€90</div>
-                </div>
-            </div>
-            <!-- Product 1 -->
-            <div class="w-[216px] h-[412px] flex-col justify-start gap-2.5 inline-flex">
-                <div class="self-stretch grow shrink basis-0 bg-zinc-300 rounded-[15px]"></div>
-                <div
-                    class="p-2.5 bg-white bg-opacity-50 rounded-[50px] justify-center items-center gap-2.5 inline-flex">
-                    <div class="w-5 h-5 relative"></div>
-                </div>
-                <div class="self-stretch h-[106px] px-[7px] flex-col justify-start items-start flex">
-                    <div class="self-stretch justify-start items-start gap-2.5 inline-flex">
-                        <div class="grow shrink basis-0 text-black text-xl font-extrabold leading-7">Product
-                            Name</div>
-                        <div class="w-4 h-4 relative"></div>
-                        <div class="h-5 justify-center items-start gap-2.5 flex">
-                            <div class="text-neutral-400 text-sm font-extrabold leading-tight">4.9</div>
-                        </div>
-                    </div>
-                    <div class="self-stretch text-black text-lg font-normal leading-[25.20px]">Product
-                        Description</div>
-                    <div class="self-stretch text-black text-lg font-normal leading-[25.20px]">€90</div>
-                </div>
-            </div>
-            <!-- Product 1 -->
-            <div class="w-[216px] h-[412px] flex-col justify-start gap-2.5 inline-flex">
-                <div class="self-stretch grow shrink basis-0 bg-zinc-300 rounded-[15px]"></div>
-                <div
-                    class="p-2.5 bg-white bg-opacity-50 rounded-[50px] justify-center items-center gap-2.5 inline-flex">
-                    <div class="w-5 h-5 relative"></div>
-                </div>
-                <div class="self-stretch h-[106px] px-[7px] flex-col justify-start items-start flex">
-                    <div class="self-stretch justify-start items-start gap-2.5 inline-flex">
-                        <div class="grow shrink basis-0 text-black text-xl font-extrabold leading-7">Product
-                            Name</div>
-                        <div class="w-4 h-4 relative"></div>
-                        <div class="h-5 justify-center items-start gap-2.5 flex">
-                            <div class="text-neutral-400 text-sm font-extrabold leading-tight">4.9</div>
-                        </div>
-                    </div>
-                    <div class="self-stretch text-black text-lg font-normal leading-[25.20px]">Product
-                        Description</div>
-                    <div class="self-stretch text-black text-lg font-normal leading-[25.20px]">€90</div>
-                </div>
-            </div>
-            <!-- Product 1 -->
-            <div class="w-[216px] h-[412px] flex-col justify-start gap-2.5 inline-flex">
-                <div class="self-stretch grow shrink basis-0 bg-zinc-300 rounded-[15px]"></div>
-                <div
-                    class="p-2.5 bg-white bg-opacity-50 rounded-[50px] justify-center items-center gap-2.5 inline-flex">
-                    <div class="w-5 h-5 relative"></div>
-                </div>
-                <div class="self-stretch h-[106px] px-[7px] flex-col justify-start items-start flex">
-                    <div class="self-stretch justify-start items-start gap-2.5 inline-flex">
-                        <div class="grow shrink basis-0 text-black text-xl font-extrabold leading-7">Product
-                            Name</div>
-                        <div class="w-4 h-4 relative"></div>
-                        <div class="h-5 justify-center items-start gap-2.5 flex">
-                            <div class="text-neutral-400 text-sm font-extrabold leading-tight">4.9</div>
-                        </div>
-                    </div>
-                    <div class="self-stretch text-black text-lg font-normal leading-[25.20px]">Product
-                        Description</div>
-                    <div class="self-stretch text-black text-lg font-normal leading-[25.20px]">€90</div>
-                </div>
-            </div>
+            {% for product in featured_products %}
+  <div class="w-[200px] h-fit min-h-[500px] flex-col justify-start gap-2.5 inline-flex my-16 mx-5">
+    <div class="flex justify-center items-center">
+      <a href="{% url 'product_detail' product.id %}">
+        {% if product.image %}
+        <img src="{{ product.image.url }}" alt="{{ product.name }}" class="h-96 object-cover rounded-md hover:scale-105">
+        {% else %}
+        <!-- Placeholder image or no image -->
+        <img src="{% static 'img/placeholder/woman-clothes.svg' %}" alt="{{ product.name }}"
+          class="h-96 object-fit rounded-md">
+        {% endif %}
+      </a>
+    </div>
+    <div class="p-2.5 bg-white bg-opacity-50 rounded-[50px] justify-center items-center gap-2.5 inline-flex">
+      <div class="w-5 h-5 relative"></div>
+    </div>
+    <div class="self-stretch h-[150px] px-[7px] flex-col justify-between items-start flex">
+      <div class="self-stretch justify-start items-start gap-2.5 inline-flex">
+        <!-- Product Name -->
+        <a href="{% url 'product_detail' product.id %}">
+          <div class="grow shrink basis-0 text-black hover:text-primary-500 text-lg font-bold leading-7 my-1">{{ product.name }}</div>
+        </a>
+        <!-- End Product Name -->
+        <div class="w-4 h-4 relative"></div>
+        <div class="h-5 justify-center items-start gap-2.5 flex">
+          {% if user.is_authenticated and wishlist %}
+            {% if product in wishlist.products.all %}
+              <a href="{% url 'remove_from_wishlist' product.id %}">
+                <img loading="lazy" src="{% static 'img/icons/heart-full.svg' %}"
+                  class="aspect-square object-contain object-center w-[25px] min-w-[25px] overflow-hidden self-center shrink-0 max-w-full my-auto mx-2 hover:scale-110" />
+              </a>
+            {% else %}
+              <a href="{% url 'add_to_wishlist' product.id %}">
+                <img loading="lazy" src="{% static 'img/icons/Wishlist.svg' %}"
+                    class="aspect-square object-contain object-center w-[25px] min-w-[25px] overflow-hidden self-center shrink-0 max-w-full my-auto mx-2 hover:scale-110" />
+              </a>
+            {% endif %}
+          {% else %}
+            <a href="{% url 'add_to_wishlist' product.id %}">
+              <img loading="lazy" src="{% static 'img/icons/Wishlist.svg' %}"
+                  class="aspect-square object-contain object-center w-[25px] min-w-[25px] overflow-hidden self-center shrink-0 max-w-full my-auto mx-2 hover:scale-110" />
+            </a>
+        {% endif %}
+        </div>
+      </div>
+      <div class="self-stretch text-secondaryGrey-400 text-sm font-normal my-1">{{ product.designer }}</div>
+      {% if product.category %}
+      <a href="{% url 'products' %}?category={{ product.category.name }}">
+        <div class="flex flex-row justify-start items-center gap-2.5">
+          <img src="{% static 'img/icons/tag-black-shape.svg' %}" alt="" class="h-3 fill-secondaryGray-400">
+          <div class="self-stretch text-black text-sm font-normal my-1">{{product.category.friendly_name }}</div>
+        </div>
+      </a>
+      {% endif %}
+      <div class="self-stretch text-black text-lg font-normal my-1">€{{ product.price }} <span
+          class="text-gray text-sm">/ day</span></div>
+    </div>
+  </div>
+  {% endfor %}
         </div>
     </section>
     <!-- End Featured Product Section -->
