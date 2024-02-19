@@ -87,32 +87,23 @@
                   data-item_id="{{ product.id }}" id="id_qty_{{ product.id }}">
           <!-- End Quantity Selector -->
 
-          <!-- Total -->
-          <div class="py-5 justify-start gap-6 flex flex-col">
-            <div class="w-[265px] md:px-5 flex-col justify-start items-start inline-flex">
-              <p class="text-center text-black text-lg font-extrabold">Total Price</p>
-              <p class="text-center text-black text-xl font-extrabold">€{{ product.price }}</p>
-            </div>
-          </div>
-          <!-- End Total -->
-
           <!-- Container [Cart & Keep Shopping ]-->
           <div class="w-full flex flex-col">
             
             <!-- Add To Cart Button -->
             <input type="submit"
-              class="lg:w-full w-[165px] px-5 mx-5 h-14 bg-primary-600 rounded-lg shadow justify-center items-start flex text-center text-white text-base font-extrabold cursor-pointer hover:bg-primary-700 hover:text-white"
+              class="lg:w-full w-[165px] my-5 px-5 md:mx-5 h-14 bg-primary-600 rounded-lg shadow justify-center items-start flex text-center text-white text-base font-extrabold cursor-pointer hover:bg-primary-700 hover:text-white"
               value="Add to Cart">
             <!-- End Add To Cart Button -->
             {% if request.user.is_superuser %}
-            <div class="self-stretch px-5 py-5 justify-start items-start gap-2.5 inline-flex">
+            <div class="self-stretch md:px-5 py-5 justify-start items-start gap-2.5 inline-flex">
               <a href="{% url 'edit_product' product.id %}" class="hover:text-blue-800 text-blue-400 text-black text-base font-normal">Edit</a>
               <a href="{% url 'delete_product' product.id %}" class="opacity-50 text-primary-600 hover:text-red-800 text-base font-normal underline">Delete</a>
             </div>
             {% endif %}
 
             <!-- Keep Shopping Button -->
-            <a href="{% url 'products' %}" class="inline-block text-primary-600 text-start px-3 py-2 hover:border hover:border-primary-600 rounded-md">
+            <a href="{% url 'products' %}" class="inline-block text-primary-600 text-start md:px-5 md:mx-5 py-2 hover:border hover:border-primary-600 rounded-md">
               <span class="icon">
                 <i class="fas fa-chevron-left"></i>
               </span>
