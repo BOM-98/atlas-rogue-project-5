@@ -11,6 +11,14 @@
 <h1 class="text-xl w-full text-center font-extrabold">Wishlist</h1>
 
 <div class="w-full h-fit py-[30px] justify-around items-center flex flex-wrap">
+  {{ wishlist|length }} items in your wishlist
+  {% if wishlist|length is 0 %}
+  <div class="w-full h-fit justify-center items-center flex my-4">
+    <a href="{% url 'products' %}"><button type="button"
+      class="text-white bg-primary-600 hover:bg-primary-700 focus:outline-none focus:ring-4 focus:ring-red-300 font-medium rounded-lg text-base px-5 py-3 text-center mb-2">Shop Items</button>
+</a>
+  </div>
+  {% endif %}
   {% for product in wishlist %}
   <div class="w-[250px] h-fit min-h-[500px] flex-col justify-start gap-2.5 inline-flex my-16 mx-5">
     <div class="flex justify-center items-center">
