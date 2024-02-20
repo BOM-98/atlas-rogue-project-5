@@ -1,4 +1,4 @@
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import render, get_object_or_404, redirect, reverse
 from django.contrib import messages
 from .models import UserProfile
 from .forms import UserProfileForm
@@ -28,10 +28,13 @@ def profile(request):
 
     return render(request, template, context)
 
-
+@login_required
 def order_history(request, order_number):
     """ Display the user's order history. """
     order = get_object_or_404(Order, order_number=order_number)
+    if order.user_profile.user != request.user:
+        messages.error(request, 'Sorry, you do not have permission to view this page.')
+        return redirect(reverse('home'))
     
     messages.info(request, f'This is a past confirmation for order number {order_number}. A confirmation email was sent on the order date.')
     
