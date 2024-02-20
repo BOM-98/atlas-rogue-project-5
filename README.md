@@ -10,29 +10,37 @@
 
 ## Overview
 
-Overview section
+Atlas Rogue is a fashion rental service specializing in women’s clothing in Ireland. Catering primarily to women aged 18-34, Atlas Rogue offers a unique approach by exclusively renting out its own collection of fashionable attire.
+
+The service is designed to provide value and convenience to its customers by offering a broad selection of the latest trends and timeless classics, all available for rent. By maintaining a direct relationship with its customers, Atlas Rogue is able to respond quickly to changing fashion trends and customer preferences, ensuring that its collection remains fresh and relevant. The company leverages exceptional SEO and brand awareness strategies to reach a wide audience, making it easy for customers to find and rent the perfect outfit for any occasion without a hefty price tag.
+
+Atlas Rogue simplifies the fashion rental process, offering a seamless online experience from browsing and selection to rental and return. This direct-to-consumer model not only enhances the shopping experience but also fosters a sense of community among its users, who appreciate the brand's commitment to style, quality, and customer satisfaction.
 
 ## Problem Statement
 
-Your client is a 
+Atlas Rogue addresses the challenge faced by fashion-conscious women aged 18-34 in Ireland who are seeking a sustainable and cost-effective way to access a diverse and trendy wardrobe. Traditional shopping methods often lead to high expenses, closet clutter, and environmental concerns due to fast fashion consumption. Furthermore, the hassle of navigating multiple rental websites to find quality, fashionable clothing items that suit their tastes and needs adds complexity and frustration to the process.
 
-## Research: CHANGE
+By offering a curated collection of high-quality women's clothing available for rent through a single, user-friendly platform, Atlas Rogue eliminates the need for consumers to buy fast fashion items that are quickly discarded, thus promoting a more sustainable approach to fashion. This service solves the problem of wardrobe diversity without the associated costs and environmental impact, providing a convenient, cost-effective, and eco-friendly solution for staying fashionable.
+
+## Research:
 
 
+- User Interviews: 1:1 interviews were conducted with existing online fashion rental shoppers to determine the categories they look for, the designers they like and what the pros and cons are of different competing sites in the country. 
+- Competitive Analysis: Examining competing rental stores and websites revealed existing offerings and their strengths and weaknesses. This informed our choice of target market, value proposition, messaging and strategy.
 
-- User Interviews: 1:1 interviews were conducted with existing gym members, and also potential new gym members, to determine what goals they have and what messaging and value propositions appeal to them. 
-- Competitive Analysis: Examining competing boxing gym classes and websites revealed existing offerings and their strengths and weaknesses. This informed our choice of target market, value proposition, messaging and strategy.
-- User Testing: Usability testing of existing flows were carried out with existing gym members to examine how they navigate the system and competitor solutions (Glofox & Squarespace)
-
-## Design CHANGE
+## Design
 
 - I began the process by designing wire-frames of the site in order to get an overall understanding of the user flows and necessary pages to achieve the client outcomes.
-- I converted the wire-frames into [a figma prototype](https://www.figma.com/proto/9gEj83rMB6EfxZzyMkmk81/Tough-Glove-Medium-Fidelity-Design?page-id=0%3A1&type=design&node-id=501-39&viewport=290%2C3902%2C0.52&t=QolXKX1XZCvxny5F-1&scaling=scale-down-width) to determine the flow, color schemes and typography that would be used.
-- These prototypes were shared with the gym owner who gave some initial feedback to ensure it achieved their objectives. The messaging and branding was accepted by the owners. I confirmed that the business objectives were met with the figma prototype. 
-- The design was then tested with current gym members to ensure they understood the proposition and were able to navigate the prototype without confusion.
-- The logo, typeface and colour scheme were chosen to reflect the Tough Glove gym ethos of challenging oneself, respect for the science of boxing and professionalism.
+- I converted the wire-frames into [a figma prototype](https://www.figma.com/file/YWbAEWtNoY8F2MQ9Bu6ytS/Atlas-Rogue-Mockups?type=design&node-id=0%3A1&mode=design&t=QR0umm1zHzCF4fw5-1) to determine the flow, color schemes and typography that would be used.
+- The design was then tested with potential customers to ensure they understood the proposition and were able to navigate the prototype without confusion.
+- The logo, typeface and colour scheme were chosen to reflect a gentle and kind brand that was not too serious.
 
-![Colour palette](readme/colour-scheme.png)
+<details>
+<summary> Colour Palette </summary>
+
+![Colour palette](readme/img/atlas-rogue-colors.png)
+
+</details>
 
 
 ## Agile Development CHANGE
@@ -52,7 +60,7 @@ A github projects board was used to track and manage the expected workload invol
 User stories were prioritized using the MoSCow method (Must have, Should have, Could have, Won't have)
 - #### [Link to the MoSCow Prioritization Board](https://github.com/users/BOM-98/projects/4/views/3)
 
-Some user stories relating to a blog section for the website were deemed to not be necessary and therefore were not added to the project. This could be added to the project on a future date as Tough Glove continue to grow.
+Some user stories relating to a blog section for the website were deemed to not be necessary and therefore were not added to the project. This could be added to the project on a future date.
 
 
 # Business Model CHANGE
