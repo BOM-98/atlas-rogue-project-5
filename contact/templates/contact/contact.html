@@ -3,6 +3,7 @@
 {% block title %}Contact{% endblock %}
 
 {% block content %}
+<div class="px-8">
 <hr class="my-4">
 <h1 class="font-semibold text-2xl mb-4">Contact Us</h1>
 <hr class="my-4">
@@ -13,4 +14,5 @@
     {{ form|crispy }}
     <button type="submit" class="bg-primary-500 hover:bg-primary-700 text-white rounded py-2 px-4 my-4">Send</button>
 </form>
+</div>
 {% endblock %}
