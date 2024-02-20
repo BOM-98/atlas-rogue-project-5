@@ -36,6 +36,11 @@ def add_to_bag(request, item_id):
     number_of_days = difference.days
     quantity = number_of_days
     
+    # Validate that both start_date and end_date are provided
+    if not start_date or not end_date:
+        messages.error(request, "You must select both a start and an end date.")
+        return redirect('product_detail', product_id=item_id)
+    
     # Convert date objects to string in ISO format before storing in the session
     if start_date:
         start_date = start_date.isoformat()  # Converts to 'YYYY-MM-DD' string
