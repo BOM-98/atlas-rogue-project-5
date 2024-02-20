@@ -46,7 +46,7 @@
                             <p class="my-0 text-xs text-gray-600">Qty: {{ item.quantity }}</p>
                         </div>
                         <div class="px-2 w-3/12 text-right">
-                            <p class="my-0 text-xs text-gray-600">${{ item.product.price | calc_subtotal:item.quantity }}</p>
+                            <p class="my-0 text-xs text-gray-600">€{{ item.product.price | calc_subtotal:item.quantity }}</p>
                         </div>
                     </div>
                 {% endwith %}
@@ -59,9 +59,9 @@
                         <p class="my-0">Grand Total:</p>
                     </div>
                     <div class="w-5/12 px-2">
-                        <p class="my-0">${{ total | floatformat:2 }}</p>
-                        <p class="my-0">${{ delivery | floatformat:2 }}</p>
-                        <p class="my-0 font-bold">${{ grand_total | floatformat:2 }}</p>
+                        <p class="my-0">€{{ total | floatformat:2 }}</p>
+                        <p class="my-0">€{{ delivery | floatformat:2 }}</p>
+                        <p class="my-0 font-bold">€{{ grand_total | floatformat:2 }}</p>
                     </div>
                 </div>
             </div>
@@ -126,7 +126,7 @@
                             <span class="icon">
                                 <i class="fas fa-exclamation-circle"></i>
                             </span>
-                            <span>Your card will be charged <strong>${{ grand_total|floatformat:2 }}</strong></span>
+                            <span>Your card will be charged <strong>€{{ grand_total|floatformat:2 }}</strong></span>
                         </p>
                     </div>
                 </form>
