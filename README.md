@@ -51,23 +51,25 @@ Agile software development methods were used to deliver this project and ensure 
 
 A github projects board was used to track and manage the expected workload involved in this project, and break it down into a list of epics, and then further into user stories that could be worked towards to build the site on time.
 - Each user story was written with a clear description following the convention of "As a ____, I want to ______, so that ____".
-- A points system was used to estimate the effort involved with each story.
+- A T-shirt sizing system was used to estimate the effort involved with each story (S, M, L, XL).
 - The end user goal and end business goal was clearly articulated on each story, along with the acceptance criteria. 
 - Each story contained the necessary tasks required to complete them and achieve the acceptance criteria. 
-- #### [Link to the GitHub Project board](https://github.com/users/BOM-98/projects/4/views/1)
+- #### [Link to the GitHub Project board](https://github.com/users/BOM-98/projects/5)
 
 
 User stories were prioritized using the MoSCow method (Must have, Should have, Could have, Won't have)
-- #### [Link to the MoSCow Prioritization Board](https://github.com/users/BOM-98/projects/4/views/3)
+- #### [Link to the MoSCow Prioritization Board](https://github.com/users/BOM-98/projects/5/views/3)
 
-Some user stories relating to a blog section for the website were deemed to not be necessary and therefore were not added to the project. This could be added to the project on a future date.
-
-
-# Business Model CHANGE
+Some user stories relating to ratings and reviews, payment options and customer account management for the website were deemed to not be necessary and therefore were not added to the project. This could be added to the project on a future date.
 
 
+# Business Model
 
-## Marketing CHANGE
+- Atlas Rogue is an online eCommerce store where customers can rent items of clothing online and have them delivered.
+- All clothing items were scraped using the product_scraper.py script from a UK website - [ClOAN STORE](https://www.cloan.uk/).
+
+
+## Marketing
 
 ### SEO
 
@@ -83,6 +85,8 @@ Some user stories relating to a blog section for the website were deemed to not 
 - Whenever possible, important keywords were bolded to highlight their importance and increase chances of them ranking. 
 - The word `dress` was included in the majority of our product names for dresses, therefore I made sure that the image names matched the name of the item and included the item name in the alt attributes of any image to increase our rankings for the word `dress`.
 - A `sitemap.xml` and `robot.txt` file was generated and uploaded to the project to inform Google what pages should be indexed and maximize chances of Atlas Rogue ranking for our targeted keywords.
+
+<hr>
 
 | KEYWORD                 | VOLUME | SD |
 |-------------------------|--------|----|
@@ -107,6 +111,7 @@ Some user stories relating to a blog section for the website were deemed to not 
 | `dress rental cork`     | 210    | 30 |
 
 
+
 <details>
 <summary>Screenshot of Ubersuggest Report</summary>
 
@@ -115,11 +120,18 @@ Some user stories relating to a blog section for the website were deemed to not 
 
 </details>
 
-### Social CHANGE
+<hr>
+
+### Social
 
 - A fictional Facebook business page was set up for the eCommerce store which offers several advantages:
 
-![Facebook page](/readme/img/facebook-page.png)
+<details>
+<summary>Facebook Page Screenshot</summary>
+
+![Facebook page](readme/img/facebook-account-1.png)
+
+</details>
 
   - Increased Visibility: .
 
@@ -149,50 +161,150 @@ Some user stories relating to a blog section for the website were deemed to not 
 
 The database schema for the tough glove site is shown below:
 
-![Database schema](readme/drawSQL-tough-glove-database-schema.png)
+![Database schema](readme/img/database-model.png)
+
+<details>
+<summary>Orders Model</summary>
+
+### `orders`
+- `order_number` varchar(32) [primary key]
+- `user_profile_id` integer [null]
+- `full_name` varchar(50)
+- `email` varchar(254)
+- `phone_number` varchar(20)
+- `country` varchar
+- `postcode` varchar(20) [null]
+- `town_or_city` varchar(40)
+- `street_address1` varchar(80)
+- `street_address2` varchar(80) [null]
+- `county` varchar(80) [null]
+- `date` timestamp
+- `delivery_cost` decimal(6,2)
+- `order_total` decimal(10,2)
+- `grand_total` decimal(10,2)
+- `original_bag` text
+- `stripe_pid` varchar(254)
+
+</details>
+
+<details>
+<summary>Order Line Items Model</summary>
 
 
-- `User` - represents a user in the tough glove gym. This is the default model provided in the Django framework. Admin users are differentiated from gym members by the groups they are added to. 
-- `Members` - represents additional information for each member in the gym, such as their phone number and date joined.
-- `Classes` - represents Classes that the gym admin creates for the gym.
-- `Bookings` - represents class bookings that members of the gym make to reserve their spot in each class.
+### `order_line_items`
+- `id` integer [primary key]
+- `order_id` integer
+- `product_id` integer
+- `quantity` integer
+- `lineitem_total` decimal(6,2)
 
-Database Relationships:
-- `Users` have a one to one relationship with `Members`
-- `Users` have a one to many relationship with `Bookings`
-- `Classes` have a one to many relationship with `Bookings`
+</details>
 
-# Features CHANGE
+<details>
+<summary>Product Rentals Model (Custom)</summary>
+
+### `product_rentals`
+- `id` integer [primary key]
+- `product_id` integer
+- `order_line_item_id` integer
+- `start_date` date
+- `end_date` date
+
+</details>
+
+<details>
+<summary>User Profiles Model</summary>
+
+### `user_profiles`
+- `id` integer [primary key]
+- `user_id` integer
+- `default_phone_number` varchar(20) [null]
+- `default_street_address1` varchar(80) [null]
+- `default_street_address2` varchar(80) [null]
+- `default_town_or_city` varchar(40) [null]
+- `default_county` varchar(80) [null]
+- `default_postcode` varchar(20) [null]
+- `default_country` varchar(40) [null]
+
+</details>
+
+<details>
+<summary>Contacts Model (Custom)</summary>
+
+### `contacts`
+- `id` integer [primary key]
+- `name` varchar(100)
+- `email` varchar(254)
+- `subject` varchar(150)
+- `message` text
+- `created_at` timestamp
+
+</details>
+
+<details>
+<summary>Categories Model</summary>
+
+### `categories`
+- `id` integer [primary key]
+- `name` varchar(254)
+- `friendly_name` varchar(254) [null]
+
+</details>
+
+<details>
+<summary>Products Model</summary>
+
+### `products`
+- `id` integer [primary key]
+- `category_id` integer [null]
+- `sku` varchar(254) [null]
+- `name` varchar(254)
+- `designer` varchar(254) [null]
+- `price` decimal(6,2)
+- `rrp` decimal(6,2) [null]
+- `size` varchar(254) [null]
+- `colour` varchar(254) [null]
+- `length` varchar(254) [null]
+- `image_url` varchar(1024) [null]
+- `image` varchar [null] 
+
+</details>
+
+<details>
+<summary>Wishlist Model (Custom)</summary>
+
+### `wishlists`
+- `id` integer [primary key]
+- `user_profile_id` integer
+
+</details>
+
+
+# Features
 
 ## CRUD functionality:
 
 ### Member CRUD Functionality
 - Create:
-  - Users can create a `User` with an associated `Member` on the register page
-  - Users can create a `Bookings` for a class through the BookingForm
+  - Users can create a `User` with an associated `User Profile` on the register page
+  - Users can create `Orders`, `Product Rentals` & `Order Line Items` for a rental item through the checkout
+  - Users can create `Wishlist` items by clicking the wishlist button on products
+  - Users can create `Contacts` through the contact us form on the contact page
 - Read: 
-  - Users can read their `User` information on their profile page
-  - Users can read all of the `Classes` that are available in the classes page
-  - Users can read their `Bookings` they have created in the user bookings page
+  - Users can read their `Orders`, `Product Rentals` & `Order Line` Items information on their profile page in Order History
+  - Users can read all `Wishlist` items in their account
+  - Users can read all `Products` and `Categories` through the products and product details pages
 - Update: 
-  - Users can update the `User` account with the update_member page and form
-- Delete:
-  - Users can delete their `Bookings` in their cancel_bookings page
+  - Users can update the `User` account with the profile page and form
 ### Admin CRUD Functionality
 - Create:
-  - Admins can create new `Users` other than themselves with admin privileges using the CreateUserForm
-  - Admins can create `Classes` through the create_class page
-  - Admins can create `Bookings` for themselves
+  - Admins can create `Products` through the product management page
 - Read: 
-  - Admins can read all of the `Users` that are currently in the gym from the admin dashboard and the members page
-  - Admins can read all of the `Classes` that are currently running from the admin dashboard and the classes page. Classes are also displayed on calendars on both pages
+  - Admins can read all of the `Contacts` that have been submitted by users on the Contact Form Submissions page
 - Update: 
-  - Admins can update `Users` on the site, changing all of their details including first_name, last_name and email
-  - Admins can update `Classes` by via the UpdateClassForm on the update class page
+  - Admins can update `Products` on the site by clicking the edit button under any product in the products or product_detail pages
 - Delete:
-  - Admins can delete `Users` and the associated `Members` data on the site if they need to remove members
-  - Admins can delete `Classes` from the site
-  - Admins can delete `Bookings` that are their own, but not other user's bookings. 
+  - Admins can delete `Products` from the site by clicking the delete button under any product in the products or product_detail pages
 
 
 ## Authentication / Authorization:  CHANGE
@@ -473,9 +585,9 @@ I outline the different technologies involved in this project and the purpose fo
 ## Frameworks and Packages CHANGE
 
 
-- [Bootstrap 5](https://getbootstrap.com/) - CSS library used to style the site and implement pre-built components.
-- [Bootstrap Icons](https://icons.getbootstrap.com/) - Icon library used for svg icons throughout the site.
-- [Fullcalendar](https://fullcalendar.io/) - A javascript calendar used for displaying events on web apps.
+- [Tailwind](https://tailwindcss.com/) - CSS library used to style the site.
+- [Flowbite](https://flowbite.com/) - Tailwind CSS component library.
+- [jQuery](https://jquery.com/) - JavaScript library for document transversal and manipulation.
 
 
 ## Django Packages CHANGE
