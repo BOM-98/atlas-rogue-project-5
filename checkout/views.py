@@ -87,7 +87,6 @@ def checkout(request):
                         start_date=item_data['start_date'],
                         end_date=item_data['end_date'], 
                     )
-                    print(product_rental)
                     product_rental.save()
                 except Exception as e:
                     print(f"An error occurred: {e}")
@@ -177,8 +176,7 @@ def checkout_success(request, order_number):
                 user_profile_form.save()
 
     messages.success(request, f'Order successfully processed! \
-        Your order number is {order_number}. A confirmation \
-        email will be sent to {order.email}.')
+        Your order number is {order_number}.')
 
     if 'bag' in request.session:
         del request.session['bag']
