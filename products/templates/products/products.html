@@ -163,7 +163,7 @@
       </div>
       <div class="self-stretch text-secondaryGrey-400 text-sm font-normal my-1">{{ product.designer }}</div>
       {% if product.category %}
-      <a href="{% url 'products' %}?category={{ product.category.name }}">
+      <a href="{% url 'products' %}?category={{ product.category.name|urlencode }}">
         <div class="flex flex-row justify-start items-center gap-2.5">
           <img src="{% static 'img/icons/tag-black-shape.svg' %}" alt="" class="h-3 fill-secondaryGray-400">
           <div class="self-stretch text-black text-sm font-normal my-1">{{product.category.friendly_name }}</div>
