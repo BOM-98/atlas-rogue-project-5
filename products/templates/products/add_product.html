@@ -3,6 +3,14 @@
 {% load tailwind_filters %}
 
 {% block content %}
+
+<!-- 
+    This HTML code represents the template for adding a product in the product management system.
+    It contains a form for adding a new product with fields such as name, description, price, and an image upload option.
+    The form is submitted to the 'add_product' URL using the POST method.
+    The cancel button redirects the user to the 'products' page.
+    The add product button submits the form and adds the product to the system.
+-->
 <div class="overlay"></div>
 <div class="container mx-auto px-4">
     <div class="flex flex-wrap -mx-4">
@@ -27,4 +35,5 @@
             </form>
         </div>
     </div>
-    {% endblock %}
+</div>
+{% endblock %}
