@@ -11,6 +11,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     {% endblock %}
+    {% block extra_meta %}
+    {% endblock %}
 
     {% block extra_meta %}
     {% endblock %}
@@ -103,7 +105,7 @@
                         <form method="GET" action="{% url 'products' %}">
                             <div class="">
                                 <input type="text" name="q" placeholder="Search"
-                                    class="border-2 border-neutral-100 rounded-md px-2 py-1.5 text-sm text-neutral-400 focus:outline-none focus:border-primary-600">
+                                    class="border-2 border-neutral-100 rounded-md px-2 py-1.5 text-sm text-neutral-800 focus:outline-none focus:border-primary-600">
                                 <button type="submit" class="hidden">Search</button>
                             </div>
                         </form>
@@ -112,7 +114,7 @@
                         <div class="relative">
                             <!-- Rent Button -->
                             <button
-                                class="drop-down-button text-neutral-400 text-center text-base whitespace-nowrap hover:text-primary-600 hover:underline underline-offset-4 decoration-2 duration-500"
+                                class="drop-down-button text-neutral-800 text-center text-base whitespace-nowrap hover:text-primary-600 hover:underline underline-offset-4 decoration-2 duration-500"
                                 aria-label="Rent">Rent</button>
 
                             <!-- Rent Dropdown -->
@@ -144,7 +146,7 @@
                         </div>
                     </li>
                     <li><button
-                            class="drop-down-button text-neutral-400 text-center text-base hover:text-primary-600 hover:underline underline-offset-4 decoration-2 duration-500"
+                            class="drop-down-button text-neutral-800 text-center text-base hover:text-primary-600 hover:underline underline-offset-4 decoration-2 duration-500"
                             aria-label="Designers">Designers</button>
                         <!-- Suppliers Dropdown -->
                         <div class="hidden drop-down-menu lg:absolute z-10 mt-2 w-56 origin-top-right divide-y divide-gray-100 rounded-md bg-white ring-1 ring-black ring-opacity-5 focus:outline-none"
@@ -183,15 +185,15 @@
                         <!-- End Suppliers Dropdown -->
                     </li>
                     <li><a href="{% url 'about_us' %}"
-                            class="text-neutral-400 text-center text-base hover:text-primary-600 hover:underline underline-offset-4 decoration-2 duration-500"
+                            class="text-neutral-800 text-center text-base hover:text-primary-600 hover:underline underline-offset-4 decoration-2 duration-500"
                             aria-label="Our Story">About</a></li>
                     <li><a href="{% url 'contact' %}"
-                            class="text-neutral-400 text-center text-base grow whitespace-nowrap hover:text-primary-600 hover:underline underline-offset-4 decoration-2 duration-500"
+                            class="text-neutral-800 text-center text-base grow whitespace-nowrap hover:text-primary-600 hover:underline underline-offset-4 decoration-2 duration-500"
                             aria-label="Contact Us">Contact</a></li>
                     <li><!-- Account -->
                         <div class="relative self-center">
                             <button
-                                class="lg:hidden drop-down-button text-neutral-400 text-center text-base whitespace-nowrap hover:text-primary-600 hover:underline underline-offset-4 decoration-2 duration-500"
+                                class="lg:hidden drop-down-button text-neutral-800 text-center text-base whitespace-nowrap hover:text-primary-600 hover:underline underline-offset-4 decoration-2 duration-500"
                                 aria-label="Rent">My Account</button>
 
                             <!-- Account Dropdown -->
@@ -233,7 +235,7 @@
                 <form method="GET" action="{% url 'products' %}" class="self-center">
                     <div class="flex hidden lg:block self-center">
                         <input type="text" name="q" placeholder="Search"
-                            class="self-center border-2 border-neutral-100 rounded-md px-2 py-1.5 text-sm text-neutral-400 focus:outline-none focus:border-primary-600">
+                            class="self-center border-2 border-neutral-100 rounded-md px-2 py-1.5 text-sm text-neutral-800 focus:outline-none focus:border-primary-600">
                         <button type="submit" class="hidden">Search</button>
                     </div>
                 </form>
@@ -241,7 +243,7 @@
                 <!-- Account -->
                 <div class="relative self-center">
                     <button
-                        class="hidden lg:block drop-down-button text-neutral-400 text-center text-base whitespace-nowrap hover:text-primary-600 hover:underline underline-offset-4 decoration-2 duration-500"
+                        class="hidden lg:block drop-down-button text-neutral-800 text-center text-base whitespace-nowrap hover:text-primary-600 hover:underline underline-offset-4 decoration-2 duration-500"
                         aria-label="Rent"><img loading="lazy" src="{% static 'img/icons/account-img.svg' %}"
                             alt="Account"
                             class="aspect-square object-contain object-center w-[25px] sm:w-[31px] overflow-hidden self-center shrink-0 max-w-full my-auto mx-1 hover:scale-105"></button>
@@ -279,15 +281,15 @@
                 <!--Wishlist-->
                 <a href="{% url 'wishlist' %}">
                     <img loading="lazy" src="{% static 'img/icons/Wishlist.svg' %}"
-                        class="aspect-square object-contain object-center w-[25px] sm:w-[31px] overflow-hidden self-center shrink-0 max-w-full my-auto mx-1 mt-1 hover:scale-105">
+                        class="aspect-square object-contain object-center w-[25px] sm:w-[31px] overflow-hidden self-center shrink-0 max-w-full my-auto mx-1 mt-1 hover:scale-105" alt="nav-wishlist">
                 </a>
                 <!-- End Wishlist -->
                 <!-- Cart -->
-                <a class="{% if grand_total %}text-info font-weight-bold{% else %}{% endif %} nav-link self-center text-base text-neutral-400 hover:text-primary-600 hover:scale-105"
+                <a class="{% if grand_total %}text-info font-weight-bold{% else %}{% endif %} nav-link self-center text-base text-neutral-800 hover:text-primary-600 hover:scale-105"
                     href="{% url 'view_bag' %}">
                     <div class="flex flex-row items-center text-center my-auto">
                         <div><img loading="lazy" src="{% static 'img/icons/cart.svg' %}"
-                                class="aspect-square object-contain object-center w-[29px] sm:w-[31px] overflow-hidden shrink-0 max-w-full mx-2"></i>
+                                class="aspect-square object-contain object-center w-[29px] sm:w-[31px] overflow-hidden shrink-0 max-w-full mx-2" alt="cart"></i>
                         </div>
                         <p class="my-0">
                             {% if grand_total %}
