@@ -1,6 +1,10 @@
 {% extends "base.html" %}
 {% load static %}
 
+{% block extra_meta %}
+<meta name="description" content="Wishlist">
+{% endblock %}
+
 {% block extra_css %}
 {% endblock %}
 
@@ -8,7 +12,12 @@
 
 {% block content %}
 
-<h1 class="text-xl w-full text-center font-extrabold">Wishlist</h1>
+<div class="px-4 w-full">
+  <hr class="my-4">
+  <h1 class="font-semibold text-3xl mb-4">Wishlist</h1>
+  <h3 class="font-semibold text-secondaryGray-500 text-l mb-4">Your wishlist items</h3>
+  <hr class="my-4">
+</div>
 
 <div class="w-full h-fit py-[30px] justify-around items-center flex flex-wrap">
   {{ wishlist|length }} items in your wishlist
@@ -46,7 +55,7 @@
         <div class="h-5 justify-center items-start gap-2.5 flex">
             <a href="{% url 'remove_from_wishlist' product.id %}">
               <img loading="lazy" src="{% static 'img/icons/heart-full.svg' %}"
-                class="aspect-square object-contain object-center w-[25px] min-w-[25px] overflow-hidden self-center shrink-0 max-w-full my-auto mx-2 hover:scale-110" />
+                class="aspect-square object-contain object-center w-[25px] min-w-[25px] overflow-hidden self-center shrink-0 max-w-full my-auto mx-2 hover:scale-110" alt="wishlist">
             </a>
         </div>
       </div>
