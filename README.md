@@ -157,7 +157,7 @@ Some user stories relating to ratings and reviews, payment options and customer 
   Immediate Response: Facebook messaging is an increasingly more popular channel through which customers contact businesses with queries or complaints.
 
 
-## Newsletter CHANGE
+## Newsletter
 
 - A newsletter form is present on the footer of every page, which offers a variety of benefits:
 
@@ -607,69 +607,36 @@ It is intended to add calendar events to the personal calendars of members of th
 
 ### Google Maps Integrations
 
-Tough Glove is moving to a new gym address. Once that address is secured I will be adding a location for the gym to the site. This will help Tough Glove to rank higher on local SEO and inform interested web visitors where the gym is. 
+Atlas Rogue would benefit from assigning an address to it's website for SEO purposes. A physical address listed, particularly on the contact or about page, should help improve how Atlas Rogue gets reviewed by Google Search. 
 
 ### Implement A Blog 
 
-Tough Glove wants to stand out as a voice of authority in Dublin on the topic of boxing training. Informational blog posts will add an element of credibility to the company and also help Tough Glove rank higher on Google/Bing for targeted keywords. 
-
-### Implement Recurring Classes & Archive Finished Classes
-
-Currently the gym owners are only able to schedule one off classes. I want to add functionality to allow the gym owner to schedule recurring classes that repeat for 28 days from the current date. Classes that have already occurred are still displayed on the admin dashboard and classes page. I want to archive finished classes as they are no longer relevant and should not be taking up space on the site. 
-
-### Alerts If Two Classes Are Made At The Same Time
-
-The gym owner wanted to maintain the ability to schedule two classes at the same time in case two different trainers were taking different classes. However, I intend to add an alert that notifies the admin if this is happening as they are creating the second class to avoid situations were this may still be done unintentionally. I have however added a constraint so that two classes can't have the same date, start time AND end time to demonstrate the capability to restrict on the server side classes made with the exact same information. 
-
-### Password Reset
-
-Currently members can't reset their passwords in case they forget them. I will need to add a password reset option for the admin and members that sends verification emails to their registered email address. 
+Atlas Rogue wants to stand out as a voice of authority in Ireland on the topic of fashion rental and sustainable fashion. Informational blog posts will add an element of credibility to the company and also help Atlas Rogue rank higher on Google/Bing for targeted keywords mentioned in blog articles. Articles, if well written, should help secure additional back-links to the site from people who want to cite or share our points of view, therefore increasing our domain authority. 
 
 # Bugs CHANGE
 
-## Bug 1: 
+## Bug 1: Bag Contexts.py Creating an Error on Local Deployment:
+
+I updated my contexts.py file in my bag when trying to add the ability to store rental periods, and this impacted my site as my cart was trying to fetch a quantity number that was an int when I had changed it to a dictionary to store two dates. This repeatedly caused my program to crash locally, but not in production. Even when I cleared my cookies and corrected the bug in my codebase this issue persisted, and I could only run my program locally in an incognito browser. 
 
 
 
-## Bug 2: 
+## Bug 2: Add To Wishlist Bug
 
 
 
-## Bug 3: 
 
-
-
-## Bug 4: Django testing was not allowed to create new tables in elephant sql
-
-When running my tests for my program I was getting errors as my test suite did not have permission to create tables in elephant sql. To resolve this issue, I had to change my settings to instruct the program to use the default sqlite3 backend for running the tests.
-
-```
-DATABASES = {
-    'default': dj_database_url.parse(os.environ.get("DATABASE_URL"))
-}
-
-if 'test' in sys.argv:
-    DATABASES = {
-        'default': {
-            'ENGINE': 'django.db.backends.sqlite3',
-            'NAME': 'mydatabase',
-        }
-    }
-```
-
-
-
-# Technologies Used CHANGE
+# Technologies Used
 
 I outline the different technologies involved in this project and the purpose for using each technology in this section.
 
-## Core Technologies CHANGE
+## Core Technologies
 
 - [Django](https://www.djangoproject.com/) the full stack framework used for this gym management system.
 - [JavaScript](https://www.ecma-international.org/publications-and-standards/standards/ecma-262/) used for rendering the fullcalendar calendar in the app.
 - [HTML](https://html.spec.whatwg.org/)/[CSS](https://www.w3.org/Style/CSS/Overview.en.html) + [Django Template Language](https://docs.djangoproject.com/en/4.2/ref/templates/language/) used for building templates on the website and rendering data from the database on the webpages.
 
-## Frameworks and Packages CHANGE
+## Frameworks and Packages
 
 
 - [Tailwind](https://tailwindcss.com/) - CSS library used to style the site.
@@ -677,211 +644,29 @@ I outline the different technologies involved in this project and the purpose fo
 - [jQuery](https://jquery.com/) - JavaScript library for document transversal and manipulation.
 
 
-## Django Packages CHANGE
+## Django Packages
 
 - [Gunicorn](https://pypi.org/project/gunicorn/) - provides HTTP server.
 - [psycopg2](https://pypi.org/project/psycopg2/) - provides PostgreSQL connection.
+- [Pillow](https://pypi.org/project/Pillow/) - used for image processing (Model ImageField).
 - [Whitenoise](https://pypi.org/project/whitenoise/) - used for serving static files.
 - [Coverage](https://pypi.org/project/coverage/) - used for testing and analysis.
-- [django-bootstrap-datepicker-plus](https://django-bootstrap-datepicker-plus.readthedocs.io/en/latest/Usage.html) - datepicker plugin used for selecting times and dates for classes being made. 
+- [Django Storages](https://django-storages.readthedocs.io/en/latest/) and [Boto3](https://pypi.org/project/boto3/) - used for storing static files and media files on AWS S3.
+- [Django Crispy Forms](https://django-crispy-forms.readthedocs.io/en/latest/) and [Tailwind Crispy Forms](https://github.com/django-crispy-forms/crispy-tailwind) were used to style forms in this project. 
 - [Black](https://pypi.org/project/black/) - A PEP8 compliant code formatter.
 
 
-## Deployment Technologies CHANGE
+## Deployment Technologies
 
 - [PostgreSQL](https://www.postgresql.org/) (via Elephant SQl) - used for database.
 - [Heroku](https://www.heroku.com/) - used for hosting the application.
-- [Cloudinary](https://cloudinary.com/) - Image API platform for delivering images via CDN.
+- [AWS S3](https://aws.amazon.com/s3/) - used for storing static files and media files.
 - [Github](https://github.com/) - code repository for storing the codebase and version control
 
+## Integrated Technologies:
+ - [Stripe Elements](https://docs.stripe.com/payments/quickstart) was used to implement a PCI compliant checkout.
+
 # Testing CHANGE
-
-## Automatic Testing
-
-Automatic unit tests were written for the Layout back-end functionality of the app to test all of the templates, forms, models and views of the site.
-
-- 54 Unit Tests were written in total
-
-### Form Tests
-
-- All forms were tested in `test_forms.py` for appropriate form validation and to ensure the integrity of all of the data written to the database.
-
-<details>
-<summary>List of Form Unit Tests</summary>
-
- Test      | Result |
-| ----------- | ----------- |
-| CREATEUSERFORM is valid if no fields are excluded     | OK      |
-| CREATEUSERFORM is invalid if no FIRST_NAME field is inputted   | OK       |
-| CREATEUSERFORM is invalid if no USERNAME field is inputted   | OK       |
-| CREATEUSERFORM is invalid if no EMAIL field is inputted   | OK       |
-| CREATEUSERFORM is invalid if a duplicate USERNAME field is inputted  | OK       |
-| CREATEUSERFORM is valid if a duplicate EMAIL field is inputted  | OK       |
-| CREATEUSERFORM is invalid if the PASSWORD1 and PASSWORD2 fields are different  | OK       |
-| UPDATEUSERFORM is valid if no fields are excluded  | OK       |
-| UPDATEUSERFORM is invalid if no FIRST_NAME field is inputted  | OK       |
-| UPDATEUSERFORM is invalid if no LAST_NAME field is inputted  | OK       |
-| UPDATEUSERFORM is invalid if no USERNAME field is inputted  | OK       |
-| UPDATEUSERFORM is invalid if no EMAIL field is inputted  | OK       |
-| CREATECLASSFORM is valid if no fields are excluded  | OK       |
-| CREATECLASSFORM is invalid if no CLASS_TYPE field is inputted  | OK       |
-| CREATECLASSFORM is invalid if no CLASS_DATE field is inputted.  | OK       |
-| CREATECLASSFORM is invalid if no CLASS_START_TIME field is inputted  | OK       |
-| CREATECLASSFORM is invalid if no CLASS_END_TIME field is inputted  | OK       |
-| CREATECLASSFORM is invalid if no SLOTS_AVAILABLE field is inputted  | OK       |
-| UPDATECLASSFORM is valid if no fields are excluded  | OK       |
-| BOOKINGFORM is valid if no fields are excluded  | OK       |
-| BOOKINGFORM is invalid if no USER field is inputted  | OK       |
-| BOOKINGFORM is invalid if no CLASS_ID field is inputted  | OK       |
-| CREATECLASSFORM is invalid if no SLOTS_AVAILABLE field is inputted  | OK       |
-</details>
-
-<br>
-
-### Models Tests CHANGE
-
-- Models are tested in `test_models.py` to check that models created the correct instances in the system
-
-
-#### Class Model Tests:
-
-<details>
-<summary>Class Model Unit Tests</summary>
-
-| Test Description                                | Action                                                               | Expected Outcome       |
-| ----------------------------------------------- | -------------------------------------------------------------------- | ---------------------- |
-| Test Class Creation                             | Verify the class instance has correct initial settings.              |                        |
-| \- `class_name` is 'Test Class'                 | Check the `class_name` attribute.                                    | Pass                   |
-| \- `slots_available` is set to 10               | Check the `slots_available` attribute.                               | Pass                   |
-| \- `slots_filled` starts at 0                   | Check the `slots_filled` attribute.                                  | Pass                   |
-| Unique Together Constraint                      | Ensure class uniqueness based on date and time.                      |                        |
-| \- Attempt to create a duplicate class instance | Try creating a class with the same date and time as an existing one. | Exception raised, pass |
-
-</details>
-
-<br>
-
-#### Booking Model Tests:
-
-<details>
-<summary>Booking Model Unit Tests</summary>
-
-| Test Description                            | Action                                                       | Expected Outcome |
-| ------------------------------------------- | ------------------------------------------------------------ | ---------------- |
-| Test Booking Creation                       | Verify the booking instance is correctly created and linked. |                  |
-| \- `user` is linked to `other_user`         | Check the `user` attribute.                                  | Pass             |
-| \- `class_id` is linked to `class_instance` | Check the `class_id` attribute.                              | Pass             |
-
-</details>
-
-<br>
-
-#### Class Slot Management Tests:
-
-<details>
-<summary>Slot Management Unit Tests</summary>
-
-| Test Description                                        | Action                                                     | Expected Outcome |
-| ------------------------------------------------------- | ---------------------------------------------------------- | ---------------- |
-| Test Decrement Slots                                    | Validate the update of slot availability and filled slots. |                  | Pass
-| \- After booking deletion, `slots_available` increments | Delete a booking and check `slots_available`.              | Pass             |
-| \- After booking deletion, `slots_filled` decrements    | Delete a booking and check `slots_filled`.                 | Pass             |Pass             | 
-
-</details>
-
-<br>
-
-### Views Tests
-
-- Views are tested in `test_views.py` to ensure HTTP status codes, templates used and forms all performed as expected. 
-
-#### Registration and Login Tests:
-
-<details>
-<summary>Registration and Login Unit Tests</summary>
-
-| Test Case         | Description                                                                                 | Outcome |
-| ----------------- | ------------------------------------------------------------------------------------------- | ------- |
-| Homepage View     | Confirms that the homepage view uses the correct template and returns a status code of 200. | Pass    |
-| Register View     | Checks the registration page is displayed correctly with the appropriate template.          | Pass    |
-| User Registration | Ensures that a new user can register successfully and is redirected to the login page.      | Pass    |
-| Login View        | Validates the login page is displayed correctly with the appropriate template.              | Pass    |
-| User Login        | Confirms that a user can log in successfully and is redirected to the homepage.             | Pass    |
-</details>
-<br>
-
-#### Member Views Tests:
-
-<details>
-<summary>Member Views Unit Tests</summary>
-
-| Test Case                   | Description                                                                             | Outcome |
-| --------------------------- | --------------------------------------------------------------------------------------- | ------- |
-| Logout View                 | Tests if a user can logout successfully and is redirected to the homepage.              | Pass    |
-| Available Classes View      | Ensures that the list of available classes is retrieved successfully.                   | Pass    |
-| Profile View                | Checks that the user profile page is displayed correctly and uses the correct template. | Pass    |
-| Update Member View          | Confirms that the member update page is accessible and uses the correct template.       | Pass    |
-| Update Profile              | Ensures that a user can update their profile and is redirected to the profile page.     | Pass    |
-| Unauthorized Profile Update | Verifies that a user cannot update another user's profile unless they are an admin.     | Pass    | Pass    |
-</details>
-<br>
-
-#### Admin Views Tests:
-
-<details>
-<summary>Admin Views Unit Tests</summary>
-
-| Test Case            | Description                                                                     | Outcome |
-| -------------------- | ------------------------------------------------------------------------------- | ------- |
-| Members View         | Tests if the admin can view the list of members.                                | Pass    |
-| Update Other Profile | Checks that an admin can update other member profiles.                          | Pass    |
-| Delete Member View   | Confirms that the admin can access the delete member page.                      | Pass    |
-| Delete Profile       | Ensures that an admin can delete a member's profile.                            | Pass    |
-| Admin Dashboard View | Validates that the admin dashboard is accessible and uses the correct template. | Pass    |
-</details>
-<br>
-
-#### Classes Views Tests:
-
-<details>
-<summary>Classes Views Unit Tests</summary>
-
-| Test Case         | Description                                                               | Outcome |
-| ----------------- | ------------------------------------------------------------------------- | ------- |
-| Create Class View | Confirms that the class creation page is displayed correctly.             | Pass    |
-| Create Class      | Ensures that an admin can create a class successfully.                    | Pass    |
-| Update Class View | Checks that the class update page is displayed correctly.                 | Pass    |
-| Update Class      | Verifies that an admin can update class details.                          | Pass    |
-| Delete Class View | Tests if the class deletion page is displayed correctly.                  | Pass    |
-| Delete Class      | Confirms that an admin can delete a class.                                | Pass    |
-| Classes View      | Ensures that the classes list page is accessible and displayed correctly. | Pass    |
-</details>
-<br>
-
-#### Bookings Views Tests:
-
-<details>
-<summary>Bookings Views Unit Tests</summary>
-
-| Test Case           | Description                                                                   | Outcome |
-| ------------------- | ----------------------------------------------------------------------------- | ------- |
-| Bookings View       | Validates that the bookings page is accessible and uses the correct template. | Pass    |
-| Book Class View     | Checks that the class booking page is displayed correctly.                    | Pass    |
-| Book Class          | Confirms that a user can book a class successfully.                           | Pass    |
-| Cancel Booking View | Tests if the cancel booking page is displayed correctly.                      | Pass    |
-| Cancel Booking      | Ensures that a user can cancel a booking successfully.                        | Pass    |
-</details>
-<br>
-
-### Automated Test Results: 
-
-![ Automated Tests Screenshot](readme/automated-tests.png)
-
-### Coverage Report: 
-
-Overall I managed to gain 94% coverage on my layout app as seen in the image below. 
-
-![ Automated Tests Coverage Report](readme/coverage-report.png)
 
 ## Manual Testing
 
@@ -894,7 +679,7 @@ Overall I managed to gain 94% coverage on my layout app as seen in the image bel
 | Navigation links all work             | Click each navigation link in the header and verify it directs to the correct page.          | PASS   |
 | All CTA Links work                    | Click each Call to Action (CTA) link and verify it performs the expected action.             | PASS   |
 | All footer navigation links work      | Click each navigation link in the footer and verify it directs to the correct page.          | PASS   |
-| Social link opens to a different page | Click each social media link and verify it opens the correct social media page in a new tab. | PASS   |
+| Facebook link opens to a different page | Click Facebook media link and verify it opens the correct social media page in a new tab. | PASS   |
 
 ### Homepage Testing
 
@@ -906,13 +691,15 @@ Overall I managed to gain 94% coverage on my layout app as seen in the image bel
 | All CTA Links work                    | Click on each Call to Action button/link and check it leads to the expected response/page. | PASS   |
 | All footer navigation links work      | Verify each link in the footer to ensure they navigate to the correct sections or pages.   | PASS   |
 | Social link opens to a different page | Click the social media icons and check if they open the correct profiles in new tabs.      | PASS   |
+| All products link to the right page | Click each product in the featured section and ensure that the right product page is opened.      | PASS   |
+| Wishlist links work | Click each wishlist icon and check the item gets added to the wishlist and the heart becomes full. Click again to remove the item from wishlist and see and empty heart.      | PASS   |
 
 ### Login & Register Page Testing
 
 | Forms create a new user                          | Complete and submit the registration form with valid details.                              | PASS |
 | ------------------------------------------------ | ------------------------------------------------------------------------------------------ | ---- |
 | Form validation prevents missing fields          | Submit forms with some fields left blank to test required field validation.                | PASS |
-| Form validation prevents duplicate users         | Attempt to register a user with a username or email that already exists.                   | PASS |
+| Form validation prevents duplicate users         | Attempt to register a user with a username that already exists.                   | PASS |
 | Password validation prevents easy passwords      | Try to create a user with common passwords to test the strength validation.                | PASS |
 | Password confirmation prevents mismatched fields | Enter mismatched passwords in the 'password' and 'confirm password' fields.                | PASS |
 | User can login with a valid account              | Attempt to login with correct user credentials.                                            | PASS |
@@ -920,69 +707,107 @@ Overall I managed to gain 94% coverage on my layout app as seen in the image bel
 | Error messages for invalid forms display         | Submit invalid forms to ensure that appropriate error messages are displayed.              | PASS |
 | Login link on register form redirects            | Click the login link on the registration form to ensure it redirects to the login page.    | PASS |
 | Register link on login form redirects            | Click the register link on the login form to ensure it redirects to the registration page. | PASS |
-| All footer navigation links work                 | Click each navigation link in the footer and verify it directs to the correct page.        | PASS |
+| Register form sends a confirmation email to the user | Ensure that customers that register receive an email confirmation | PASS |
 
-### Admin Page Testing
+### Bag/Cart Testing
 
-| Test                                                | Action                                                                                                | Result |
-| --------------------------------------------------- | ----------------------------------------------------------------------------------------------------- | ------ |
-| Create a class link works                           | Click the "Create a Class" link and verify it opens the class creation form.                          | PASS   |
-| Create a member link works                          | Click the "Create a Member" link and verify it opens the member creation form.                        | PASS   |
-| Class Deletion button deletes class                 | Use the delete button on a class entry and verify the class is removed from the database.             | PASS   |
-| User must confirm class deletions                   | Attempt to delete a class and verify that a confirmation prompt is displayed.                         | PASS   |
-| Member Deletion button deletes members              | Use the delete button on a member entry and verify the member is removed from the database.           | PASS   |
-| User must confirm member deletions                  | Attempt to delete a member and verify that a confirmation prompt is displayed.                        | PASS   |
-| Class Update button redirects to update form        | Click the "Update" button for a class and verify redirection to the update form.                      | PASS   |
-| Member Update button redirects to update form       | Click the "Update" button for a member and verify redirection to the update form.                     | PASS   |
-| Class calendar displays all classes in the database | Verify that the class calendar shows all scheduled classes.                                           | PASS   |
-| Class calendar month, week, day and list views work | Test different views (month, week, day, list) in the class calendar to ensure they display correctly. | PASS   |
-| Class calendar Renders (JAVASCRIPT TEST) | Load the webpage to ensure the javascript renders the calendar on page load. | PASS   |
-
-### Members Page
-
-| Test                                           | Action                                                                                          | Result |
-| ---------------------------------------------- | ----------------------------------------------------------------------------------------------- | ------ |
-| Create New Member Link Works                   | Click the "Create New Member" link to ensure it directs to the new member creation form.        | PASS   |
-| All User Actions Work                          | Verify that all user actions (update & delete) function as intended.                | PASS   |
-| Update User Link Works                         | Click the "Update User" link for a member to check if it redirects to the user update form.     | PASS   |
-| Delete User Link Works                         | Use the "Delete User" link or button for a member to confirm it initiates the deletion process. | PASS   |
-| Total Users Column Correctly Tallies the Users | Confirm that the "Total Users" column presents an accurate count of all users.                  | PASS   |
+| Test                                          | Action                                                            | Result |
+|-----------------------------------------------|-------------------------------------------------------------------|--------|
+| View cart page without items                  | Navigate to cart page without adding any product to the cart      | Pass   |
+| Add a single product to cart                  | Find a product and add it to the cart                             | Pass   |
+| Remove a product from the cart                | Remove an item from the cart                                      | Pass   |
+| Add multiple products to cart                 | Add several different products to the cart                        | Pass   |
+| Add the same product multiple times to cart   | Add the same product to the cart multiple times - the product should just change dates                   | Pass   |
+| View updated subtotal after adding items      | Check if the cart's subtotal updates after adding/removing items  | Pass   |
+| Proceed to checkout with items in the cart    | Click on proceed to checkout with items in the cart               | Pass   |
+| Update rental dates in the cart from product page | Change the rental dates of a product from its product detail page to the cart | Pass |
+| Save cart items for logged-in user            | Log in, add items to cart, log out, log back in, and view cart    | Pass   |
+| Cart is empty for a new session               | Open a new browser session and check if the cart is empty         | Pass   |
+| Cart items persist after browser refresh      | Refresh the browser page and check if cart items persist         | Pass   |
+| Cart redirects with error message if empty and proceeding to checkout     | Keep the cart empty, press the checkout button         | Pass   |
 
 
-### Classes Page
 
-| Test                                          | Action                                                                                                      | Result |
-| --------------------------------------------- | ----------------------------------------------------------------------------------------------------------- | ------ |
-| Create a Class Button Works                   | Click the "Create a Class" button to ensure it leads to the class creation form.                            | PASS   |
-| All Class Actions (Update, Delete, Book) Work | Test each action button for a class to confirm that update, delete, and book operations function correctly. | PASS   |
-| Classes Count Correctly Tallies the Classes   | Verify the total count of classes listed matches the actual number of classes in the system.                | PASS   |
-| Slots Available Counts the Correct Numbers    | Check that the "Slots Available" count reflects the correct number of available slots per class.            | PASS   |
-| Slots Booked Counts the Correct Numbers       | Confirm that the "Slots Booked" count accurately represents the number of slots booked.                     | PASS   |
-| Class calendar displays all classes in the database | Verify that the class calendar shows all scheduled classes.                                           | PASS   |
-| Class calendar month, week, day and list views work | Test different views (month, week, day, list) in the class calendar to ensure they display correctly. | PASS   |
-| Class calendar Renders (JAVASCRIPT TEST) | Load the webpage to ensure the javascript renders the calendar on page load. | PASS   |
+### Checkout Page
 
-### My Bookings
+| Test                                          | Action                                                                    | Result |
+|-----------------------------------------------|---------------------------------------------------------------------------|--------|
+| Access checkout page with items in cart       | Navigate to checkout page with items in the cart                          | Pass   |
+| Fill in personal information                  | Enter personal details in the form fields                                 | Pass   |
+| Fill in shipping information                  | Enter shipping details in the form fields                                 | Pass   |
+| Enter payment information                     | Fill in payment details using a test credit card provided by Stripe       | Pass   |
+| Complete purchase                             | Submit the checkout form to complete the purchase                         | Pass   |
+| Display success message after purchase        | Verify that a success message or confirmation page appears after purchase | Pass   |
+| Redirect to checkout success page after purchase     | Check if the user is redirected to the checkout success page after purchase   | Pass   |
+| Save order in user's order history            | For logged-in users, check if the order appears in their order history    | Pass   |
+| Validate form fields                          | Check required fields for validation and display error messages           | Pass   |
+| Responsive design for mobile devices          | Test the checkout page on various mobile devices for responsiveness       | Pass   |
 
-| Test                                      | Action                                                                                        | Result |
-| ----------------------------------------- | --------------------------------------------------------------------------------------------- | ------ |
-| Correctly Displays Bookings for User      | Check that the user's bookings are correctly displayed on their booking page.                 | PASS   |
-| Cancel Button on Bookings Works           | Click the "Cancel" button on a booking to ensure it initiates the cancellation process.       | PASS   |
-| Bookings Total Column is Correct          | Verify that the "Bookings Total" column sums up the correct total number of bookings made.    | PASS   |
-| Booking Page Title Displays the User Name | Ensure that the booking page title includes the user's name, indicating personalized content. | PASS   |
+
+
+### Products Page
+
+| Test                                      | Action                                                                | Result |
+|-------------------------------------------|-----------------------------------------------------------------------|--------|
+| Display all products                      | Navigate to the products page to check if all products are displayed  | Pass   |
+| Product filtering by category             | Select a category and verify only products from that category appear  | Pass   |
+| Product search functionality              | Use the search bar to find products by keywords                       | Pass   |
+| Detailed product view                     | Click on a product to view its detailed page                          | Pass   |
+| Sort products                             | Sort products by different criteria (e.g., price, name)               | Pass   |
+| Responsive design                         | Test the products page on various screen sizes for responsiveness    | Pass   |
+| Filter products by price range            | Use a price filter to display products within a specific price range  | Pass   |
+| Display number of products found          | Verify the total number of products found is displayed                | Pass   |
+| Wishlist links work | Click each wishlist icon and check the item gets added to the wishlist and the heart becomes full. Click again to remove the item from wishlist and see and empty heart.      | PASS   |
+
+
+### Payments
+
+| Test | Action | Result |
+|------|--------|--------|
+| NLI can successfully make a payment & order | A not-logged-in user (NLI) attempts to make a payment and order | Pass |
+| LIU can successfully make a payment & order | A logged-in user (LIU) attempts to make a payment and order | Pass |
+| If payment is successful user will be redirected to order success page | After a successful payment, check if the user is redirected to an order success page | Pass |
+| If order fails due to incorrect information being submitted order will not be submitted | Attempt to submit an order with incorrect information and verify it does not get processed | Pass |
+| If there is an error when processing the order the site returns a 500 error without processing order | Introduce an error in order processing and verify that a 500 error is returned without the order being processed | Pass |
+| Payment method validation failure results in error message | Enter an invalid payment method and verify that an appropriate error message is displayed | Pass |
+| Correct currency is charged for the payment | Verify that the payment is processed in the correct currency as displayed on the checkout page | Pass |
+
+### Wishlist
+| Test | Action | Result |
+|------|--------|--------|
+| LIU can add a product to wishlist | A logged-in user (LIU) attempts to add a product to their wishlist | Pass |
+| LIU can view products in wishlist | A logged-in user navigates to the wishlist page to view added products | Pass |
+| LIU can remove a product from wishlist | A logged-in user removes a product from their wishlist | Pass |
+| Wishlist retains products after logout and login | A user adds products to wishlist, logs out, then logs back in to check persistence | Pass |
+| NLI cannot access wishlist | A not-logged-in user (NLI) attempts to access the wishlist feature | Pass |
+| LIU can add a product from wishlist to cart | A logged-in user adds a product from their wishlist directly into their cart | Pass |
+| Wishlist page is responsive on mobile devices | Access the wishlist page on various mobile devices and verify responsiveness | Pass |
+| Duplicate products cannot be added to wishlist | Attempt to add the same product multiple times to the wishlist | Pass |
+| Wishlist updates reflect immediately without page refresh | Modify the wishlist (add/remove items) and verify changes reflect immediately | Pass |
+| Products in wishlist show relevant details | Verify that products in the wishlist display necessary details like name, price, etc. | Pass |
+| Empty wishlist shows a meaningful message | Navigate to the wishlist page without any products and check for a message | Pass |
+| LIU can move products between wishlist and cart | Move a product from the wishlist to the cart and vice versa | Pass |
+| Wishlist icon/count updates in real-time | Verify the wishlist icon or count updates as products are added or removed | Pass |
+| Product details accessible from wishlist | Click on a product in the wishlist to view its detailed page | Pass |
 
 ### Profile
 
-| Test                                       | Action                                                                                               | Result |
-| ------------------------------------------ | ---------------------------------------------------------------------------------------------------- | ------ |
-| First Name is Correct                      | Verify that the displayed first name matches the user's actual first name.                           | PASS   |
-| Last Name is Correct                       | Confirm that the displayed last name matches the user's actual last name.                            | PASS   |
-| Username is Correct                        | Check that the displayed username is accurate according to the user's profile data.                  | PASS   |
-| Email is Correct                           | Ensure the displayed email address is the one associated with the user's account.                    | PASS   |
-| Bookings Count is Correct                  | Confirm that the number displayed in the bookings count reflects the actual number of bookings made. | PASS   |
-| See Bookings Link Directs to Bookings Page | Click on the "See Bookings" link and check if it redirects to the user's bookings page.              | PASS   |
-| Edit Button Directs to Update User Page    | Use the "Edit" button and verify redirection to the user's profile update page.                      | PASS   |
-| Log Out Button Logs the User Out           | Click the "Log Out" button and confirm that it successfully logs the user out of the system.         | PASS   |
+| Test                                         | Action                                                                                           | Result |
+|----------------------------------------------|--------------------------------------------------------------------------------------------------|--------|
+| User's Profile details in profile page is Correct                 | Verify that the displayed fields matches the user's actual fields in their profile.     | PASS   |
+| Email Address Verification                   | Ensure the displayed email address is correctly associated with the user's account.             | PASS   |
+| Wishlist Count is Accurate                   | Confirm that the wishlist count reflects the actual number of items in the user's wishlist.     | PASS   |
+| Navigate to Wishlist from Profile            | Click on a link or button from the user profile to navigate to the wishlist page.               | PASS   |
+| Product Addition to Wishlist                 | Add a product to the wishlist and verify it appears within the user's wishlist.                 | PASS   |
+| Remove Product from Wishlist                 | Remove a product from the wishlist and confirm the list updates accordingly.                   | PASS   |
+| Edit Profile Directs Correctly               | Use the "Edit Profile" option and verify redirection to the profile update page.                | PASS   |
+| Log Out Functionality                        | Click the "Log Out" button and confirm the user is successfully logged out.                     | PASS   |
+| Update User Information                      | Update user information (e.g., name, email) and verify changes are reflected.                   | PASS   |
+| See Orders Link Directs to Orders Page       | Click on the "See Orders" link and check if it redirects to the user's orders page.             | PASS   |
+| Order History Matches User Activity          | Verify the order history correctly lists all past orders made by the user.                      | PASS   |
+| Product Detail Accessibility from Wishlist   | Select a product in the wishlist and ensure it directs to the detailed product page.            | PASS   |
+| Mobile Responsiveness of User Profile Page   | Access the user profile page on a mobile device to test for responsive design.                  | PASS   |
+
 
 ## Pagespeed Insights Report CHANGE
 
