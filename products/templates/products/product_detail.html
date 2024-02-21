@@ -76,9 +76,9 @@
             period</div>
         </div>
         <div class="md:px-5 py-2 w-full">
-            <input required name="start_date" type="date" id="start_datepick" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-3/4 ps-6 p-2.5" placeholder="Select date start">
+            <input required name="start_date" type="date" id="start_datepick" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-3/4 ps-6 p-2.5">
             <p class="my-2 text-gray-500">to</p>
-            <input required name="end_date" type="date" id="end_datepick" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-3/4 ps-6 p-2.5" placeholder="Select date end">
+            <input required name="end_date" type="date" id="end_datepick" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-3/4 ps-6 p-2.5">
         </div>
         <!-- End Rental Period Calendar -->
 
@@ -101,7 +101,6 @@
               <a href="{% url 'delete_product' product.id %}" class="opacity-50 text-primary-600 hover:text-red-800 text-base font-normal underline">Delete</a>
             </div>
             {% endif %}
-
             <!-- Keep Shopping Button -->
             <a href="{% url 'products' %}" class="inline-block text-primary-600 text-start md:px-5 md:mx-5 py-2 hover:border hover:border-primary-600 rounded-md">
               <span class="icon">
@@ -116,12 +115,11 @@
 
 
           <input type="hidden" name="redirect_url" value="{{ request.path }}">
+        </form>
         </div>
-      </form>
       <!-- End Add to Bag Form -->
     </div>
   </div>
-</div>
 
 
 {% endblock %}
