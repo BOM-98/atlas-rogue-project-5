@@ -1,6 +1,6 @@
 # Atlas Rogue
 
-![Screenshot of Hero Section](readme/hero-section.png)
+![Screenshot of Hero Section](readme/img/cover-image.png)
 
 > [Live Site](https://atlas-rogue-09e759974ffc.herokuapp.com/)
 
@@ -133,29 +133,49 @@ Some user stories relating to ratings and reviews, payment options and customer 
 
 </details>
 
-  - Increased Visibility: .
 
-  - Customer Engagement: 
+- Using a Facebook business page to promote Atlas Rogue, offers a multitude of benefits in terms of digital marketing and customer interaction.
 
-  - Marketing Opportunities: 
+  - **Increased Visibility:**
+  Broad Audience Reach: Facebook's vast user base provides an unparalleled platform to reach a wide audience globally. This increased visibility can lead to higher brand recognition and potentially more customers.
 
-  - Brand Building: 
+  - **SEO Benefits:** A well-maintained Facebook page can also enhances our SEO efforts, giving Google signals that this is a legitimate business and providing more trust scores on its EAT criteria to make it more visible in search engine results pages (SERPs) when people search for related keywords.
 
-  - Customer Support: 
+  - **Customer Engagement:**
+  Direct Communication: Facebook allows for real-time interaction with our audience through comments, messages, and posts, fostering a stronger connection between your brand and its followers.
+
+  - **Marketing Opportunities:**
+  Targeted Advertising: Facebook's advertising platform enables highly targeted campaigns based on demographics, interests, and behavior, allowing you to reach specific segments of your audience with customized messages.
+
+  - **Content Sharing:** The platform is ideal for sharing a wide range of content, including updates, promotions, educational content, and behind-the-scenes looks, which can engage and inform your audience.
+
+  - **Brand Building:** Consistent Brand Image: A Facebook business page serves as an extension of Atlas Rogue's, allowing us to maintain a consistent brand image and voice across all your marketing channels.
+
+  - **Community Building:** Through features like Facebook Groups, Facebook enables us to foster a community around our Brand or Clothing Rentals in general.
+
+  - **Customer Support:**
+  Immediate Response: Facebook messaging is an increasingly more popular channel through which customers contact businesses with queries or complaints.
+
 
 ## Newsletter CHANGE
 
-- A newletter form is present on the footer of every page, which offers a variety of benefits:
+- A newsletter form is present on the footer of every page, which offers a variety of benefits:
 
-  - Lead Generation: 
+  - **Lead Generation:**
+    The newsletter sign-up form serves as a powerful tool for capturing the contact information of potential customers. By encouraging visitors to subscribe, Atlas Rogue can grow its database of leads who have expressed interest in their rental service, laying the groundwork for targeted marketing campaigns and personalized offers.
 
-  - Direct Communication:
+  - **Direct Communication:**
+    Subscribing to the newsletter allows Atlas Rogue to establish a direct line of communication with its audience. This channel can be used to send updates, promotions, exclusive offers, and fashion tips directly to subscribers' inboxes, fostering a stronger connection between the brand and its customers.
 
-  - Customer Retention: 
+  - **Customer Retention:**
+    Regular newsletters keep subscribers engaged and informed about the latest additions to the collection, special events, and any loyalty programs. This consistent touchpoint increases the likelihood of subscribers returning to Atlas Rogue for their rental needs, enhancing customer retention.
 
-  - Traffic and Engagement: 
+  - **Traffic and Engagement:**
+    Newsletters can drive traffic back to the Atlas Rogue website by featuring captivating content, such as new arrivals, fashion inspiration, and exclusive deals. Increased website visits not only boost engagement but also provide more opportunities for conversions and sales.
 
-  - Analytics and Insights: 
+  - **Analytics and Insights:**
+    Every newsletter campaign offers actionable analytics, such as open rates, click-through rates, and conversion data. Atlas Rogue can use these insights to understand subscriber preferences better, refine marketing strategies, and tailor future content to meet the interests and needs of their audience more effectively.
+
 
 ## Data Models CHANGE
 
@@ -307,7 +327,7 @@ The database schema for the tough glove site is shown below:
   - Admins can delete `Products` from the site by clicking the delete button under any product in the products or product_detail pages
 
 
-## Authentication / Authorization:  CHANGE
+## Authentication / Authorization:
 
 Certain access restrictions were put in place across the website. 
 
@@ -321,66 +341,48 @@ Only users who are not logged in can view:
 - The registration page to register an account
 - The login page to login to their account
 
-If a user is logged in and navigates to these pages they should be redirected to the available classes page
+If a user is logged in and navigates to these pages they should be redirected to the homepage
 
 
 ### Login Required:
 
 Logins are required on a user account in order to access these pages:
-- Available classes page
-- Members page
-- Profile page (only their own profile)
-- Update Member page (only their own)
-- Classes Page
-- User Bookings Page (only their own)
-- Book Class Page
-- Cancel Bookings Page
+- Profile page - `profile.html`
+- Wishlist page - `wishlist.html`
 
+### User Authentication
+- Users are only able to see Orders that they have made - `checkout_success.html`
 
 ### Admin Only Access: 
 
 Only users logged in with an admin account can access these pages:
 
-- Profile page (Profiles other than their own)
-- Update Member page (can update everyone)
-- Delete member page
-- Admin dashboard page
-- Create Class Page
-- Update Class Page
-- Delete Class Page
-- User Bookings Page (only their own)
-- Create User Page (Admin - can create multiple accounts from the admin dashboard)
+- Add Product page - `add_product.html`
+- Update Product page - `edit_product.html`
+- Contact Form Submissions page - `contact_form_submissions.html`
 
-## General Features:  CHANGE
+## General Features:
 
 ### Navigation & Footer
 
-- A primary navigation is present on the header on all pages of the website.
+- A primary navigation is present on the header on all pages of the website. The top navigation is entirely custom built to fit with the style and design of the brand and **does not use any other pre-built components from other libraries**. 
 
-- <b>If a user is logged in as an admin, the user has access to all available navigation links</b>
+- If a user is logged in as an admin, the user has access to all available navigation links including Product Management and Contact Form Submissions which are not available to regular users
 
 <details>
 <summary>Screenshot of Admin Navigation</summary>
 
-![Screenshot of Admin Navigation ](readme/navigation.png)
+![Screenshot of Admin Navigation ](readme/img/admin-nav.png)
 
 </details>
 <br>
 
-- If the user is logged in as a member, the user has access to the classes, my booking and profile links
+- If the user is logged in as a regular customer, the user has access to their profile, cart, wishlist and all standard navigation links. 
 
 <details>
 <summary>Screenshot of Member Navigation</summary>
 
-![Screenshot of Member Navigation ](readme/navigation-member.png)
-</details>
-<br>
-
-- If the user is not logged in, the navigation displays the register and login links
-<details>
-<summary>Screenshot of Logged Out Navigation</summary>
-
-![Screenshot of Logged Out Navigation ](readme/navigation-member.png)
+![Screenshot of Member Navigation ](readme/img/atlas-rogue-desktop-nav.png)
 </details>
 <br>
 
@@ -388,125 +390,165 @@ Only users logged in with an admin account can access these pages:
 <details>
 <summary>Screenshot of Collapse Menu</summary>
 
-![Screenshot of Collapse Menu](readme/navigation-burger-menu.png)
+![Screenshot of Collapse Menu](readme/img/atlas-rogue-mobile-nav.png)
 </details>
 <br>
 
 The footer is present on all screens of the website and follows the same conditional login for presenting links as the primary navigation
 
+<details>
+<summary>Footer Navigation</summary>
+
+![Screenshot of Collapse Menu](readme/img/footer.png)
+</details>
+<br>
+
 ### Homepage
 
-The homepage acts as an advertising front for any visitors who are not currently members. The copy on the homepage will be optimised for SEO keywords to win search traffic from people searching for boxing gyms in Dublin.
+The homepage acts as an advertising front for any visitors who are not currently members. The copy on the homepage will be optimised for SEO keywords to win search traffic from people searching for dress rentals in Ireland.
 
 <details>
 <summary>Screenshots of The Homepage</summary>
 
-![Screenshot of Hero Section](readme/hero-section.png)
-![Screenshot of Homepage Section 3](readme/why-tough-glove.png)
-![Screenshot of Homepage Member Plans](readme/membership-program.png)
+![Screenshot of Hero Section](readme/img/hero-section.png)
+![Screenshot of Homepage Section 3](readme/img/homepage-2.png)
+![Screenshot of Homepage Member Plans](readme/img/homepage-3.png)
 </details>
 
 ### Login & Register
 
-Login and register pages were implemented to manage user access to class schedules and secure contact information within the gym management system
+Login and register pages were implemented to manage user signups and contact/delivery details.
 
-The gym owner collects `first name`, `last name` and `email` for marketing purposes through the registration form. 
+The website collects `email`, `username` and `password` through the registration form. 
 
-Form validation ensures that no username can be used twice. The gym owner requested that people can create multiple accounts with the same email so that field was not restricted as a unique field.
+Form validation ensures that no username can be used twice.
 
 <details>
 <summary>Screenshot of The Register Form</summary>
 
-![Screenshot of The Register Form](readme/register-page.png)
+![Screenshot of The Register Form](readme/img/registration.png)
 
 </details>
 <br>
 <details>
 <summary>Screenshot of The Login Form</summary>
 
-![Screenshot of The Register Form](readme/login-page.png)
+![Screenshot of The Register Form](readme/img/login.png)
 
 </details>
 
 ### Error Pages
 
-Custom error pages were added to handle 400, 403, 404 and 500 errors. 
+A custom error page was added to handle 400 errors. 
 
 <details>
 <summary>Screenshot of The 404 Page</summary>
 
-![Screenshot of The 404 Page](readme/404-page.png)
+![Screenshot of The 404 Page](readme/img/404.png)
 
 </details>
 
-## Admin Features: CHANGE
+## Admin Features:
 
-### Admin Dashboard
+### Add Products
 
-An admin dashboard is used for the gym owner to manage classes and members. A the dashboard reads the database to display high level overview of total members and classes is shown, with a breakdown of which classes are pt classes and which classes are group classes. The admin can then create, update and delete classes and members from here. 
+Admin users can add products to the website through the `add products` tab.
 
 <details>
-<summary>Screenshots of The Admin Dashboard</summary>
+<summary>Screenshot of the Add Products Tab</summary>
 
-![Screenshot of The Admin Dashboard Metrics](readme/admin-dashboard.png)
-![Screenshot of The Admin Dashboard Calendar](readme/admin-dashboard-calendar.png)
+![Screenshot of The Add Products Page](readme/img/add-products.png)
 
 </details>
 
+### Edit & Delete Products
 
-### Members Listings
-
-A members management page is used for the gym owner to manage members specifically in more detail. The dashboard reads the database to display a more detailed view of the `first_name`, `last_name`, `email`, `username`, `phone` and `date_joined` fields of the `Members` model. The admin can update and delete members under the actions column of the table and can also create new users from here. Only gym admins can view this page. 
+Admin users can update and delete links from their account seen on the the `products` and `product_detail` pages.
 
 <details>
-<summary>Screenshot of The Members Page</summary>
+<summary>Screenshot of the products page with update & delete links</summary>
 
-![Screenshot of The Members Page](readme/members-page.png)
+![Screenshot of the products page with update & delete links](readme/img/update-edit-links.png)
+![Screenshot of the products udpate page](readme/img/edit-product.png)
 
 </details>
 
 
-## Members Features: 
+## Customer Features: 
 
-Members have pages they can view to browse available classes and book classes they want to attend. Members can also manage their bookings from there and view their profile details. 
+All customers can see the following pages
 
-### Classes Page
+### Products Page
 
-A class management page is used for the gym owner to manage classes specifically in more detail. The dashboard reads the database to display a more detailed view of the `class_name`, `class_type`, `class_date`, `class_start_time`, `slots_available` and `slots_filled` of the `Classes` model. Another calendar is available for easier visual reference. Slots available and slots filled dynamically update as classes are booked by members. The admin can update, delete and book classes from this page. The gym owner requested the ability to book classes himself in case he wanted to reserve spots for people who had not registered yet. Only admins can view this page.
-
-NOTE: members can only see classes and book them. They do not see the update or create class buttons. 
+Customers can browse all products in our inventory through `products.html`. Customers can search for products by keyword in the search bar in the navigation or filter/sort products by using the tabs across the top of the page. 
 
 <details>
-<summary>Screenshot of The Classes Dashboard</summary>
+<summary>Screenshot of The Products Page</summary>
 
-![Screenshot of The Admin Dashboard Metrics](readme/classes-page.png)
+![Products Page](readme/img/products-page.png)
 
 </details>
 
-### Bookings Page
+### Products Detail Page
 
-Members can see a list of all of the bookings they have made on the bookings page. This allows them to cancel bookings if they need to also. 
+Customers can see a more detailed view of their products through the `products_detail.html` page. Here customers can view the `designer`, `name`, `price` (daily), `RRP`, `size`, `color` and `length` of each item. They can select their rental period using the datetime pickers on the page and add their items to the cart.
+
+Datetime pickers have form validation implemented to ensure they are inputted. Datetime pickers also prevent users from selecting impossible dates including dates earlier than today and setting an end date that is before the start date.
 
 <details>
-<summary>Screenshot of The Classes Dashboard</summary>
+<summary>Screenshot of The Product Detail Page</summary>
 
-![Screenshot of The Bookings Page](readme/bookings-page.png)
+![Screenshot of The Product Detail Page](readme/img/product-detail-page.png)
 
 </details>
 
-### Profile View & Update Pages
+### Add To Cart Toast
 
-Members can view their profile details and update them in the profile section.
+Customers receive a success notification with an update on items in their cart whenever they add a new item to their bag.
 
 <details>
-<summary>Screenshot of The Profile Page</summary>
+<summary>Screenshot of Add To Cart Toast</summary>
 
-![Screenshot of The Profile Page](readme/profile-page.png)
+![Screenshot of Add To Cart Toast](readme/img/add-to-card-toast.png)
 
 </details>
 
+### Cart
 
+Customers view, edit and delete all items they have in their cart. Their cart also gives them up-to-date information on the number of items they have, the rental periods and days rented, their shipping fee and their grand total. 
 
+<details>
+<summary>Screenshot of Cart</summary>
+
+![Screenshot of Add To Cart](readme/img/cart.png)
+
+</details>
+
+### Checkout
+
+Customers are prompted to enter or confirm their personal information, including name, email, and contact number. If the customer is already logged in, this information can be auto-filled from their account details.
+
+A secure Stripe payment gateway is integrated, allowing customers to enter their payment details with confidence.
+
+Form validation is implemented to ensure all fields are inputted before completing the order.
+
+<details>
+<summary>Screenshot of Checkout</summary>
+
+![Screenshot of Add To Checkout](readme/img/checkout.png)
+
+</details>
+
+### Order Confirmation
+
+Upon successful completion of their checkout customers receive an order confirmation.
+
+<details>
+<summary>Screenshot of Confirmation</summary>
+
+![Screenshot of Add To Confirmation](readme/img/order-confirmation.png)
+
+</details>
 
 ## Roadmap CHANGE
 
