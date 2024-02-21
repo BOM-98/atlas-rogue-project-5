@@ -1,5 +1,10 @@
 {% extends "base.html" %}
 {% load static %}
+{% block title %}All Products{% endblock %}
+
+{% block extra_meta %}
+<meta name="description" content="Rent the latest fashion and accessories from top designers.">
+{% endblock %}
 
 {% block extra_css %}
 {% endblock %}
@@ -140,18 +145,18 @@
             {% if product in wishlist.products.all %}
               <a href="{% url 'remove_from_wishlist' product.id %}">
                 <img loading="lazy" src="{% static 'img/icons/heart-full.svg' %}"
-                  class="aspect-square object-contain object-center w-[25px] min-w-[25px] overflow-hidden self-center shrink-0 max-w-full my-auto mx-2 hover:scale-110" />
+                  class="aspect-square object-contain object-center w-[25px] min-w-[25px] overflow-hidden self-center shrink-0 max-w-full my-auto mx-2 hover:scale-110" alt="wishlist icon">
               </a>
             {% else %}
               <a href="{% url 'add_to_wishlist' product.id %}">
                 <img loading="lazy" src="{% static 'img/icons/Wishlist.svg' %}"
-                    class="aspect-square object-contain object-center w-[25px] min-w-[25px] overflow-hidden self-center shrink-0 max-w-full my-auto mx-2 hover:scale-110" />
+                    class="aspect-square object-contain object-center w-[25px] min-w-[25px] overflow-hidden self-center shrink-0 max-w-full my-auto mx-2 hover:scale-110" alt="wishlist icon">
               </a>
             {% endif %}
           {% else %}
             <a href="{% url 'add_to_wishlist' product.id %}">
               <img loading="lazy" src="{% static 'img/icons/Wishlist.svg' %}"
-                  class="aspect-square object-contain object-center w-[25px] min-w-[25px] overflow-hidden self-center shrink-0 max-w-full my-auto mx-2 hover:scale-110" />
+                  class="aspect-square object-contain object-center w-[25px] min-w-[25px] overflow-hidden self-center shrink-0 max-w-full my-auto mx-2 hover:scale-110" alt="wishlist icon">
             </a>
         {% endif %}
         </div>
