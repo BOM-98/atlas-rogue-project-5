@@ -12,13 +12,16 @@
 {% block extra_title %}Home{% endblock %}
 
 {% block content %}
+<!-- Hero Section -->
 <div class="w-full h-full flex-col justify-center items-center inline-flex py-2">
+    <!-- Hero Image -->
     <div class="self-stretch aspect-[1200/480] justify-start items-center inline-flex w-full py-5"
         style="background-image: url('{% static 'img/hero-image.webp' %}'); background-size:100%;"
         id="hero-image">
         <div
             class="text-2xl md:text-4lx py-5 px-5 bg-rose-300 bg-opacity-80 sm:bg-opacity-20 rounded-[15px] flex-col justify-center items-start gap-5 inline-flex">
             <p class="text-black text-base font-bold tracking-widest">FASHION RENTAL</p>
+            <!-- Hero Title -->
             <h1 class="text-black text-2xl sm:text-5xl font-bold">DRESS RENTAL IRELAND</h1>
             <p class="text-sm">
                 <span >Dublin | Cork | Galway |</span>
@@ -215,19 +218,25 @@
         <!-- End Product Name -->
         <div class="w-4 h-4 relative"></div>
         <div class="h-5 justify-center items-start gap-2.5 flex">
+        <!-- 
+            Conditional statement that displays a heart icon with a link to add or remove a product from the wishlist.
+        -->
           {% if user.is_authenticated and wishlist %}
             {% if product in wishlist.products.all %}
+            <!-- if there are products in the wishlisrt, display the heart-full.svg icon with a link to remove the product from the wishlist. -->
               <a href="{% url 'remove_from_wishlist' product.id %}">
                 <img loading="lazy" src="{% static 'img/icons/heart-full.svg' %}"
                   class="aspect-square object-contain object-center w-[25px] min-w-[25px] overflow-hidden self-center shrink-0 max-w-full my-auto mx-2 hover:scale-110" alt="remove from wishlist">
               </a>
             {% else %}
+            <!-- if there are no products in the wishlist, display the Wishlist.svg icon with a link to add the product to the wishlist. -->
               <a href="{% url 'add_to_wishlist' product.id %}">
                 <img loading="lazy" src="{% static 'img/icons/Wishlist.svg' %}"
                     class="aspect-square object-contain object-center w-[25px] min-w-[25px] overflow-hidden self-center shrink-0 max-w-full my-auto mx-2 hover:scale-110" alt="add to wishlist">
               </a>
             {% endif %}
           {% else %}
+            <!-- if the user is not authenticated, display the Wishlist.svg icon with a link to add the product to the wishlist. -->
             <a href="{% url 'add_to_wishlist' product.id %}">
               <img loading="lazy" src="{% static 'img/icons/Wishlist.svg' %}"
                   class="aspect-square object-contain object-center w-[25px] min-w-[25px] overflow-hidden self-center shrink-0 max-w-full my-auto mx-2 hover:scale-110" alt="add to wishlist">
@@ -236,6 +245,7 @@
         </div>
       </div>
       <div class="self-stretch text-secondaryGrey-400 text-sm font-normal my-1">{{ product.designer }}</div>
+      <!-- Conditional statement that displays the category of the product.-->
       {% if product.category %}
       <a href="{% url 'products' %}?category={{ product.category.name }}">
         <div class="flex flex-row justify-start items-center gap-2.5">

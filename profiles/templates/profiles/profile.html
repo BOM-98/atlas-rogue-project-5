@@ -2,6 +2,11 @@
 {% load static %}
 {% load bag_tools %}
 {% load tailwind_filters %}
+{% block extra_meta %}
+<meta name="description" content="Profile">
+{% endblock %}
+
+{% block extra_title %}Profile{% endblock %}
 
 {% block extra_css %}
     <link rel="stylesheet" href="{% static 'css/profile.css' %}">
@@ -13,11 +18,13 @@
         <div class="flex flex-wrap -mx-4">
             <div class="px-4 w-full">
                 <hr class="my-4">
+                <!-- Profile Heading -->
                 <h2 class="font-semibold text-2xl mb-4">Profile</h2>
                 <hr class="my-4">
             </div>
             <div class="px-4 w-full">
                 <p class="my-2">Default Delivery Information</p>
+                <!-- Profile Form -->
                 <form  action="{% url 'profile' %}" method="POST" id="profile-update-form">
                     {% csrf_token %}
                     {{ form|crispy }}
@@ -25,9 +32,11 @@
                 </form>
             </div>
             <div class="w-full">
+                <!-- Order History -->
                 <h2 class="text-gray-500 font-semibold text-lg my-4">Order History</h2>
                 <div class="overflow-auto">
                     <table class="min-w-full divide-y divide-gray-200">
+                        <!-- Table Headers -->
                         <thead class="bg-gray-50">
                             <tr>
                                 <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Order Number</th>
@@ -37,6 +46,9 @@
                             </tr>
                         </thead>
                         <tbody class="bg-white divide-y divide-gray-200 max-h-[460px] overflow-scroll">
+
+                            <!--Template for displaying a list of orders in a profile page.
+                                It uses a for loop to iterate through each order in the "orders" variable.-->
                             {% for order in orders %}
                             <tr>
                                 <td class="px-6 py-4 whitespace-nowrap text-sm text-primary-600">

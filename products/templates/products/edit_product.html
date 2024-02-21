@@ -1,8 +1,17 @@
 {% extends "base.html" %}
 {% load static %}
 {% load tailwind_filters %}
+{% block extra_meta %}
+<meta name="description" content="Edit Product">
+{% endblock %}
+{% block extra_title %}Edit Product{% endblock %}
 
 {% block content %}
+<!-- 
+    This HTML template is used for editing a product in the product management system.
+    It contains a form for updating the product details, including a cancel button and an update button.
+    The form is submitted to the 'edit_product' URL with the product ID as a parameter.
+-->
 <div class="overlay"></div>
 <div class="container mx-auto px-4">
     <div class="flex flex-wrap -mx-4">
