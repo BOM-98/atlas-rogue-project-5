@@ -142,9 +142,8 @@
                 <span>Total cost</span>
                 <span>€{{ grand_total|floatformat:2 }}</span>
             </div>
-            <a href="{% url 'checkout' %}">
-            <button
-                class="bg-primary-500 font-semibold hover:bg-primary-600 rounded-md py-3 text-sm text-white uppercase w-full mt-5">Checkout</button>
+            <a href="{% url 'checkout' %}" class="bg-primary-500 px-4 font-semibold hover:bg-primary-600 rounded-md py-3 text-sm text-white uppercase w-full mt-5">
+            Checkout
             </a>
         </div>
     </div>
