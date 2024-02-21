@@ -23,7 +23,7 @@
             </div>
         </div>
     </div>
-    <div class="self-stretch text-black text-2xl font-normal px-8 py-8">
+    <div class="self-stretch text-black text-2xl font-normal px-8 py-8 flex flex-col justify-center items-center">
         <h2 class="self-stretch text-black text-2xl md:text-4xl text-center py-5"><span class="text-black">The
             </span><span class="text-primary-600 font-bold">Fashion Rental
                 Site</span><br><span class="text-black"> That Makes
@@ -31,6 +31,13 @@
         <p class="text-center"><span class="text-neutral-400 font-normal text-lg md:text-2xl">Ireland’s best women’s
                 fashion</span><br><span class="text-primary-600 font-normal text-lg md:text-2xl">rentals
                 in one place</span></p>
+
+    <!-- See All -->
+    <a href="{% url 'products' %}"><button type="button"
+        class="my-8 text-white bg-primary-600 hover:bg-primary-700 focus:outline-none focus:ring-4 focus:ring-red-300 font-medium rounded-lg text-base px-5 py-3 text-center mb-2">See
+        All</button>
+</a>
+<!-- End See All -->
     </div>
     <h2 class="self-stretch my-8 text-black text-center text-2xl font-semibold">Category</h2>
     <!-- Carousel -->
@@ -174,19 +181,13 @@
     </div>
     <!-- End Carousel -->
 
-    <!-- See All -->
-    <a href="{% url 'products' %}"><button type="button"
-            class="text-white bg-primary-600 hover:bg-primary-700 focus:outline-none focus:ring-4 focus:ring-red-300 font-medium rounded-lg text-base px-5 py-3 text-center mb-2">See
-            All</button>
-    </a>
-    <!-- End See All -->
 
     <!--Featured Product  Section -->
     <section class="w-full py-5" id="featured-section">
         <h2 class="self-stretch text-center my-8 text-black text-2xl font-semibold">Featured Items</h2>
         <div class="w-full h-fit py-[30px] justify-around items-center flex flex-wrap">
             {% for product in featured_products %}
-  <div class="w-[200px] h-fit min-h-[500px] flex-col justify-start gap-2.5 inline-flex my-16 mx-5">
+  <div class="w-[200px] h-fit min-h-[500px] flex-col justify-start gap-2.5 inline-flex mb-8 mx-5">
     <div class="flex justify-center items-center">
       <a href="{% url 'product_detail' product.id %}">
         {% if product.image %}
