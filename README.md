@@ -599,11 +599,7 @@ Customers who are logged into an account can add items to their wishlist which i
 
 ### Social Media Logins
 
-It is intended to add functionality to allow members register and login using social media authentication from google and meta. This would significantly reduce the friction on sign-up for new members and improve the conversion rate of web visitors to members. 
-
-### Google Calendar Integration
-
-It is intended to add calendar events to the personal calendars of members of the gyms when they book classes. This would help remind members of upcoming classes and has built in functionality to remind members when classes are upcoming. 
+It is intended to add functionality to allow members register and login using social media authentication from google and meta. This would significantly reduce the friction on sign-up for new members and improve the conversion rate of web visitors to members.  
 
 ### Google Maps Integrations
 
@@ -621,7 +617,7 @@ I updated my contexts.py file in my bag when trying to add the ability to store 
 
 
 
-## Bug 2: Add To Wishlist Bug
+## Bug 2: Stripe Payments: 
 
 
 
@@ -666,7 +662,7 @@ I outline the different technologies involved in this project and the purpose fo
 ## Integrated Technologies:
  - [Stripe Elements](https://docs.stripe.com/payments/quickstart) was used to implement a PCI compliant checkout.
 
-# Testing CHANGE
+# Testing
 
 ## Manual Testing
 
