@@ -2,6 +2,11 @@
 {% load static %}
 {% load bag_tools %}
 {% load tailwind_filters %}
+{% block extra_meta %}
+<meta name="description" content="Checkout">
+{% endblock %}
+
+{% block extra_title %}Checkout{% endblock %}
 
 {% block extra_css %}
     <link rel="stylesheet" href="{% static 'checkout/css/checkout.css' %}">
@@ -13,7 +18,7 @@
         <div class="flex flex-wrap -mx-4">
             <div class="px-4 w-full">
                 <hr class="my-4">
-                <h2 class="font-semibold text-2xl mb-4">Checkout</h2>
+                <h1 class="font-semibold text-2xl mb-4">Checkout</h1>
                 <hr class="my-4">
             </div>
         </div>
@@ -28,6 +33,11 @@
                         <p class="mb-1 mt-0 text-sm text-gray-600">Subtotal</p>
                     </div>
                 </div>
+                <!-- 
+                    Loop to iterate over each item in the bag_items list.
+                    For each item, it displays the product image, name, size (if available), and quantity.
+                    It also calculates and displays the subtotal price for each item.
+                -->
                 {% for item in bag_items %}
                 {% with product=item.product %}
                     <div class="flex -mx-2 items-center">
@@ -67,8 +77,15 @@
             </div>
             <div class="px-4 w-full lg:w-1/2">
                 <p class="text-gray-600">Please fill out the form below to complete your order</p>
+                <!-- 
+                    The checkout form.
+                    Allows users to enter their personal information, delivery address, and payment details.
+                    The payment section includes a Stripe card element for secure payment processing.
+                    The total amount to be charged is displayed at the bottom of the form.
+                -->
                 <form action="{% url 'checkout' %}" method="POST" id="payment-form">
                     {% csrf_token %}
+                    <!-- It includes sections for customer details, delivery information, payment, and order summary. -->
                     <fieldset class="border border-gray-300 rounded px-3 mb-5">
                         <legend class="text-sm text-black px-2">Details</legend>
                         {{ order_form.full_name | as_crispy_field }}
@@ -86,6 +103,7 @@
                         
                         {{ order_form.county | as_crispy_field }}
                     </fieldset>
+                    <!-- If the user is authenticated, they have the option to save the delivery information to their profile. -->
                     <div class="form-check inline-flex justify-end mr-0 px-4">
                         {% if user.is_authenticated %}
                             <label class="form-check-label" for="id-save-info">Save this delivery information to my profile</label>
@@ -113,6 +131,7 @@
                             <span class="icon">
                                 <i class="fas fa-chevron-left"></i>
                             </span>
+                            <!-- Includes buttons for adjusting the shopping bag and completing the order. -->
                             <span class="font-semibold">Adjust Bag</span>
                         </a>
                         <button id="submit-button" class="bg-primary-500 hover:bg-primary-700 text-white rounded py-2 px-4">
