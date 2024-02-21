@@ -473,6 +473,17 @@ Admin users can update and delete links from their account seen on the the `prod
 
 </details>
 
+### Contact Form Submission Views
+
+Admin users can view their contact form submissions from the Contact Form Submissions page. Submissions are presented as a table. 
+
+<details>
+<summary>Screenshot of the Form Submissions Page</summary>
+
+![Screenshot of the Form Submissions Pags](readme/img/contact-form-submissions.png)
+
+</details>
+
 
 ## Customer Features: 
 
@@ -547,6 +558,40 @@ Upon successful completion of their checkout customers receive an order confirma
 <summary>Screenshot of Confirmation</summary>
 
 ![Screenshot of Add To Confirmation](readme/img/order-confirmation.png)
+
+</details>
+
+### Contact Form
+
+Customers can contact Atlas Rogue through our contact form, reachable from the top navigation and the footer. The form includes `name`, `email`, `subject` and `message` fields. 
+
+<details>
+<summary>Screenshot of Contact Form</summary>
+
+![Screenshot of Contact Form](readme/img/contact-form.png)
+
+</details>
+
+### Customer Profile
+
+Customers can view and update their profile information, along with their order history, from the Profile page. The profile contains update functionality to add profile information in addition to reading their Order history. 
+
+<details>
+<summary>Screenshot of Profile Page</summary>
+
+![Screenshot of Profile Page](readme/img/profile.png)
+
+</details>
+
+### Wishlist
+
+Customers who are logged into an account can add items to their wishlist which is viewable from the Wishlist page. To add items customers click the heart icons next to any product and can then navigate to the wishlist page by clicking the heart in the top navigation. On the wishlist page customers can proceed to remove items from their wishlist by clicking the now 'full' heart icon or they can proceed to add them to their cart.
+
+<details>
+<summary>Screenshot of Wishlist</summary>
+
+![Screenshot of Wishlist](readme/img/wishlist.png)
+![Screenshot of Wishlist Buttons](readme/img/wishlist-2.png)
 
 </details>
 
