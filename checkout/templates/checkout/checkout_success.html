@@ -1,6 +1,11 @@
 {% extends "base.html" %}
 {% load static %}
 {% load tailwind_filters %}
+{% block extra_meta %}
+<meta name="description" content="Checkout Success">
+{% endblock %}
+
+{% block extra_title %}Checkout Success{% endblock %}
 
 {% block extra_css %}
 <link rel="stylesheet" href="{% static 'checkout/css/checkout.css' %}">
@@ -16,7 +21,7 @@
             <div class="border-t-2 border-gray-200 my-4"></div>
             
             <!-- Thank You Message -->
-            <h2 class="text-2xl font-semibold text-center mb-4">Thank You</h2>
+            <h1 class="text-2xl font-semibold text-center mb-4">Thank You</h1>
             
             <div class="border-t-2 border-gray-200 my-4"></div>
             
@@ -38,7 +43,12 @@
                     <p class="text-md font-semibold text-gray-600">Order Date</p>
                     <p class="text-md text-gray-800">{{ order.date }}</p>
                 </div>
-                
+
+                <!-- 
+                    Loop to iterate through each item in the order's line items.
+                    For each item, it displays the product name and quantity, along with the price per item.
+                    If the item has rentals associated with it, it also displays the rental period.
+                -->
                 <!-- Dynamic Order Items -->
                 {% for item in order.lineitems.all %}
                 <div class="flex justify-between flex-wrap items-center border-t pt-2 mt-2">
