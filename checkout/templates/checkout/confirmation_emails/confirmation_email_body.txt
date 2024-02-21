@@ -1,11 +1,17 @@
 Dear [Customer Name],
 
-Thank you for your order from Atlas Rogue! We're excited to let you know that your order #[Order Number] has been successfully processed and is now being prepared for shipment. Here's a quick summary of your purchase:
+Thank you for your order from Atlas Rogue! We're excited to let you know that your order #{{ order.order_number }} has been successfully processed and is now being prepared for shipment. Here's a quick summary of your purchase:
 
-Item(s) Ordered: [Item Details]
-Order Total: [Order Total]
-Shipping Address: [Shipping Address]
-Your order will be on its way soon, and you'll receive another email with tracking information once it has shipped. Should you have any questions or need to make any changes, please reach out to us at [Customer Support Email].
+Order Number: {{ order.order_number }}
+Order Date: {{ order.date }}
+
+Order Total: ${{ order.order_total }}
+Delivery: ${{ order.delivery_cost }}
+Grand Total: ${{ order.grand_total }}
+
+Address: {{ order.street_address1 }} in {{ order.town_or_city }}, {{ order.country }}.
+
+Your order will be on its way soon. Should you have any questions or need to make any changes, please reach out to us on our contact page.
 
 Thank you for choosing Atlas Rogue for your fashion needs. We can't wait for you to enjoy your new clothing!
 
