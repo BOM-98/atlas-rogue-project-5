@@ -1,6 +1,9 @@
 {% extends "base.html" %}
 {% load static %}
 {% load bag_tools %}
+{% block extra_meta %}
+<meta name="description" content="Bag">
+{% endblock %}
 
 {% block extra_css %}
 {% endblock %}
@@ -24,6 +27,10 @@
             </div>
         </div>
 
+
+        <!-- This code represents the template for displaying items in a shopping bag. It iterates over the bag items and 
+            display their image, description, quantity, dates, total price, and options to delete or edit the items. If 
+            the bag is empty, a different section is displayed. -->
         {% if bag_items %}
         {% for item in bag_items %}
         {% with product=item.product %}
@@ -112,6 +119,11 @@
         </a>
     </div>
 
+    <!-- Summary
+        This code displays the order summary, including the number of items in the bag, the total cost, shipping fee, 
+        shipping cost, and the grand total. If the free delivery threshold is not met, it shows the amount needed to 
+        qualify for free delivery.
+    -->
     <div id="summary" class="w-full md:w-1/4 px-8 py-10">
         <h1 class="font-semibold text-2xl border-b pb-8">Order Summary</h1>
         <div class="flex justify-between mt-10 mb-5">
