@@ -2,6 +2,11 @@
 {% load static %}
 {% load bag_tools %}
 {% load tailwind_filters %}
+{% block extra_meta %}
+<meta name="description" content="Contact Form Submissions">
+{% endblock %}
+
+{% block extra_title %}Contact Form Submissions{% endblock %}
 
 {% block extra_css %}
     <link rel="stylesheet" href="{% static 'css/profile.css' %}">
