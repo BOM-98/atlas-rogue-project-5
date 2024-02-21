@@ -75,10 +75,22 @@
                 </div>
                 {% endif %}
         
-                <!-- Billing Details -->
+                <!-- Order Total -->
                 <div class="flex justify-between flex-wrap items-center py-2">
                     <p class="text-md font-semibold text-gray-600">Order Total</p>
                     <p class="text-md text-gray-800">€{{ order.order_total }}</p>
+                </div>
+
+                <!-- Order Total -->
+                <div class="flex justify-between flex-wrap items-center py-2">
+                    <p class="text-md font-semibold text-gray-600">Shipping</p>
+                    <p class="text-md text-gray-800">€{{ order.delivery_cost }}</p>
+                </div>
+
+                <!-- Grand Total -->
+                <div class="flex justify-between flex-wrap items-center py-2">
+                    <p class="text-md font-semibold text-gray-600">Grand Total:</p>
+                    <p class="text-md text-gray-800">€{{ order.grand_total }}</p>
                 </div>
             </div>
             {% if from_profile %}
