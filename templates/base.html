@@ -19,10 +19,9 @@
     <!-- Tailwind CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- Flowbite CDN-->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.2.1/flowbite.min.css" rel="stylesheet" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.2.1/flowbite.min.css" rel="stylesheet">
     <!-- Mailchip CDN -->
-    <link href="//cdn-images.mailchimp.com/embedcode/classic-061523.css" rel="stylesheet"
-                            type="text/css">
+    <link href="//cdn-images.mailchimp.com/embedcode/classic-061523.css" rel="stylesheet" type="text/css">
     <!-- Tailwind Configuration -->
     <script>
         tailwind.config = {
@@ -88,7 +87,7 @@
                 </button>
                 <a href="{% url 'home' %}" class="flex items-center">
                     <img src="{% static 'img/icons/atlas-rogue-icon.svg' %}" class="h-8 lg:me-3 w-[40px] min-w-[40px]"
-                        alt="Atlas Rogue Logo" />
+                        alt="Atlas Rogue Logo">
                     <span
                         class="hidden lg:block self-center text-2xl font-semibold text-gray-700 whitespace-nowrap">Atlas
                         Rogue</span>
@@ -104,7 +103,7 @@
                         <form method="GET" action="{% url 'products' %}">
                             <div class="">
                                 <input type="text" name="q" placeholder="Search"
-                                    class="border-2 border-neutral-100 rounded-md px-2 py-1.5 text-sm text-neutral-400 focus:outline-none focus:border-primary-600" />
+                                    class="border-2 border-neutral-100 rounded-md px-2 py-1.5 text-sm text-neutral-400 focus:outline-none focus:border-primary-600">
                                 <button type="submit" class="hidden">Search</button>
                             </div>
                         </form>
@@ -117,8 +116,8 @@
                                 aria-label="Rent">Rent</button>
 
                             <!-- Rent Dropdown -->
-                            <div class="hidden drop-down-menu lg:absolute z-10 mt-2 w-56 origin-top-right divide-y divide-gray-100 rounded-md bg-white  ring-1 ring-black ring-opacity-5 focus:outline-none"
-                                role="menu" aria-orientation="vertical" aria-labelledby="menu-button" tabindex="-1">
+                            <div class="hidden drop-down-menu lg:absolute z-10 mt-2 w-56 origin-top-right divide-y divide-gray-100 rounded-md bg-white ring-1 ring-black ring-opacity-5 focus:outline-none"
+                                role="menu" aria-orientation="vertical" tabindex="-1">
                                 <a href="{% url 'products' %}"
                                     class="text-gray-700 block px-4 py-2 text-sm hover:bg-gray-100 hover:text-primary-600"
                                     role="menuitem" tabindex="-1" id="menu-item-0">All</a>
@@ -149,37 +148,37 @@
                             aria-label="Designers">Designers</button>
                         <!-- Suppliers Dropdown -->
                         <div class="hidden drop-down-menu lg:absolute z-10 mt-2 w-56 origin-top-right divide-y divide-gray-100 rounded-md bg-white ring-1 ring-black ring-opacity-5 focus:outline-none"
-                            role="menu" aria-orientation="vertical" aria-labelledby="menu-button" tabindex="-1">
+                            role="menu" aria-orientation="vertical" tabindex="-1">
                             <a href="{% url 'products' %}?designer=Ganni"
                                 class="text-gray-700 block px-4 py-2 text-sm hover:bg-gray-100 hover:text-primary-600"
-                                role="menuitem" tabindex="-1" id="menu-item-0">Ganni</a>
+                                role="menuitem" tabindex="-1" id="menu-item-7">Ganni</a>
                             <a href="{% url 'products' %}?designer=Rixo"
                                 class="text-gray-700 block px-4 py-2 text-sm hover:bg-gray-100 hover:text-primary-600"
-                                role="menuitem" tabindex="-1" id="menu-item-1">Rixo</a>
+                                role="menuitem" tabindex="-1" id="menu-item-8">Rixo</a>
                             <a href="{% url 'products' %}?designer=Shrimps"
                                 class="text-gray-700 block px-4 py-2 text-sm hover:bg-gray-100 hover:text-primary-600"
-                                role="menuitem" tabindex="-1" id="menu-item-2">Shrimps</a>
+                                role="menuitem" tabindex="-1" id="menu-item-9">Shrimps</a>
                             <a href="{% url 'products' %}?designer=Stine Goya"
                                 class="text-gray-700 block px-4 py-2 text-sm hover:bg-gray-100 hover:text-primary-600"
-                                role="menuitem" tabindex="-1" id="menu-item-3">Stine Goya</a>
+                                role="menuitem" tabindex="-1" id="menu-item-10">Stine Goya</a>
                             <a href="{% url 'products' %}?designer=Self Portrait"
                                 class="text-gray-700 block px-4 py-2 text-sm hover:bg-gray-100 hover:text-primary-600"
-                                role="menuitem" tabindex="-1" id="menu-item-4">Self Portrait</a>
+                                role="menuitem" tabindex="-1" id="menu-item-11">Self Portrait</a>
                             <a href="{% url 'products' %}?designer=Rotate"
                                 class="text-gray-700 block px-4 py-2 text-sm hover:bg-gray-100 hover:text-primary-600"
-                                role="menuitem" tabindex="-1" id="menu-item-5">Rotate</a>
+                                role="menuitem" tabindex="-1" id="menu-item-12">Rotate</a>
                             <a href="{% url 'products' %}?designer=Ghost"
                                 class="text-gray-700 block px-4 py-2 text-sm hover:bg-gray-100 hover:text-primary-600"
-                                role="menuitem" tabindex="-1" id="menu-item-6">Ghost</a>
+                                role="menuitem" tabindex="-1" id="menu-item-13">Ghost</a>
                             <a href="{% url 'products' %}?designer=Faithful The Brand"
                                 class="text-gray-700 block px-4 py-2 text-sm hover:bg-gray-100 hover:text-primary-600"
-                                role="menuitem" tabindex="-1" id="menu-item-6">Faithful The Brand</a>
+                                role="menuitem" tabindex="-1" id="menu-item-14">Faithful The Brand</a>
                             <a href="{% url 'products' %}?designer=The Frankie Shop"
                                 class="text-gray-700 block px-4 py-2 text-sm hover:bg-gray-100 hover:text-primary-600"
-                                role="menuitem" tabindex="-1" id="menu-item-6">The Frankie Shop</a>
+                                role="menuitem" tabindex="-1" id="menu-item-15">The Frankie Shop</a>
                             <a href="{% url 'products' %}"
                                 class="text-gray-700 block px-4 py-2 text-sm hover:bg-gray-100 hover:text-primary-600"
-                                role="menuitem" tabindex="-1" id="menu-item-6">View All</a>
+                                role="menuitem" tabindex="-1" id="menu-item-16">View All</a>
                         </div>
                         <!-- End Suppliers Dropdown -->
                     </li>
@@ -194,10 +193,10 @@
                             <button
                                 class="lg:hidden drop-down-button text-neutral-400 text-center text-base whitespace-nowrap hover:text-primary-600 hover:underline underline-offset-4 decoration-2 duration-500"
                                 aria-label="Rent">My Account</button>
-        
+
                             <!-- Account Dropdown -->
                             <div class="hidden drop-down-menu lg:absolute z-10 mt-2 w-56 divide-y divide-gray-100 rounded-md bg-white ring-1 ring-black ring-opacity-5 focus:outline-none"
-                                role="menu" aria-orientation="vertical" aria-labelledby="menu-button" tabindex="-1">
+                                role="menu" aria-orientation="vertical" tabindex="-1">
                                 {% if request.user.is_authenticated %}
                                 {% if request.user.is_superuser %}
                                 <a href="{% url 'add_product' %}"
@@ -223,7 +222,8 @@
                                 {% endif %}
                             </div>
                         </div>
-                        <!-- End Account Dropdown --></li>
+                        <!-- End Account Dropdown -->
+                    </li>
                     <!-- End Menu Items -->
                 </ul>
             </div>
@@ -233,7 +233,7 @@
                 <form method="GET" action="{% url 'products' %}" class="self-center">
                     <div class="flex hidden lg:block self-center">
                         <input type="text" name="q" placeholder="Search"
-                            class="self-center border-2 border-neutral-100 rounded-md px-2 py-1.5 text-sm text-neutral-400 focus:outline-none focus:border-primary-600" />
+                            class="self-center border-2 border-neutral-100 rounded-md px-2 py-1.5 text-sm text-neutral-400 focus:outline-none focus:border-primary-600">
                         <button type="submit" class="hidden">Search</button>
                     </div>
                 </form>
@@ -243,11 +243,12 @@
                     <button
                         class="hidden lg:block drop-down-button text-neutral-400 text-center text-base whitespace-nowrap hover:text-primary-600 hover:underline underline-offset-4 decoration-2 duration-500"
                         aria-label="Rent"><img loading="lazy" src="{% static 'img/icons/account-img.svg' %}"
-                        class="aspect-square object-contain object-center w-[25px] sm:w-[31px] overflow-hidden self-center shrink-0 max-w-full my-auto mx-1 hover:scale-105" /></button>
+                            alt="Account"
+                            class="aspect-square object-contain object-center w-[25px] sm:w-[31px] overflow-hidden self-center shrink-0 max-w-full my-auto mx-1 hover:scale-105"></button>
 
                     <!-- Account Dropdown -->
                     <div class="hidden drop-down-menu lg:absolute z-10 mt-2 w-56 divide-y divide-gray-100 rounded-md bg-white ring-1 ring-black ring-opacity-5 focus:outline-none"
-                        role="menu" aria-orientation="vertical" aria-labelledby="menu-button" tabindex="-1">
+                        role="menu" aria-orientation="vertical" tabindex="-1">
                         {% if request.user.is_authenticated %}
                         {% if request.user.is_superuser %}
                         <a href="{% url 'add_product' %}"
@@ -278,7 +279,7 @@
                 <!--Wishlist-->
                 <a href="{% url 'wishlist' %}">
                     <img loading="lazy" src="{% static 'img/icons/Wishlist.svg' %}"
-                        class="aspect-square object-contain object-center w-[25px] sm:w-[31px] overflow-hidden self-center shrink-0 max-w-full my-auto mx-1 mt-1 hover:scale-105" />
+                        class="aspect-square object-contain object-center w-[25px] sm:w-[31px] overflow-hidden self-center shrink-0 max-w-full my-auto mx-1 mt-1 hover:scale-105">
                 </a>
                 <!-- End Wishlist -->
                 <!-- Cart -->
@@ -286,7 +287,7 @@
                     href="{% url 'view_bag' %}">
                     <div class="flex flex-row items-center text-center my-auto">
                         <div><img loading="lazy" src="{% static 'img/icons/cart.svg' %}"
-                                class="aspect-square object-contain object-center w-[29px] sm:w-[31px] overflow-hidden shrink-0 max-w-full mx-2" /></i>
+                                class="aspect-square object-contain object-center w-[29px] sm:w-[31px] overflow-hidden shrink-0 max-w-full mx-2"></i>
                         </div>
                         <p class="my-0">
                             {% if grand_total %}
@@ -299,10 +300,9 @@
                 </a>
                 <!-- End Cart -->
             </div>
+        </nav>
     </div>
     <!-- End Nav icons -->
-    </nav>
-    </div>
     <!-- End Navigation -->
     <main class="container mx-auto flex-grow">
         {% if messages %}
@@ -418,13 +418,14 @@
                         <h2 class="mb-6 text-sm font-semibold text-gray-900 uppercase">About</h2>
                         <ul class="text-gray-500 dark:text-gray-400 font-medium">
                             <li>
-                                <a href="{% url 'about_us' %}" class="hover:underline hover:text-primary-600">About Us</a>
+                                <a href="{% url 'about_us' %}" class="hover:underline hover:text-primary-600">About
+                                    Us</a>
                             </li>
                         </ul>
                     </div>
                 </div>
             </div>
-            <hr class="my-6 border-gray-200 sm:mx-auto dark:border-gray-700 lg:my-8" />
+            <hr class="my-6 border-gray-200 sm:mx-auto dark:border-gray-700 lg:my-8" >
             <div class="sm:flex sm:items-center sm:justify-between">
                 <span class="text-sm text-gray-500 sm:text-center dark:text-gray-400">© 2024 <a href="{% url 'home' %}"
                         class="hover:underline hover:hover:text-primary-600">Atlas Rogue</a>. All Rights Reserved.

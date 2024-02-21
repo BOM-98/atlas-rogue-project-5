@@ -9,7 +9,7 @@
 {% block content %}
 <div class="w-full h-full flex-col justify-center items-center inline-flex py-2">
     <div class="self-stretch aspect-[1200/480] justify-start items-center inline-flex w-full py-5"
-        style="background-image: url('{% static 'img/hero-image.png' %}'); background-size:100%; repeat: none;"
+        style="background-image: url('{% static 'img/hero-image.png' %}'); background-size:100%;"
         id="hero-image">
         <div
             class="text-2xl md:text-4lx py-5 px-5 bg-rose-300 bg-opacity-20 rounded-[15px] flex-col justify-center items-start gap-5 inline-flex">
@@ -33,10 +33,9 @@
                 in one place</span></p>
 
     <!-- See All -->
-    <a href="{% url 'products' %}"><button type="button"
-        class="my-8 text-white bg-primary-600 hover:bg-primary-700 focus:outline-none focus:ring-4 focus:ring-red-300 font-medium rounded-lg text-base px-5 py-3 text-center mb-2">See
-        All</button>
-</a>
+    <a href="{% url 'products' %}"  class="my-8 text-white bg-primary-600 hover:bg-primary-700 focus:outline-none focus:ring-4 focus:ring-red-300 font-medium rounded-lg text-base px-5 py-3 text-center mb-2">See
+        All
+    </a>
 <!-- End See All -->
     </div>
     <h2 class="self-stretch my-8 text-black text-center text-2xl font-semibold">Category</h2>
@@ -215,18 +214,18 @@
             {% if product in wishlist.products.all %}
               <a href="{% url 'remove_from_wishlist' product.id %}">
                 <img loading="lazy" src="{% static 'img/icons/heart-full.svg' %}"
-                  class="aspect-square object-contain object-center w-[25px] min-w-[25px] overflow-hidden self-center shrink-0 max-w-full my-auto mx-2 hover:scale-110" />
+                  class="aspect-square object-contain object-center w-[25px] min-w-[25px] overflow-hidden self-center shrink-0 max-w-full my-auto mx-2 hover:scale-110" alt="remove from wishlist">
               </a>
             {% else %}
               <a href="{% url 'add_to_wishlist' product.id %}">
                 <img loading="lazy" src="{% static 'img/icons/Wishlist.svg' %}"
-                    class="aspect-square object-contain object-center w-[25px] min-w-[25px] overflow-hidden self-center shrink-0 max-w-full my-auto mx-2 hover:scale-110" />
+                    class="aspect-square object-contain object-center w-[25px] min-w-[25px] overflow-hidden self-center shrink-0 max-w-full my-auto mx-2 hover:scale-110" alt="add to wishlist">
               </a>
             {% endif %}
           {% else %}
             <a href="{% url 'add_to_wishlist' product.id %}">
               <img loading="lazy" src="{% static 'img/icons/Wishlist.svg' %}"
-                  class="aspect-square object-contain object-center w-[25px] min-w-[25px] overflow-hidden self-center shrink-0 max-w-full my-auto mx-2 hover:scale-110" />
+                  class="aspect-square object-contain object-center w-[25px] min-w-[25px] overflow-hidden self-center shrink-0 max-w-full my-auto mx-2 hover:scale-110" alt="add to wishlist">
             </a>
         {% endif %}
         </div>
@@ -255,15 +254,15 @@
             <div class="w-100 mx-auto sm:max-w-2xl md:max-w-3xl lg:max-w-5xl xl:max-w-7xl">
               <div class="grid items-center gap-12 lg:grid-cols-2">
                 <div class="mt-12 lg:mt-0">
-                  <h1 class="mt-2 mb-16 text-5xl font-bold tracking-tight md:text-6xl xl:text-7xl">
+                  <h2 class="mt-2 mb-16 text-5xl font-bold tracking-tight md:text-6xl xl:text-7xl">
                     Rent<span class="text-primary-500"> Rixo</span>
-                  </h1>
+                  </h2>
                   <a class="mb-2 inline-block rounded bg-primary-500 px-12 pt-4 pb-3.5 text-sm font-medium uppercase leading-normal text-white shadow-[0_4px_9px_-4px_#3b71ca] transition duration-150 ease-in-out hover:bg-primary-600 hover:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:bg-primary-600 focus:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:outline-none focus:ring-0 active:bg-primary-700 active:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] md:mr-2 md:mb-0"
                     data-te-ripple-init data-te-ripple-color="light" href="{% url 'products' %}?designer=rixo" role="button">Rent</a>
                 </div>
                 <div class="mb-12 lg:mb-0">
                   <img src="{% static 'img/rixo-image.webp' %}"
-                    class="w-full rounded-lg shadow-lg dark:shadow-black/20" alt="" />
+                    class="w-full rounded-lg shadow-lg dark:shadow-black/20" alt="Rixo">
                 </div>
               </div>
             </div>
@@ -273,12 +272,12 @@
                   <div class="grid items-center gap-12 lg:grid-cols-2">
                     <div class="mb-12 lg:mb-0">
                         <img src="{% static 'img/ganni-image.webp' %}"
-                          class="w-full rounded-lg shadow-lg dark:shadow-black/20" alt="" />
+                          class="w-full rounded-lg shadow-lg dark:shadow-black/20" alt="Ganni">
                       </div>
                     <div class="mt-12 lg:mt-0">
-                      <h1 class="mt-2 mb-16 text-5xl font-bold tracking-tight md:text-6xl xl:text-7xl">
+                      <h2 class="mt-2 mb-16 text-5xl font-bold tracking-tight md:text-6xl xl:text-7xl">
                         Rent<span class="text-primary-500"> Ganni</span>
-                      </h1>
+                      </h2>
                       <a class="mb-2 inline-block rounded bg-primary-500 px-12 pt-4 pb-3.5 text-sm font-medium uppercase leading-normal text-white shadow-[0_4px_9px_-4px_#3b71ca] transition duration-150 ease-in-out hover:bg-primary-600 hover:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:bg-primary-600 focus:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:outline-none focus:ring-0 active:bg-primary-700 active:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] md:mr-2 md:mb-0"
                         data-te-ripple-init data-te-ripple-color="light" href="{% url 'products' %}?designer=ganni" role="button">Rent</a>
                     </div>
