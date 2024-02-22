@@ -4,7 +4,7 @@ from products.models import Product, Category
 from wishlist.models import Wishlist
 from profiles.models import UserProfile
 
-# Create your views here.
+
 def index(request):
     """
     Render the homepage view.
@@ -26,23 +26,29 @@ def index(request):
     featured_product_2 = Product.objects.get(pk=63)
     featured_product_3 = Product.objects.get(pk=66)
     featured_product_4 = Product.objects.get(pk=76)
-    featured_products = [featured_product_1, featured_product_2, featured_product_3, featured_product_4]
+    featured_products = [
+        featured_product_1,
+        featured_product_2,
+        featured_product_3,
+        featured_product_4]
     categories = Category.objects.all()
     wishlist = None
-    
-    # Only attempt to get the user's profile and wishlist if the user is authenticated
+
+    # Only attempt to get the user's profile
+    # and wishlist if the user is authenticated
     if request.user.is_authenticated:
         user_profile = UserProfile.objects.get(user=request.user)
         wishlist, created = Wishlist.objects.get_or_create(user=user_profile)
     else:
-        wishlist = None  # Wishlist remains None if the user is not authenticated
-        
+        wishlist = None
+
     context = {
         "featured_products": featured_products,
         "current_categories": categories,
         "wishlist": wishlist,
     }
     return render(request, "home/index.html", context)
+
 
 def about_us(request):
     """
