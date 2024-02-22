@@ -653,7 +653,7 @@ I outline the different technologies involved in this project and the purpose fo
 
 ## Core Technologies
 
-- [Django](https://www.djangoproject.com/) the full stack framework used for this gym management system.
+- [Django](https://www.djangoproject.com/) the full stack framework used for this website.
 - [JavaScript](https://www.ecma-international.org/publications-and-standards/standards/ecma-262/) used for rendering the fullcalendar calendar in the app.
 - [HTML](https://html.spec.whatwg.org/)/[CSS](https://www.w3.org/Style/CSS/Overview.en.html) + [Django Template Language](https://docs.djangoproject.com/en/4.2/ref/templates/language/) used for building templates on the website and rendering data from the database on the webpages.
 
