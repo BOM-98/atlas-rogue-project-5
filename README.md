@@ -832,7 +832,7 @@ Pagespeed Insights & Lighthouse testing revealed perfect results for of the webs
 > index.html
 
 
-![ PageSpeed Insights Report](readme/img/Pagespeed-insights.png)
+![ PageSpeed Insights Report](readme/img/pagespeed-insights-1.png)
 
 <details>
 <summary>Pages Tested List:</summary>
