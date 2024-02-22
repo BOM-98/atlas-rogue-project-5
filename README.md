@@ -187,7 +187,7 @@ Some user stories relating to ratings and reviews, payment options and customer 
 
 ## Data Models
 
-The database schema for the tough glove site is shown below:
+The database schema for the Atlas Rogue site is shown below:
 
 ![Database schema](readme/img/database-model.png)
 
