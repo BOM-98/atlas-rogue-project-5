@@ -37,6 +37,13 @@ By offering a curated collection of high-quality women's clothing available for 
 - The logo, typeface and colour scheme were chosen to reflect a gentle and kind brand that was not too serious.
 
 <details>
+<summary> Mockups </summary>
+
+![Colour palette](readme/img/mockup-image.png)
+
+</details>
+
+<details>
 <summary> Colour Palette </summary>
 
 ![Colour palette](readme/img/atlas-rogue-colors.png)
