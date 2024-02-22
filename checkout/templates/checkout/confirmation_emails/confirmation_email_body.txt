@@ -1,4 +1,4 @@
-Dear [Customer Name],
+Hello from Atlas Rogue!
 
 Thank you for your order from Atlas Rogue! We're excited to let you know that your order #{{ order.order_number }} has been successfully processed and is now being prepared for shipment. Here's a quick summary of your purchase:
 
