@@ -1,6 +1,7 @@
 # Atlas Rogue
 
 ![Screenshot of Hero Section](readme/img/cover-image.png)
+![Sub Header](readme/img/sub-cover-img.png)
 
 > [Live Site](https://atlas-rogue-09e759974ffc.herokuapp.com/)
 
@@ -43,7 +44,7 @@ By offering a curated collection of high-quality women's clothing available for 
 </details>
 
 
-## Agile Development CHANGE
+## Agile Development
 
 Agile software development methods were used to deliver this project and ensure that an iterative approach was taken to achieve the best results for the end-user. 
 - The project was broken down from the high level business outcomes and problem statement into epics and user stories. 
@@ -168,7 +169,7 @@ Some user stories relating to ratings and reviews, payment options and customer 
     Subscribing to the newsletter allows Atlas Rogue to establish a direct line of communication with its audience. This channel can be used to send updates, promotions, exclusive offers, and fashion tips directly to subscribers' inboxes, fostering a stronger connection between the brand and its customers.
 
   - **Customer Retention:**
-    Regular newsletters keep subscribers engaged and informed about the latest additions to the collection, special events, and any loyalty programs. This consistent touchpoint increases the likelihood of subscribers returning to Atlas Rogue for their rental needs, enhancing customer retention.
+    Regular newsletters keep subscribers engaged and informed about the latest additions to the collection, special events, and any loyalty programs. This consistent touch point increases the likelihood of subscribers returning to Atlas Rogue for their rental needs, enhancing customer retention.
 
   - **Traffic and Engagement:**
     Newsletters can drive traffic back to the Atlas Rogue website by featuring captivating content, such as new arrivals, fashion inspiration, and exclusive deals. Increased website visits not only boost engagement but also provide more opportunities for conversions and sales.
@@ -177,7 +178,7 @@ Some user stories relating to ratings and reviews, payment options and customer 
     Every newsletter campaign offers actionable analytics, such as open rates, click-through rates, and conversion data. Atlas Rogue can use these insights to understand subscriber preferences better, refine marketing strategies, and tailor future content to meet the interests and needs of their audience more effectively.
 
 
-## Data Models CHANGE
+## Data Models
 
 The database schema for the tough glove site is shown below:
 
@@ -469,7 +470,7 @@ Admin users can update and delete links from their account seen on the the `prod
 <summary>Screenshot of the products page with update & delete links</summary>
 
 ![Screenshot of the products page with update & delete links](readme/img/update-edit-links.png)
-![Screenshot of the products udpate page](readme/img/edit-product.png)
+![Screenshot of the products update page](readme/img/edit-product.png)
 
 </details>
 
@@ -480,7 +481,7 @@ Admin users can view their contact form submissions from the Contact Form Submis
 <details>
 <summary>Screenshot of the Form Submissions Page</summary>
 
-![Screenshot of the Form Submissions Pags](readme/img/contact-form-submissions.png)
+![Screenshot of the Form Submissions Pages](readme/img/contact-form-submissions.png)
 
 </details>
 
@@ -609,7 +610,7 @@ Atlas Rogue would benefit from assigning an address to it's website for SEO purp
 
 Atlas Rogue wants to stand out as a voice of authority in Ireland on the topic of fashion rental and sustainable fashion. Informational blog posts will add an element of credibility to the company and also help Atlas Rogue rank higher on Google/Bing for targeted keywords mentioned in blog articles. Articles, if well written, should help secure additional back-links to the site from people who want to cite or share our points of view, therefore increasing our domain authority. 
 
-# Bugs CHANGE
+# Bugs
 
 ## Bug 1: Bag Contexts.py Creating an Error on Local Deployment:
 
@@ -617,7 +618,7 @@ I updated my contexts.py file in my bag when trying to add the ability to store 
 
 ![Screenshot of Bag Contents Bug](readme/img/bug-2.png)
 
-## Bug 2: Stripe Payments Webook Not Working: 
+## Bug 2: Stripe Payments Webhook Not Working: 
 When I implemented Stripe payments at first, the checkout would process a card payment and generate a payment intent but the payment.intent.succeeded webhook from Stripe would never succeed. This prevented the site from sending confirmation emails to the customer once the order was made. Eventually I found that I had not included a code snippet mentioned in one of the  walkthroughs due to Stripe updating it's API recently. The code snippet is included below: 
 
 ```
@@ -931,7 +932,7 @@ All code was put through the [https://www.jsvalidator.com](jsvalidator.com) and 
 
 <br>
 
-# Deployment CHANGE
+# Deployment
 
 ### ElephantSQL Database
 
@@ -948,17 +949,32 @@ To obtain your own Postgres Database, sign-up with your GitHub account, then fol
  - On the details page of your Instance, copy the URL beginning with `postgres://` and Paste your ElephantSQL url in your env.py file
  - Make sure to include your URL in your Heroku app settings as outlined in the Heroku section below
 
-### Cloudinary 
+### AWS S3 
 
-> This project uses the [Cloudinary API](https://www.cloudinary.com) to store static files
-
-To set up a Cloudinary API follow these steps:
-- Sign up or login to Cloudinary
-- Your Cloudinary Dashboard provides access to your API Environment Variable, which you can copy.
-- Important: Exclude 'CLOUDINARY_URL=' from the API value, as this represents the key
-- Paste your Cloudinary url in your env.py file
-- Make sure to include your URL in you Heroku app settings as outlined in the next section
-
+- This project utilizes [Amazon Web Services (AWS) S3](https://aws.amazon.com/s3/) for storing static and media files.
+- Sign up or log into your AWS account at [AWS](https://aws.amazon.com/).
+- Navigate to the S3 service in the AWS Management Console.
+- Click **Create bucket**. Name your bucket, select a region, uncheck "Block all public access", acknowledge the public access, and create the bucket.
+- In your bucket settings, go to the **Permissions** tab.
+- Under **Bucket Policy**, click **Edit** and input a policy to allow public read access. Example:
+  ```json
+  {
+      "Version": "2012-10-17",
+      "Statement": [{
+          "Sid": "PublicReadGetObject",
+          "Effect": "Allow",
+          "Principal": "*",
+          "Action": "s3:GetObject",
+          "Resource": "arn:aws:s3:::YOUR_BUCKET_NAME/*"
+      }]
+  }
+- Replace YOUR_BUCKET_NAME with your actual bucket name.
+- Within the Permissions tab, select Static website hosting.
+- Opt for "Use this bucket to host a website" and set index and error documents as needed.
+- Go to IAM (Identity and Access Management) service.
+- Click Add user, choose a name, select Programmatic access, and attach the AmazonS3FullAccess policy.
+- Important: Download the provided CSV file with the access key ID and secret access key.
+- Install required packages: boto3 and django-storages.
 
 ### Heroku
 
@@ -982,7 +998,7 @@ To deploy to Heroku I followed these steps:
 | --- | --- |
 | `AWS_ACCESS_KEY_ID` | user's own value |
 | `AWS_SECRET_ACCESS_KEY` | user's own value |
-| `DATABASE_URL` | elephand sql url |
+| `DATABASE_URL` | elephant sql url |
 | `EMAIL_HOST_PASSWORD` | user's own value |
 | `EMAIL_HOST_USER` | user's own value |
 | `SECRET_KEY` | user's own value |
@@ -1020,7 +1036,7 @@ To deploy to Heroku I followed these steps:
 By forking the GitHub Repository you can make a copy of the original repository to view or change without it effecting the original repository.
 You can do this by: 
 -  Logging into GitHub or create an account. 
-- Locate the repository at  [here](https://github.com/BOM-98/tough-glove-project-4)  . 
+- Locate the repository at  [here](https://github.com/BOM-98/atlas-rogue-project-5)  . 
 -  At the top of the repository, on the right side of the page, select "Fork" from the buttons available. 
 -  A copy of the repository should now be created in your own repository.
 
@@ -1028,7 +1044,7 @@ You can do this by:
 
 Creating a clone enables you to make a copy of the repository at that point in time - this lets you run a copy of the project locally: This can be done by:
 
--   Navigate [Here](https://github.com/BOM-98/tough-glove-project-4)
+-   Navigate [Here](https://github.com/BOM-98/atlas-rogue-project-5)
 -   click on the arrow on the green code button at the top of the list of files
 -   select the clone by https option and copy the URL it provides to the clipboard
 -   navigate to your code editor of choice and within the terminal change the directory to the location you want to clone the repository to.
@@ -1070,7 +1086,7 @@ AWS_S3_CUSTOM_DOMAIN= #your aws domain
 - Recommended text sizes [Typeography](https://learnui.design/blog/mobile-desktop-website-font-size-guidelines.html)
 - [Tailwind CSS Walkthrough](https://www.youtube.com/watch?v=76n7sqZocSk)
 - [Tailwind CSS Documentation](https://django-tailwind.readthedocs.io/en/latest/installation.html)
-- [Ui color creater](https://uicolors.app/create)
+- [Ui color creator](https://uicolors.app/create)
 - [Django signals](https://docs.djangoproject.com/en/4.2/topics/signals/)
 - product_scraper.py creation [Scraping Product Information](https://www.youtube.com/watch?v=MeBU-4Xs2RU)
 - [Shopping Cart Base Template](https://codepen.io/abdelrhman/pen/BaNPVJO)
