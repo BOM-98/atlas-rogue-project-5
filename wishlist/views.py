@@ -7,9 +7,20 @@ from django.shortcuts import get_object_or_404
 from django.contrib import messages
 from django.http import HttpResponseRedirect
 
+
 # Create your views here.
 @login_required
 def add_to_wishlist(request, product_id):
+    """
+    Adds a product to the user's wishlist.
+
+    Parameters:
+    - request: The HTTP request object.
+    - product_id: The ID of the product to be added to the wishlist.
+
+    Returns:
+    - HttpResponseRedirect: Redirects the user to the previous page.
+    """
     product = Product.objects.get(pk=product_id)
     user = UserProfile.objects.get(user=request.user)
     wishlist, created = Wishlist.objects.get_or_create(user=user)
@@ -19,14 +30,26 @@ def add_to_wishlist(request, product_id):
         messages.info(request, f"{product.name} is already in your wishlist.")
     else:
         wishlist.products.add(product)
-        messages.info(request, f"{product.name} has been added to your wishlist.")
-    
-    return HttpResponseRedirect(request.META.get('HTTP_REFERER', '/'))
+        messages.info(
+            request, f"{product.name} has been added to your wishlist.")
+
+    return HttpResponseRedirect(request.META.get("HTTP_REFERER", "/"))
+
 
 @login_required
 def view_wishlist(request):
     """
     View the user's wishlist. Create a wishlist if it does not exist.
+
+    Args:
+        request (HttpRequest): The HTTP request object.
+
+    Returns:
+        HttpResponse: The rendered wishlist page.
+
+    Raises:
+        Http404: If the user profile does not exist.
+
     """
     user_profile = get_object_or_404(UserProfile, user=request.user)
     wishlist, created = Wishlist.objects.get_or_create(user=user_profile)
@@ -36,14 +59,24 @@ def view_wishlist(request):
     }
     return render(request, "wishlist/wishlist.html", context)
 
+
 @login_required
 def remove_from_wishlist(request, product_id):
     """
     Remove a product from the user's wishlist
+
+    Parameters:
+    - request: The HTTP request object
+    - product_id: The ID of the product to be removed from the wishlist
+
+    Returns:
+    - HttpResponseRedirect: Redirects the user to the
+    previous page after removing the product from the wishlist
     """
     product = Product.objects.get(pk=product_id)
     user = UserProfile.objects.get(user=request.user)
     wishlist = Wishlist.objects.get(user=user)
     wishlist.products.remove(product)
-    messages.info(request, f"{product.name} has been removed from your wishlist.")
-    return HttpResponseRedirect(request.META.get('HTTP_REFERER', '/'))
+    messages.info(
+        request, f"{product.name} has been removed from your wishlist.")
+    return HttpResponseRedirect(request.META.get("HTTP_REFERER", "/"))
