@@ -615,7 +615,7 @@ Atlas Rogue wants to stand out as a voice of authority in Ireland on the topic o
 
 I updated my contexts.py file in my bag when trying to add the ability to store rental periods, and this impacted my site as my cart was trying to fetch a quantity number that was an int when I had changed it to a dictionary to store two dates. This repeatedly caused my program to crash locally, but not in production. Even when I cleared my cookies and corrected the bug in my codebase this issue persisted, and I could only run my program locally in an incognito browser. 
 
-
+![Screenshot of Bag Contents Bug](readme/img/bug-2.png)
 
 ## Bug 2: Stripe Payments: 
 
@@ -807,38 +807,31 @@ I outline the different technologies involved in this project and the purpose fo
 
 ## Pagespeed Insights Report CHANGE
 
-Pagespeed Insights & Lighthouse testing revealed near perfect results for the performance of the website across all dimensions.
+Pagespeed Insights & Lighthouse testing revealed perfect results for of the website across all dimensions except Performance which was amber.
 
 <br>
 
-> homepage.html
+> index.html
 
 
-![ PageSpeed Insights Report](readme/pagespeed-insights-report.png)
+![ PageSpeed Insights Report](readme/img/pagespeed-insights.png)
 
 <details>
 <summary>Pages Tested List:</summary>
 
-- create_member.html
-- delete_member.html
-- login.html
-- members.html
+- bag.html
+- checkout.html
+- checkout_success.html
+- contact.html
+- contact_submissions.html
+- about_us.html
+- add_product.html
+- edit_product.html
+- product_detail.html
+- products.html
 - profile.html
-- register.html
-- update_member.html
-- book_classes.html
-- cancel_booking.html
-- classes.html
-- delete_class.html
-- update_class.html
-- user_bookings.html
-- admin_dashboard.html
-- available_classes.html
-- homepage.html
+- wishlist.html
 - 400.html
-- 403.html
-- 404.html
-- 500.html
 
 </details>
 
@@ -852,17 +845,7 @@ Pagespeed Insights & Lighthouse testing revealed near perfect results for the pe
 <details>
 <summary>Homepage Responsive Checking</summary>
 
-![ Responsive Testing 1](readme/responsive-testing-1.png)
-![ Responsive Testing 2](readme/responsive-testing-2.png)
-
-</details>
-
-<br>
-<details>
-<summary>Admin Responsive Checking</summary>
-
-![ Responsive Testing 3](readme/responsive-testing-3.png)
-![ Responsive Testing 4](readme/responsive-testing-4.png)
+![ Responsive Testing 1](readme/img/responsively-images.png)
 
 </details>
 
@@ -874,31 +857,23 @@ All HTML code was put through the [W3 HTML Validator](https://validator.w3.org/n
 <br>
 
 > homepage.html
-![ Homepage W3 Validator Check](readme/nu-html-checker.png)
+![ Homepage W3 Validator Check](readme/img/html-validation.png)
 <details>
 <summary>Pages Checked List:</summary>
 
-- create_member.html
-- delete_member.html
-- login.html
-- members.html
+- bag.html
+- checkout.html
+- checkout_success.html
+- contact.html
+- contact_submissions.html
+- about_us.html
+- add_product.html
+- edit_product.html
+- product_detail.html
+- products.html
 - profile.html
-- register.html
-- update_member.html
-- book_classes.html
-- cancel_booking.html
-- classes.html
-- delete_class.html
-- update_class.html
-- user_bookings.html
-- admin_dashboard.html
-- available_classes.html
-- base.html (was checked on every instance of every other page with page source code inputted into the validator)
-- homepage.html
+- wishlist.html
 - 400.html
-- 403.html
-- 404.html
-- 500.html
 
 </details>
 
@@ -907,14 +882,13 @@ All HTML code was put through the [W3 HTML Validator](https://validator.w3.org/n
 All CSS code was put through the [W3 CSS Validator](https://jigsaw.w3.org/css-validator/) and passed.
 <br>
 
-> style.css
-![ style.css Validator Check](readme/css-linter-check.png)
+> profile.css
+![ profile.css Validator Check](readme/img/css-validation.png)
 <details>
 <summary>Pages Checked List:</summary>
 
-- style.css
-- homepage.css
-- admin.css
+- profile.css
+- checkout.css
 
 </details>
 
@@ -922,31 +896,21 @@ All CSS code was put through the [W3 CSS Validator](https://jigsaw.w3.org/css-va
 
 All python code was put through the [Code Institute Python Linter](https://pep8ci.herokuapp.com/#) and passed
 
-<br>
-
-> forms.py
-![ forms.py Python Linter Check](readme/python-linter-check.png)
-
-<details>
-<summary>Pages Checked List:</summary>
-
-- decorators.py
-- forms.py
-- models.py
-- test_forms.py
-- test_models.py
-- test_views.py
-- views.py
-
-
-
-</details>
-
-<br>
-
 ### Javascript
 
-Calendar.js code was put through the [https://www.jsvalidator.com](jsvalidator.com) and returned no errors.
+All code was put through the [https://www.jsvalidator.com](jsvalidator.com) and returned no errors.
+
+<details>
+<summary>JS Files Checked List:</summary>
+
+- Stripe_elements.js
+- countryfield.js
+- cart.js
+- Datepicker_config.js
+- index.js
+- navButton.js
+
+</details>
 
 <br>
 
@@ -958,7 +922,7 @@ Calendar.js code was put through the [https://www.jsvalidator.com](jsvalidator.c
 
 To obtain your own Postgres Database, sign-up with your GitHub account, then follow these steps:
 - Click **Create New Instance**.
-- Provide the name of your project e.g. `Tough-Glove`
+- Provide the name of your project e.g. `Atlas-Rogue`
 - Select the **Tiny Turtle (Free)** plan.
 - Choose your **Data Center** e.g. `eu-west-1 (Ireland)` 
 - Click "Review"
@@ -979,7 +943,6 @@ To set up a Cloudinary API follow these steps:
 - Make sure to include your URL in you Heroku app settings as outlined in the next section
 
 
-
 ### Heroku
 
 > This project uses [Heroku](https://www.heroku.com)
@@ -988,7 +951,7 @@ To deploy to Heroku I followed these steps:
 
 - Sign up or login on Heroku
 - Create a new app in Heroku by selecting "New" and "Create New App" from the admin dashboard homepage
-- Choose your name e.g. `tough-glove` as the name for the project and chose your region e.g. `EU`
+- Choose your name e.g. `atlas-rogue` as the name for the project and chose your region e.g. `EU`
 - Confirmed creation of a new app
 - Navigate to the submenu in the navigation bar and select "resources"
 - From here I was redirected to the Deploy tab
@@ -1000,11 +963,16 @@ To deploy to Heroku I followed these steps:
 
 | Key | Value |
 | --- | --- |
-| `CLOUDINARY_URL` | user's own value |
-| `DATABASE_URL` | user's own value |
-| `DISABLE_COLLECTSTATIC` | 1 (*this is temporary, and can be removed for the final deployment*) |
+| `AWS_ACCESS_KEY_ID` | user's own value |
+| `AWS_SECRET_ACCESS_KEY` | user's own value |
+| `DATABASE_URL` | elephand sql url |
+| `EMAIL_HOST_PASSWORD` | user's own value |
+| `EMAIL_HOST_USER` | user's own value |
 | `SECRET_KEY` | user's own value |
-| `PORT` | 8000 |
+| `STRIPE_PUBLIC_KEY` | users' own public key |
+| `STRIPE_SECRET_KEY` | users own' secret key |
+| `STRIPE_WH_SECRET` | stripe webhook endpoint |
+| `USE_AWS` | True |
 
 - Heroku needs two additional files in order to deploy properly.
   - requirements.txt
@@ -1048,6 +1016,27 @@ Creating a clone enables you to make a copy of the repository at that point in t
 -   navigate to your code editor of choice and within the terminal change the directory to the location you want to clone the repository to.
 -   type 'git clone' and paste the https link you copied from github
 -   press enter and git will clone the repository to your local machine
+-   In the terminal install the requirements by using the following: pip3 install -r requirements.txt
+-   Next create the env.py file which tells our project which variables to use.  
+-   Add the file to a .gitignore to prevent it from being pushed to github
+-   Add the following variables to your env.py file
+```python
+DEBUG=FALSE #django debug mode
+SECRET_KEY= #your django secret key
+STRIPE_PRIVATE_KEY= #your stripe private key
+DATABASE_URL= #your postgres database URL
+
+#set to false unless you have an AWS instance with S3 and Cloudfront
+USE_S3=FALSE
+#if above is FALSE, ignore below variables
+AWS_ACCESS_KEY_ID= #AWS access key
+AWS_SECRET_ACCESS_KEY= #AWS secret access key
+AWS_STORAGE_BUCKET_NAME= #name of your S3 storage bucket
+AWS_S3_CUSTOM_DOMAIN= #your cloudfront domain
+```
+-   Make migrations by running :  `python manage.py makemigrations`
+-   Then migrate those changes with  `python manage.py migrate`
+-   To run the project type  `python manage.py runserver` into the terminal and open port 8000.
 
 #### Requirements
 

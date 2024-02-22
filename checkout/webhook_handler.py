@@ -17,9 +17,18 @@ class StripeWH_Handler:
 
     def __init__(self, request):
         self.request = request
-        
+
     def _send_confirmation_email(self, order):
-        """Send the user a confirmation email"""
+        """
+        Send the user a confirmation email.
+
+        Args:
+            order (Order): The order object
+            containing the necessary information.
+
+        Returns:
+            None
+        """
         cust_email = order.email
         subject = render_to_string(
             'checkout/confirmation_emails/confirmation_email_subject.txt',
@@ -27,7 +36,7 @@ class StripeWH_Handler:
         body = render_to_string(
             'checkout/confirmation_emails/confirmation_email_body.txt',
             {'order': order, 'contact_email': settings.DEFAULT_FROM_EMAIL})
-        
+
         send_mail(
             subject,
             body,
@@ -38,11 +47,30 @@ class StripeWH_Handler:
     def handle_event(self, event):
         """
         Handle a generic/unknown/unexpected webhook event
+
+        Args:
+            event (dict): The webhook event received
+
+        Returns:
+            HttpResponse: The response to be sent back
         """
         return HttpResponse(
             content=f'Unhandled webhook received: {event["type"]}',
             status=200)
 
+    def handle_payment_intent_succeeded(self, event):
+        """
+        Handle the payment_intent.succeeded
+        webhook from Stripe
+
+        Parameters:
+        - event: The event object received from the Stripe webhook.
+
+        Returns:
+        - HttpResponse: The response indicating
+        the status and result of the webhook handling.
+        """
+        # code implementation...
     def handle_payment_intent_succeeded(self, event):
         """
         Handle the payment_intent.succeeded webhook from Stripe
@@ -51,20 +79,17 @@ class StripeWH_Handler:
         pid = intent.id
         bag = intent.metadata.bag
         save_info = intent.metadata.save_info
-        stripe_charge = stripe.Charge.retrieve( intent.latest_charge)
+        stripe_charge = stripe.Charge.retrieve(intent.latest_charge)
 
-        billing_details = stripe_charge.billing_details # updated
+        billing_details = stripe_charge.billing_details  # updated
         shipping_details = intent.shipping
-        grand_total = round(stripe_charge.amount / 100, 2) # updated
-        
-        
-        
+        grand_total = round(stripe_charge.amount / 100, 2)  # updated
 
         # Clean data in the shipping details
         for field, value in shipping_details.address.items():
             if value == "":
                 shipping_details.address[field] = None
-                
+
         # Update profile information if save_info was checked
         profile = None
         username = intent.metadata.username
@@ -156,7 +181,14 @@ class StripeWH_Handler:
 
     def handle_payment_intent_payment_failed(self, event):
         """
-        Handle the payment_intent.payment_failed webhook from Stripe
+        Handle the payment_intent.payment_failed
+        webhook from Stripe
+
+        Args:
+            event (dict): The event data received from Stripe
+
+        Returns:
+            HttpResponse: The response to be sent back to Stripe
         """
         return HttpResponse(
             content=f'Webhook received: {event["type"]}',
