@@ -4,6 +4,7 @@ from products.models import Product
 from django.contrib import messages
 from datetime import datetime
 
+
 # Create your views here.
 def view_bag(request):
     """
@@ -15,6 +16,7 @@ def view_bag(request):
     additional context or processing.
     """
     return render(request, "bag/bag.html")
+
 
 def add_to_bag(request, item_id):
     """
@@ -48,24 +50,36 @@ def add_to_bag(request, item_id):
 
     # Validate that both start_date and end_date are provided
     if not start_date or not end_date:
-        messages.error(request, "You must select both a start and an end date.")
+        messages.error(
+            request, "You must select both a start and an end date.")
         return redirect('product_detail', product_id=item_id)
 
-    # Convert date objects to string in ISO format before storing in the session
+    # Convert date objects to string in ISO
+    # format before storing in the session
     if start_date:
         start_date = start_date.isoformat()  # Converts to 'YYYY-MM-DD' string
     if end_date:
         end_date = end_date.isoformat()
 
     if item_id in list(bag.keys()):
-        bag[item_id] = {'quantity': quantity, 'start_date': start_date, 'end_date': end_date}
+        bag[item_id] = {
+            'quantity': quantity,
+            'start_date': start_date,
+            'end_date': end_date}
     else:
-        bag[item_id] = {'quantity': quantity, 'start_date': start_date, 'end_date': end_date}
-    bag[item_id] = {'quantity': quantity, 'start_date': start_date, 'end_date': end_date}
+        bag[item_id] = {
+            'quantity': quantity,
+            'start_date': start_date,
+            'end_date': end_date}
+    bag[item_id] = {
+        'quantity': quantity,
+        'start_date': start_date,
+        'end_date': end_date}
     messages.success(request, f"Added {product.name} to your bag")
 
     request.session["bag"] = bag
     return redirect(redirect_url)
+
 
 def remove_from_bag(request, item_id):
     """Remove the item from the shopping bag.

@@ -22,7 +22,6 @@ MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 
-
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/
 
@@ -32,7 +31,8 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['atlas-rogue-09e759974ffc.herokuapp.com', 'localhost', '127.0.0.1']
+ALLOWED_HOSTS = [
+    'atlas-rogue-09e759974ffc.herokuapp.com', 'localhost', '127.0.0.1']
 
 
 # Application definition
@@ -137,7 +137,7 @@ WSGI_APPLICATION = "atlas_rogue.wsgi.application"
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
-#elephantSQL database
+# elephantSQL database
 if 'DATABASE_URL' in os.environ:
     DATABASES = {
         'default': dj_database_url.parse(os.environ.get('DATABASE_URL'))
@@ -206,21 +206,21 @@ if 'USE_AWS' in os.environ:
         'Expires': 'Thu, 31 Dec 2099 20:00:00 GMT',
         'CacheControl': 'max-age=94608000',
     }
-    
+
     # Bucket Config
     AWS_STORAGE_BUCKET_NAME = 'atlas-rogue-09e759974ffc'
     AWS_S3_REGION_NAME = 'eu-west-1'
     AWS_ACCESS_KEY_ID = os.getenv('AWS_ACCESS_KEY_ID')
     AWS_SECRET_ACCESS_KEY = os.getenv('AWS_SECRET_ACCESS_KEY')
     AWS_S3_CUSTOM_DOMAIN = f'{AWS_STORAGE_BUCKET_NAME}.s3.amazonaws.com'
-    
-    #Static and media files
+
+    # Static and media files
     STATICFILES_STORAGE = 'custom_storages.StaticStorage'
     STATICFILES_LOCATION = 'static'
     DEFAULT_FILE_STORAGE = 'custom_storages.MediaStorage'
     MEDIAFILES_LOCATION = 'media'
-    
-    #Override static and media URLS in production
+
+    # Override static and media URLS in production
     STATIC_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/{STATICFILES_LOCATION}/'
     MEDIA_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/{MEDIAFILES_LOCATION}/'
 

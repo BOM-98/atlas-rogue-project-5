@@ -24,7 +24,8 @@ from profiles.views import profile
 @require_POST
 def cache_checkout_data(request):
     """
-    Cache the checkout data in the session and modify the payment intent metadata.
+    Cache the checkout data in the session
+    and modify the payment intent metadata.
 
     Args:
         request (HttpRequest): The HTTP request object.
@@ -59,7 +60,8 @@ def checkout(request):
         request: The HTTP request object.
 
     Returns:
-        The rendered checkout page with the order form, stripe public key, and client secret.
+        The rendered checkout page with
+        the order form, stripe public key, and client secret.
     """
     # Load Stripe keys from environment variables
     stripe_secret_key = os.getenv("STRIPE_SECRET_KEY")
@@ -182,7 +184,8 @@ def checkout_success(request, order_number):
         order_number (str): The order number.
 
     Returns:
-        HttpResponse: The rendered checkout success template with the order details.
+        HttpResponse: The rendered
+        checkout success template with the order details.
     """
     save_info = request.session.get('save_info')
     order = get_object_or_404(Order, order_number=order_number)
