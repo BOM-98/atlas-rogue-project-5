@@ -595,7 +595,7 @@ Customers who are logged into an account can add items to their wishlist which i
 
 </details>
 
-## Roadmap CHANGE
+## Roadmap
 
 ### Social Media Logins
 
@@ -617,10 +617,27 @@ I updated my contexts.py file in my bag when trying to add the ability to store 
 
 ![Screenshot of Bag Contents Bug](readme/img/bug-2.png)
 
-## Bug 2: Stripe Payments: 
+## Bug 2: Stripe Payments Webook Not Working: 
+When I implemented Stripe payments at first, the checkout would process a card payment and generate a payment intent but the payment.intent.succeeded webhook from Stripe would never succeed. This prevented the site from sending confirmation emails to the customer once the order was made. Eventually I found that I had not included a code snippet mentioned in one of the  walkthroughs due to Stripe updating it's API recently. The code snippet is included below: 
 
+```
 
+intent = event.data.object
+pid = intent.id
+bag = intent.metadata.bag
+save_info = intent.metadata.save_info
 
+stripe_charge = stripe.Charge.retrieve(
+    intent.latest_charge
+)
+
+billing_details = stripe_charge.billing_details # updated
+shipping_details = intent.shipping
+grand_total = round(stripe_charge.amount / 100, 2) # updated
+
+```
+
+Once the following update was made my Stripe webhook started working as intended.
 
 # Technologies Used
 
@@ -805,7 +822,7 @@ I outline the different technologies involved in this project and the purpose fo
 | Mobile Responsiveness of User Profile Page   | Access the user profile page on a mobile device to test for responsive design.                  | PASS   |
 
 
-## Pagespeed Insights Report CHANGE
+## Pagespeed Insights Report
 
 Pagespeed Insights & Lighthouse testing revealed perfect results for of the website across all dimensions except Performance which was amber.
 
@@ -814,7 +831,7 @@ Pagespeed Insights & Lighthouse testing revealed perfect results for of the webs
 > index.html
 
 
-![ PageSpeed Insights Report](readme/img/pagespeed-insights.png)
+![ PageSpeed Insights Report](readme/img/Pagespeed-insights.png)
 
 <details>
 <summary>Pages Tested List:</summary>
@@ -835,7 +852,7 @@ Pagespeed Insights & Lighthouse testing revealed perfect results for of the webs
 
 </details>
 
-## Responsiveness Testing CHANGE
+## Responsiveness Testing
 
 - ResponsivelyApp and Chrome Dev Tools were used to test responsiveness.
 - The website underwent comprehensive testing in both portrait and landscape orientations across a variety of simulated mobile, tablet, and large format screen sizes.
@@ -979,7 +996,7 @@ To deploy to Heroku I followed these steps:
   - Procfile
 
 >You can install this project's requirements (where applicable) using:
->
+```
 >pip3 install -r requirements.txt
 >If you have your own packages that have been installed, then the requirements file needs >updated using:
 
@@ -988,6 +1005,7 @@ To deploy to Heroku I followed these steps:
 
 >echo web: gunicorn app_name.wsgi > Procfile
 >replace app_name with the name of your primary Django app name; the folder where settings.py is located
+```
 
 - In the Settings tab, ensure that the Python Buildpack is added.
 - In the Deploy tab, enable automatic deploys from the Github repository
@@ -1020,41 +1038,27 @@ Creating a clone enables you to make a copy of the repository at that point in t
 -   Next create the env.py file which tells our project which variables to use.  
 -   Add the file to a .gitignore to prevent it from being pushed to github
 -   Add the following variables to your env.py file
-```python
+```
+python
 DEBUG=FALSE #django debug mode
 SECRET_KEY= #your django secret key
 STRIPE_PRIVATE_KEY= #your stripe private key
 DATABASE_URL= #your postgres database URL
-
-#set to false unless you have an AWS instance with S3 and Cloudfront
-USE_S3=FALSE
-#if above is FALSE, ignore below variables
+USE_S3=True
 AWS_ACCESS_KEY_ID= #AWS access key
 AWS_SECRET_ACCESS_KEY= #AWS secret access key
 AWS_STORAGE_BUCKET_NAME= #name of your S3 storage bucket
-AWS_S3_CUSTOM_DOMAIN= #your cloudfront domain
+AWS_S3_CUSTOM_DOMAIN= #your aws domain
 ```
 -   Make migrations by running :  `python manage.py makemigrations`
 -   Then migrate those changes with  `python manage.py migrate`
 -   To run the project type  `python manage.py runserver` into the terminal and open port 8000.
-
-#### Requirements
-
-For local deployment, you will need to create a .env file in the root directory of the project and set the environment variables in this file.
-You will need to define the following variables:
-
-| Key | Value |
-| --- | --- |
-| `CLOUDINARY_URL` | user's own value |
-| `DATABASE_URL` | user's own value |
-| `SECRET_KEY` | user's own value |
 
 <br>
 
 # Credits CHANGE
 
 ## Courses & Tutorials
-- Denis Ivy Youtube tutorials were used to learn how to create a django project. Specifically, this Youtube Series was used to learn the ropes of Django - [Denis Ivy Youtube Series](https://www.youtube.com/watch?v=xv_bwpA_aEA&list=PL-51WBLyFTg2vW-_6XBoUpE7vpmoR3ztO)
 
 - This Codecademy Skill Path was used to learn the ins and outs of Django concepts [Codecademy Course](https://www.codecademy.com/learn/paths/build-python-web-apps-with-django)
 
@@ -1063,24 +1067,22 @@ You will need to define the following variables:
 ## Articles & Guides
 
 - [Setting up the project boards, issues and milestones](https://www.topcoder.com/thrive/articles/project-management-on-github)
-- [Design and layout of the registration form](https://epicbootstrap.com/snippets/registration)
-- [Design and layout of the members list page](https://www.bootdey.com/snippets/view/new-customer-list#css)
-- [Datepicker](https://github.com/monim67/django-bootstrap-datepicker-plus/blob/master/README.rst#usage)
+- Recommended text sizes [Typeography](https://learnui.design/blog/mobile-desktop-website-font-size-guidelines.html)
+- [Tailwind CSS Walkthrough](https://www.youtube.com/watch?v=76n7sqZocSk)
+- [Tailwind CSS Documentation](https://django-tailwind.readthedocs.io/en/latest/installation.html)
+- [Ui color creater](https://uicolors.app/create)
 - [Django signals](https://docs.djangoproject.com/en/4.2/topics/signals/)
-- Creating cancel buttons that don’t post [John Harbison's Blog](http://johnharbison.net/make-a-form-a-cancel-button)
-- [Stack Overflow Discussion](https://stackoverflow.com/questions/17678689/how-to-add-a-cancel-button-to-deleteview-in-django)
-- [Fullcalendar](https://www.jsdelivr.com/package/npm/fullcalendar)
-- [Carousel](https://getbootstrap.com/docs/5.0/components/carousel/)
-- [Setting fields to required](https://stackoverflow.com/questions/7682804/django-model-forms-setting-a-required-field)
-- [Guide on creating docstrings](https://realpython.com/documenting-python-code/#documenting-your-python-code-base-using-docstrings)
+- product_scraper.py creation [Scraping Product Information](https://www.youtube.com/watch?v=MeBU-4Xs2RU)
+- [Shopping Cart Base Template](https://codepen.io/abdelrhman/pen/BaNPVJO)
+- [CrispyTailwind](https://github.com/django-crispy-forms/crispy-tailwind)
 - [Securing against unauthorized access](https://www.codu.co/articles/securing-django-views-from-unauthorized-access-npyb3to_)
-- [Types of assertions](https://docs.python.org/3/library/unittest.html)
-- [Testing specifically in Django](https://docs.djangoproject.com/en/4.2/topics/testing/)
+- [Designer sections on homepage template](https://tw-elements.com/snippets/tailwind/tailwindelements/5196688)
 
 
 ## Code Examples & Templates
-- [Custom 404](https://www.makeuseof.com/create-custom-404-error-page-django/): The template for 404 pages
-- [Admin Dashboard](https://github.com/startbootstrap/startbootstrap-sb-admin-2): This codebase was used as inspiration and was heavily customized to suit the needs of this project
+- [404 page layout](https://merakiui.com/components/marketing/404-pages)
+- [Product card inspiration](https://componentland.com/component/product-card-2)
+- [Footer component from flowbite](https://flowbite.com/docs/components/footer/)
 
 ## Acknowledgements
 
