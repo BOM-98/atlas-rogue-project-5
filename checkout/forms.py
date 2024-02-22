@@ -1,7 +1,21 @@
 from django import forms
 from .models import Order
 
+
 class OrderForm(forms.ModelForm):
+    """
+    A form for creating or updating an order.
+
+    Inherits from forms.ModelForm and defines the fields and attributes
+    for the Order model.
+
+    Attributes:
+        model (Order): The model associated with the form.
+        fields (tuple): The fields to include in the form.
+
+    Methods:
+        __init__(self, *args, **kwargs): Initializes the form instance.
+    """
     class Meta:
         model = Order
         fields = (
@@ -15,7 +29,7 @@ class OrderForm(forms.ModelForm):
             "country",
             "county",
         )
-        
+
     def __init__(self, *args, **kwargs):
         """
         Add placeholders and classes, remove auto-generated
@@ -32,7 +46,7 @@ class OrderForm(forms.ModelForm):
             "street_address2": "Street Address 2",
             "county": "County, State or Locality",
         }
-        
+
         self.fields["full_name"].widget.attrs["autofocus"] = True
         for field in self.fields:
             if field != "country":

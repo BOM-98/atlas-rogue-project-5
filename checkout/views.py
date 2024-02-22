@@ -20,8 +20,22 @@ from profiles.models import UserProfile
 from profiles.forms import UserProfileForm
 from profiles.views import profile
 
+
 @require_POST
 def cache_checkout_data(request):
+    """
+    Cache the checkout data in the session and modify the payment intent metadata.
+
+    Args:
+        request (HttpRequest): The HTTP request object.
+
+    Returns:
+        HttpResponse: The HTTP response object.
+
+    Raises:
+        Exception: If the payment cannot be processed.
+
+    """
     try:
         pid = request.POST.get("client_secret").split("_secret")[0]
         stripe.api_key = settings.STRIPE_SECRET_KEY
@@ -35,15 +49,22 @@ def cache_checkout_data(request):
         messages.error(request, "Sorry, your payment cannot be \
             processed right now. Please try again later.")
         return HttpResponse(content=e, status=400)
-    
+
+
 def checkout(request):
     """
     A view to return the checkout page
+
+    Args:
+        request: The HTTP request object.
+
+    Returns:
+        The rendered checkout page with the order form, stripe public key, and client secret.
     """
     # Load Stripe keys from environment variables
     stripe_secret_key = os.getenv("STRIPE_SECRET_KEY")
     stripe_public_key = os.getenv("STRIPE_PUBLIC_KEY")
-    
+
     if request.method == "POST":
         bag = request.session.get("bag", {})
         form_data = {
@@ -74,9 +95,11 @@ def checkout(request):
                     )
                     order_line_item.save()
                 except Product.DoesNotExist:
-                    messages.error(request, (
-                        "One of the products in your bag wasn't found in our database. "
-                        "Please call us for assistance!")
+                    messages.error(
+                        request, (
+                            "One of the products in your bag wasn't \
+                                found in our database."
+                            "Please call us for assistance!")
                     )
                     order.delete()
                     return redirect(reverse("view_bag"))
@@ -85,7 +108,7 @@ def checkout(request):
                         product=product,
                         order_line_item=order_line_item,
                         start_date=item_data['start_date'],
-                        end_date=item_data['end_date'], 
+                        end_date=item_data['end_date'],
                     )
                     product_rental.save()
                 except Exception as e:
@@ -94,16 +117,18 @@ def checkout(request):
                     return redirect(reverse("view_bag"))
 
             request.session["save_info"] = "save-info" in request.POST
-            return redirect(reverse("checkout_success", args=[order.order_number]))
+            return redirect(
+                reverse("checkout_success", args=[order.order_number]))
     else:
         bag = request.session.get("bag", {})
         if not bag:
-            messages.error(request, "There's nothing in your bag at the moment")
+            messages.error(
+                request, "There's nothing in your bag at the moment")
             return redirect(reverse("products"))
 
         current_bag = bag_contents(request)
         total = current_bag["grand_total"]
-        stripe_total = round(total * 100)  # Stripe requires the amount to be in cents
+        stripe_total = round(total * 100)
         stripe.api_key = stripe_secret_key
 
         # Create a Stripe PaymentIntent
@@ -112,7 +137,7 @@ def checkout(request):
             currency=settings.STRIPE_CURRENCY,
             # Add any additional arguments here
         )
-        
+
         if request.user.is_authenticated:
             try:
                 profile = UserProfile.objects.get(user=request.user)
@@ -147,9 +172,17 @@ def checkout(request):
     }
     return render(request, template, context)
 
+
 def checkout_success(request, order_number):
     """
     Handle successful checkouts
+
+    Args:
+        request (HttpRequest): The HTTP request object.
+        order_number (str): The order number.
+
+    Returns:
+        HttpResponse: The rendered checkout success template with the order details.
     """
     save_info = request.session.get('save_info')
     order = get_object_or_404(Order, order_number=order_number)
